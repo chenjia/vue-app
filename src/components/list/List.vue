@@ -5,7 +5,7 @@
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <div v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
-      <mt-cell v-for="(item,index) in list" :key="index" title="标题文字" to="//github.com" is-link value="带链接"></mt-cell>
+      <mt-cell v-for="(item,index) in list" :key="index" title="标题文字" to="http://www.baidu.com" is-link value="带链接"></mt-cell>
     </div>
   </div>
 </template>
