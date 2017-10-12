@@ -6,6 +6,9 @@ import login from './login'
 import home from './home'
 import list from './list'
 import chart from './chart'
+import contact from './contact'
+import form from './form'
+import tab from './tab'
 
 Vue.use(Router)
 
@@ -17,7 +20,10 @@ const router = new Router({
     ...login,
     ...home,
     ...list,
-    ...chart
+    ...chart,
+    ...contact,
+    ...form,
+    ...tab
   ]
 })
 router.beforeEach((to, from, next) => {

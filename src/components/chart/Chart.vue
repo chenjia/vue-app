@@ -386,8 +386,3 @@ export default {
   }
 }
 </script>
-<style>
-.bottom-nav .btn{
-  min-width:40px;
-}
-</style>

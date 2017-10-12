@@ -26,13 +26,13 @@
             </div>
           </td>
           <td>
-            <div ui-sref="contacts">
+            <div @click="go('contact')">
               <i class="fa fa-fw fa-book" style="color:#da70d6"></i><br/>
               <span>通讯录</span>
             </div>
           </td>
           <td>
-            <div ui-sref="form">
+            <div @click="go('form')">
               <i class="fa fa-fw fa-list-alt" style="color:#32cd32"></i><br/>
               <span>表单</span>
             </div>
@@ -40,7 +40,7 @@
         </tr>
         <tr>
           <td>
-            <div ui-sref="tab">
+            <div @click="go('tab')">
               <i class="fa fa-fw fa-folder" style="color:#6495ed"></i><br/>
               <span>选项卡</span>
             </div>

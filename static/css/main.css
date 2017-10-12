@@ -5,6 +5,39 @@
   padding:10px;
 }
 
+.tabs {
+  position: relative;
+}
+
+.tabs .tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background: #FFF;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs .tab-bar .tab-item {
+  text-align: center;
+  padding: 0 10px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  transition: all .3s;
+}
+
+.tabs .tab-item.active {
+  font-size: 14px;
+  color: #26a2ff;
+}
+
+.tabs .tab-line {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid #26a2ff;
+}
+
 .mint-header .mint-button{
   min-width:24px;
 }
