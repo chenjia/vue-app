@@ -1,0 +1,16 @@
+.lxt-content{
+
+}
+.pd-md{
+  padding:10px;
+}
+
+.mint-header .mint-button{
+  min-width:24px;
+}
+.mint-header .mint-button.fa{
+  font-size:18px;
+}
+.mint-swipe-indicator{
+  opacity:.6;
+}
