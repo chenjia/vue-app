@@ -2,7 +2,7 @@
   <div class="lxt-page">
     <mt-header title="登录"></mt-header>
 
-    <div class="lxt-content">
+    <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="password"></mt-field>
       <mt-field label="验证码" v-model="captcha">
