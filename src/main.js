@@ -13,12 +13,15 @@ import {
   Header,
   Button,
   Cell,
+  CellSwipe,
   Checklist,
   Field,
   IndexList,
   IndexSection,
+  Loadmore,
   Progress,
   Radio,
+  Spinner,
   Switch,
   Swipe,
   SwipeItem,
@@ -31,12 +34,15 @@ import {
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
+Vue.component(CellSwipe.name, CellSwipe)
 Vue.component(Checklist.name, Checklist)
 Vue.component(Field.name, Field)
 Vue.component(IndexList.name, IndexList)
 Vue.component(IndexSection.name, IndexSection)
+Vue.component(Loadmore.name, Loadmore)
 Vue.component(Progress.name, Progress)
 Vue.component(Radio.name, Radio)
+Vue.component(Spinner.name, Spinner)
 Vue.component(Switch.name, Switch)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)

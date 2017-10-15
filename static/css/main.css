@@ -40,7 +40,9 @@
   bottom: 0;
   border-bottom: 2px solid #26a2ff;
 }
-
+.mint-header-title{
+  font-size:16px;
+}
 .mint-header .mint-button{
   min-width:24px;
 }

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div style="position:relative;" :style="{height:screenHeight+'px'}">
     <mt-header title="图表">
       <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
     </mt-header>
-
-    <echarts :width="screenWidth" :height="screenHeight-100" :options="options[active]"></echarts>
+    
+    <echarts :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>
 
     <mt-tabbar v-model="active">
       <mt-tab-item id="bar"><span slot="icon">柱</span></mt-tab-item>
