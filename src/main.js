@@ -10,48 +10,50 @@ import {
 } from 'vuex'
 
 import {
-  Header,
   Button,
   Cell,
   CellSwipe,
   Checklist,
   Field,
+  Header,
   IndexList,
   IndexSection,
   Loadmore,
+  Popup,
   Progress,
   Radio,
   Search,
   Spinner,
-  Switch,
   Swipe,
   SwipeItem,
+  Switch,
   Tabbar,
-  TabItem,
   TabContainer,
-  TabContainerItem
+  TabContainerItem,
+  TabItem
 } from 'mint-ui'
 
-Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
 Vue.component(CellSwipe.name, CellSwipe)
 Vue.component(Checklist.name, Checklist)
 Vue.component(Field.name, Field)
+Vue.component(Header.name, Header)
 Vue.component(IndexList.name, IndexList)
 Vue.component(IndexSection.name, IndexSection)
 Vue.component(Loadmore.name, Loadmore)
+Vue.component(Popup.name, Popup)
 Vue.component(Progress.name, Progress)
 Vue.component(Radio.name, Radio)
 Vue.component(Search.name, Search)
 Vue.component(Spinner.name, Spinner)
-Vue.component(Switch.name, Switch)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
+Vue.component(Switch.name, Switch)
 Vue.component(Tabbar.name, Tabbar)
-Vue.component(TabItem.name, TabItem)
 Vue.component(TabContainer.name, TabContainer)
 Vue.component(TabContainerItem.name, TabContainerItem)
+Vue.component(TabItem.name, TabItem)
 
 Vue.config.productionTip = false
 
@@ -61,15 +63,6 @@ Vue.mixin({
       screenWidth: document.documentElement.clientWidth,
       screenHeight: document.documentElement.clientHeight
     }
-  },
-  computed: {
-    ...mapGetters([
-      'hasHeader',
-      'hasTabs',
-      'hasFooter',
-      'fixFooter',
-      'isLoading'
-    ])
   },
   methods: {
     go(url) {

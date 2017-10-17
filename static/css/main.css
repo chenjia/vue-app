@@ -43,6 +43,9 @@
   bottom: 0;
   border-bottom: 2px solid #26a2ff;
 }
+.mint-button{
+  font-size:14px;
+}
 .mint-field .mint-cell-title{
   width:80px;
   font-size:14px;
@@ -67,4 +70,67 @@
 }
 .mt-progress-progress{
   transition:width .3s linear;
+}
+.mint-switch-label .normal-text {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  height: 32px;
+  line-height: 32px;
+  z-index: 1;
+  font-size:14px;
+}
+.switch-normal{
+  margin-right: -10px;
+}
+.switch-normal .mint-switch-core{
+  width: 60px;
+  border:1px solid #ef4f4f;
+  background:#ef4f4f;
+}
+.switch-normal .mint-switch-input:checked + .mint-switch-core{
+  border-color: #4caf50;
+  background-color: #4caf50;
+}
+.switch-normal .mint-switch-core::before {
+  width: 58px;
+  background-color: #ef4f4f;
+}
+.switch-normal .mint-switch-core::after {
+  z-index: 2;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: 7px;
+}
+.switch-normal .mint-switch-input+.mint-switch-core::after {
+  content:'\f00d';
+  line-height:30px;
+  text-align:center;
+  font-weight:bold;
+  color:#ef4f4f;
+  font-family: FontAwesome;
+}
+.switch-gender .mint-switch-input+.mint-switch-core::after {
+  content:'\f222';
+}
+.switch-normal .mint-switch-input:checked+.mint-switch-core::after {
+  -webkit-transform: translateX(28px);
+  content:'\f00c';
+  color:#4caf50;
+}
+.switch-gender .mint-switch-input:checked+.mint-switch-core::after {
+  content:'\f221';
+}
+.switch-normal .mint-switch-label .gender-text :first-child {
+    display: inline-block;
+    width: 27px;
+    text-align: center;
+    color: #fff;
+}
+.mint-switch-label .normal-text :last-child {
+    display: inline-block;
+    width: 23px;
+    text-align: center;
+    color: #fff;
 }

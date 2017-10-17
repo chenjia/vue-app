@@ -13,6 +13,7 @@ import lock from './lock'
 import calendar from './calendar'
 import loading from './loading'
 import map from './map'
+import dialog from './dialog'
 
 Vue.use(Router)
 
@@ -31,7 +32,8 @@ const router = new Router({
     ...lock,
     ...calendar,
     ...loading,
-    ...map
+    ...map,
+    ...dialog
   ]
 })
 router.beforeEach((to, from, next) => {

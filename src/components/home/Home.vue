@@ -12,76 +12,12 @@
         </mt-swipe-item>
       </mt-swipe>
       <table class="icon-table">
-        <tr>
-          <td>
-            <div @click="go('list')">
-              <i class="fa fa-fw fa-list" style="color:#ff7f50"></i><br/>
-              <span>动态列表</span>
+        <tr v-if="index%4 == 0" v-for="(menu, index) in menus" :key="index">
+          <td v-if="i>=index && i<index+4" v-for="(menu, i) in menus" style="width:25%;">
+            <div @click="go(menu.url)">
+              <i class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{color:menu.color}"></i><br/>
+              <span>{{menu.name}}</span>
             </div>
-          </td>
-          <td>
-            <div @click="go('chart')">
-              <i class="fa fa-fw fa-bar-chart" style="color:#87cefa"></i><br/>
-              <span>动态图表</span>
-            </div>
-          </td>
-          <td>
-            <div @click="go('contact')">
-              <i class="fa fa-fw fa-book" style="color:#da70d6"></i><br/>
-              <span>通讯录</span>
-            </div>
-          </td>
-          <td>
-            <div @click="go('form')">
-              <i class="fa fa-fw fa-list-alt" style="color:#32cd32"></i><br/>
-              <span>表单</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div @click="go('tab')">
-              <i class="fa fa-fw fa-folder" style="color:#6495ed"></i><br/>
-              <span>选项卡</span>
-            </div>
-          </td>
-          <td>
-            <div @click="go('lock')">
-              <i class="fa fa-fw fa-hand-o-up" style="color:#ff69b4"></i><br/>
-              <span>手势解锁</span>
-            </div>
-          </td>
-          <td>
-            <div @click="go('loading')">
-              <i class="fa fa-fw fa-spinner fa-pulse" style="color:#40e0d0"></i><br/>
-              <span>　加载　</span>
-            </div>
-          </td>
-          <td>
-            <div ui-sref="live">
-              <i class="fa fa-fw fa-video-camera" style="color:#cd5c5c"></i><br/>
-              <span>视频播放</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div @click="go('calendar')">
-              <i class="fa fa-fw fa-calendar" style="color:#ffa500"></i><br/>
-              <span>日历</span>
-            </div>
-          </td>
-          <td>
-            <div @click="go('map')">
-              <i class="fa fa-fw fa-map" style="color:#40e0d0"></i><br/>
-              <span>地图</span>
-            </div>
-          </td>
-          <td>
-
-          </td>
-          <td>
-
           </td>
         </tr>
       </table>
@@ -120,31 +56,66 @@ export default {
       }],
       menus: [{
         name: '列表',
-        icon: 'reorder',
-        path: 'list'
+        icon: 'list',
+        color: '#ff7f50',
+        url: 'list'
       },{
         name: '图表',
-        icon: 'insert_chart',
-        path: 'chart'
+        icon: 'bar-chart',
+        color: '#87cefa',
+        url: 'chart'
       },{
         name: '通讯录',
-        icon: 'perm_contact_calendar'
+        icon: 'book',
+        color: '#da70d6',
+        url: 'contact'
       },{
         name: '表单',
-        icon: 'description'
+        icon: 'list-alt',
+        color: '#32cd32',
+        url: 'form'
       },{
         name: '选项卡',
-        icon: 'tab'
+        icon: 'folder',
+        color: '#6495ed',
+        url: 'tab'
       },{
         name: '锁屏',
-        icon: 'lock_outline'
+        icon: 'hand-o-up',
+        color: '#ff69b4',
+        url: 'tab'
       },{
         name: '加载',
-        icon: 'refresh'
+        icon: 'spinner',
+        color: '#ffa500',
+        url: 'loading'
+      },{
+        name: '视频',
+        icon: 'video-camera',
+        color: '#cd5c5c',
+        url: 'live'
+      },{
+        name: '日历',
+        icon: 'calendar',
+        color: '#ba55d3',
+        url: 'calendar'
       },{
         name: '地图',
-        icon: 'map'
+        icon: 'map',
+        color: '#40e0d0',
+        url: 'map'
+      },{
+        name: '弹窗',
+        icon: 'window-restore',
+        color: '#1e90ff',
+        url: 'dialog'
       }]
+      /*
+        '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 
+        '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0', 
+        '#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700', 
+        '#6b8e23', '#ff00ff', '#3cb371', '#b8860b', '#30e0e0' 
+      */
     }
   },
   methods: {
@@ -165,7 +136,7 @@ export default {
   height:64px;
   line-height: 20px;
   vertical-align:middle;
-  border:1px solid #f0f0f0;
+  border:1px dashed #dfdfdf;
 }
 .icon-table td i{
   font-size:24px;

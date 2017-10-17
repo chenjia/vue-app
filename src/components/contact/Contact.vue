@@ -13,8 +13,8 @@
     </div>
 
     <mt-index-list>
-      <mt-index-section v-for="(contact, key) in contacts" :index="key">
-        <mt-cell v-for="(item, index) in contact" :title="item"></mt-cell>
+      <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
+        <mt-cell v-for="(item, index) in contact" :key="index" :title="item"></mt-cell>
       </mt-index-section>
     </mt-index-list>
   </div>

@@ -12,31 +12,19 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import BaiduMap from '../common/BaiduMap.vue'
-  Vue.component('baiduMap', BaiduMap)
+  import baiduMap from '../common/BaiduMap.vue'
   export default {
-    name: 'test',
+    name: 'map',
+    components:{
+      baiduMap
+    },
     data () {
       return {
-        activeStep: 0
-      }
-    },
-    computed: {
-      finished () {
-        return this.activeStep > 2
+        
       }
     },
     methods: {
-      handleNext () {
-        this.activeStep++
-      },
-      handlePrev () {
-        this.activeStep--
-      },
-      reset () {
-        this.activeStep = 0
-      }
+      
     },
     mounted () {
       

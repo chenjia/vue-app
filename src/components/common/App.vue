@@ -12,8 +12,20 @@
 </template>
 
 <script>
+import {
+  mapGetters
+} from 'vuex'
 export default {
-  name: 'app'
+  name: 'app',
+  computed: {
+    ...mapGetters([
+      'hasHeader',
+      'hasTabs',
+      'hasFooter',
+      'fixFooter',
+      'isLoading'
+    ])
+  }
 }
 </script>
 <style>
