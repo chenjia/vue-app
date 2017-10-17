@@ -21,7 +21,7 @@
     mounted () {
       window.mapCallback = BMap => {
         const map = new BMap.Map("mapBox")
-        map.centerAndZoom(new BMap.Point(116.404, 39.915),15)
+        map.centerAndZoom(new BMap.Point(121.506396,31.24495),15)
         navigator.geolocation.getCurrentPosition(function(position){
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude

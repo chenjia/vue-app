@@ -21,6 +21,7 @@ import {
   Loadmore,
   Progress,
   Radio,
+  Search,
   Spinner,
   Switch,
   Swipe,
@@ -42,6 +43,7 @@ Vue.component(IndexSection.name, IndexSection)
 Vue.component(Loadmore.name, Loadmore)
 Vue.component(Progress.name, Progress)
 Vue.component(Radio.name, Radio)
+Vue.component(Search.name, Search)
 Vue.component(Spinner.name, Spinner)
 Vue.component(Switch.name, Switch)
 Vue.component(Swipe.name, Swipe)

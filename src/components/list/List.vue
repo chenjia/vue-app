@@ -1,45 +1,41 @@
 <template>
   <div>
-    <mt-header title="列表">
+    <mt-header title="列表" fixed>
       <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
 
-    <mt-loadmore 
+    <div class="has-header">
+      <mt-loadmore 
       :maxDistance="100"
-      :top-method="loadTop"
-      @top-status-change="handleTopChange"
-      :bottom-method="loadBottom"
-      :bottom-all-loaded="allLoaded"
-      @bottom-status-change="handleBottomChange"
-      ref="loadmore">
+        :top-method="loadTop"
+        @top-status-change="handleTopChange"
+        :bottom-method="loadBottom"
+        :bottom-all-loaded="allLoaded"
+        @bottom-status-change="handleBottomChange"
+        ref="loadmore">
 
-      <div slot="top" class="mint-loadmore-top">
-        <span v-show="topStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': topStatus === 'drop' }">↓</span>
-        <span v-show="topStatus === 'loading'">
-          <mt-spinner type="fading-circle" color="#26a2ff" :size="20"></mt-spinner>
-          <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
-        </span>
-      </div>
-      <mt-cell-swipe v-for="(item,index) in list" :key="index" :title="item.name" value="带链接" :right="[{
-        content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
-        style: { background: '#ef4f4f', color: '#fff' },
-        handler: () => swipeItem(index)
-      }]"></mt-cell-swipe>
-      <div slot="bottom" class="mint-loadmore-bottom">
-        <span v-show="bottomStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': bottomStatus === 'drop' }">↑</span>
-        <span v-show="bottomStatus === 'loading'">
-          <mt-spinner type="fading-circle" color="#26a2ff" :size="20"></mt-spinner>
-          <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
-        </span>
-      </div>
-      <!-- <mt-cell>
-        <div slot="title" style="text-align:center;">
-          <mt-spinner type="fading-circle" color="#26a2ff" :size="20" style=""></mt-spinner>
-          <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
+        <div slot="top" class="mint-loadmore-top">
+          <span v-show="topStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': topStatus === 'drop' }">↓</span>
+          <span v-show="topStatus === 'loading'">
+            <mt-spinner type="fading-circle" color="#26a2ff" :size="20"></mt-spinner>
+            <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
+          </span>
         </div>
-      </mt-cell> -->
-    </mt-loadmore>
+        <mt-cell-swipe v-for="(item,index) in list" :key="index" :title="item.name" value="带链接" :right="[{
+          content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
+          style: { background: '#ef4f4f', color: '#fff' },
+          handler: () => swipeItem(index)
+        }]"></mt-cell-swipe>
+        <div slot="bottom" class="mint-loadmore-bottom">
+          <span v-show="bottomStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': bottomStatus === 'drop' }">↑</span>
+          <span v-show="bottomStatus === 'loading'">
+            <mt-spinner type="fading-circle" color="#26a2ff" :size="20"></mt-spinner>
+            <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
+          </span>
+        </div>
+      </mt-loadmore>
+    </div>
   </div>
 </template>
 
@@ -114,6 +110,7 @@ export default {
   transition:all .3s ease-out;
   display:inline-block;
   font-size:24px;
+  font-family: '微软雅黑';
   color:#26a2ff;
 }
 .mint-loadmore-top{
