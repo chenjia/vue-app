@@ -1,6 +1,9 @@
 .lxt-content{
   padding:16px;
 }
+.has-header{
+  padding-top:40px;
+}
 .mbsc-cal-day-i .mbsc-ic:before{
   font-family:'FontAwesome'!important;
 }
@@ -40,7 +43,19 @@
   bottom: 0;
   border-bottom: 2px solid #26a2ff;
 }
-
+.mint-field .mint-cell-title{
+  width:80px;
+  font-size:14px;
+}
+.mint-field .mint-cell-value{
+  justify-content: flex-end;
+}
+.mint-field-core,.mint-radio-label,.mint-checkbox-label{
+  font-size:14px;
+}
+.mint-header-title{
+  font-size:16px;
+}
 .mint-header .mint-button{
   min-width:24px;
 }
