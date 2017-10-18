@@ -10,6 +10,7 @@ import {
 } from 'vuex'
 
 import {
+  Actionsheet,
   Button,
   Cell,
   CellSwipe,
@@ -32,7 +33,7 @@ import {
   TabContainerItem,
   TabItem
 } from 'mint-ui'
-
+Vue.component(Actionsheet.name, Actionsheet)
 Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
 Vue.component(CellSwipe.name, CellSwipe)

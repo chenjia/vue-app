@@ -134,3 +134,11 @@
     text-align: center;
     color: #fff;
 }
+.mint-actionsheet-listitem{
+  color:#26a2ff;
+  font-size:16px;
+}
+.mint-actionsheet-button{
+  color:#ef4f4f;
+  font-size:14px;
+}

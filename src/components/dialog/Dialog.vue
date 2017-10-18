@@ -10,6 +10,12 @@
       <mt-button @click="showAlert" type="primary" size="large">提示</mt-button><br/>
       <mt-button @click="showConfirm" type="primary" size="large">确认</mt-button><br/>
       <mt-button @click="popupZoom = !popupZoom" type="primary" size="large">缩放</mt-button><br/>
+      <mt-button @click="showPopup('Top', true)" type="primary" size="large">顶部提示</mt-button><br/>
+      <mt-button @click="showPopup('Center')" type="primary" size="large">中部弹窗</mt-button><br/>
+      <mt-button @click="showPopup('Bottom')" type="primary" size="large">底部弹窗</mt-button><br/>
+      <mt-button @click="sheetVisible = true" type="primary" size="large">actionSheet</mt-button><br/>
+      
+
     </div>
 
     <mt-popup v-model="popupAccordion" position="top" style="width:100%;border-radius:4px;">
@@ -51,6 +57,30 @@
       </div>
     </mt-popup>
 
+    <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
+      <i class="fa fa-fw fa-check"></i> 版本更新成功
+    </mt-popup>
+
+    <mt-popup v-model="popupCenter" class="popup-center pd-md" style="width:80%;border-radius:6px;">
+      <p>中部弹窗</p>
+      <p>中部弹窗</p>
+      <p>中部弹窗</p>
+    </mt-popup>
+
+    <mt-popup v-model="popupBottom" position="bottom" style="width:100%;">
+      <mt-header title="已选美食" style="background:#fafafa;color:#26a2ff;border-top:1px solid #ddd;">
+        <mt-button @click="popupBottom = !popupBottom" slot="right"><i class="fa fa-fw fa-times"></i></mt-button>
+      </mt-header>
+
+      <div>
+        <mt-cell title="明炉烧鸭饭" value="x1"></mt-cell>
+        <mt-cell title="米饭" value="x1"></mt-cell>
+        <mt-cell title="打包盒" value="x2"></mt-cell>
+      </div>
+    </mt-popup>
+
+    <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
+
     <zoom title="放大缩小" :dialog="true" :show.sync="popupZoom">
       <mt-button @click="popupZoom = !popupZoom" type="primary" size="large">关闭</mt-button>
       <img style="width:100%;" src="../../../static/img/banner1.jpg">
@@ -72,21 +102,38 @@ export default {
     return {
       popupAccordion: false,
       popupAlert: false,
-      popupZoom: false
+      popupZoom: false,
+      popupTop: false,
+      popupCenter: false,
+      popupBottom: false,
+      sheetVisible: false,
+      actions:[{
+        name:'从文件导入'
+      },{
+        name:'打开照相机'
+      }]
     }
   },
   methods: {
     showAlert(){
       MessageBox.alert('操作成功！', '温馨提示').then(action => {
         console.log(action)
-      });
+      })
     },
     showConfirm(){
       MessageBox.confirm('确定删除该记录吗?', '确认操作').then(action => {
         console.log(action)
       },action => {
         console.log(action)
-      });
+      })
+    },
+    showPopup(position, autoClose){
+      this['popup'+position] = true
+      if(autoClose){
+        setTimeout(()=>{
+          this['popup'+position] = false
+        }, 3000)
+      }
     }
   },
   mounted () {
@@ -94,3 +141,17 @@ export default {
   }
 }
 </script>
+<style>
+.popup-center::before{
+  width:0;
+  height:0;
+  display: inline-block;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  content: ' ';
+  position: absolute;
+  top: -10px;
+  right: 50px;
+}
+</style>
