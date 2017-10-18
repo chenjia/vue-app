@@ -65,8 +65,12 @@
 .mint-header .mint-button.fa{
   font-size:18px;
 }
+.mint-swipe-indicator.is-active{
+  background:#26a2ff;
+}
 .mint-swipe-indicator{
-  opacity:.6;
+  opacity: 1;
+  background:rgba(0,0,0,0.5);
 }
 .mt-progress-progress{
   transition:width .3s linear;
