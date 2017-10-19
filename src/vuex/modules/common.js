@@ -1,7 +1,8 @@
 import utils from '../../utils'
 
 const typeArrays = [
-  'SET_TITLE',
+  'LOGIN',
+  'LOGOUT',
   'TOGGLE_HEADER',
   'TOGGLE_FOOTER',
   'TOGGLE_TABS',
@@ -16,20 +17,17 @@ for (let type of typeArrays) {
 
 const state = {
   ui: {
-    title: 'lxt-vue',
     hasHeader: false,
     hasFooter: true,
     fixFooter: true,
     hasTabs: false,
     loading: false
   },
-  user: {}
+  user: utils.cache.get('user'),
+  userSetting: utils.cache.get('userSetting')
 }
 
 const getters = {
-  title() {
-    return state.ui.title
-  },
   hasHeader() {
     return state.ui.hasHeader
   },
@@ -57,8 +55,16 @@ const actions = {
 }
 
 const mutations = {
-  [types.SET_TITLE](state, title) {
-    state.ui.title = title
+  [types.LOGIN](state, data) {
+    utils.cache.set('user', data.user)
+    utils.cache.set('userSetting', data.userSetting)
+    state.user = data.user
+    state.userSetting = data.userSetting
+  },
+  [types.LOGOUT](state) {
+    utils.cache.clear()
+    state.user = null
+    state.userSetting = null
   },
   [types.TOGGLE_HEADER](state, flag) {
     state.ui.hasHeader = flag

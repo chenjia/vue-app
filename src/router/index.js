@@ -14,6 +14,7 @@ import calendar from './calendar'
 import loading from './loading'
 import map from './map'
 import dialog from './dialog'
+import chat from './chat'
 
 Vue.use(Router)
 
@@ -33,7 +34,8 @@ const router = new Router({
     ...calendar,
     ...loading,
     ...map,
-    ...dialog
+    ...dialog,
+    ...chat
   ]
 })
 router.beforeEach((to, from, next) => {

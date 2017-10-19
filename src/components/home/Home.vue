@@ -109,6 +109,11 @@ export default {
         icon: 'window-restore',
         color: '#1e90ff',
         url: 'dialog'
+      },{
+        name: '聊天',
+        icon: 'qq',
+        color: '#ff6347',
+        url: 'chat'
       }]
       /*
         '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 

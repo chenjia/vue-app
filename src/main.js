@@ -1,9 +1,14 @@
+window.Config = {
+  server: 'http://localhost:8080/lxt-server'
+}
+
 import Vue from 'vue'
 import App from './components/common/App'
 import router from './router'
 import store from './vuex/store'
 import 'mint-ui/lib/style.css'
 import '../static/css/main.css'
+import utils from './utils'
 import {
   mapGetters,
   mapMutations
@@ -57,6 +62,8 @@ Vue.component(TabContainerItem.name, TabContainerItem)
 Vue.component(TabItem.name, TabItem)
 
 Vue.config.productionTip = false
+
+window.utils = utils
 
 Vue.mixin({
   data() {
