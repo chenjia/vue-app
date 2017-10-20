@@ -83,7 +83,7 @@ export default {
         name: '锁屏',
         icon: 'hand-o-up',
         color: '#ff69b4',
-        url: 'tab'
+        url: 'lock'
       },{
         name: '加载',
         icon: 'spinner',

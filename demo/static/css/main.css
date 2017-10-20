@@ -1,3 +1,8 @@
+/*
+  primary-color:#26a2ff;
+  success-color:#4caf50;
+  error-color:#ef4f4f;
+*/
 .lxt-content{
   padding:16px;
 }
@@ -10,7 +15,9 @@
 .pd-md{
   padding:10px;
 }
-
+input {
+  outline-style: none;
+}
 .tabs {
   position: relative;
 }
