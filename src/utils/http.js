@@ -2,7 +2,6 @@ import axios from 'axios'
 import cache from './cache'
 
 let instance = axios.create({
-  baseURL: 'http://localhost:8080/lxt-server',
   method: 'post',
   timeout: 60000,
   withCredentials: true,
@@ -33,6 +32,7 @@ instance.interceptors.request.use(function(config) {
       data: config.data
     }
   }
+  config.url = window.Config.server + config.url
   config.data = {
     request: JSON.stringify(data)
   }

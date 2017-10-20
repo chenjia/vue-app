@@ -32,7 +32,6 @@ export default {
     }
   },
   mounted(){
-    console.log(this)
     this.ready = true
     let prev = this.$el.previousElementSibling
     if(prev && prev.className == 'accordion'){

@@ -1,5 +1,5 @@
 window.Config = {
-  server: 'http://localhost:8080/lxt-server'
+  server: 'http://192.168.43.185:8080/lxt-server'
 }
 
 import Vue from 'vue'

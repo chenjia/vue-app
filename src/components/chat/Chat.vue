@@ -49,15 +49,11 @@
 
     <chatDetails :open.sync="popupDetails" :target="target"></chatDetails>
 
-    <iframe style="display:none;" id="chatFrame" :src="server+'/chatFrame.html'"></iframe>
+    <iframe style="display:none;" id="chatFrame" :src="server+'/chatFrame.html?userId='+user.userId"></iframe>
   </div>
 </template>
 
 <script>
-window.addEventListener('message', function(event) {
-  console.log(event);
-  // angular.element(document.getElementById('chatFrame')).scope().chat.receiveMessage(event.data);
-});
 import accordion from '../common/Accordion.vue'
 import chatDetails from './ChatDetails.vue'
 export default {
@@ -69,6 +65,7 @@ export default {
   data() {
     return {
       server: Config.server,
+      user:utils.cache.get('user'),
       popupMenu: false,
       popupConfig: false,
       popupDetails: false,

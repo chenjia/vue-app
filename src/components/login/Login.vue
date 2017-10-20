@@ -1,6 +1,8 @@
 <template>
   <div class="lxt-page">
-    <mt-header title="登录"></mt-header>
+    <mt-header title="登录">
+      <mt-button slot="left" @click="go('/home')" class="fa fa-fw fa-home"></mt-button>
+    </mt-header>
 
     <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="model.username"></mt-field>
@@ -11,6 +13,7 @@
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登录</mt-button>
       </div>
+      <mt-field label="服务器地址" v-model="server"></mt-field>
     </div>
 
     <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
@@ -34,6 +37,7 @@ export default {
         password: 'admin',
         captcha: ''
       },
+      server: Config.server,
       popupTop:false,
       msg: '',
       captchaBase64:''
@@ -73,6 +77,11 @@ export default {
         }
         Indicator.close()
       })
+    }
+  },
+  watch:{
+    server(value){
+      Config.server = value
     }
   },
   mounted(){

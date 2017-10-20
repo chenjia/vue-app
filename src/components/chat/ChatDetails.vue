@@ -47,9 +47,9 @@ export default {
       msg: '',
       user:utils.cache.get('user'),
       heads:{
-        admin:'../../../static/img/head.jpg',
-        chenjia:'../../../static/img/head.jpg',
-        xiaoting:'../../../static/img/head_bg.jpg'
+        admin:require('../../../static/img/head.jpg'),
+        chenjia:require('../../../static/img/head.jpg'),
+        xiaoting:require('../../../static/img/head_bg.jpg')
       },
       targets:{},
       records:{}
@@ -67,8 +67,7 @@ export default {
         beforeDate: this.now,
         count:10
       }).then(response => {
-        this.records[this.target.friendId] = response.data.body.data
-        console.log(this.records[this.target.friendId])
+        this.$set(this.records, this.target.friendId, response.data.body.data)
       })
     },
     send(){
@@ -87,6 +86,14 @@ export default {
       setTimeout(function(){
         document.querySelector('.chat-container').scrollTop = 99999
       },100);
+    },
+    receiveMessage(message){
+      if(this.records[message.sendId]){
+        this.records[message.sendId].push(message)
+        setTimeout(function(){
+          document.querySelector('.chat-container').scrollTop = 99999
+        },100)
+      }
     }
   },
   watch:{
@@ -98,7 +105,9 @@ export default {
     }
   },
   mounted(){
-    
+    window.addEventListener('message', event => {
+      this.receiveMessage(event.data)
+    })
   }
 }
 </script>
@@ -128,13 +137,15 @@ export default {
   background:#eee;
   border:1px solid #ccc;
   border-radius: 4px;
-  margin:0 24px;
+  margin:0 0 0 20px;
   padding:10px;
-  max-width: 70%;
+  max-width: 60%;
+  word-wrap:break-word;
 }
 .chat-send .chat-msg{
   border:1px solid #26a2ff;
   background:#e3f2fd;
+  margin:0 20px 0 0;
 }
 .chat-send .chat-msg::before{
   width:10px;
