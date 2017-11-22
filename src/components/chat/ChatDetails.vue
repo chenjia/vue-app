@@ -5,12 +5,21 @@
     </mt-header>
 
     <div class="chat-container pd-md" :style="{height:screenHeight-100+'px'}">
-      <div v-for="(item,index) in records[target.friendId]" class="chat-box" :class="{'chat-receive':user.userId==item.receiveId,'chat-send':user.userId==item.sendId}">
-        <img class="chat-head" :src="heads[item.sendId]">
-        <div class="chat-msg">
-          {{item.content}}
+      <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore">
+        <div slot="top" class="mint-loadmore-top">
+          <span v-show="topStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': topStatus === 'drop' }">↓</span>
+          <span v-show="topStatus === 'loading'">
+            <mt-spinner type="fading-circle" color="#26a2ff" :size="20"></mt-spinner>
+            <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
+          </span>
         </div>
-      </div>
+        <div :id="item.recordId" v-for="(item,index) in records[target.friendId]" class="chat-box" :class="{'chat-receive':user.userId==item.receiveId,'chat-send':user.userId==item.sendId}">
+          <img class="chat-head" :src="heads[item.sendId]">
+          <div class="chat-msg">
+            {{item.content}}
+          </div>
+        </div>
+      </mt-loadmore>
     </div>
     <div class="chat-editor">
       <div class="chat-editor-btn" style="transform:rotate(90deg);">
@@ -44,6 +53,8 @@ export default {
     return {
       now: new Date().getTime(),
       show: this.open,
+      currentPage:1,
+      topStatus: '',
       msg: '',
       user:utils.cache.get('user'),
       heads:{
@@ -60,15 +71,39 @@ export default {
       this.show = value
       this.$emit('update:open', value)
     },
-    queryRecords(){
+    queryRecords(callback){
       utils.http.post('/chat/record', {
         sendId:this.user.userId,
         receiveId:this.target.friendId,
         beforeDate: this.now,
+        currentPage: this.currentPage,
         count:10
       }).then(response => {
-        this.$set(this.records, this.target.friendId, response.data.body.data)
+        setTimeout(() => {
+          this.currentPage++
+          if(!this.records[this.target.friendId]){
+            this.$set(this.records, this.target.friendId, response.data.body.data.reverse())
+            setTimeout(function(){
+              document.querySelector('.chat-container').scrollTop = 99999
+            })
+          }else{
+            let recordId = this.records[this.target.friendId][0].recordId
+            this.$set(this.records, this.target.friendId, response.data.body.data.reverse().concat(this.records[this.target.friendId]))
+            setTimeout(function(){
+              document.querySelector('.chat-container').scrollTop = document.getElementById(recordId).offsetTop - 50
+              callback()
+            })
+          }
+        }, 500)
       })
+    },
+    loadTop(){
+      this.queryRecords(() => {
+        this.$refs.loadmore.onTopLoaded()
+      })
+    },
+    handleTopChange(status) {
+      this.topStatus = status;
     },
     send(){
       let message = {
@@ -81,18 +116,18 @@ export default {
       };
       let frame = document.getElementById('chatFrame')
       frame.contentWindow.postMessage(message, '*')
-      this.records[this.target.friendId].push(message);
+      this.records[this.target.friendId].push(message)
       this.msg = ''
       setTimeout(function(){
         document.querySelector('.chat-container').scrollTop = 99999
-      },100);
+      })
     },
     receiveMessage(message){
       if(this.records[message.sendId]){
         this.records[message.sendId].push(message)
         setTimeout(function(){
           document.querySelector('.chat-container').scrollTop = 99999
-        },100)
+        })
       }
     }
   },
@@ -111,7 +146,7 @@ export default {
   }
 }
 </script>
-<style type="text/css" scoped>
+<style type="text/css">
 .popup-details{
   width:100%;
   height:100%;
@@ -205,5 +240,18 @@ export default {
   line-height:30px;
   border-bottom:1px solid #ccc;
   flex:0 1 100px;
+}
+.rotate{
+  transform:rotate(-180deg);
+}
+.loadmore-arrow{
+  transition:all .3s ease-out;
+  display:inline-block;
+  font-size:24px;
+  font-family: '微软雅黑';
+  color:#26a2ff;
+}
+div[class^="mint-spinner-"]{
+  display:inline-block;
 }
 </style>

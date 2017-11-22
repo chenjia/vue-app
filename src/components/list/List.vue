@@ -59,20 +59,18 @@ export default {
   },
   methods: {
     loadTop(){
-      console.log('loadTop')
       setTimeout(()=>{
         this.$refs.loadmore.onTopLoaded()
-      },1000)
+      }, Math.random()*3000)
     },
     handleTopChange(status) {
       this.topStatus = status;
     },
     loadBottom(){
-      console.log('loadBottom')
       setTimeout(()=>{
         this.add(10)
         this.$refs.loadmore.onBottomLoaded()
-      },1000)
+      }, Math.random()*3000)
     },
     handleBottomChange(status) {
       this.bottomStatus = status;
@@ -83,7 +81,7 @@ export default {
         this.add(10)
         this.loading = false
         this.bottomStatus = 'loading'
-      }, 1000)
+      }, Math.random()*3000)
     },
     add(count){
       for (let i = this.length; i < this.length+count; i++) {

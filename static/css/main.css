@@ -3,6 +3,10 @@
   success-color:#4caf50;
   error-color:#ef4f4f;
 */
+body.modal-open {
+  position: fixed;
+  width: 100%;
+}
 .lxt-content{
   padding:16px;
 }

@@ -128,11 +128,22 @@ export default {
       })
     },
     showPopup(position, autoClose){
+      
       this['popup'+position] = true
+
       if(autoClose){
         setTimeout(()=>{
           this['popup'+position] = false
         }, 3000)
+      }
+    }
+  },
+  watch:{
+    popupBottom(val){
+      if(val){
+        utils.ui.modal.afterOpen()
+      }else{
+        utils.ui.modal.beforeClose()
       }
     }
   },
