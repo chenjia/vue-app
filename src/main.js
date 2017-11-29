@@ -2,6 +2,8 @@ window.Config = {
   server: 'http://localhost:8080/lxt-server'
 }
 
+import FastClick from 'fastclick'
+FastClick.attach(document.body);
 import Vue from 'vue'
 import App from './components/common/App'
 import router from './router'
