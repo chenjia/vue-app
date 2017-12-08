@@ -30,15 +30,14 @@ export default {
     ])
   },
   beforeRouteUpdate (to, from, next) {
-    if(this.urlArray.length>1){
-      if(this.urlArray[this.urlArray.length-2] == to.path){
-        this.$router.isBack = true
-        this.urlArray.pop()
-      }else{
-        this.urlArray.push(to.path)
-      }
-    }
 
+    if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
+      this.$router.isBack = true
+      this.urlArray.pop()
+    }else{
+      this.urlArray.push(to.path)
+    }
+    console.log(this.urlArray)
     let isBack = this.$router.isBack
     if (isBack) {
       this.transitionName = 'animate-out'
@@ -50,12 +49,7 @@ export default {
     next()
   },
   mounted(){
-    // window.onpopstate = () => {
-    //   if(++this.count % 2 == 0){
-    //     this.$router.isBack = true
-    //     this.count = 0
-    //   }
-    // }
+
   }
 }
 </script>
@@ -64,7 +58,7 @@ export default {
 .animate-out-enter-active,
 .animate-in-leave-active,
 .animate-out-leave-active{
-  transition: all .25s ease;
+  transition: all .2s ease;
 }
 .animate-in-enter, .animate-out-leave-to{
   transform: translateX(10%);
