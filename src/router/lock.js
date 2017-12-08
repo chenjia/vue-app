@@ -1,6 +1,6 @@
 export default [{
   name: 'lock',
-  path: '/lock',
+  path: 'lock',
   meta: {
     login: false,
     hasFooter: false

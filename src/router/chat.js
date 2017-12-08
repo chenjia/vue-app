@@ -1,6 +1,6 @@
 export default [{
   name: 'chat',
-  path: '/chat',
+  path: 'chat',
   meta: {
     login: false,
     hasFooter: false

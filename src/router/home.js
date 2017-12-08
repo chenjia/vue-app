@@ -1,6 +1,6 @@
 export default [{
   name: 'home',
-  path: '/home',
+  path: 'home',
   meta: {
     login: false,
     hasFooter: false,

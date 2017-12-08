@@ -1,6 +1,6 @@
 export default [{
   name: 'list',
-  path: '/list',
+  path: 'list',
   meta: {
     login: false,
     hasFooter: false

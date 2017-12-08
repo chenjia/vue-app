@@ -1,7 +1,7 @@
 <template>
   <div style="position:relative;" :style="{height:screenHeight+'px'}">
     <mt-header title="图表">
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
     
     <echarts :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>

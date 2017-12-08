@@ -1,6 +1,6 @@
 export default [{
   name: 'login',
-  path: '/login',
+  path: 'login',
   meta: {
     login: false,
     hasFooter: true

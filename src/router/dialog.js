@@ -1,6 +1,6 @@
 export default [{
   name: 'dialog',
-  path: '/dialog',
+  path: 'dialog',
   meta: {
     login: false,
     hasFooter: false

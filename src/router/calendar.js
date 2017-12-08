@@ -1,6 +1,6 @@
 export default [{
   name: 'calendar',
-  path: '/calendar',
+  path: 'calendar',
   meta: {
     login: false,
     hasFooter: false

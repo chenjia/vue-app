@@ -1,6 +1,6 @@
 export default [{
   name: 'contact',
-  path: '/contact',
+  path: 'contact',
   meta: {
     login: false,
     hasFooter: false

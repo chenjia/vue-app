@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="联系人">
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
     
     <div class="mint-searchbar">
@@ -74,12 +74,11 @@ export default {
       }else{
         result = this.items
       }
-      console.log(result)
       return result
     }
   },
   mounted(){
-    
+    console.log(window.history)
   }
 }
 </script>

@@ -79,7 +79,7 @@ Vue.mixin({
       this.$router.push(url)
     },
     back() {
-      router.back()
+      router.goBack()
     },
     ...mapMutations({
       toggleHeader: 'TOGGLE_HEADER',

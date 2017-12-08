@@ -1,7 +1,7 @@
 <template>
   <div class="lxt-page">
     <mt-header title="弹窗" fixed>
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
 
     <div class="lxt-content has-header">

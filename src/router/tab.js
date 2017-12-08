@@ -1,6 +1,6 @@
 export default [{
   name: 'tab',
-  path: '/tab',
+  path: 'tab',
   meta: {
     login: false,
     hasFooter: false

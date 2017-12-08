@@ -1,6 +1,6 @@
 export default [{
   name: 'loading',
-  path: '/loading',
+  path: 'loading',
   meta: {
     login: false,
     hasFooter: false

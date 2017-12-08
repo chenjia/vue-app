@@ -1,6 +1,6 @@
 export default [{
   name: 'form',
-  path: '/form',
+  path: 'form',
   meta: {
     login: false,
     hasFooter: false

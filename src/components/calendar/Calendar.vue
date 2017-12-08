@@ -1,7 +1,7 @@
 <template>
   <div class="lxt-page">
     <mt-header title="日历">
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
 
     <div id="calendar"></div>

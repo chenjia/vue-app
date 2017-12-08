@@ -1,6 +1,6 @@
 export default [{
   name: 'map',
-  path: '/map',
+  path: 'map',
   meta: {
     login: false,
     hasFooter: false

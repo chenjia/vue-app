@@ -18,11 +18,21 @@ import chat from './chat'
 
 Vue.use(Router)
 
+Router.prototype.goBack = function() {
+  this.isBack = true
+  window.history.go(-1)
+}
+
 const router = new Router({
   routes: [{
-      path: '/',
-      redirect: '/login'
+    path: '/',
+    redirect: '/page/login'
+  },{
+    path: '/page',
+    component: function(resolve) {
+      require.ensure([], () => resolve(require('../components/common/Page.vue')), 'page')
     },
+    children:[
     ...login,
     ...home,
     ...list,
@@ -36,7 +46,8 @@ const router = new Router({
     ...map,
     ...dialog,
     ...chat
-  ]
+    ]
+  }]
 })
 router.beforeEach((to, from, next) => {
   store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)

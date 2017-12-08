@@ -1,6 +1,6 @@
 export default [{
   name: 'chart',
-  path: '/chart',
+  path: 'chart',
   meta: {
     login: false,
     hasFooter: false

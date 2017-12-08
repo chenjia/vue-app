@@ -1,7 +1,7 @@
 <template>
   <div class="lxt-page">
     <mt-header title="聊天">
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       <mt-button @click="popupMenu = true" slot="right">
         <i class="fa fa-fw fa-plus"></i>
       </mt-button>

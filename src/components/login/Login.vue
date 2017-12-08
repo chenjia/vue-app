@@ -1,7 +1,7 @@
 <template>
   <div class="lxt-page">
     <mt-header title="登录">
-      <mt-button slot="left" @click="go('/home')" class="fa fa-fw fa-home"></mt-button>
+      <mt-button slot="left" @click="go('home')" class="fa fa-fw fa-home"></mt-button>
     </mt-header>
 
     <div>

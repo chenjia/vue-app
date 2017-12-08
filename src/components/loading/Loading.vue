@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="加载">
-      <mt-button @click="go('home')" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     
