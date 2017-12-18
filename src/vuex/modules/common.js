@@ -6,7 +6,8 @@ const typeArrays = [
   'TOGGLE_HEADER',
   'TOGGLE_FOOTER',
   'TOGGLE_TABS',
-  'TOGGLE_LOADING'
+  'TOGGLE_LOADING',
+  'TOGGLE_POPUP'
 ]
 
 const types = {}
@@ -21,7 +22,9 @@ const state = {
     hasFooter: true,
     fixFooter: true,
     hasTabs: false,
-    loading: false
+    loading: false,
+    popupTop: true,
+    popupText: '正在检测新版本'
   },
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
@@ -77,7 +80,12 @@ const mutations = {
   },
   [types.TOGGLE_LOADING](state, flag) {
     state.ui.loading = flag
+  },
+  [types.TOGGLE_POPUP](state, params) {
+    state.ui.popupTop = params.visible
+    state.ui.popupText = params.text
   }
+  
 }
 
 export default {

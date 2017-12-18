@@ -1,11 +1,16 @@
+import store from '../vuex/store'
+
 const version = {
 	ready(){
 		document.addEventListener('chcp_updateIsReadyToInstall', () => {
-			console.log('检测到新版本')
+			store.commit('TOGGLE_POPUP', {visible: true, text: '正在更新版本...'})
 		}, false);
 
 		document.addEventListener('chcp_updateInstalled', () => {
-			console.log('版本更新成功')
+			store.commit('TOGGLE_POPUP', {visible: true, text: '版本更新成功'})
+			setTimeout(()=>{
+				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+			},1000)
 		}, false);
 	},
 	check(){
