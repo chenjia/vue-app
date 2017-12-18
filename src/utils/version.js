@@ -19,6 +19,12 @@ const version = {
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
 			},1000)
 		}, false);
+
+		if(window.chcp == undefined){
+			setTimeout(()=>{
+				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+			})
+		}
 	},
 	check(){
 		console.log('check')
@@ -27,7 +33,7 @@ const version = {
 	update(){
 		console.log('update')
 		chcp.fetchUpdate(() => {
-			
+
 		}, {
 			'config-file': 'https://chenjia.github.io/vue-app/demo/chcp.json'
 		})
