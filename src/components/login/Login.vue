@@ -13,7 +13,7 @@
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登录</mt-button>
       </div>
-      <mt-field label="服务器地址d" v-model="server"></mt-field>
+      <mt-field label="服务器地址e" v-model="server"></mt-field>
     </div>
 
     <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
