@@ -19,7 +19,7 @@ for (let type of typeArrays) {
 
 const state = {
   app: {
-    version: utils.cache.get('version') || '初始版本'
+    version: utils.cache.get('version') || ''
   },
   ui: {
     hasHeader: false,

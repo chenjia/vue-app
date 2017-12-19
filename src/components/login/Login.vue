@@ -14,7 +14,7 @@
         <mt-button @click="login" type="primary" size="large">登录</mt-button>
       </div>
       <mt-field label="服务器地址" v-model="server"></mt-field>
-      <div style="color:green;padding:50px 0;text-align:center">当前版本：{{$store.state.common.app.version}}</div>
+      <div style="color:green;padding:100px 0;text-align:center">当前版本：{{$store.state.common.app.version}}</div>
     </div>
 
     <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
