@@ -7,7 +7,8 @@ const typeArrays = [
   'TOGGLE_FOOTER',
   'TOGGLE_TABS',
   'TOGGLE_LOADING',
-  'TOGGLE_POPUP'
+  'TOGGLE_POPUP',
+  'UPDATE_VERSION'
 ]
 
 const types = {}
@@ -17,6 +18,9 @@ for (let type of typeArrays) {
 }
 
 const state = {
+  app: {
+    version: cache.get('version') || '1.0'
+  },
   ui: {
     hasHeader: false,
     hasFooter: true,
@@ -45,6 +49,9 @@ const getters = {
   },
   isLoading() {
     return state.ui.loading
+  },
+  getVersion() {
+    return state.app.version
   }
 }
 
@@ -58,6 +65,10 @@ const actions = {
 }
 
 const mutations = {
+  [types.UPDATE_VERSION](state, version) {
+    utils.cache.set('version', version)
+    state.app.version = version
+  },
   [types.LOGIN](state, data) {
     utils.cache.set('user', data.user)
     utils.cache.set('userSetting', data.userSetting)

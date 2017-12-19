@@ -2,7 +2,6 @@ import store from '../vuex/store'
 import cache from './cache'
 
 const version = {
-	version: cache.get('version') || '1.0',
 	ready(){
 		document.addEventListener("deviceready", () => {
 			this.check()
@@ -12,10 +11,8 @@ const version = {
 	check(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, data) => {
-			if(version.version != data.currentWebVersion){
-				version.version = data.currentWebVersion
-				alert(version.version)
-				cache.set('version', version.version)
+			if(store.state.common.app.version != data.currentWebVersion){
+				store.commit('UPDATE_VERSION', data.currentWebVersion)
 			}
 		})
 	},
