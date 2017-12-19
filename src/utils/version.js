@@ -18,7 +18,7 @@ const version = {
 	},
 	update(){
 		chcp.fetchUpdate(() => {
-
+			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		}, {
 			'config-file': 'https://chenjia.github.io/vue-app/demo/chcp.json'
 		})

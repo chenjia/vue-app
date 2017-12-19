@@ -14,6 +14,9 @@
         <mt-button @click="login" type="primary" size="large">登录</mt-button>
       </div>
       <mt-field label="服务器地址" v-model="server"></mt-field>
+      <div class="pd-md">
+        <mt-button @click="update" type="primary" size="large">更新版本</mt-button>
+      </div>
       <div style="color:green;padding:100px 0;text-align:center">当前版本：{{$store.state.common.app.version}}</div>
     </div>
 
@@ -78,6 +81,9 @@ export default {
         }
         Indicator.close()
       })
+    },
+    update(){
+      utils.version.update()
     }
   },
   watch:{
