@@ -14,6 +14,7 @@ const version = {
 		chcp.getVersionInfo((err, data) => {
 			if(version.version != data.currentWebVersion){
 				version.version = data.currentWebVersion
+				alert(version.version)
 				cache.set('version', version.version)
 			}
 		})
