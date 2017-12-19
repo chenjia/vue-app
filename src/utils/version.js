@@ -6,16 +6,19 @@ const version = {
 		this.bindEvent()
 	},
 	check(){
-		alert(chcp)
-		chcp.getVersionInfo(callback);
+		setTimeout(()=>{
+			alert(chcp)
+			chcp.getVersionInfo(callback);
 
-		function callback(err, data) {
-			alert('Current web version: ' + data.currentWebVersion);
-			alert('Previous web version: ' + data.previousWebVersion);
-			alert('Loaded and ready for installation web version: ' + data.readyToInstallWebVersion);
-			alert('Application version name: ' + data.appVersion);
-			alert('Application build version: ' + data.buildVersion);
-		}
+			function callback(err, data) {
+				alert('Current web version: ' + data.currentWebVersion);
+				alert('Previous web version: ' + data.previousWebVersion);
+				alert('Loaded and ready for installation web version: ' + data.readyToInstallWebVersion);
+				alert('Application version name: ' + data.appVersion);
+				alert('Application build version: ' + data.buildVersion);
+			}
+		},1111)
+		
 
 		setTimeout(()=>{
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
