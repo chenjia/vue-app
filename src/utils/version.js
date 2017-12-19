@@ -5,6 +5,13 @@ const version = {
 		document.addEventListener('chcp_updateIsReadyToInstall', () => {
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在更新版本'})
 		}, false);
+		
+		document.addEventListener('chcp_updateLoadFailed', () => {
+			store.commit('TOGGLE_POPUP', {visible: true, text: '获取更新包失败'})
+			setTimeout(()=>{
+				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+			},1000)
+		}, false);
 
 		document.addEventListener('chcp_nothingToUpdate', () => {
 			store.commit('TOGGLE_POPUP', {visible: false, text: ''})
@@ -17,11 +24,11 @@ const version = {
 			},1000)
 		}, false);
 
-		if(window.chcp == undefined){
-			setTimeout(()=>{
-				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-			})
-		}
+		// if(window.chcp == undefined){
+		// 	setTimeout(()=>{
+		// 		store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+		// 	})
+		// }
 	},
 	check(){
 		console.log('check')
