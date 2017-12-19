@@ -36,14 +36,7 @@ const version = {
 		}, false);
 
 		document.addEventListener('chcp_nothingToUpdate', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本'+store.state.common.app.version})
-			setTimeout(()=>{
-				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-			},1000)
-		}, false);
-
-		document.addEventListener('chcp_updateInstalled', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '版本更新成功'})
+			store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本'})
 			setTimeout(()=>{
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
 			},1000)
