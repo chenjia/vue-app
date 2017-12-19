@@ -10,9 +10,10 @@ const version = {
 	check(){
 		setTimeout(()=>{
 			chcp.getVersionInfo((err, data) => {
-				if(this.version != data.currentWebVersion){
-					this.version = data.currentWebVersion
-					cache.set('version', this.version)
+				alert(data.currentWebVersion+(version.version != data.currentWebVersion))
+				if(version.version != data.currentWebVersion){
+					version.version = data.currentWebVersion
+					cache.set('version', version.version)
 				}else{
 					store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 				}
