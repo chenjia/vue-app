@@ -4,21 +4,19 @@ import cache from './cache'
 const version = {
 	version: cache.get('version') || '1.0',
 	ready(){
-		this.check()
-		this.bindEvent()
+		document.addEventListener("deviceready", () => {
+			this.check()
+			this.bindEvent()
+		}, false);
 	},
 	check(){
-		setTimeout(()=>{
-			alert(chcp)
-			chcp.getVersionInfo((err, data) => {
-				alert(data.currentWebVersion+(version.version != data.currentWebVersion))
-				if(version.version != data.currentWebVersion){
-					version.version = data.currentWebVersion
-					cache.set('version', version.version)
-				}else{
-					store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
-				}
-			})
+		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
+		chcp.getVersionInfo((err, data) => {
+			alert(data.currentWebVersion+(version.version != data.currentWebVersion))
+			if(version.version != data.currentWebVersion){
+				version.version = data.currentWebVersion
+				cache.set('version', version.version)
+			}
 		})
 	},
 	update(){
