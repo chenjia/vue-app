@@ -4,6 +4,7 @@ import cache from './cache'
 const version = {
 	version: cache.get('version') || '1.0',
 	ready(){
+		alert(123)
 		document.addEventListener("deviceready", () => {
 			this.check()
 			this.bindEvent()
