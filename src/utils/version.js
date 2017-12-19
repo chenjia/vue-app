@@ -9,6 +9,7 @@ const version = {
 	},
 	check(){
 		setTimeout(()=>{
+			alert(chcp)
 			chcp.getVersionInfo((err, data) => {
 				alert(data.currentWebVersion+(version.version != data.currentWebVersion))
 				if(version.version != data.currentWebVersion){
