@@ -77,7 +77,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "6ac6db3218d5f4813561f4a22f6ec6a9"
+    "hash": "330bc9253c8961d072b14190a0eb911c"
   },
   {
     "file": "static/js/calendar.js",
@@ -121,7 +121,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "343069838b2ca2914384802a79e3dcf3"
+    "hash": "464a47419e0705faea6af1c8970419c3"
   },
   {
     "file": "static/js/manifest.js",
@@ -338,9 +338,5 @@
   {
     "file": "static/lib/mobiscroll/js/mobiscroll.javascript.min.js",
     "hash": "b7cd2c4ba85534e2c4b5f8d33ec82631"
-  },
-  {
-    "file": "zllib6.zip",
-    "hash": "e0faae4661858f090a2322ae610bb2c6"
   }
 ]
