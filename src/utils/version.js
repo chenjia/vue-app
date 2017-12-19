@@ -6,7 +6,9 @@ const version = {
 		this.bindEvent()
 	},
 	check(){
-		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
+		setTimeout(()=>{
+			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
+		})
 	},
 	update(){
 		chcp.fetchUpdate(() => {
