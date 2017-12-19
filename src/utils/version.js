@@ -39,7 +39,7 @@ const version = {
 		}, false);
 
 		document.addEventListener('chcp_nothingToUpdate', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本'+this.version})
+			store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本'+version.version})
 			setTimeout(()=>{
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
 			},1000)
