@@ -25,7 +25,7 @@ const version = {
 	},
 	bindEvent(){
 		document.addEventListener('chcp_updateIsReadyToInstall', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '正在更新版本'})
+			store.commit('TOGGLE_POPUP', {visible: true, text: '发现新版本，正在更新'})
 		}, false);
 		
 		document.addEventListener('chcp_updateLoadFailed', () => {
