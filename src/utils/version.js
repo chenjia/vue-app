@@ -8,12 +8,10 @@ const version = {
 	},
 	check(){
 		setTimeout(()=>{
-			alert(window.chcp)
 			chcp.getVersionInfo((err, data) => {
 				this.version = data.currentWebVersion
 			})
-		},11111)
-		
+		})
 
 		setTimeout(()=>{
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
