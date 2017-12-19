@@ -17,7 +17,7 @@ const version = {
 				alert('Application version name: ' + data.appVersion);
 				alert('Application build version: ' + data.buildVersion);
 			}
-		},1111)
+		},11111)
 		
 
 		setTimeout(()=>{
