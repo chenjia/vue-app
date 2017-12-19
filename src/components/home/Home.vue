@@ -1,6 +1,6 @@
 <template>
   <div class="lxt-page">
-    <mt-header title="系统首页">
+    <mt-header title="首页">
       <mt-button slot="left" class="fa fa-fw fa-bars"></mt-button>
       <mt-button slot="right" @click="go('/page/login')" class="fa fa-fw fa-lock"></mt-button>
     </mt-header>
