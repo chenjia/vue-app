@@ -2,6 +2,7 @@ import store from '../vuex/store'
 import cache from './cache'
 
 const version = {
+	version: cache.get('version'),
 	ready(){
 		this.check()
 		this.bindEvent()
@@ -9,12 +10,13 @@ const version = {
 	check(){
 		setTimeout(()=>{
 			chcp.getVersionInfo((err, data) => {
-				this.version = data.currentWebVersion
+				if(this.version != null && this.version != data.currentWebVersion){
+					this.version = data.currentWebVersion
+					cache.set('version', this.version)
+				}else{
+					store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
+				}
 			})
-		})
-
-		setTimeout(()=>{
-			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		})
 	},
 	update(){
@@ -41,7 +43,6 @@ const version = {
 		}, false);
 
 		document.addEventListener('chcp_updateInstalled', () => {
-			cache.set('version', )
 			store.commit('TOGGLE_POPUP', {visible: true, text: '版本更新成功'})
 			setTimeout(()=>{
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
