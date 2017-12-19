@@ -2,7 +2,7 @@ import store from '../vuex/store'
 import cache from './cache'
 
 const version = {
-	version: cache.get('version'),
+	version: cache.get('version') || '1.0',
 	ready(){
 		this.check()
 		this.bindEvent()
@@ -10,7 +10,7 @@ const version = {
 	check(){
 		setTimeout(()=>{
 			chcp.getVersionInfo((err, data) => {
-				if(this.version != null && this.version != data.currentWebVersion){
+				if(this.version != data.currentWebVersion){
 					this.version = data.currentWebVersion
 					cache.set('version', this.version)
 				}else{
