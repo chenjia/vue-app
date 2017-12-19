@@ -2,6 +2,20 @@ import store from '../vuex/store'
 
 const version = {
 	ready(){
+		this.check()
+		this.bindEvent()
+	},
+	check(){
+		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
+	},
+	update(){
+		chcp.fetchUpdate(() => {
+
+		}, {
+			'config-file': 'https://chenjia.github.io/vue-app/demo/chcp.json'
+		})
+	},
+	bindEvent(){
 		document.addEventListener('chcp_updateIsReadyToInstall', () => {
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在更新版本'})
 		}, false);
@@ -23,24 +37,6 @@ const version = {
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
 			},1000)
 		}, false);
-
-		// if(window.chcp == undefined){
-		// 	setTimeout(()=>{
-		// 		store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-		// 	})
-		// }
-	},
-	check(){
-		console.log('check')
-		
-	},
-	update(){
-		console.log('update')
-		chcp.fetchUpdate(() => {
-
-		}, {
-			'config-file': 'https://chenjia.github.io/vue-app/demo/chcp.json'
-		})
 	}
 };
 

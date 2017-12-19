@@ -23,8 +23,8 @@ const state = {
     fixFooter: true,
     hasTabs: false,
     loading: false,
-    popupTop: true,
-    popupText: '正在检测新版本'
+    popupTop: false,
+    popupText: ''
   },
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
