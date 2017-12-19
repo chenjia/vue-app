@@ -1,4 +1,5 @@
 import store from '../vuex/store'
+import cache from './cache'
 
 const version = {
 	ready(){
@@ -7,16 +8,10 @@ const version = {
 	},
 	check(){
 		setTimeout(()=>{
-			alert(chcp)
-			chcp.getVersionInfo(callback);
-
-			function callback(err, data) {
-				alert('Current web version: ' + data.currentWebVersion);
-				alert('Previous web version: ' + data.previousWebVersion);
-				alert('Loaded and ready for installation web version: ' + data.readyToInstallWebVersion);
-				alert('Application version name: ' + data.appVersion);
-				alert('Application build version: ' + data.buildVersion);
-			}
+			alert(window.chcp)
+			chcp.getVersionInfo((err, data) => {
+				this.version = data.currentWebVersion
+			})
 		},11111)
 		
 
@@ -48,6 +43,7 @@ const version = {
 		}, false);
 
 		document.addEventListener('chcp_updateInstalled', () => {
+			cache.set('version', )
 			store.commit('TOGGLE_POPUP', {visible: true, text: '版本更新成功'})
 			setTimeout(()=>{
 				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
