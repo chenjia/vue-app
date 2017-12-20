@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "bf29351a3115cd101f810fdcf438a769"
+    "hash": "4186966902d782234c50ab7e13804a4b"
   },
   {
     "file": "static/css/app.css",
@@ -73,7 +73,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "b8f9d977d28fbfaadfad1a3c3f426e83"
+    "hash": "c08297ac0b197ff1654d43e93410e6d4"
   },
   {
     "file": "static/js/calendar.js",
@@ -126,6 +126,10 @@
   {
     "file": "static/js/map.js",
     "hash": "14464a7c490a1308b6d2ae0e263ad9f3"
+  },
+  {
+    "file": "static/js/nativeVersion.js",
+    "hash": "f5a059856106850a407ecbefc8347aa2"
   },
   {
     "file": "static/js/page.js",
@@ -334,9 +338,5 @@
   {
     "file": "static/lib/mobiscroll/js/mobiscroll.javascript.min.js",
     "hash": "b7cd2c4ba85534e2c4b5f8d33ec82631"
-  },
-  {
-    "file": "zllib.zip",
-    "hash": "e0faae4661858f090a2322ae610bb2c6"
   }
 ]

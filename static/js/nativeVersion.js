@@ -1,0 +1,1 @@
+window.NativeVersion = '1.0'
