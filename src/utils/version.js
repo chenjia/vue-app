@@ -11,10 +11,12 @@ const version = {
 	check(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测&下载新版本'})
 		chcp.getVersionInfo((err, data) => {
-			alert(data)
-			alert(JSON.stringify(data))
 			if(store.state.common.app.version != data.currentWebVersion){
 				store.commit('UPDATE_VERSION', data.currentWebVersion)
+				if(window.Config.updateConfig){
+					alert('当前版本太旧，需重新安装新版本')
+					window.open('https://chenjia.github.io/vue-app/demo/index.html');
+				}
 			}
 		})
 	},
@@ -22,7 +24,7 @@ const version = {
 		chcp.fetchUpdate(() => {
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测&下载新版本'})
 		}, {
-			'config-file': 'https://chenjia.github.io/vue-app/demo/chcp.json'
+			'config-file': window.Config.updateConfig
 		})
 	},
 	bindEvent(){
