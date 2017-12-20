@@ -1,5 +1,9 @@
 [
   {
+    "file": "android-armv7-debug.apk",
+    "hash": "f1a739dab8ea2d91b0f6831e9067147e"
+  },
+  {
     "file": "index.html",
     "hash": "bf29351a3115cd101f810fdcf438a769"
   },
@@ -338,9 +342,5 @@
   {
     "file": "static/lib/mobiscroll/js/mobiscroll.javascript.min.js",
     "hash": "b7cd2c4ba85534e2c4b5f8d33ec82631"
-  },
-  {
-    "file": "zllib.zip",
-    "hash": "e0faae4661858f090a2322ae610bb2c6"
   }
 ]
