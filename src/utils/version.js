@@ -11,6 +11,8 @@ const version = {
 	check(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测&下载新版本'})
 		chcp.getVersionInfo((err, data) => {
+			alert(data)
+			alert(JSON.stringify(data))
 			if(store.state.common.app.version != data.currentWebVersion){
 				store.commit('UPDATE_VERSION', data.currentWebVersion)
 			}
@@ -25,8 +27,6 @@ const version = {
 	},
 	bindEvent(){
 		document.addEventListener('chcp_updateIsReadyToInstall', (a) => {
-			alert(a)
-			alert(JSON.stringify(a))
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装更新包'})
 		}, false);
 		
