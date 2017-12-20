@@ -14,7 +14,9 @@ const version = {
 			if(store.state.common.app.version != data.currentWebVersion){
 				store.commit('UPDATE_VERSION', data.currentWebVersion)
 			}
-			if(window.Config.nativeUpdate){
+			var webVersion = data.currentWebVersion.split('.')
+			var nativeVersion = window.Config.nativeUpdate.split('.')
+			if(parseInt(webVersion[0])<parseInt(nativeVersion[0]) || parseInt(webVersion[1])<parseInt(nativeVersion[1])){
 				alert('当前版本太旧，需重新安装新版本！')
 				window.open('https://chenjia.github.io/vue-app/demo/index.html');
 			}
