@@ -13,10 +13,11 @@ const version = {
 		chcp.getVersionInfo((err, data) => {
 			if(store.state.common.app.version != data.currentWebVersion){
 				store.commit('UPDATE_VERSION', data.currentWebVersion)
-				if(window.Config.updateConfig){
-					alert('当前版本太旧，需重新安装新版本')
-					window.open('https://chenjia.github.io/vue-app/demo/index.html');
-				}
+			}
+
+			if(window.Config.updateConfig){
+				alert('当前版本太旧，需重新安装新版本')
+				window.open('https://chenjia.github.io/vue-app/demo/index.html');
 			}
 		})
 	},
