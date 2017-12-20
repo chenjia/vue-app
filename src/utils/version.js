@@ -26,7 +26,7 @@ const version = {
 		chcp.fetchUpdate(() => {
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测&下载新版本'})
 		}, {
-			'config-file': Config.updateConfig
+			'config-file': Config.chcpUrl
 		})
 	},
 	bindEvent(){
