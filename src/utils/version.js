@@ -16,7 +16,7 @@ const version = {
 			}
 
 			if(window.Config.updateConfig){
-				alert('当前版本太旧，需重新安装新版本')
+				alert('当前版本太旧，需重新安装新版本！')
 				window.open('https://chenjia.github.io/vue-app/demo/index.html');
 			}
 		})
