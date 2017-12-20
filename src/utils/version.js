@@ -17,7 +17,7 @@ const version = {
 			var webVersion = data.currentWebVersion
 			var nativeVersion = window.NativeVersion
 			if(webVersion.indexOf(nativeVersion+'.') == -1){
-				alert('当前版本不可用，需重新安装新版本')
+				alert('当前版本过低，请安装最新版本')
 				window.open('https://chenjia.github.io/vue-app/demo/index.html');
 			}
 		})

@@ -4,7 +4,7 @@ window.Config = {
 }
 
 import FastClick from 'fastclick'
-FastClick.attach(document.body);
+FastClick.attach(document.body)
 import Vue from 'vue'
 import App from './components/common/App'
 import router from './router'
