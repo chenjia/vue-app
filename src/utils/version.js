@@ -24,7 +24,9 @@ const version = {
 		})
 	},
 	bindEvent(){
-		document.addEventListener('chcp_updateIsReadyToInstall', () => {
+		document.addEventListener('chcp_updateIsReadyToInstall', (a) => {
+			alert(a)
+			alert(JSON.stringify(a))
 			store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装更新包'})
 		}, false);
 		
