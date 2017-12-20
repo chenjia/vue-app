@@ -72,10 +72,6 @@
     "hash": "648f0f67fccc757d5cab6abd950ce054"
   },
   {
-    "file": "static/js/16.js",
-    "hash": "c19724b5bae389ad0f695de69cff793b"
-  },
-  {
     "file": "static/js/app.js",
     "hash": "c6a8b72a302d0444e798c8bacd473059"
   },
@@ -85,7 +81,7 @@
   },
   {
     "file": "static/js/chart.js",
-    "hash": "0dad5441ae8d53bb27cd5da37d953501"
+    "hash": "7babc8c1a7a54053c033571dc8ce0ac1"
   },
   {
     "file": "static/js/chat.js",
@@ -125,7 +121,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "7e1ac99df310ebd4042a3ec25b6250ac"
+    "hash": "1cc403cccbf250f077d12ca801da4157"
   },
   {
     "file": "static/js/map.js",

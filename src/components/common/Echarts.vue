@@ -4,7 +4,19 @@
 
 <script>
 import chinaJson from './china.json'
-const echarts = require('echarts/lib/echarts')
+import echarts from 'echarts/lib/echarts'
+import './macarons'
+import 'echarts/lib/chart/bar'
+import 'echarts/lib/chart/line'
+import 'echarts/lib/chart/pie'
+import 'echarts/lib/chart/radar'
+import 'echarts/lib/chart/funnel'
+import 'echarts/lib/chart/gauge'
+import 'echarts/lib/chart/map'
+import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/title'
+import 'echarts/lib/component/legend'
+
 export default {
   name: 'echarts',
   props:['width', 'height','options'],
@@ -26,26 +38,11 @@ export default {
   },
   mounted(){
     this.opts = this.options
-    
-    require([
-      './macarons',
-      'echarts/lib/chart/bar',
-      'echarts/lib/chart/line',
-      'echarts/lib/chart/pie',
-      'echarts/lib/chart/radar',
-      'echarts/lib/chart/funnel',
-      'echarts/lib/chart/gauge',
-      'echarts/lib/chart/map',
-      'echarts/lib/component/tooltip',
-      'echarts/lib/component/title',
-      'echarts/lib/component/legend'
-    ], () => {
-      this.$refs.myChart.style.width = this.width+'px'
-      this.$refs.myChart.style.height = this.height+'px'
-      echarts.registerMap('china', chinaJson)
-      let myChart = echarts.init(this.$refs.myChart, 'macarons')
-      myChart.setOption(this.options, true)
-    })
+    this.$refs.myChart.style.width = this.width+'px'
+    this.$refs.myChart.style.height = this.height+'px'
+    echarts.registerMap('china', chinaJson)
+    let myChart = echarts.init(this.$refs.myChart, 'macarons')
+    myChart.setOption(this.options, true)
   }
 }
 </script>
