@@ -1,1 +1,1 @@
-window.NativeVersion = '1.0'
+window.NativeVersion = '1.1'
