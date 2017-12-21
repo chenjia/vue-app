@@ -96,5 +96,7 @@ export default {
 }
 </script>
 <style type="text/css" scoped>
-  
+.mint-msgbox-message{
+  text-align:left;
+}
 </style>

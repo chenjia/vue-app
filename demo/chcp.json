@@ -3,6 +3,6 @@
   "content_url": "https://b7c0c46b.ngrok.io",
   "update": "now",
   "native_version": "1.0",
-  "description": "本次更新内容为：<br>1.xxxxxxx <br>2.xxxxxx <br>3.xxxxxx",
-  "release": "2017.12.21-16.05.51"
+  "description": "本次更新内容为：<br>1.页面样式调整 <br>2.增量更新功能优化 <br>3.修复若干bug",
+  "release": "2017.12.21-17.07.01"
 }
