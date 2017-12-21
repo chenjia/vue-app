@@ -5,7 +5,7 @@
     </transition>
     <router-view></router-view>
 
-    <mt-popup v-model="$store.state.common.ui.popupTop" position="top" :modal="true" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
+    <mt-popup v-model="$store.state.common.ui.popupTop" :closeOnClickModal="false" position="top" :modal="true" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
       {{$store.state.common.ui.popupText}}
     </mt-popup>
   </div>

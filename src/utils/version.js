@@ -5,7 +5,6 @@ const version = {
 	ready(){
 		document.addEventListener("deviceready", () => {
 			this.check()
-			this.update()
 			this.bindEvent()
 		}, false)
 	},
@@ -19,13 +18,15 @@ const version = {
 			if(webVersion.indexOf(nativeVersion+'.') == -1){
 				alert('当前版本过低，请安装最新版本')
 				window.open('https://chenjia.github.io/vue-app/demo/index.html');
+			}else{
+				this.update()
 			}
 		})
 	},
 	update(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在获取新版本'})
 		chcp.fetchUpdate((error, data) => {
-			alert(error+":"+JSON.stringify(data))
+			alert(JSON.stringify(error)+":"+JSON.stringify(data))
 			if (error) {
 				console.log(error.code+':'+error.description);
 				store.commit('TOGGLE_POPUP', {visible: true, text: '获取更新包失败'})
@@ -43,10 +44,7 @@ const version = {
 				console.log(error.code+':'+error.description);
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败'})
 	    } else {
-	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本'})
-				setTimeout(()=>{
-					store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-				},1000)
+	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
 		})
 	},

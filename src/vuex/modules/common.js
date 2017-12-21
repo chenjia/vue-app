@@ -95,8 +95,14 @@ const mutations = {
   [types.TOGGLE_POPUP](state, params) {
     state.ui.popupTop = params.visible
     state.ui.popupText = params.text
+    if(params.popupDuration){
+      setTimeout(() => {
+        state.ui.popupTop = false
+        state.ui.popupText = ''
+        state.ui.popupDuration = null
+      }, params.popupDuration)
+    }
   }
-  
 }
 
 export default {
