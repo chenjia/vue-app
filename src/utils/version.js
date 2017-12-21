@@ -15,7 +15,7 @@ const version = {
 			var nativeVersion = window.NativeVersion
 			if(webVersion.indexOf(nativeVersion+'.') == -1){
 				alert('当前版本过低，请安装最新版本')
-				window.open('https://chenjia.github.io/vue-app/demo/index.html');
+				window.open(Config.appUrl);
 			}else{
 				this.update()
 			}
@@ -24,9 +24,8 @@ const version = {
 	update(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.fetchUpdate((error, data) => {
-			alert(JSON.stringify(error)+' '+JSON.stringify(data))
-			if(data.description){
-				alert(data.description)	
+			if(data.config.description){
+				alert(data.config.description)	
 			}
 			if(error){
 				if(error.code == 2){
