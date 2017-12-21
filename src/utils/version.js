@@ -25,15 +25,15 @@ const version = {
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.fetchUpdate((error, data) => {
 			alert(JSON.stringify(error)+":"+JSON.stringify(data))
-			if(error.code == 2){
-				store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
-			}else{
-				if (error) {
+			if(error){
+				if(error.code == 2){
+					store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
+				}else{
 					console.log(error.code+':'+error.description);
 					store.commit('TOGGLE_POPUP', {visible: true, text: '获取更新包失败'})
-		    } else {
-		      this.install()
-		    }
+				}
+			}else{
+				this.install()
 			}
 		}, {
 			'config-file': Config.chcpUrl

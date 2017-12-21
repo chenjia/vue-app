@@ -28,7 +28,8 @@ const state = {
     hasTabs: false,
     loading: false,
     popupTop: false,
-    popupText: ''
+    popupText: '',
+    popupDuration: null
   },
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
@@ -95,12 +96,12 @@ const mutations = {
   [types.TOGGLE_POPUP](state, params) {
     state.ui.popupTop = params.visible
     state.ui.popupText = params.text
-    if(params.popupDuration){
+    if(params.duration){
       setTimeout(() => {
         state.ui.popupTop = false
         state.ui.popupText = ''
         state.ui.popupDuration = null
-      }, params.popupDuration)
+      }, params.duration)
     }
   }
 }
