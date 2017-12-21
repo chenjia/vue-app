@@ -24,7 +24,7 @@ const version = {
 	update(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.fetchUpdate((error, data) => {
-			alert(JSON.stringify(error)+":"+JSON.stringify(data))
+			alert(data.description)
 			if(error){
 				if(error.code == 2){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
