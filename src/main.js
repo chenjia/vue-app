@@ -1,8 +1,8 @@
 window.Config = {
   server: 'http://localhost:8080/lxt-server',
   appUrl:'https://chenjia.github.io/vue-app/demo/index.html',
-  chcpUrl_bak:'https://b7c0c46b.ngrok.io/chcp.json',
-  chcpUrl: 'https://chenjia.github.io/vue-app/demo/chcp.json'
+  chcpUrl:'https://b7c0c46b.ngrok.io/chcp.json',
+  chcpUrl_bak: 'https://chenjia.github.io/vue-app/demo/chcp.json'
 }
 
 import FastClick from 'fastclick'
