@@ -24,14 +24,14 @@ const version = {
 	},
 	update(){
 		chcp.fetchUpdate(() => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测&下载新版本'})
+			store.commit('TOGGLE_POPUP', {visible: true, text: '正在获取新版本'})
 		}, {
 			'config-file': Config.chcpUrl
 		})
 	},
 	bindEvent(){
 		document.addEventListener('chcp_updateIsReadyToInstall', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装更新包'})
+			store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本'})
 		}, false)
 		
 		document.addEventListener('chcp_updateLoadFailed', () => {
@@ -42,10 +42,7 @@ const version = {
 		}, false)
 
 		document.addEventListener('chcp_nothingToUpdate', () => {
-			store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本'})
-			setTimeout(()=>{
-				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-			},1000)
+			store.commit('TOGGLE_POPUP', {visible: false, text: ''})
 		}, false)
 	}
 };
