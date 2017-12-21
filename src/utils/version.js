@@ -42,7 +42,9 @@ const version = {
 		}, false)
 
 		document.addEventListener('chcp_nothingToUpdate', () => {
-			store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+			setTimeout(()=>{
+				store.commit('TOGGLE_POPUP', {visible: false, text: ''})
+			},1000)
 		}, false)
 	}
 };
