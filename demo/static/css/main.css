@@ -3,6 +3,9 @@
   success-color:#4caf50;
   error-color:#ef4f4f;
 */
+*{
+  -webkit-user-select: none;
+}
 body.modal-open {
   position: fixed;
   width: 100%;

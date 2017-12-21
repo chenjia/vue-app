@@ -1,8 +1,8 @@
 <template>
-  <div class="lxt-page">
+  <div class="lxt-page" :style="{height: screenHeight+'px'}">
     <mt-header title="登录">
       <mt-button slot="left" @click="go('home')" class="fa fa-fw fa-home"></mt-button>
-      <mt-button slot="right" @click="update" class="fa fa-fw fa-refresh"></mt-button>
+      <mt-button slot="right" @click="check" class="fa fa-fw fa-refresh"></mt-button>
     </mt-header>
 
     <div>
@@ -14,7 +14,7 @@
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登录</mt-button>
       </div>
-      <mt-field label="接口地址" v-model="server"></mt-field>
+      <mt-field label="服务器地址" v-model="server"></mt-field>
       <div style="position:absolute;width:100%;bottom:0;color:gray;font-size:12px;text-align:center">版本号：{{$store.state.common.app.version}}</div>
     </div>
 
@@ -80,8 +80,8 @@ export default {
         Indicator.close()
       })
     },
-    update(){
-      utils.version.update()
+    check(){
+      utils.version.check()
     }
   },
   watch:{

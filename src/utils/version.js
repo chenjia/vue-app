@@ -1,46 +1,41 @@
 import store from '../vuex/store'
 import cache from './cache'
+import { MessageBox } from 'mint-ui'
 
 const version = {
-	ready(){
-		document.addEventListener("deviceready", () => {
-			this.check()
-			this.bindEvent()
-		}, false)
-	},
 	check(){
-		chcp.getVersionInfo((err, data) => {
-			store.commit('UPDATE_VERSION', data.currentWebVersion)
-			var webVersion = data.currentWebVersion
-			var nativeVersion = window.NativeVersion
-			if(webVersion.indexOf(nativeVersion+'.') == -1){
-				alert('当前版本过低，请安装最新版本')
-				window.open(Config.appUrl)
-			}
-			this.update()
-		})
-	},
-	update(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
-		chcp.fetchUpdate((error, data) => {
-			console.log(data)
-			if(data.config.description){
-				alert(data.config.description)
-			}
-			if(error){
-				if(error.code == 2){
-					store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
-				}else{
-					store.commit('TOGGLE_POPUP', {visible: true, text: '获取更新包失败'})
+		chcp.getVersionInfo((err, versionInfo) => {
+			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+			chcp.fetchUpdate((error, data) => {
+				console.log(JSON.stringify(error))
+				console.log(5344)
+				let config = JSON.parse(data.config)
+				if(config.native_version != window.native_version){
+					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
+					alert('当前版本过低，请安装最新版本')
+					window.open(Config.appUrl)
+				}else {
+					if(error){
+						if(error.code == 2){
+							store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
+						}else{
+							store.commit('TOGGLE_POPUP', {visible: true, text: '更新包获取失败'})
+						}
+					}else{
+						if(config.release != versionInfo.currentWebVersion){
+							MessageBox('版本提示（'+config.release+'）', config.description).then(action => {
+							  this.install(versionInfo)
+							})
+						}
+					}
 				}
-			}else{
-				this.install()
-			}
-		}, {
-			'config-file': Config.chcpUrl
+			}, {
+				'config-file': Config.chcpUrl
+			})
 		})
 	},
-	install(){
+	install(versionInfo){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装新版本'})
 		chcp.installUpdate(error => {
 			if (error) {
@@ -49,17 +44,11 @@ const version = {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
 		})
-	},
-	bindEvent(){
-		// document.addEventListener('chcp_nothingToUpdate', () => {
-		// 	store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本'})
-		// 	setTimeout(()=>{
-		// 		store.commit('TOGGLE_POPUP', {visible: false, text: ''})
-		// 	},1000)
-		// }, false)
 	}
-};
+}
 
-version.ready()
+document.addEventListener("deviceready", () => {
+	version.check()
+}, false)
 
 export default version
