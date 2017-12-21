@@ -16,14 +16,14 @@ const version = {
 			if(webVersion.indexOf(nativeVersion+'.') == -1){
 				alert('当前版本过低，请安装最新版本')
 				window.open(Config.appUrl)
-			}else{
-				this.update()
 			}
+			this.update()
 		})
 	},
 	update(){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.fetchUpdate((error, data) => {
+			alert(JSON.stringify(data)+data.config)
 			if(data.config.description){
 				alert(data.config.description)
 			}
@@ -31,7 +31,6 @@ const version = {
 				if(error.code == 2){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 				}else{
-					console.log(error.code+':'+error.description);
 					store.commit('TOGGLE_POPUP', {visible: true, text: '获取更新包失败'})
 				}
 			}else{
