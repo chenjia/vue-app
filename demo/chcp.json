@@ -1,8 +1,7 @@
 {
-  "content_url_bak": "https://chenjia.github.io/vue-app/demo",
-  "content_url": "https://b7c0c46b.ngrok.io",
+  "content_url": "https://chenjia.github.io/vue-app/demo",
   "update": "now",
   "native_version": "1.0",
   "description": "本次更新内容为：<br>1.页面样式调整 <br>2.增量更新功能优化 <br>3.修复若干bug",
-  "release": "2017.12.21-17.07.01"
+  "release": "2017.12.25-14.07.15"
 }

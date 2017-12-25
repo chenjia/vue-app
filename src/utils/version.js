@@ -9,7 +9,7 @@ const version = {
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 			chcp.fetchUpdate((error, data) => {
 				console.log(JSON.stringify(error)+"__"+JSON.stringify(data))
-				console.log(35555)
+				console.log(325253)
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
@@ -27,6 +27,7 @@ const version = {
 							MessageBox('版本提示（'+config.release+'）', config.description).then(action => {
 							  this.install(versionInfo)
 							})
+							document.querySelector('.mint-msgbox-message').style.textAlign = 'left'
 						}
 					}
 				}
