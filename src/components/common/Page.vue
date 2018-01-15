@@ -54,11 +54,11 @@ export default {
 }
 </script>
 <style>
-.animate-in-enter-active,
-.animate-out-enter-active,
-.animate-in-leave-active,
-.animate-out-leave-active{
-  transition: all .2s ease;
+.animate-out-leave-active,.animate-in-leave-active{
+  transition: all .2s ease-in;
+}
+.animate-in-enter-active,.animate-out-enter-active{
+  transition: all .2s ease-out;
 }
 .animate-in-enter, .animate-out-leave-to{
   transform: translateX(10%);
