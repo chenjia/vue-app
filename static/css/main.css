@@ -5,6 +5,7 @@
 */
 *{
   -webkit-user-select: none;
+  -webkit-tap-highlight-color:transparent;
 }
 body.modal-open {
   position: fixed;
