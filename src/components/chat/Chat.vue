@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       server: Config.server,
-      user:utils.cache.get('user'),
+      user:utils.cache.get('user') || {},
       popupMenu: false,
       popupConfig: false,
       popupDetails: false,
@@ -79,6 +79,7 @@ export default {
   },
   methods: {
     getFriends(){
+      return;
       utils.http.post('/chat/friend').then(response => {
         this.contacts = response.data.body.data
         console.log(this.contacts)

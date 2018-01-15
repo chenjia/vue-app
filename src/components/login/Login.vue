@@ -63,24 +63,30 @@ export default {
         spinnerType: 'fading-circle'
       })
 
-      utils.http.post('/system/login', this.model).then(response => {
-        console.log(response)
-        if(response.data.head.status == 200){
-          this.doLogin({
-            user:response.data.body.data.user,
-            userSetting:response.data.body.data.userSetting
-          })
-          this.go('/page/home')
-        }else {
-          this.msg = response.data.body.data
-          this.popupTop = true
-          setTimeout(()=>{
-            this.popupTop = false
-          }, 3000)
-          this.getCaptcha()
-        }
+      setTimeout(()=>{
         Indicator.close()
-      })
+        this.go('/page/home')
+      },Math.random()*3000)
+      
+
+      // utils.http.post('/system/login', this.model).then(response => {
+      //   console.log(response)
+      //   if(response.data.head.status == 200){
+      //     this.doLogin({
+      //       user:response.data.body.data.user,
+      //       userSetting:response.data.body.data.userSetting
+      //     })
+      //     this.go('/page/home')
+      //   }else {
+      //     this.msg = response.data.body.data
+      //     this.popupTop = true
+      //     setTimeout(()=>{
+      //       this.popupTop = false
+      //     }, 3000)
+      //     this.getCaptcha()
+      //   }
+      //   
+      // })
     },
     check(){
       utils.version.check()

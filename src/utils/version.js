@@ -4,6 +4,7 @@ import { MessageBox } from 'mint-ui'
 
 const version = {
 	check(){
+		if(!window.chcp){return}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
