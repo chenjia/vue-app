@@ -22,7 +22,7 @@
             <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
           </span>
         </div>
-        <mt-cell-swipe v-for="(item,index) in list" :key="index" :title="item.name" value="带链接" :right="[{
+        <mt-cell-swipe class="fade" :class="{'fade-out':item.fade}" v-for="(item,index) in list" :key="index" :title="item.name" value="带链接" :right="[{
           content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
           style: { background: '#ef4f4f', color: '#fff' },
           handler: () => swipeItem(index)
@@ -60,17 +60,20 @@ export default {
   methods: {
     loadTop(){
       setTimeout(()=>{
+        this.length = 0
+        this.list = []
+        this.add(5)
         this.$refs.loadmore.onTopLoaded()
-      }, Math.random()*3000)
+      }, Math.random()*2000+1000)
     },
     handleTopChange(status) {
       this.topStatus = status;
     },
     loadBottom(){
       setTimeout(()=>{
-        this.add(10)
+        this.add(5)
         this.$refs.loadmore.onBottomLoaded()
-      }, Math.random()*3000)
+      }, Math.random()*2000+1000)
     },
     handleBottomChange(status) {
       this.bottomStatus = status;
@@ -78,17 +81,23 @@ export default {
     loadMore() {
       this.loading = true
       setTimeout(() => {
-        this.add(10)
+        this.add(5)
         this.loading = false
         this.bottomStatus = 'loading'
-      }, Math.random()*3000)
+      }, Math.random()*2000+1000)
     },
     add(count){
       for (let i = this.length; i < this.length+count; i++) {
-        this.list.push({
-          name:'标题'+i
-        });
+        const item = {
+          name:'标题'+i,
+          fade:true
+        }
+        this.list.push(item)
+        setTimeout(()=>{
+          item.fade = false
+        },100)
       }
+
       this.length += count
     },
     swipeItem(index){
@@ -96,7 +105,7 @@ export default {
     }
   },
   mounted(){
-    this.add(10)
+    this.add(5)
   }
 }
 </script>
@@ -122,5 +131,12 @@ export default {
 }
 div[class^="mint-spinner-"]{
   display:inline-block;
+}
+.fade{
+  opacity:1;
+  transition:all .5s ease-in .1s;
+}
+.fade.fade-out{
+  opacity:0;
 }
 </style>
