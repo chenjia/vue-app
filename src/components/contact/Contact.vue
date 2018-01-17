@@ -12,7 +12,7 @@
       <a class="mint-searchbar-cancel" style="display: none;">取消</a>
     </div>
 
-    <mt-index-list>
+    <mt-index-list ref="indexList">
       <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
         <mt-cell v-for="(item, index) in contact" :key="index" :title="item"></mt-cell>
       </mt-index-section>
@@ -78,7 +78,7 @@ export default {
     }
   },
   mounted(){
-    console.log(window.history)
+    this.items.C.push('Chenjia')
   }
 }
 </script>

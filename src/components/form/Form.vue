@@ -9,7 +9,7 @@
     <mt-cell class="mint-field">
       <span slot="title">婚否 {{marriage}}</span>
       <mt-switch class="switch-normal" v-model="marriage">
-        <span class="normal-text gender-text">
+        <span class="normal-text">
           <span>是</span>
           <span>否</span>
         </span>
@@ -18,7 +18,7 @@
     <mt-cell class="mint-field">
       <span slot="title">性别 {{gender}}</span>
       <mt-switch class="switch-normal switch-gender" v-model="genderSwitch">
-        <span class="normal-text gender-text">
+        <span class="normal-text">
           <span>男</span>
           <span>女</span>
         </span>
