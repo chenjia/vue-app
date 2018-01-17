@@ -134,7 +134,7 @@ div[class^="mint-spinner-"]{
 }
 .fade{
   opacity:1;
-  transition:all .5s ease-in .1s;
+  transition:all .2s ease-in .1s;
 }
 .fade.fade-out{
   opacity:0;

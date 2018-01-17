@@ -6,10 +6,11 @@
 
     <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
     <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
+    <datepicker label="出生日期" v-model="date"/>
     <mt-cell class="mint-field">
       <span slot="title">婚否 {{marriage}}</span>
       <mt-switch class="switch-normal" v-model="marriage">
-        <span class="normal-text gender-text">
+        <span class="normal-text">
           <span>是</span>
           <span>否</span>
         </span>
@@ -18,7 +19,7 @@
     <mt-cell class="mint-field">
       <span slot="title">性别 {{gender}}</span>
       <mt-switch class="switch-normal switch-gender" v-model="genderSwitch">
-        <span class="normal-text gender-text">
+        <span class="normal-text">
           <span>男</span>
           <span>女</span>
         </span>
@@ -30,12 +31,17 @@
 </template>
 
 <script>
+import datepicker from '../common/DatePicker'
 export default {
   name: 'form',
+  components:{
+    datepicker
+  },
   data () {
     return {
       username:'',
       password:'',
+      date:'2018-01-18',
       gender: 'M',
       marriage: false,
       checkValue:['选项A'],
@@ -55,6 +61,9 @@ export default {
         }
       }
     }
+  },
+  methods:{
+    
   },
   mounted(){
     

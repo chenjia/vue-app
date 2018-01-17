@@ -5,11 +5,11 @@ import ui from './ui'
 import version from './version'
 
 const utils = {
-  cache: cache,
-  format: format,
-  http: http,
-  ui: ui,
-  version: version
+  cache,
+  format,
+  http,
+  ui,
+  version
 }
 
 export default utils

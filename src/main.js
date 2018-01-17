@@ -24,6 +24,7 @@ import {
   Cell,
   CellSwipe,
   Checklist,
+  DatetimePicker,
   Field,
   Header,
   IndexList,
@@ -47,6 +48,7 @@ Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
 Vue.component(CellSwipe.name, CellSwipe)
 Vue.component(Checklist.name, Checklist)
+Vue.component(DatetimePicker.name, DatetimePicker)
 Vue.component(Field.name, Field)
 Vue.component(Header.name, Header)
 Vue.component(IndexList.name, IndexList)

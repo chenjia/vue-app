@@ -1,13 +1,8 @@
-/*
-  primary-color:#26a2ff;
-  success-color:#4caf50;
-  error-color:#ef4f4f;
-*/
 *{
   -webkit-user-select: none;
   -webkit-tap-highlight-color:transparent;
 }
-input,select{
+input,textarea,select{
   -webkit-user-select: text;
 }
 body.modal-open {
@@ -67,13 +62,17 @@ input {
 }
 .mint-field .mint-cell-title{
   width:80px;
-  font-size:14px;
+  font-size:16px;
 }
 .mint-field .mint-cell-value{
   justify-content: flex-end;
 }
-.mint-field-core,.mint-radio-label,.mint-checkbox-label{
-  font-size:14px;
+.mint-field-core{
+  text-align:right;
+  padding-right:30px;
+}
+.mint-field-core,.mint-checklist-title,.mint-radiolist-title,.mint-radio-label,.mint-checkbox-label{
+  font-size:16px;
 }
 .mint-header-title{
   font-size:16px;
@@ -127,35 +126,32 @@ input {
   background-position: 7px;
 }
 .switch-normal .mint-switch-input+.mint-switch-core:after {
-  content:'\f00d';
   line-height:30px;
   text-align:center;
-  font-weight:bold;
-  color:#ef4f4f;
-  font-family: FontAwesome;
+  background-image:url(../img/no.png);
 }
 .switch-gender .mint-switch-input+.mint-switch-core:after {
-  content:'\f222';
+  background-image:url(../img/female.png);
 }
 .switch-normal .mint-switch-input:checked+.mint-switch-core:after {
-  -webkit-transform: translateX(28px);
-  content:'\f00c';
+  transform: translateX(28px);
+  background-image:url(../img/yes.png);
   color:#4caf50;
 }
 .switch-gender .mint-switch-input:checked+.mint-switch-core:after {
-  content:'\f221';
+  background-image:url(../img/male.png);
 }
-.switch-normal .mint-switch-label .gender-text :first-child {
-    display: inline-block;
-    width: 27px;
-    text-align: center;
-    color: #fff;
+.mint-switch-label .normal-text :first-child {
+  display: inline-block;
+  width: 27px;
+  text-align: center;
+  color: #fff;
 }
 .mint-switch-label .normal-text :last-child {
-    display: inline-block;
-    width: 23px;
-    text-align: center;
-    color: #fff;
+  display: inline-block;
+  width: 23px;
+  text-align: center;
+  color: #fff;
 }
 .mint-actionsheet-listitem{
   color:#26a2ff;
