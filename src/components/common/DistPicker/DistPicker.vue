@@ -30,7 +30,7 @@ export default {
     },
     selected(data){
       this.$emit("input", data.area.code);
-      setText(data.province.value,data.city.value,data.area.value)
+      this.setText(data.province.value,data.city.value,data.area.value)
     	this.visible = false
     },
     setText(p,c,a){
