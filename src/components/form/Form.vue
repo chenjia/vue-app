@@ -7,6 +7,7 @@
     <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
     <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
     <datepicker label="出生日期" v-model="date"/>
+    <distpicker label="家庭住址" v-model="dist"/>
     <mt-cell class="mint-field">
       <span slot="title">婚否 {{marriage}}</span>
       <mt-switch class="switch-normal" v-model="marriage">
@@ -32,16 +33,19 @@
 
 <script>
 import datepicker from '../common/DatePicker'
+import distpicker from '../common/DistPicker'
 export default {
   name: 'form',
   components:{
-    datepicker
+    datepicker,
+    distpicker
   },
   data () {
     return {
       username:'',
       password:'',
       date:'2018-01-18',
+      dist:'430102',
       gender: 'M',
       marriage: false,
       checkValue:['选项A'],
