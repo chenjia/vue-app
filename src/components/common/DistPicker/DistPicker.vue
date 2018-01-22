@@ -30,7 +30,7 @@ export default {
     },
     selected(data){
       this.$emit("input", data.area.code);
-      setText(data.province.value,data.city.value,data.area.value)
+      this.setText(data.province.value,data.city.value,data.area.value)
     	this.visible = false
     },
     setText(p,c,a){
@@ -74,5 +74,6 @@ export default {
 }
 .distpicker-address-wrapper .address-container ul{
 	height:300px!important;
+  -webkit-overflow-scrolling: touch;
 }
 </style>
