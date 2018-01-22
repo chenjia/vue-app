@@ -72,8 +72,10 @@ export default {
 	color:#26a2ff!important;
 	border-bottom:#26a2ff solid 2px!important;
 }
+.distpicker-address-wrapper .address-container ul li.active{
+  color:#26a2ff!important;
+}
 .distpicker-address-wrapper .address-container ul{
 	height:300px!important;
-  -webkit-overflow-scrolling: touch;
 }
 </style>
