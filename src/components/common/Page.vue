@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import router from '../../router'
 import {
   mapGetters
 } from 'vuex'
@@ -16,7 +17,7 @@ export default {
   name: 'page',
   data(){
     return {
-      urlArray:[location.href.substr(location.href.indexOf('#')+1)],
+      urlArray:['/page/login'],
       transitionName: 'animate-in'
     }
   },
@@ -30,12 +31,8 @@ export default {
     ])
   },
   beforeRouteUpdate (to, from, next) {
-
     if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
       this.$router.isBack = true
-      this.urlArray.pop()
-    }else{
-      this.urlArray.push(to.path)
     }
     console.log(this.urlArray)
     let isBack = this.$router.isBack
@@ -48,8 +45,14 @@ export default {
 
     next()
   },
-  mounted(){
-
+  created(){
+    router.afterEach((to, from) => {
+      if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
+        this.urlArray.pop()
+      }else{
+        this.urlArray.push(to.path)
+      }
+    })
   }
 }
 </script>
@@ -68,4 +71,84 @@ export default {
   transform: translateX(-10%);
   opacity: 0;
 }
+/*.animate-in-enter>div{
+  transform: translateX(100%);
+}
+.animate-out-enter>div{
+  transform: translateX(-100%);
+}
+.animate-in-enter-to>div{
+  transition: all .5s ease-out;
+  transform: translateX(0%);
+}
+.animate-out-enter-to>div{
+  transition: all .5s ease-out;
+  transform: translateX(0%);
+}
+.animate-in-enter>header>h1{
+  transform: translateX(100%);
+  opacity:0;
+}
+.animate-out-enter>header>h1{
+  transform: translateX(-100%);
+  opacity:0;
+}
+.animate-in-enter-to>header,.animate-out-enter-to>header{
+  background-color:rgba(0,0,0,0);
+}
+.animate-in-enter-to>header>h1{
+  transition: all .5s ease-out;
+  transform: translateX(0%);
+  opacity:1;
+}
+.animate-out-enter-to>header>h1{
+  transition: all .5s ease-out;
+  transform: translateX(0%);
+  opacity:1;
+}
+.animate-in-enter>header>div{
+  transition: all .5s ease-out;
+  opacity:0;
+}
+.animate-out-enter>header>div{
+  transition: all .5s ease-out;
+  opacity:0;
+}
+.animate-in-enter-to,.animate-out-enter-to{
+  position:absolute;
+  width:100%;
+  top:0;
+  transition: all .5s ease-out;
+  opacity:1;
+}
+.animate-in-leave-to{
+  transition: all 0s ease-out .5s;
+  transform: translateX(-100%);
+}
+.animate-out-leave-to{
+  transition: all 0s ease-out .5s;
+  transform: translateX(100%);
+}
+.animate-in-leave-to>div{
+  transition: all .5s ease-out;
+  transform: translateX(-100%);
+}
+.animate-out-leave-to>div{
+  transition: all .5s ease-out;
+  transform: translateX(100%);
+}
+.animate-in-leave-to>header>div,.animate-out-leave-to>header>div{
+  transition: all .5s ease-out;
+  opacity:0;
+}
+.animate-in-leave-to>header>h1{
+  transition: all .5s ease-out;
+  opacity:0;
+  transform: translateX(-20%);
+}
+.animate-out-leave-to>header>h1{
+  transition: all .5s ease-out;
+  opacity:0;
+  transform: translateX(20%);
+}*/
 </style>

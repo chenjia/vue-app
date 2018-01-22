@@ -1,10 +1,10 @@
 <template>
-  <div style="position:relative;" :style="{height:screenHeight+'px'}">
+  <div :style="{height:screenHeight+'px'}">
     <mt-header title="图表">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
     
-    <echarts :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>
+    <echarts v-if="ready" :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>
 
     <mt-tabbar v-model="active">
       <mt-tab-item id="bar"><span slot="icon">柱</span></mt-tab-item>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Echarts from '../common/Echarts.vue'
+import Echarts from '../common/Echarts'
 
 export default {
   name: 'chart',
@@ -58,6 +58,7 @@ export default {
   },
   data () {
     return {
+      ready:false,
       active: 'bar',
       options: {
         bar: {
@@ -382,7 +383,9 @@ export default {
     }
   },
   mounted(){
-    
+    setTimeout(()=>{
+      this.ready = true
+    },500)
   }
 }
 </script>

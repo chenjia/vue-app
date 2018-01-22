@@ -12,7 +12,7 @@
       <a class="mint-searchbar-cancel" style="display: none;">取消</a>
     </div>
 
-    <mt-index-list ref="indexList">
+    <mt-index-list v-if="ready" ref="indexList">
       <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
         <mt-cell v-for="(item, index) in contact" :key="index" :title="item"></mt-cell>
       </mt-index-section>
@@ -25,6 +25,7 @@ export default {
   name: 'contact',
   data () {
     return {
+      ready:false,
       searchKey:'',
       items:{
         A:['Aaron','Alden','Austin'],
@@ -78,7 +79,10 @@ export default {
     }
   },
   mounted(){
-    this.items.C.push('Chenjia')
+    setTimeout(()=>{
+      this.ready = true
+      this.items.C.push('Chenjia')
+    },500)
   }
 }
 </script>
