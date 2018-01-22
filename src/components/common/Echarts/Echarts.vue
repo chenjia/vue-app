@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import chinaJson from './china.json'
+import chinaJson from './china'
 import echarts from 'echarts/lib/echarts'
 import './macarons'
 import 'echarts/lib/chart/bar'

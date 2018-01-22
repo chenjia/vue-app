@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Echarts from '../common/Echarts.vue'
+import Echarts from '../common/Echarts'
 
 export default {
   name: 'chart',
