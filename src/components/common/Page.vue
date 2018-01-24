@@ -16,8 +16,17 @@ import {
 export default {
   name: 'page',
   data(){
+    let path = location.href.substr(location.href.indexOf('#')+1)
+    const urlArray = []
+    if(path==='/page/login'){
+      urlArray.push('/page/login')
+    }else if(path==='/page/home'){
+      urlArray.push('/page/login', '/page/home')
+    }else{
+      urlArray.push('/page/login', '/page/home', path)
+    }
     return {
-      urlArray:['/page/login'],
+      urlArray:urlArray,
       transitionName: 'animate-in'
     }
   },
