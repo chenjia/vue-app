@@ -9,8 +9,6 @@ const version = {
 		chcp.getVersionInfo((err, versionInfo) => {
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 			chcp.fetchUpdate((error, data) => {
-				console.log(JSON.stringify(error)+"__"+JSON.stringify(data))
-				console.log(325253)
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
@@ -18,6 +16,7 @@ const version = {
 					window.open(Config.appUrl)
 				}else {
 					if(error){
+						console.log(error)
 						if(error.code == 2){
 							store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 						}else{
