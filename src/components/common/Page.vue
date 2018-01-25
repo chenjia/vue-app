@@ -43,7 +43,7 @@ export default {
     if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
       this.$router.isBack = true
     }
-    console.log(this.urlArray)
+    
     let isBack = this.$router.isBack
     if (isBack) {
       this.transitionName = 'animate-out'

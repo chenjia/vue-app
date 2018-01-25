@@ -81,8 +81,11 @@ export default {
   mounted(){
     setTimeout(()=>{
       this.ready = true
+    },100)
+    setTimeout(()=>{
       this.items.C.push('Chenjia')
-    },500)
+    },200)
+    
   }
 }
 </script>

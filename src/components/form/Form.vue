@@ -3,7 +3,7 @@
     <mt-header title="表单">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
-    <div v-if="ready">
+    <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
       <datepicker label="出生日期" v-model="date"/>
@@ -43,7 +43,6 @@ export default {
   },
   data () {
     return {
-      ready:false,
       username:'',
       password:'',
       date:'2018-01-18',
@@ -72,9 +71,7 @@ export default {
     
   },
   mounted(){
-    setTimeout(()=>{
-      this.ready = true
-    },500)
+    
   }
 }
 </script>

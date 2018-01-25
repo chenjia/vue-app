@@ -27,37 +27,35 @@ export default {
     }
   },
   mounted(){
-    setTimeout(()=>{
-      let calendar = mobiscroll.calendar('#calendar', {
-        theme: 'mobiscroll',
-        display: 'inline',
-        layout: 'liquid',
-        lang: 'zh',
-        firstDay: 1,
-        controls: ['calendar', 'date', 'time'],
-        headerText: '请选择查看日期',
-        showScrollArrows: true,
-        events: (function() {
-          let events = [];
-          let icons = ['fa fa fa-paw', 'fa fa fa-heart', 'fa fa fa-flag'];
-          for (let m = 1; m <= 12; m++) {
-            let count = parseInt(Math.random() * 10, 10);
-            for (let i = 0; i < count; i++) {
-              let day = parseInt(Math.random() * 31, 10);
-              let icon = icons[parseInt(Math.random() * 3, 10)];
-              events.push({
-                d: m + '/' + day,
-                icon: icon
-              });
-            }
+    let calendar = mobiscroll.calendar('#calendar', {
+      theme: 'mobiscroll',
+      display: 'inline',
+      layout: 'liquid',
+      lang: 'zh',
+      firstDay: 1,
+      controls: ['calendar', 'date', 'time'],
+      headerText: '请选择查看日期',
+      showScrollArrows: true,
+      events: (function() {
+        let events = [];
+        let icons = ['fa fa fa-paw', 'fa fa fa-heart', 'fa fa fa-flag'];
+        for (let m = 1; m <= 12; m++) {
+          let count = parseInt(Math.random() * 10, 10);
+          for (let i = 0; i < count; i++) {
+            let day = parseInt(Math.random() * 31, 10);
+            let icon = icons[parseInt(Math.random() * 3, 10)];
+            events.push({
+              d: m + '/' + day,
+              icon: icon
+            });
           }
-          return events;
-        })(),
-        onMonthChange: function(event, inst) {
-          this.date = event;
         }
-      })
-    },500)
+        return events;
+      })(),
+      onMonthChange: function(event, inst) {
+        this.date = event;
+      }
+    })
   }
 }
 </script>

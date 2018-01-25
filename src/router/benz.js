@@ -9,7 +9,7 @@ export default [{
     require.ensure([], () => r(require('../components/benz/Benz.vue')), 'benz')
   },
   children:[{
-    name: 'login',
+    name: 'benzLogin',
     path: 'login',
     meta: {
       login: false,
@@ -20,7 +20,7 @@ export default [{
       require.ensure([], () => r(require('../components/benz/Login.vue')), 'login')
     }
   },{
-    name: 'home',
+    name: 'benzHome',
     path: 'home',
     meta: {
       login: false,

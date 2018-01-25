@@ -5,11 +5,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "0e8b680f82810450e7c93ce0e4bd480c"
+    "hash": "7a1228be16271283d237b3ac513c1598"
   },
   {
     "file": "static/css/main.css",
-    "hash": "3cc387931788a761cd0f85f00c9a06a2"
+    "hash": "b880417c9062421ae9432714bd58a00f"
   },
   {
     "file": "static/fonts/icons_mobiscroll.eot",
@@ -52,8 +52,88 @@
     "hash": "665583c1996216b58835981a7272ff6e"
   },
   {
+    "file": "static/img/benz/chenxun2.png",
+    "hash": "f52b0bd9e2b59976f81ca7a7acf5e4ad"
+  },
+  {
+    "file": "static/img/benz/home.jpg",
+    "hash": "01152f31e6acd57381106e908aa5af01"
+  },
+  {
+    "file": "static/img/benz/homebtn1.png",
+    "hash": "9470bc415a510a541c3a439019a9341b"
+  },
+  {
+    "file": "static/img/benz/homebtn6.png",
+    "hash": "18518ae105313c50841548ec289a8cb4"
+  },
+  {
+    "file": "static/img/benz/homebtn8.png",
+    "hash": "f7cfe79c2ef3e4d7d6ec5636670399ac"
+  },
+  {
+    "file": "static/img/benz/imglink01.png",
+    "hash": "bb5e2ee7f4cef2251ae78a232722215b"
+  },
+  {
+    "file": "static/img/benz/imglink03.png",
+    "hash": "8e9ffe30a8864c76085d34b95b382f30"
+  },
+  {
+    "file": "static/img/benz/imglink04.png",
+    "hash": "e8504b6e446d40dfaf725a6cc7f746f6"
+  },
+  {
+    "file": "static/img/benz/imglink05.png",
+    "hash": "80f79d3b1137aff0f8b5a5e7de70c653"
+  },
+  {
+    "file": "static/img/benz/imglink08.png",
+    "hash": "b49c29705f083f62aa6bb918e56c1c77"
+  },
+  {
+    "file": "static/img/benz/imglink10.png",
+    "hash": "6401d7cf2dd851ba32acceb791bf4f42"
+  },
+  {
+    "file": "static/img/benz/imglink11.png",
+    "hash": "de0fac57ee82b3c51153f4ef0ed6f62a"
+  },
+  {
+    "file": "static/img/benz/imglink13.png",
+    "hash": "0bf4f76ff968a40ac1f93bff847ec855"
+  },
+  {
+    "file": "static/img/benz/imglink14.png",
+    "hash": "df1d5e588f56a71035cc2e68bfd622e1"
+  },
+  {
+    "file": "static/img/benz/imglink16.png",
+    "hash": "2ad121f1bdc19761e9ce6a5e5d24a5ae"
+  },
+  {
+    "file": "static/img/benz/imglinkpolicy.png",
+    "hash": "4ebed8aef571dd269748c0c58d128b21"
+  },
+  {
+    "file": "static/img/benz/kaoqin2.png",
+    "hash": "3af33c6b0ba99f2b6b5b75acb1ff1d89"
+  },
+  {
+    "file": "static/img/benz/lbt.png",
+    "hash": "72be71cc80c1e9c6c83dde3e60dd5476"
+  },
+  {
+    "file": "static/img/benz/logo.png",
+    "hash": "322dd6275ae51c3c5b75305a56648d8b"
+  },
+  {
     "file": "static/img/captcha.png",
     "hash": "49768f8e38e7c3bb9198faa25dc225f3"
+  },
+  {
+    "file": "static/img/female.png",
+    "hash": "2cd028c3efa993d789b23ad043b4fd25"
   },
   {
     "file": "static/img/head_bg.jpg",
@@ -72,60 +152,76 @@
     "hash": "648f0f67fccc757d5cab6abd950ce054"
   },
   {
+    "file": "static/img/male.png",
+    "hash": "e87bc8352357bc263d34e56889cfcd0d"
+  },
+  {
+    "file": "static/img/no.png",
+    "hash": "446112982e2784e1643b2e53ee841433"
+  },
+  {
+    "file": "static/img/yes.png",
+    "hash": "f857b3f089b373e79a9a2a6d4586cc8a"
+  },
+  {
     "file": "static/js/app.js",
-    "hash": "f4b41ef3ca94fc842be22e9147aadae0"
+    "hash": "509aa41893acacdc66a70dd35d45a7cf"
+  },
+  {
+    "file": "static/js/benz.js",
+    "hash": "45f3adc43df15a0c6730bd1d8147ee15"
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "049b7ba7861caf352b9bb83531517c27"
+    "hash": "821082527faea90f627077e1766533da"
   },
   {
     "file": "static/js/chart.js",
-    "hash": "7babc8c1a7a54053c033571dc8ce0ac1"
+    "hash": "0b2dda46e2974862e056164f5f4213a0"
   },
   {
     "file": "static/js/chat.js",
-    "hash": "7d60250ae0f33f3a5375bc16aa695c32"
+    "hash": "fb9b95f502565e1139ecc2ab479f3063"
   },
   {
     "file": "static/js/contact.js",
-    "hash": "f91680e9032ddb1342658bb45c08fb63"
+    "hash": "666fa8c23c54c338a55713cc03aac994"
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "3b5dbc0d1875a029e0ad4357c5ec9455"
+    "hash": "18a534ee94b99c75baa7b6c1bd3164c2"
   },
   {
     "file": "static/js/form.js",
-    "hash": "c3e4a1e9cf95733a559d7973f55fe08b"
+    "hash": "d92c17f5165d295522bd4c44a7d486a5"
   },
   {
     "file": "static/js/home.js",
-    "hash": "6eb009940b5647348a73b690f2211cb3"
+    "hash": "907d406b4079e7314d7aa633daa21d70"
   },
   {
     "file": "static/js/list.js",
-    "hash": "2d96f3c6508ccc090810ca79d8c1160c"
+    "hash": "89c0783659500c3f11000209c66a2499"
   },
   {
     "file": "static/js/loading.js",
-    "hash": "3bf54b93b3f55875237a39915e0f341b"
+    "hash": "87649073016f54afa07b3f2a67f5d977"
   },
   {
     "file": "static/js/lock.js",
-    "hash": "a6ec0342a0738de18676edea617d3bff"
+    "hash": "77c86864a2ee8e0ee1c3b72f9a35438e"
   },
   {
     "file": "static/js/login.js",
-    "hash": "9ab7d7c96c8f0a8168c466e6a7b5b2a5"
+    "hash": "42a9afc9daea1d6f1897c69c585be4c6"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "1cc403cccbf250f077d12ca801da4157"
+    "hash": "73312d51fae40cc8ebcf7ba7c958e1ec"
   },
   {
     "file": "static/js/map.js",
-    "hash": "14464a7c490a1308b6d2ae0e263ad9f3"
+    "hash": "68d906c181eb1c60d5270a4e8ac813d1"
   },
   {
     "file": "static/js/nativeVersion.js",
@@ -133,15 +229,15 @@
   },
   {
     "file": "static/js/page.js",
-    "hash": "d255c82f94de84263a0eacd8e7ff0e48"
+    "hash": "40e2f7767b8dfdb966a615c1feda9d76"
   },
   {
     "file": "static/js/tab.js",
-    "hash": "9ec0c8bb9109ebf7ff64c0df28b4b47a"
+    "hash": "e380fd2508849fe75f56b24d4eab7846"
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "36e6d811308a5d5c03eb5ab6eda78913"
+    "hash": "915a136ce05b43c2d426365e119707d6"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.css",
