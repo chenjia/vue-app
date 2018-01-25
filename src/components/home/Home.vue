@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page has-footer">
     <mt-header title="首页">
       <mt-button slot="left" class="fa fa-fw fa-bars"></mt-button>
       <mt-button slot="right" @click="go('/page/login')" class="fa fa-fw fa-lock"></mt-button>
@@ -22,6 +22,7 @@
         </tr>
       </table>
     </div>
+    
   </div>
 </template>
 

@@ -5,11 +5,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "7a1228be16271283d237b3ac513c1598"
+    "hash": "dcdc0e0f3b8b387c4e8afb41984c8a4b"
   },
   {
     "file": "static/css/main.css",
-    "hash": "b880417c9062421ae9432714bd58a00f"
+    "hash": "bc120ba54755bc37a3619e752feae0e6"
   },
   {
     "file": "static/fonts/icons_mobiscroll.eot",
@@ -165,7 +165,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "a3d4ea6e493f9b43fdbf9454ad4f7c32"
+    "hash": "f7353829f3bfa739e94e104b56a7dbe8"
   },
   {
     "file": "static/js/benz.js",
@@ -197,7 +197,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "907d406b4079e7314d7aa633daa21d70"
+    "hash": "8f942938542dca03f7b6034f77024274"
   },
   {
     "file": "static/js/list.js",
