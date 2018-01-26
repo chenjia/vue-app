@@ -1,6 +1,5 @@
 <template>
   <mt-field @click.native="open" v-model="value" :label="label" :disableClear="true" :readonly="true">
-    <!-- <img class="icon_img" style="margin-top:-4px;" src="../../assets/images/icon/date.png" /> -->
     <i @click="open" class="fa fa-calendar icon-picker"></i>
     <mt-datetime-picker v-model="dateValue" ref="datepicker"
                         :type="type"
@@ -62,7 +61,7 @@ export default {
   },
   methods: {
     //点击打开选择框按钮
-    open(e) {
+    open() {
       this.$refs.datepicker.open()
       utils.ui.modal.afterOpen()
       

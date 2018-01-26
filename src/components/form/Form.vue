@@ -6,8 +6,10 @@
     <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
+      <picker label="编程语言" v-model="language" :data="pickerItems" />
       <datepicker label="出生日期" v-model="date"/>
       <distpicker label="家庭住址" v-model="dist"/>
+      <jobpicker label="职业" v-model="job"/>
       <mt-cell class="mint-field">
         <span slot="title">婚否 {{marriage}}</span>
         <mt-switch class="switch-normal" v-model="marriage">
@@ -27,26 +29,43 @@
         </mt-switch>
       </mt-cell>
       <mt-radio title="单选框列表" v-model="radioValue" :options="['选项A', '选项B', '选项C']"></mt-radio>
-      <mt-checklist title="复选框列表" v-model="checkValue" :options="['选项A', '选项B', '选项C']"></mt-checklist>
+      <mt-checklist title="复选框列表" v-model="checkValue" :options="['选项A', '选项B', '选项C']" align="right"></mt-checklist>
+      <br/>
     </div>
   </div>
 </template>
 
 <script>
+import picker from '../common/Picker'
 import datepicker from '../common/DatePicker'
 import distpicker from '../common/DistPicker'
+import jobpicker from '../common/JobPicker'
 export default {
   name: 'form',
   components:{
+    picker,
     datepicker,
-    distpicker
+    distpicker,
+    jobpicker
   },
   data () {
     return {
       username:'',
       password:'',
+      language:'',
+      pickerItems:[{
+        value:'angular',
+        text:'angular'
+      },{
+        value:'vue',
+        text:'vue'
+      },{
+        value:'react',
+        text:'react'
+      }],
       date:'2018-01-18',
-      dist:'430102',
+      dist:'',
+      job:'',
       gender: 'M',
       marriage: false,
       checkValue:['选项A'],

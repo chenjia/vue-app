@@ -1,6 +1,6 @@
 <template>
-	<mt-field class="dist-picker" @click.native="toggleVisible(true, $event)" v-model="text" :label="label" :readonly="true" :disableClear="true">
-		<i @click="toggleVisible(true)" class="fa fa-map-marker icon-picker"></i>
+	<mt-field class="job-picker" @click.native="toggleVisible(true, $event)" v-model="text" :label="label" :readonly="true" :disableClear="true">
+		<i @click="toggleVisible(true)" class="fa fa-briefcase icon-picker"></i>
     <mt-popup v-model="visible" position="bottom" @close="toggleVisible(false)" :closeOnClickModal="true" class="popup-dist">
       <vdistpicker type="mobile" @selected="selected"/>
     </mt-popup>
@@ -8,7 +8,7 @@
 </template>
 <script>
 import vdistpicker from './vdistpicker.vue'
-import DISTRICT from './districts'
+import DISTRICT from './job'
 export default {
   name: 'distpicker',
   components:{vdistpicker},
@@ -59,7 +59,7 @@ export default {
 .icon-picker{
   position:absolute;
   top:-8px;
-  right:6px;
+  right:3px;
   color:#26a2ff;
 }
 .popup-dist{
@@ -80,7 +80,7 @@ export default {
 .distpicker-address-wrapper .address-container ul{
 	height:300px!important;
 }
-.dist-picker .mint-field-core{
+.job-picker .mint-field-core{
   padding-right:20px;
 }
 </style>
