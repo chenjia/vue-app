@@ -6,7 +6,7 @@
     <router-view></router-view>
     <transition name="slide-y" mode="out-in">
       <mt-tabbar v-show="hasTabs" v-model="tab" fixed>
-        <mt-tab-item v-for="(item,index) in tabs" :id="item.id">
+        <mt-tab-item v-for="(item,index) in tabs" :key="index" :id="item.id">
           <i slot="icon" class="fa" :class="item.icon" style="font-size:24px;"></i>
           {{item.text}}
         </mt-tab-item>

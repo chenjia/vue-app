@@ -67,7 +67,7 @@ export default {
         url: 'chart'
       },{
         name: '通讯录',
-        icon: 'book',
+        icon: 'address-book-o',
         color: '#da70d6',
         url: 'contact'
       },{

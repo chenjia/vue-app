@@ -30,8 +30,11 @@
     </template>
     <template v-else>
       <div :class="addressHeader">
+        <div style="width:100%;height:50px;">
+          <mt-search v-model="searchKey"></mt-search>
+        </div>
         <ul>
-          <li :class="{'active': tab === 1}" @click="resetProvince">{{ currentProvince && !staticPlaceholder ? currentProvince : placeholders.province }}</li>
+          <li v-if="showProvinceTab" :class="{'active': tab === 1}" @click="resetProvince">{{ currentProvince && !staticPlaceholder ? currentProvince : placeholders.province }}</li>
           <template v-if="!onlyProvince">
             <li v-if="showCityTab" :class="{'active': tab === 2}" @click="resetCity">{{  currentCity && !staticPlaceholder ? currentCity : placeholders.city }}</li>
             <li v-if="showAreaTab && !hideArea" :class="{'active': tab === 3}">{{ currentArea && !staticPlaceholder ? currentArea : placeholders.area }}</li>
@@ -102,11 +105,13 @@ export default {
   data() {
     return {
       tab: 1,
+      showProvinceTab: true,
       showCityTab: false,
       showAreaTab: false,
       provinces: [],
       cities: [],
       areas: [],
+      searchKey:'',
       currentProvince: this.determineType(this.province) || this.placeholders.province,
       currentCity: this.determineType(this.city) || this.placeholders.city,
       currentArea: this.determineType(this.area) || this.placeholders.area,
@@ -156,6 +161,30 @@ export default {
     area(value) {
       this.currentArea = this.area || this.placeholders.area
     },
+    searchKey(value){
+      if(value){
+        this.areas = {}
+        for(let i in this.getDistricts()){
+          let obj1 = this.getDistricts(i)
+          for(let j in obj1){
+            let obj2 = this.getDistricts(j)
+            for(let k in obj2){
+              let obj3 = obj2[k]
+              if(obj3.indexOf(this.searchKey) !== -1){
+                this.areas[k] = obj3
+                this.showProvinceTab = false
+                this.showCityTab = false
+                this.showAreaTab = true
+                this.tab = 3
+              }
+            }
+          }
+        }
+      }else{
+        this.resetCity()
+        this.resetProvince()
+      }
+    }
   },
   methods: {
     setData(value, check = '') {
@@ -175,6 +204,11 @@ export default {
 
       if (!this.onlyProvince || this.hideArea) {
         this.$set(data, 'area', this.setData(this.currentArea))
+      }
+
+      if(!this.showProvinceTab){
+        this.$set(data, 'province', this.setData(this.currentArea.substr(0,2)))
+        this.$set(data, 'city', this.setData(this.currentArea.substr(0,4)))
       }
 
       this.$emit(name, data)
@@ -204,6 +238,7 @@ export default {
       this.provinces = this.getDistricts()
       this.showCityTab = false
       this.showAreaTab = false
+      this.showProvinceTab = true
     },
     resetCity() {
       this.tab = 2
@@ -229,6 +264,7 @@ export default {
     },
     chooseArea(name) {
       this.currentArea = name
+      console.log(this.currentArea)
     },
     getAreaCode(name, check = '') {
       for(let x in DISTRICTS) {
@@ -320,6 +356,10 @@ export default {
   }
   .address-header {
     background-color: #fff;
+
+    .mint-search-list{
+      z-index:-1;
+    }
 
     ul {
       display: flex;
