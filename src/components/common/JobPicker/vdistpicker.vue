@@ -147,6 +147,14 @@ export default {
       if (value != this.placeholders.city && this.hideArea) this.emit('selected')
     },
     currentArea(value) {
+      if(!this.showProvinceTab){
+        const area = this.setData(value)
+        const province = this.setData(DISTRICTS[0][area.code.substr(0,2)])
+        const city = this.setData(DISTRICTS[area.code.substr(0,2)][area.code.substr(0,4)])
+        this.currentProvince = province.value
+        this.currentCity = city.value
+      }
+
       this.$emit('area', this.setData(value, this.currentProvince))
       if (value != this.placeholders.area) this.emit('selected')
     },
@@ -206,11 +214,6 @@ export default {
         this.$set(data, 'area', this.setData(this.currentArea))
       }
 
-      if(!this.showProvinceTab){
-        this.$set(data, 'province', this.setData(this.currentArea.substr(0,2)))
-        this.$set(data, 'city', this.setData(this.currentArea.substr(0,4)))
-      }
-
       this.$emit(name, data)
     },
     getCities() {
@@ -264,13 +267,15 @@ export default {
     },
     chooseArea(name) {
       this.currentArea = name
-      console.log(this.currentArea)
     },
     getAreaCode(name, check = '') {
       for(let x in DISTRICTS) {
         for(let y in DISTRICTS[x]) {
           if(name === DISTRICTS[x][y]) {
             if (check.length > 0) {
+              if(this.getAreaCode(check) === undefined ){
+                alert(check)
+              }
               if (y.slice(0, 2) !== this.getAreaCode(check).slice(0, 2)) {
                 continue
               } else {
