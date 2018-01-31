@@ -33,7 +33,9 @@ export default {
     selected(data){
       this.$emit("input", data.area.code);
       this.setText(data.province.value,data.city.value,data.area.value)
-    	this.visible = false
+      setTimeout(()=>{
+        this.visible = false
+      })
     },
     setText(p,c,a){
       this.text = p +' '+ c +' '+ a
@@ -78,7 +80,7 @@ export default {
   color:#26a2ff!important;
 }
 .distpicker-address-wrapper .address-container ul{
-	height:300px!important;
+	height:200px!important;
 }
 .job-picker .mint-field-core{
   padding-right:20px;
