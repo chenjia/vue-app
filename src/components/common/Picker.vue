@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     open(e) {
-      console.log(this.instance)
       
     },
     close() {
