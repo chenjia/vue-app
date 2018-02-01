@@ -165,7 +165,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "c4ba356ae36f287366c061a1033bae4b"
+    "hash": "cc5e363f0705904b7866fd7a29d54d83"
   },
   {
     "file": "static/js/benz.js",
@@ -193,11 +193,11 @@
   },
   {
     "file": "static/js/form.js",
-    "hash": "3d4c5999809cda5619ad78c91054855b"
+    "hash": "8e41a57dc627a714d66771efa02aa464"
   },
   {
     "file": "static/js/home.js",
-    "hash": "17ebca6b72c825a6720446817329ebc1"
+    "hash": "caa24c92b4ea6cb9759d31f82ab20783"
   },
   {
     "file": "static/js/list.js",

@@ -23,10 +23,12 @@
       </table>
     </div>
     
+    <timeline :items="timelines"></timeline>
   </div>
 </template>
 
 <script>
+import timeline from '../common/Timeline.vue'
 import {
   mapGetters,
   mapMutations
@@ -34,6 +36,9 @@ import {
 
 export default {
   name: 'home',
+  components:{
+    timeline
+  },
   data() {
     return {
       drawer: false,
@@ -115,6 +120,22 @@ export default {
         icon: 'qq',
         color: '#ff6347',
         url: 'chat'
+      }],
+      timelines:[{
+        time:'2018-01-01 09:00:00',
+        title:'会议',
+        content:'部门早会',
+        icon:'fa fa-microphone'
+      },{
+        time:'2018-01-01 12:00:00',
+        title:'午饭',
+        content:'员工食堂用餐',
+        icon:'fa fa-cutlery'
+      },{
+        time:'2018-01-01 19:00:00',
+        title:'聚会',
+        content:'公司年会',
+        icon:'fa fa-glass'
       }]
       /*
         '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 

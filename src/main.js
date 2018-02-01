@@ -19,6 +19,7 @@ import {
 
 import {
   Actionsheet,
+  Badge,
   Button,
   Cell,
   CellSwipe,
@@ -32,6 +33,7 @@ import {
   Popup,
   Progress,
   Radio,
+  Range,
   Search,
   Spinner,
   Swipe,
@@ -43,6 +45,7 @@ import {
   TabItem
 } from 'mint-ui'
 Vue.component(Actionsheet.name, Actionsheet)
+Vue.component(Badge.name, Badge)
 Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
 Vue.component(CellSwipe.name, CellSwipe)
@@ -56,6 +59,7 @@ Vue.component(Loadmore.name, Loadmore)
 Vue.component(Popup.name, Popup)
 Vue.component(Progress.name, Progress)
 Vue.component(Radio.name, Radio)
+Vue.component(Range.name, Range)
 Vue.component(Search.name, Search)
 Vue.component(Spinner.name, Spinner)
 Vue.component(Swipe.name, Swipe)

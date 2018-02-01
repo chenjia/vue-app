@@ -28,6 +28,13 @@
           </span>
         </mt-switch>
       </mt-cell>
+      <mt-cell class="mint-field">
+        <span slot="title">电量 {{light}}%</span>
+        <mt-range v-model="light" :min="0" :max="100" style="width:100%;">
+          <div slot="start"><i class="fa fa-battery-empty"></i>&nbsp;</div>
+          <div slot="end">&nbsp;<i class="fa fa-battery-4" style="color:#26a2ff;"></i></div>
+        </mt-range>
+      </mt-cell>
       <mt-radio title="单选框列表" v-model="radioValue" :options="['选项A', '选项B', '选项C']"></mt-radio>
       <mt-checklist title="复选框列表" v-model="checkValue" :options="['选项A', '选项B', '选项C']" align="right"></mt-checklist>
       <br/>
@@ -68,6 +75,7 @@ export default {
       job:'',
       gender: 'M',
       marriage: false,
+      light:50,
       checkValue:['选项A'],
       radioValue:''
     }
