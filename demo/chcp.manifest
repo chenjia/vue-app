@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "0792034c0aec19b0cf5aaaa7caf3f021"
+    "hash": "3d8b5bff0e6e26c39e080cd73b828755"
   },
   {
     "file": "static/css/app.css",
@@ -165,7 +165,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "cc5e363f0705904b7866fd7a29d54d83"
+    "hash": "423c9288d8b51204ab8ee9633f64150e"
   },
   {
     "file": "static/js/benz.js",
@@ -197,7 +197,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "caa24c92b4ea6cb9759d31f82ab20783"
+    "hash": "7f1c9ba7e305df85db106c31bb028a8d"
   },
   {
     "file": "static/js/list.js",

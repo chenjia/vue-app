@@ -22,7 +22,10 @@
         </tr>
       </table>
     </div>
-    
+
+    <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
+      <i class="fa fa-calendar-o"></i> 待办事项
+    </mt-button>
     <timeline :items="timelines"></timeline>
   </div>
 </template>
@@ -122,20 +125,41 @@ export default {
         url: 'chat'
       }],
       timelines:[{
-        time:'2018-01-01 09:00:00',
+        time:(()=>{
+          let date = new Date()
+          date.setHours(9, 0, 0, 0)
+          return date
+        })(),
         title:'会议',
         content:'部门早会',
         icon:'fa fa-microphone'
       },{
-        time:'2018-01-01 12:00:00',
+        time:(()=>{
+          let date = new Date()
+          date.setHours(12, 0, 0, 0)
+          return date
+        })(),
         title:'午饭',
         content:'员工食堂用餐',
         icon:'fa fa-cutlery'
       },{
-        time:'2018-01-01 19:00:00',
+        time:(()=>{
+          let date = new Date()
+          date.setHours(20, 0, 0, 0)
+          return date
+        })(),
         title:'聚会',
         content:'公司年会',
         icon:'fa fa-glass'
+      },{
+        time:(()=>{
+          let date = new Date()
+          date.setHours(22, 0, 0, 0)
+          return date
+        })(),
+        title:'睡觉',
+        content:'亲爱滴，晚安么么哒~',
+        icon:'fa fa-moon-o'
       }]
       /*
         '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 

@@ -66,4 +66,13 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+router.afterEach((to, from) => {
+  let loader = document.querySelector('.loader-box')
+  if(loader.className.indexOf('fadeOut') === -1){
+    loader.className += ' fadeOut'
+    setTimeout(()=>{
+      loader.style.display = 'none'
+    },500)
+  }
+})
 export default router

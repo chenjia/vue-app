@@ -2,21 +2,24 @@
 	<div style="padding:10px;">
 		<div class="timeline-item" v-for="(item, index) in items">
 			<div class="line-item">
-				<div class="line" :class="{history:index<1}" :style="{borderColor:color[index],borderStyle:'dashed'}">
-					<div class="line-icon" :class="item.icon" :style="{background:color[index]}"></div>
+				<div class="line" :class="{history:item.time<new Date()}" :style="{borderColor:item.time<new Date()?color[index]:'#ccc',borderStyle:'dashed'}">
+					<div v-if="index == 0" class="line-start"></div>
+					<div class="line-icon" :class="item.icon" :style="{background:(item.time<new Date()?color[index]:'#ccc')}"></div>
 				</div>
 			</div>
 
-			<div class="content-item" :style="{borderLeftColor:color[index]}">
-				<div class="content-title">{{item.title}}</div>
+			<div class="content-item" :style="{border:'1px '+(item.time<new Date()?'solid':'dashed')+(item.time<new Date()?color[index]:'#ccc'),borderLeft:'4px solid '+(item.time<new Date()?color[index]:'#ccc')}">
+				<div class="content-arrow" :style="{borderRight:'8px solid '+(item.time<new Date()?color[index]:'#ccc')}"></div>
+				<div class="content-title" :style="{borderBottom:'1px dashed '+(item.time<new Date()?color[index]:'#ccc')}">{{item.title}}</div>
 				<div class="content-details">{{item.content}}</div>
-				<div class="content-time">{{item.time}}</div>
+				<div class="content-time">{{item.time|dateFilter(false)}}</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import '../../filters'
 export default {
   name: 'tab',
   props: ['items'],
@@ -45,6 +48,7 @@ export default {
 	flex:0 0 80px;
 }
 .line{
+	position:relative;
 	margin:0 auto;
 	padding:0;
 	width:0px;
@@ -54,9 +58,19 @@ export default {
 .line.history{
 	border-style:solid!important;
 }
+.line-start{
+	position:absolute;
+	left:-6px;
+	top:-2px;
+	width:6px;
+	height:6px;
+	border-radius:50%;
+	background:#fff;
+	border:3px solid #26a2ff;
+}
 .line-icon{
 	position:relative;
-	top:24px;
+	top:20px;
 	left:-12px;
 	text-align:center;
 	line-height:24px;
@@ -68,14 +82,23 @@ export default {
 }
 .content-item{
 	flex:1 0 100px;
-	border:1px solid #ccc;
-	border-left:4px solid;
-	margin-top:10px;
-	
+	border-radius:0 4px 4px 0;
+	margin-top:22px;
+	position:relative;
+}
+.content-arrow{
+	position:absolute;
+	top:5px;
+	left:-12px;
+	width:0;
+	height:0;
+	border-top:8px solid #fff;
+	border-bottom:8px solid #fff;
 }
 .content-title{
 	font-size:16px;
-	border-bottom:1px dashed #ccc;
+	height:20px;
+	line-height:20px;
 	padding:4px 10px;
 }
 .content-details{
@@ -85,7 +108,7 @@ export default {
 .content-time{
 	padding:5px;
 	font-size:12px;
-	color:#aaa;
+	color:#888;
 	text-align:right;
 }
 </style>
