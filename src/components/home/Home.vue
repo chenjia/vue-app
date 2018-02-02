@@ -53,15 +53,15 @@ export default {
         { title: 'About', icon: 'question_answer' }
       ],
       banners: [{
-        icon: 'fa fa-user'
+        icon: 'fa fa-list'
       },{
-        icon: 'fa fa-user'
+        icon: 'fa fa-bar-chart'
       },{
-        icon: 'fa fa-user'
+        icon: 'fa fa-address-book-o'
       },{
-        icon: 'fa fa-user'
+        icon: 'fa fa-list-alt'
       },{
-        icon: 'fa fa-user'
+        icon: 'fa fa-folder'
       }],
       menus: [{
         name: '列表',
