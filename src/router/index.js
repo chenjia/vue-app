@@ -15,7 +15,6 @@ import loading from './loading'
 import map from './map'
 import dialog from './dialog'
 import chat from './chat'
-import benz from './benz'
 
 Vue.use(Router)
 
@@ -46,8 +45,7 @@ const router = new Router({
     ...loading,
     ...map,
     ...dialog,
-    ...chat,
-    ...benz
+    ...chat
     ]
   }]
 })

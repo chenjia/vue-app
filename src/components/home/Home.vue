@@ -7,8 +7,8 @@
     
     <div>
       <mt-swipe :auto="4000" :style="{height:screenWidth*0.6+'px'}">
-        <mt-swipe-item v-for="(item,index) in banners" :key="index">
-          <img :src="item.src" :style="{height:screenWidth*0.6666+'px'}">
+        <mt-swipe-item v-for="(item,index) in banners" :key="index" :style="{textAlign:'center', height:screenWidth*0.6666+'px'}">
+          <i :class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
         </mt-swipe-item>
       </mt-swipe>
       <table class="icon-table">
@@ -53,15 +53,15 @@ export default {
         { title: 'About', icon: 'question_answer' }
       ],
       banners: [{
-        src: require('../../../static/img/banner1.jpg')
+        icon: 'fa fa-user'
       },{
-        src: require('../../../static/img/banner2.jpg')
+        icon: 'fa fa-user'
       },{
-        src: require('../../../static/img/banner3.jpg')
+        icon: 'fa fa-user'
       },{
-        src: require('../../../static/img/banner4.jpg')
+        icon: 'fa fa-user'
       },{
-        src: require('../../../static/img/banner5.jpg')
+        icon: 'fa fa-user'
       }],
       menus: [{
         name: '列表',
@@ -130,6 +130,11 @@ export default {
           date.setHours(9, 0, 0, 0)
           return date
         })(),
+        history:(()=>{
+          let date = new Date()
+          date.setHours(9, 0, 0, 0)
+          return date < new Date()
+        })(),
         title:'会议',
         content:'部门早会',
         icon:'fa fa-microphone'
@@ -138,6 +143,11 @@ export default {
           let date = new Date()
           date.setHours(12, 0, 0, 0)
           return date
+        })(),
+        history:(()=>{
+          let date = new Date()
+          date.setHours(12, 0, 0, 0)
+          return date < new Date()
         })(),
         title:'午饭',
         content:'员工食堂用餐',
@@ -148,6 +158,11 @@ export default {
           date.setHours(20, 0, 0, 0)
           return date
         })(),
+        history:(()=>{
+          let date = new Date()
+          date.setHours(20, 0, 0, 0)
+          return date < new Date()
+        })(),
         title:'聚会',
         content:'公司年会',
         icon:'fa fa-glass'
@@ -156,6 +171,11 @@ export default {
           let date = new Date()
           date.setHours(22, 0, 0, 0)
           return date
+        })(),
+        history:(()=>{
+          let date = new Date()
+          date.setHours(22, 0, 0, 0)
+          return date < new Date()
         })(),
         title:'睡觉',
         content:'亲爱滴，晚安么么哒~',

@@ -83,7 +83,7 @@
 
     <zoom title="放大缩小" :dialog="true" :show.sync="popupZoom">
       <mt-button @click="popupZoom = !popupZoom" type="primary" size="large">关闭</mt-button>
-      <img style="width:100%;" src="../../../static/img/banner1.jpg">
+      <img style="width:100%;" src="../../../static/img/lock-bg.jpg">
     </zoom>
   </div>
 </template>

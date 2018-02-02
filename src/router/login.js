@@ -8,7 +8,7 @@ export default [{
   component(r) {
     require.ensure([], () => {
       r(require('../components/login/Login.vue'))
-      // require(['../components/home/Home.vue'])
+      require(['../components/home/Home.vue'])
     }, 'login')
   }
 }]

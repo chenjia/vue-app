@@ -2,15 +2,15 @@
 	<div style="padding:10px;">
 		<div class="timeline-item" v-for="(item, index) in items">
 			<div class="line-item">
-				<div class="line" :class="{history:item.time<new Date()}" :style="{borderColor:item.time<new Date()?color[index]:'#ccc',borderStyle:'dashed'}">
+				<div class="line" :class="{history:item.history}" :style="{borderColor:item.history?color[index]:'#ccc',borderStyle:'dashed'}">
 					<div v-if="index == 0" class="line-start"></div>
-					<div class="line-icon" :class="item.icon" :style="{background:(item.time<new Date()?color[index]:'#ccc')}"></div>
+					<div class="line-icon" :class="item.icon" :style="{background:(item.history?color[index]:'#ccc')}"></div>
 				</div>
 			</div>
 
-			<div class="content-item" :style="{border:'1px '+(item.time<new Date()?'solid':'dashed')+(item.time<new Date()?color[index]:'#ccc'),borderLeft:'4px solid '+(item.time<new Date()?color[index]:'#ccc')}">
-				<div class="content-arrow" :style="{borderRight:'8px solid '+(item.time<new Date()?color[index]:'#ccc')}"></div>
-				<div class="content-title" :style="{borderBottom:'1px dashed '+(item.time<new Date()?color[index]:'#ccc')}">{{item.title}}</div>
+			<div class="content-item" :style="{border:'1px '+(item.history?'solid':'dashed')+(item.history?color[index]:'#ccc'),borderLeft:'4px solid '+(item.history?color[index]:'#ccc'),boxShadow:'2px 2px 5px '+(item.history?color[index]:'#888')}">
+				<div class="content-arrow" :style="{borderRight:'8px solid '+(item.history?color[index]:'#ccc')}"></div>
+				<div class="content-title" :style="{borderBottom:'1px dashed '+(item.history?color[index]:'#ccc')}">{{item.title}}</div>
 				<div class="content-details">{{item.content}}</div>
 				<div class="content-time">{{item.time|dateFilter(false)}}</div>
 			</div>
