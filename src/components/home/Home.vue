@@ -102,7 +102,7 @@ export default {
         name: '视频',
         icon: 'video-camera',
         color: '#cd5c5c',
-        url: 'live'
+        url: 'video'
       },{
         name: '日历',
         icon: 'calendar',

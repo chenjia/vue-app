@@ -145,7 +145,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "0484241c87193f5a57a6f17c87ec18ef"
+    "hash": "4426d383f707cc7202025afb9a1fed4f"
   },
   {
     "file": "static/js/calendar.js",
@@ -173,7 +173,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "1b1289b7c119dea2db02e1b3f6783d7b"
+    "hash": "e3c7163110e2c9cddd864e0e11cfd37d"
   },
   {
     "file": "static/js/list.js",
@@ -189,11 +189,11 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "f06ecff23c728f2d96ed385ac10b4eb6"
+    "hash": "ca456a8a1be2cb5a00f5074acd0d7a70"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "e2c47bfc89a565bf31558afe04e2d63e"
+    "hash": "a6b09ee20d8580e988505aeea43157e5"
   },
   {
     "file": "static/js/map.js",
@@ -213,7 +213,11 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "36e6d811308a5d5c03eb5ab6eda78913"
+    "hash": "915a136ce05b43c2d426365e119707d6"
+  },
+  {
+    "file": "static/js/video.js",
+    "hash": "1c2cd9c504883e6f037d24b50d300d4c"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.css",
@@ -410,5 +414,13 @@
   {
     "file": "static/lib/mobiscroll/js/mobiscroll.javascript.min.js",
     "hash": "b7cd2c4ba85534e2c4b5f8d33ec82631"
+  },
+  {
+    "file": "static/media/movie.ogg",
+    "hash": "62a4fde860f3d9aa9d3f05d0b14ef554"
+  },
+  {
+    "file": "static/video/movie.ogg",
+    "hash": "62a4fde860f3d9aa9d3f05d0b14ef554"
   }
 ]
