@@ -155,6 +155,20 @@ export default {
       },{
         time:(()=>{
           let date = new Date()
+          date.setHours(15, 0, 0, 0)
+          return date
+        })(),
+        history:(()=>{
+          let date = new Date()
+          date.setHours(15, 0, 0, 0)
+          return date < new Date()
+        })(),
+        title:'下午茶',
+        content:'放松一下心情',
+        icon:'fa fa-coffee'
+      },{
+        time:(()=>{
+          let date = new Date()
           date.setHours(20, 0, 0, 0)
           return date
         })(),

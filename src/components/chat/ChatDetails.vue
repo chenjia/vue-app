@@ -56,7 +56,7 @@ export default {
       currentPage:1,
       topStatus: '',
       msg: '',
-      user:utils.cache.get('user'),
+      user:utils.cache.get('user')||{userId:'admin'},
       heads:{
         admin:require('../../../static/img/head.jpg'),
         chenjia:require('../../../static/img/head.jpg'),
@@ -95,6 +95,16 @@ export default {
             })
           }
         }, 500)
+      }).catch(()=>{
+        this.records = {
+          chenjia:[{
+            recordId:'xxxxx',
+            receiveId:'admin',
+            sendId:'chenjia',
+            content:'Hello World'
+          }]
+        }
+
       })
     },
     loadTop(){

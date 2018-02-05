@@ -8,7 +8,7 @@
 				</div>
 			</div>
 
-			<div class="content-item" :style="{border:'1px '+(item.history?'solid':'dashed')+(item.history?color[index]:'#ccc'),borderLeft:'4px solid '+(item.history?color[index]:'#ccc'),boxShadow:'2px 2px 5px '+(item.history?color[index]:'#888')}">
+			<div class="content-item" :style="{border:'1px solid ' +(item.history?color[index]:'#ccc'),borderLeft:'4px solid '+(item.history?color[index]:'#ccc'),boxShadow:'2px 2px 5px '+(item.history?color[index]:'#888')}">
 				<div class="content-arrow" :style="{borderRight:'8px solid '+(item.history?color[index]:'#ccc')}"></div>
 				<div class="content-title" :style="{borderBottom:'1px dashed '+(item.history?color[index]:'#ccc')}">{{item.title}}</div>
 				<div class="content-details">{{item.content}}</div>
@@ -70,7 +70,7 @@ export default {
 }
 .line-icon{
 	position:relative;
-	top:20px;
+	top:22px;
 	left:-12px;
 	text-align:center;
 	line-height:24px;

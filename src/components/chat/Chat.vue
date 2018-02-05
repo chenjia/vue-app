@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       server: Config.server,
-      user:utils.cache.get('user') || {},
+      user:utils.cache.get('user') || {userId:'admin'},
       popupMenu: false,
       popupConfig: false,
       popupDetails: false,
@@ -79,6 +79,14 @@ export default {
   },
   methods: {
     getFriends(){
+      this.contacts = [{
+        name:'最近联系人',
+        friends:[{
+          name:'佳哥哥',
+          memo:'佳哥哥',
+          friendId:'chenjia'
+        }]
+      }]
       return;
       utils.http.post('/chat/friend').then(response => {
         this.contacts = response.data.body.data
