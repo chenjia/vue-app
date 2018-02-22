@@ -16,6 +16,7 @@ const version = {
 					window.open(Config.appUrl)
 				}else {
 					if(error){
+						console.log(error)
 						if(error.code == 2){
 							store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 						}else{
