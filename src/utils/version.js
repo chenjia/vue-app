@@ -56,6 +56,7 @@ const version = {
 
 document.addEventListener("deviceready", () => {
 	//version.check()
+	console.log(version)
 }, false)
 
 export default version
