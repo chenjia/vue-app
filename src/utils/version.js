@@ -47,7 +47,7 @@ const version = {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    	setTimeout(()=>{
 	    		store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
-	    	},5000)
+	    	},3000)
 	    }
 		})
 	}
