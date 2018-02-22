@@ -7,7 +7,7 @@ const version = {
 		if(!window.chcp){return}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
-			// store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 			chcp.fetchUpdate((error, data) => {
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
@@ -45,8 +45,6 @@ const version = {
 			if (error) {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败'})
 	    } else {
-	    	alert('install:'+versionInfo.currentWebVersion)
-	    	store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
 		})
