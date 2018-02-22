@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import store from '../../vuex/store'
 import { Indicator } from 'mint-ui';
 import {
   mapGetters,
@@ -103,6 +104,7 @@ export default {
   mounted(){
     this.doLogout()
     this.getCaptcha()
+    store.commit('UPDATE_VERSION', '123123123')
   }
 }
 </script>
