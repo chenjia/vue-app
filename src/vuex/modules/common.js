@@ -34,6 +34,7 @@ const state = {
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
 }
+alert(state.app.version)
 
 const getters = {
   hasHeader() {
