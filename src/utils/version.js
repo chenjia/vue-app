@@ -15,6 +15,7 @@ const version = {
 					alert('当前版本过低，请安装最新版本')
 					window.open(Config.appUrl)
 				}else {
+					alert(error)
 					if(error){
 						console.log(error)
 						if(error.code == 2){
