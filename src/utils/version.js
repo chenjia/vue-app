@@ -48,6 +48,7 @@ const version = {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败'})
 	    } else {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
+	    	version.check()
 	    }
 		})
 	}
