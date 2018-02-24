@@ -9,6 +9,7 @@ const version = {
 		chcp.getVersionInfo((err, versionInfo) => {
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 			alert(versionInfo.currentWebVersion)
+			console.log(123)
 			chcp.fetchUpdate((error, data) => {
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
