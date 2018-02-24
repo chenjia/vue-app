@@ -48,6 +48,7 @@ const version = {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    	// version.check()
 	    	alert(versionInfo.currentWebVersion)
+	    	console.log(123)
 	    	store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 	    }
 		})
