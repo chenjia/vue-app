@@ -5,6 +5,7 @@ import { MessageBox } from 'mint-ui'
 const version = {
 	getVersionInfo(){
 		chcp.getVersionInfo((err, versionInfo) => {
+			alert(JSON.stringify(versionInfo))
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 		})
 	},
