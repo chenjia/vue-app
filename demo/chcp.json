@@ -1,7 +1,7 @@
 {
   "content_url": "https://chenjia.github.io/vue-app/demo",
   "update": "now",
-  "native_version": "1.1",
+  "native_version": "1.0",
   "description": "本次更新内容为：<br>1.页面样式调整 <br>2.增量更新功能优化 <br>3.修复部分bug",
-  "release": "2018.02.26-17.23.00"
+  "release": "2018.02.26-17.27.44"
 }
