@@ -3,13 +3,16 @@ import cache from './cache'
 import { MessageBox } from 'mint-ui'
 
 const version = {
-	check(){
+	getVersionInfo(){
+		chcp.getVersionInfo((err, versionInfo) => {
+			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+		})
+	},
+	fetchUpdate(){
 		if(!window.chcp){return}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
-			// store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 			chcp.fetchUpdate((error, data) => {
-				alert(JSON.stringify(data))
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
@@ -17,7 +20,6 @@ const version = {
 					window.open(Config.appUrl)
 				}else {
 					if(error){
-						console.log(error)
 						if(error.code == 2){
 							store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 						}else{
@@ -29,7 +31,7 @@ const version = {
 					}else{
 						if(config.release != versionInfo.currentWebVersion){
 							MessageBox('版本提示（'+config.release+'）', config.description).then(action => {
-							  this.install(versionInfo)
+							  this.installUpdate(config)
 							})
 							document.querySelector('.mint-msgbox-message').style.textAlign = 'left'
 						}
@@ -40,24 +42,21 @@ const version = {
 			})
 		})
 	},
-	install(versionInfo){
+	installUpdate(config){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装新版本'})
 		chcp.installUpdate(error => {
 			if (error) {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败'})
 	    } else {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
-	    	// version.check()
-	    	alert(JSON.stringify(versionInfo))
-	    	alert('install'+versionInfo.currentWebVersion)
-	    	store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+	    	// store.commit('UPDATE_VERSION', config.release)
 	    }
 		})
 	}
 }
 
 document.addEventListener("deviceready", () => {
-	//version.check()
+	version.getVersionInfo()
 }, false)
 
 export default version
