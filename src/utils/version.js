@@ -15,7 +15,7 @@ const version = {
 		chcp.getVersionInfo((err, versionInfo) => {
 			version.log.push('getVersionInfo:'+new Date().getTime())
 			chcp.fetchUpdate((error, data) => {
-				store.commit('TOGGLE_POPUP', {visible: true, text: '正在下载新版本'})
+				store.commit('TOGGLE_POPUP', {visible: true, text: '正在下载新版本...'})
 				version.log.push('fetchUpdate:'+new Date().getTime())
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
