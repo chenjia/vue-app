@@ -3,7 +3,6 @@ import cache from './cache'
 import { MessageBox } from 'mint-ui'
 
 const version = {
-	log:[],
 	getVersionInfo(){
 		chcp.getVersionInfo((err, versionInfo) => {
 			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
@@ -13,10 +12,8 @@ const version = {
 		if(!window.chcp){return}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
-			version.log.push('getVersionInfo:'+new Date().getTime())
 			chcp.fetchUpdate((error, data) => {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '正在下载新版本...'})
-				version.log.push('fetchUpdate:'+new Date().getTime())
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.native_version){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
@@ -32,9 +29,7 @@ const version = {
 						}
 					}else{
 						if(config.release != versionInfo.currentWebVersion){
-							version.log.push('MessageBox:'+new Date().getTime())
 							MessageBox('版本提示（'+config.release+'）', config.description).then(action => {
-							  version.log.push('beforeinstallUpdate:'+new Date().getTime())
 							  this.installUpdate(config)
 							})
 							setTimeout(()=>{
@@ -51,14 +46,12 @@ const version = {
 	installUpdate(config){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装新版本'})
 		chcp.installUpdate(error => {
-			version.log.push('installUpdate:'+new Date().getTime())
 			if (error) {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败', duration: 3000})
 				alert(JSON.stringify(error))
 	    } else {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
-	    alert(JSON.stringify(version.log))
 		})
 	}
 }

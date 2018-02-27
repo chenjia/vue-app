@@ -71,14 +71,14 @@ export default {
   transform: translate(0, 50px);
 }
 .slide-y-enter-to{
-  transition:all .4s linear;
+  transition:all .4s ease-out;
 }
 .slide-y-leave {
   opacity: 1;
   transform: translate(0, 0);
 }
 .slide-y-leave-to{
-  transition:all .4s linear;
+  transition:all .4s ease-out;
   opacity: 0;
   transform: translate(0, 50px);
 }
