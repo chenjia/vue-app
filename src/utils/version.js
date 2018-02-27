@@ -36,7 +36,9 @@ const version = {
 							  version.log.push('beforeinstallUpdate:'+new Date().getTime())
 							  this.installUpdate(config)
 							})
-							document.querySelector('.mint-msgbox-message').style.textAlign = 'left'
+							setTimeout(()=>{
+								document.querySelector('.mint-msgbox-message').style.textAlign = 'left'
+							})
 						}
 					}
 				}
