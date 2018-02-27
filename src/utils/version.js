@@ -22,7 +22,7 @@ const version = {
 				}else {
 					if(error){
 						if(error.code == 2){
-							store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
+							store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本', duration: 1000})
 						}else{
 							store.commit('TOGGLE_POPUP', {visible: true, text: '更新包获取失败', duration: 5000})
 						}
