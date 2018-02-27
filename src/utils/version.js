@@ -27,7 +27,8 @@ const version = {
 						if(error.code == 2){
 							store.commit('TOGGLE_POPUP', {visible: true, text: '已经是最新版本', duration: 1000})
 						}else{
-							store.commit('TOGGLE_POPUP', {visible: true, text: '更新包获取失败', duration: 5000})
+							store.commit('TOGGLE_POPUP', {visible: true, text: '更新包获取失败', duration: 3000})
+							alert(JSON.stringify(error))
 						}
 					}else{
 						if(config.release != versionInfo.currentWebVersion){
@@ -52,7 +53,8 @@ const version = {
 		chcp.installUpdate(error => {
 			version.log.push('installUpdate:'+new Date().getTime())
 			if (error) {
-				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败', duration: 5000})
+				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败', duration: 3000})
+				alert(JSON.stringify(error))
 	    } else {
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
