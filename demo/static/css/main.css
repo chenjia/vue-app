@@ -87,6 +87,9 @@ form .mint-field-core{
 .mint-header .mint-button.fa{
   font-size:18px;
 }
+.mint-popup{
+  transition: all .3s ease-out;
+}
 .mint-swipe-indicator.is-active{
   background:#26a2ff;
 }

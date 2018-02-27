@@ -18,8 +18,8 @@
 
     </div>
 
-    <mt-popup v-model="popupAccordion" position="top" style="width:100%;border-radius:4px;">
-      <mt-header title="弹窗" fixed>
+    <mt-popup v-model="popupAccordion" position="right" style="width:100%;border-radius:4px;">
+      <mt-header title="手风琴" fixed>
         <mt-button @click="popupAccordion = !popupAccordion" slot="left" icon="back">返回</mt-button>
       </mt-header>
 

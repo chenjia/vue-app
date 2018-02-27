@@ -5,11 +5,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "3db51402828cda513fc86dd8e4a8544b"
+    "hash": "024e8520d2830976d0c1adc8a10fc2ec"
   },
   {
     "file": "static/css/main.css",
-    "hash": "be0b81615415e7e69118e68735ab886a"
+    "hash": "8dcba481054dd0fcdc1cdb21e8cd0501"
   },
   {
     "file": "static/fonts/icons_mobiscroll.eot",
@@ -165,7 +165,7 @@
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "39f65dde2ef0b44a48bf737c50e2d42f"
+    "hash": "dce9188dc5ee698acf3de9264a0a4094"
   },
   {
     "file": "static/js/form.js",
