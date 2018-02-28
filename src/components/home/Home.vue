@@ -1,7 +1,7 @@
 <template>
   <div class="page has-footer">
     <mt-header title="首页">
-      <mt-button slot="left" class="fa fa-fw fa-bars"></mt-button>
+      <mt-button slot="left" @click="popupMenu = true" class="fa fa-fw fa-bars"></mt-button>
       <mt-button slot="right" @click="go('/page/login')" class="fa fa-fw fa-lock"></mt-button>
     </mt-header>
     
@@ -26,7 +26,20 @@
     <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
       <i class="fa fa-calendar-o"></i> 待办事项
     </mt-button>
+
     <timeline :items="timelines"></timeline>
+
+    <mt-popup v-model="popupMenu" position="left" style="width:80%;">
+      <mt-header title="菜单" fixed>
+        <mt-button @click="popupMenu = !popupMenu" slot="right" icon="back">隐藏</mt-button>
+      </mt-header>
+
+      <div class="has-header" style="overflow-y:auto;" :style="{height:screenHeight-40+'px'}">
+        <mt-cell @click.native="popupMenu = false;go(menu.url)" v-for="(menu, index) in menus" :key="index" :title="menu.name">
+          <i slot="icon" class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{verticalAlign:'middle', color:menu.color}"></i>
+        </mt-cell>                                                                                                                                          
+      </div>
+    </mt-popup>
   </div>
 </template>
 
@@ -48,6 +61,7 @@ export default {
       mini: false,
       temporary: true,
       right: null,
+      popupMenu: false,
       leftMenus: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' }
@@ -205,7 +219,16 @@ export default {
   },
   methods: {
     
-  }
+  },
+  watch:{
+    popupMenu(val){
+      if(val){
+        utils.ui.modal.afterOpen()
+      }else{
+        utils.ui.modal.beforeClose()
+      }
+    }
+  },
 }
 </script>
 <style type="text/css" scoped>
