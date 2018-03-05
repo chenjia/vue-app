@@ -4,6 +4,7 @@
 }
 input,textarea,select{
   -webkit-user-select: text;
+  outline-style: none;
 }
 body.modal-open {
   position: fixed;
@@ -26,9 +27,7 @@ body.modal-open {
 .pd-md{
   padding:10px;
 }
-input {
-  outline-style: none;
-}
+
 .tabs {
   position: relative;
 }
