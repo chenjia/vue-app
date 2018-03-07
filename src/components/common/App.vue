@@ -5,7 +5,7 @@
     </transition>
     <router-view></router-view>
     <transition name="slide-y" mode="out-in">
-      <mt-tabbar v-show="hasTabs" v-model="tab" fixed>
+      <mt-tabbar v-show="hasTabs" v-model="$store.state.common.ui.tab" fixed>
         <mt-tab-item v-for="(item,index) in tabs" :key="index" :id="item.id">
           <i slot="icon" class="fa" :class="item.icon" style="font-size:24px;"></i>
           {{item.text}}
@@ -20,35 +20,34 @@
 </template>
 
 <script>
-import {
-  mapGetters
-} from 'vuex'
+import { mapGetters } from 'vuex'
+import store from '../../vuex/store'
 export default {
   name: 'app',
   data(){
     return {
       transitionName: 'animate-in',
-      tab:'home',
+      tab:store.state.common.ui.tab || 'home',
       tabs:[{
         id:'home',
         icon:'fa-home',
         text:'首页',
-        url:'/page/home'
+        url:'home'
       },{
         id:'contacts',
         icon:'fa-address-book-o',
         text:'联系人',
-        url:'/page/home'
+        url:'contacts'
       },{
         id:'message',
         icon:'fa-envelope-o',
         text:'消息',
-        url:'/page/home'
+        url:'message'
       },{
-        id:'user',
+        id:'setting',
         icon:'fa-cog',
         text:'设置',
-        url:'/page/home'
+        url:'setting'
       }]
     }
   },
@@ -60,8 +59,15 @@ export default {
       'fixFooter',
       'isLoading'
     ])
+  },
+  watch:{
+    '$store.state.common.ui.tab'(val){
+      this.go({name:val})
+    }
+  },
+  mounted(){
+    
   }
-  
 }
 </script>
 

@@ -16,6 +16,7 @@ import map from './map'
 import dialog from './dialog'
 import chat from './chat'
 import video from './video'
+import setting from './setting'
 
 Vue.use(Router)
 
@@ -47,18 +48,20 @@ const router = new Router({
     ...map,
     ...dialog,
     ...chat,
-    ...video
+    ...video,
+    ...setting
     ]
   }]
 })
 router.beforeEach((to, from, next) => {
   store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)
   store.commit('TOGGLE_FOOTER', to.meta.hasFooter != false)
-  store.commit('TOGGLE_TABS', to.meta.hasTabs == true)
+  store.commit('TOGGLE_TABS', {flag:to.meta.hasTabs == true, tab:to.name})
   if (to.meta.login != false && !store.state.common.user) {
-    store.commit('TOGGLE_TOAST', {
-      toast: true,
-      toastMsg: '请先登录！'
+    store.commit('TOGGLE_POPUP', {
+      visible: true,
+      text: '请先登录！',
+      duration: 3000
     })
     next('/page/login')
   } else {

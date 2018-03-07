@@ -102,7 +102,7 @@ export default {
   },
   mounted(){
     this.doLogout()
-    this.getCaptcha()
+    // this.getCaptcha()
   }
 }
 </script>

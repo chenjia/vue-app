@@ -26,6 +26,7 @@ const state = {
     hasFooter: true,
     fixFooter: true,
     hasTabs: false,
+    tab: 'home',
     loading: false,
     popupTop: false,
     popupText: '',
@@ -87,8 +88,9 @@ const mutations = {
   [types.TOGGLE_FOOTER](state, flag) {
     state.ui.hasFooter = flag
   },
-  [types.TOGGLE_TABS](state, flag) {
-    state.ui.hasTabs = flag
+  [types.TOGGLE_TABS](state, params) {
+    state.ui.hasTabs = params.flag
+    state.ui.tab = params.tab
   },
   [types.TOGGLE_LOADING](state, flag) {
     state.ui.loading = flag
