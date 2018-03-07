@@ -6,7 +6,7 @@
     </mt-header>
 
     <div>
-      <mt-field label="用户名" placeholder="请输入用户名" v-model="model.username"></mt-field>
+      <mt-field label="账　号" placeholder="请输入用户名" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
       <mt-field label="验证码" v-model="model.captcha" placeholder="请输入验证码">
         <img @click="getCaptcha" :src="captchaBase64" height="36px" width="100px">
