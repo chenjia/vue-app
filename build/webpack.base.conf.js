@@ -33,7 +33,7 @@ module.exports = {
       loader: 'babel-loader',
       include: [resolve('src'), resolve('test')]
     }, {
-      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif)(\?.*)?$/,
       loader: 'url-loader',
       options: {
         limit: 10000,
@@ -47,7 +47,7 @@ module.exports = {
         name: utils.assetsPath('media/[name].[ext]')
       }
     }, {
-      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
       loader: 'url-loader',
       options: {
         limit: 10000,
