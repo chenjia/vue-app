@@ -71,11 +71,11 @@ export default {
 .line-icon{
 	position:relative;
 	top:22px;
-	left:-12px;
+	left:-13px;
 	text-align:center;
 	line-height:24px;
-	width:24px;
-	height:24px;
+	width:25px;
+	height:25px;
 	border-radius:50%;
 	box-shadow: 2px 2px 5px #888888;
 	color:#fff;

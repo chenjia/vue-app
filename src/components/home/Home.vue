@@ -62,6 +62,7 @@ export default {
       temporary: true,
       right: null,
       popupMenu: false,
+      ready: false,
       leftMenus: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' }
@@ -229,6 +230,9 @@ export default {
       }
     }
   },
+  mounted(){
+    
+  }
 }
 </script>
 <style type="text/css" scoped>

@@ -67,10 +67,10 @@ export default {
 </script>
 <style>
 .animate-out-leave-active,.animate-in-leave-active{
-  transition: all .25s ease-in;
+  transition: all .1s ease-in;
 }
 .animate-in-enter-active,.animate-out-enter-active{
-  transition: all .25s ease-out;
+  transition: all .1s ease-out;
 }
 .animate-in-enter, .animate-out-leave-to{
   transform: translateX(10%);

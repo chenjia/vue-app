@@ -15,7 +15,7 @@ Vue.filter('dateFilter', (value, simple = true) => {
 	}else if(type === 'object'){
 		let str = value.getFullYear() + '-' + fillZero(value.getMonth()+1) + '-' + fillZero(value.getDate())
 		if(!simple){
-			str = str + ' ' + fillZero(value.getHours()) + ':' + fillZero(value.getMinutes()) + ':' + fillZero(value.getSeconds())
+			str = str + ' ' + fillZero(value.getHours()) + ':' + fillZero(value.getMinutes())
 		}
 		value = str
 	}
