@@ -48,6 +48,10 @@
     "hash": "21aaf9f5a65df473c9bcc24db383342e"
   },
   {
+    "file": "static/img/icons_mobiscroll.svg",
+    "hash": "53e7b503046c9070d57db9897cfdac9e"
+  },
+  {
     "file": "static/img/lock-bg.jpg",
     "hash": "648f0f67fccc757d5cab6abd950ce054"
   },
@@ -65,7 +69,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "3c467b6f5a45cb2821122a0557d4ee41"
+    "hash": "278636a39aca6c786ee1cc73164b939d"
   },
   {
     "file": "static/js/calendar.js",
@@ -109,11 +113,11 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "16bb46303ef7c4ef000d9ef12df32cb3"
+    "hash": "2f184bde8601a63fdedcb83d3bcd4925"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "a6b09ee20d8580e988505aeea43157e5"
+    "hash": "55f8a1ca833a3b2b25900e3a9c384c8e"
   },
   {
     "file": "static/js/map.js",
@@ -124,12 +128,16 @@
     "hash": "a827f321d0b7802e2d7bf29186d7cba8"
   },
   {
+    "file": "static/js/setting.js",
+    "hash": "4547ab94b7965aae0ee00c5886016e83"
+  },
+  {
     "file": "static/js/tab.js",
     "hash": "89377e0530785d7b43e795c0158265ba"
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "915a136ce05b43c2d426365e119707d6"
+    "hash": "1be9e79111dafbd83f52214e132a59ac"
   },
   {
     "file": "static/js/video.js",
