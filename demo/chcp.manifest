@@ -16,6 +16,10 @@
     "hash": "6ed19d32ac6f73d37de8ad660a7f3c72"
   },
   {
+    "file": "static/fonts/icons_mobiscroll.svg",
+    "hash": "53e7b503046c9070d57db9897cfdac9e"
+  },
+  {
     "file": "static/fonts/icons_mobiscroll.ttf",
     "hash": "0daec2050452cd0a76c9845d3183ba6b"
   },
@@ -48,10 +52,6 @@
     "hash": "21aaf9f5a65df473c9bcc24db383342e"
   },
   {
-    "file": "static/img/icons_mobiscroll.svg",
-    "hash": "53e7b503046c9070d57db9897cfdac9e"
-  },
-  {
     "file": "static/img/lock-bg.jpg",
     "hash": "648f0f67fccc757d5cab6abd950ce054"
   },
@@ -73,7 +73,7 @@
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "9c960e6a3da16d5218c4d24f640fa11e"
+    "hash": "91c8352915e9f9f63d005ced2482d2ef"
   },
   {
     "file": "static/js/chart.js",
@@ -93,7 +93,7 @@
   },
   {
     "file": "static/js/form.js",
-    "hash": "66089cbe664a241b98e1a8580addfa55"
+    "hash": "9ab96d8136b433a5a793447a10a3f241"
   },
   {
     "file": "static/js/home.js",
