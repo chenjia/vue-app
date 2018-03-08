@@ -132,11 +132,11 @@ export default {
 div[class^="mint-spinner-"]{
   display:inline-block;
 }
-.fade{
+/*.fade{
   opacity:1;
   transition:all .2s ease-in .1s;
 }
 .fade.fade-out{
   opacity:0;
-}
+}*/
 </style>

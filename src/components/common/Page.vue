@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition :name="transitionName" mode="out-in">
+    <transition :name="transitionName">
       <keep-alive include="home">
         <router-view></router-view>
       </keep-alive>
@@ -67,17 +67,21 @@ export default {
 </script>
 <style>
 .animate-out-leave-active,.animate-in-leave-active{
-  transition: all .1s ease-in;
+  transition: all .3s;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:-1;
 }
 .animate-in-enter-active,.animate-out-enter-active{
-  transition: all .1s ease-out;
+  transition: all .3s;
 }
 .animate-in-enter, .animate-out-leave-to{
-  transform: translateX(10%);
+  transform: translateX(20%);
   opacity: 0;
 }
 .animate-out-enter, .animate-in-leave-to{
-  transform: translateX(-10%);
+  transform: translateX(-20%);
   opacity: 0;
 }
 /*.animate-in-enter>div{
