@@ -12,22 +12,6 @@
     "hash": "46f1856a3e55b496aeee54ea5f7698de"
   },
   {
-    "file": "static/fonts/icons_mobiscroll.eot",
-    "hash": "6ed19d32ac6f73d37de8ad660a7f3c72"
-  },
-  {
-    "file": "static/fonts/icons_mobiscroll.svg",
-    "hash": "53e7b503046c9070d57db9897cfdac9e"
-  },
-  {
-    "file": "static/fonts/icons_mobiscroll.ttf",
-    "hash": "0daec2050452cd0a76c9845d3183ba6b"
-  },
-  {
-    "file": "static/fonts/icons_mobiscroll.woff",
-    "hash": "396a83de38e1a68a67b3e7406017d6b2"
-  },
-  {
     "file": "static/html/baiduMap.html",
     "hash": "c515dee874f3df10183a62a6be312ca3"
   },
@@ -73,7 +57,7 @@
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "91c8352915e9f9f63d005ced2482d2ef"
+    "hash": "7e49f06b924dd1b9a11b14c1f38685e3"
   },
   {
     "file": "static/js/chart.js",
@@ -89,11 +73,11 @@
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "8558d18128b7a34a38562bcd430720d2"
+    "hash": "9959645f90686a83ffd3069ac6ee7060"
   },
   {
     "file": "static/js/form.js",
-    "hash": "9ab96d8136b433a5a793447a10a3f241"
+    "hash": "b98bd14f7e99b667293f628990d43e9e"
   },
   {
     "file": "static/js/home.js",
@@ -141,7 +125,7 @@
   },
   {
     "file": "static/js/video.js",
-    "hash": "cbbad3c279331cb063ccadd2351f8c9d"
+    "hash": "184506a59142408970abee600134f328"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",
