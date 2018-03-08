@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "c64322a131604f07b1235d467a7723f1"
+    "hash": "8ad5e4b9579c517dbef99135ec51d1b8"
   },
   {
     "file": "static/css/app.css",
@@ -109,7 +109,7 @@
   },
   {
     "file": "static/js/page.js",
-    "hash": "b78428a64031e97b44dc4af06458ec9a"
+    "hash": "d344cdab8569a39e71adb225f407d7d3"
   },
   {
     "file": "static/js/setting.js",

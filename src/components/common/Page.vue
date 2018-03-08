@@ -67,21 +67,21 @@ export default {
 </script>
 <style>
 .animate-out-leave-active,.animate-in-leave-active{
-  transition: all .3s;
+  transition: all .2s ease-out;
   position:absolute;
   top:0;
   width:100%;
   z-index:-1;
 }
 .animate-in-enter-active,.animate-out-enter-active{
-  transition: all .3s;
+  transition: all .2s ease-out;
 }
 .animate-in-enter, .animate-out-leave-to{
-  transform: translateX(20%);
+  transform: translateX(30%);
   opacity: 0;
 }
 .animate-out-enter, .animate-in-leave-to{
-  transform: translateX(-20%);
+  transform: translateX(-30%);
   opacity: 0;
 }
 /*.animate-in-enter>div{
