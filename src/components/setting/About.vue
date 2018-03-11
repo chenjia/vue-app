@@ -16,7 +16,7 @@
     	<mt-cell is-link @click.native="check()">
     		<span slot="title">
     			检查更新
-    			<mt-badge type="error" size="small">new</mt-badge>
+    			<mt-badge v-if="latest" type="error" size="small">new</mt-badge>
     		</span>
     	</mt-cell>
     </div>
@@ -24,11 +24,12 @@
 </template>
 
 <script>
+import store from '../../vuex/store'
 export default {
 	name: 'about',
 	data () {
 		return {
-
+			latest: false
 		}
 	},
 	methods: {
@@ -45,7 +46,10 @@ export default {
 	},
 	mounted () {
 		utils.version.getVersionInfo((err, versionInfo) => {
-			alert(JSON.stringify(versionInfo))
+			alert(versionInfo.currentWebVersion+'  '+store.state.common.app.version)
+			if(versionInfo.currentWebVersion != store.state.common.app.version){
+				this.latest = true
+			}
 		})
 	}
 }
