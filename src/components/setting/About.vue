@@ -44,7 +44,9 @@ export default {
     }
 	},
 	mounted () {
-
+		utils.version.getVersionInfo((err, versionInfo) => {
+			alert(JSON.stringify(versionInfo))
+		})
 	}
 }
 </script>

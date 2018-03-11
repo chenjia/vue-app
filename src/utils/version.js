@@ -3,9 +3,10 @@ import cache from './cache'
 import { MessageBox } from 'mint-ui'
 
 const version = {
-	getVersionInfo(){
+	getVersionInfo(callback){
+		if(!window.chcp){return}
 		chcp.getVersionInfo((err, versionInfo) => {
-			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+			callback(err, versionInfo)
 		})
 	},
 	fetchUpdate(){
@@ -30,7 +31,7 @@ const version = {
 					}else{
 						if(config.release != versionInfo.currentWebVersion){
 							MessageBox('版本提示（'+config.release+'）', config.description).then(action => {
-							  this.installUpdate(config)
+							  this.installUpdate(config, versionInfo)
 							})
 							setTimeout(()=>{
 								document.querySelector('.mint-msgbox-message').style.textAlign = 'left'
@@ -43,13 +44,14 @@ const version = {
 			})
 		})
 	},
-	installUpdate(config){
+	installUpdate(config, versionInfo){
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在安装新版本'})
 		chcp.installUpdate(error => {
 			if (error) {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '更新包安装失败', duration: 3000})
 				alert(JSON.stringify(error))
 	    } else {
+	    	store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
 	      store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 1000})
 	    }
 		})
@@ -57,7 +59,7 @@ const version = {
 }
 
 document.addEventListener("deviceready", () => {
-	version.getVersionInfo()
+	
 }, false)
 
 export default version
