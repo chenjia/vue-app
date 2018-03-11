@@ -21,7 +21,7 @@ const version = {
 			chcp.fetchUpdate((error, data) => {
 				store.commit('TOGGLE_POPUP', {visible: true, text: '正在下载新版本...'})
 				let config = JSON.parse(data.config)
-				if(config.native_version != window.native_version){
+				if(config.native_version != window.Config.native_version){
 					store.commit('TOGGLE_POPUP', {visible: true, text: '当前版本过低，请安装最新版本'})
 					alert('当前版本过低，请安装最新版本！')
 					window.open(Config.appUrl)
