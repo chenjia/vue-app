@@ -6,7 +6,7 @@
     </mt-header>
     
     <div>
-      <mt-swipe :auto="4000" :style="{height:screenWidth*0.6+'px'}">
+      <mt-swipe :auto="10000" :style="{height:screenWidth*0.6+'px'}">
         <mt-swipe-item v-for="(item,index) in banners" :key="index" :style="{textAlign:'center', height:screenWidth*0.6666+'px'}">
           <i :class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
         </mt-swipe-item>
