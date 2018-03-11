@@ -40,6 +40,10 @@
     "hash": "648f0f67fccc757d5cab6abd950ce054"
   },
   {
+    "file": "static/img/logo.png",
+    "hash": "c2a605fbc0e687b2e1b4b90a7c445cdd"
+  },
+  {
     "file": "static/img/male.png",
     "hash": "e87bc8352357bc263d34e56889cfcd0d"
   },
@@ -52,8 +56,12 @@
     "hash": "f857b3f089b373e79a9a2a6d4586cc8a"
   },
   {
+    "file": "static/js/about.js",
+    "hash": "3060204d8fd7c5216cadab1cb785be3c"
+  },
+  {
     "file": "static/js/app.js",
-    "hash": "ada7cad16cceeb683451d4c04e8dc20d"
+    "hash": "cf3d1ddefa877a228465bb87b04c0213"
   },
   {
     "file": "static/js/calendar.js",
@@ -81,7 +89,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "4989d309d000ce41a60fd9700440805e"
+    "hash": "f3b8a330cb53f4c9c9963f124536295f"
   },
   {
     "file": "static/js/list.js",
@@ -97,11 +105,11 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "c89112fe0056d2d8c670ca8d70de5ff4"
+    "hash": "f816ce3e0d9268defe22f06520fc3dd8"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "55f8a1ca833a3b2b25900e3a9c384c8e"
+    "hash": "2f2ad29346ad22114b3459dbf0b54188"
   },
   {
     "file": "static/js/map.js",
@@ -109,11 +117,11 @@
   },
   {
     "file": "static/js/page.js",
-    "hash": "40c598f3f2d55d9dc32c89468d08a264"
+    "hash": "a9178a5e1605eaa344f22f8c56bbf5ee"
   },
   {
     "file": "static/js/setting.js",
-    "hash": "6a2c3297b6f1e96845187dde5ad42451"
+    "hash": "b25357345c7148b99982739b2ec557db"
   },
   {
     "file": "static/js/tab.js",
@@ -121,11 +129,11 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "7e7f195e16aee3f94d89dd7295e88bee"
+    "hash": "4c43fd5cb24d2df8b3a5fcc3fed0aff2"
   },
   {
     "file": "static/js/video.js",
-    "hash": "184506a59142408970abee600134f328"
+    "hash": "a82b0af23904072b66a45055e041d76f"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",

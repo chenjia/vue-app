@@ -27,6 +27,7 @@
 
 <script>
 import { Indicator } from 'mint-ui';
+import store from '../../vuex/store'
 import {
   mapGetters,
   mapMutations
@@ -64,6 +65,7 @@ export default {
       })
 
       setTimeout(()=>{
+        store.commit('LOGIN', {user:this.model})
         Indicator.close()
         this.go('/page/home')
       },Math.random()*3000)

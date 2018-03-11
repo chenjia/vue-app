@@ -73,11 +73,11 @@ export default {
   transition: all .2s ease-out;
 }
 .animate-in-enter, .animate-out-leave-to{
-  transform: translateX(10%);
+  transform: translateX(15%);
   opacity: 0;
 }
 .animate-out-enter, .animate-in-leave-to{
-  transform: translateX(-10%);
+  transform: translateX(-15%);
   opacity: 0;
 }
 /*.animate-in-enter>div{

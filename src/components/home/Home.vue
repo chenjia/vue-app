@@ -192,9 +192,9 @@ export default {
           date.setHours(20, 0, 0, 0)
           return date < new Date()
         })(),
-        title:'聚会',
-        content:'公司年会',
-        icon:'fa fa-glass'
+        title:'生日',
+        content:'朋友生日，一起庆祝',
+        icon:'fa fa-birthday-cake'
       },{
         time:(()=>{
           let date = new Date()

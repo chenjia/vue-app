@@ -34,10 +34,10 @@ export default {
         text:'首页',
         url:'home'
       },{
-        id:'contacts',
+        id:'contact',
         icon:'fa-address-book-o',
         text:'联系人',
-        url:'contacts'
+        url:'contact'
       },{
         id:'message',
         icon:'fa-envelope-o',
