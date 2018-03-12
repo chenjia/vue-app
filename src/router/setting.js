@@ -6,9 +6,10 @@ export default [{
     hasFooter: true
   },
   component(r) {
-    require.ensure([], () => {
-      r(require('../components/setting/Setting.vue'))
-    }, 'setting')
+    require.ensure([], () => {r(require('../components/setting/Setting.vue'))}, 'setting')
+    setTimeout(()=>{
+      require(['../components/setting/About.vue'])
+    },500)
   }
 },{
   name: 'about',

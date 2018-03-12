@@ -46,7 +46,6 @@ export default {
 	},
 	mounted () {
 		utils.version.getVersionInfo((err, versionInfo) => {
-			alert(versionInfo.currentWebVersion+'  '+store.state.common.app.version)
 			if(versionInfo.currentWebVersion != store.state.common.app.version){
 				this.latest = true
 			}
