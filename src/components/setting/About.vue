@@ -58,6 +58,7 @@ export default {
           let config = JSON.parse(data.config)
           console.log(config.release +'   '+ store.state.common.app.version)
           if(config.release != store.state.common.app.version){
+            alert(5)
             this.latest = true
           }
         }
