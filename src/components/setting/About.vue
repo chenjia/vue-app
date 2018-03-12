@@ -62,6 +62,8 @@ export default {
             this.latest = true
           }
         }
+      }, {
+        'config-file': Config.chcpUrl
       })
     }
 	}
