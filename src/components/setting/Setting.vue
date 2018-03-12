@@ -52,7 +52,7 @@ export default {
       })
 		},
     debug(){
-      if(!eruda){
+      if(!window.eruda){
         axios({
           method:'get',
           url:'http://cdn.jsdelivr.net/npm/eruda',
