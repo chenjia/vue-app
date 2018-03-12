@@ -47,7 +47,9 @@ export default {
 	mounted () {
     if(window.chcp){
       chcp.fetchUpdate((error, data) => {
+
         let config = JSON.parse(data.config)
+        alert(config.release +'   '+ store.state.common.app.version)
         if(config.release != store.state.common.app.version){
           this.latest = true
         }
