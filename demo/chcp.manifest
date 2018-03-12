@@ -1,5 +1,9 @@
 [
   {
+    "file": "cordova.js",
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
     "file": "index.html",
     "hash": "e05c2794cb1af03316e54ae7699cf644"
   },
@@ -61,7 +65,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "772876f0ee776423f98ef2c716fa3c9d"
+    "hash": "f29c8d44e9aaa6136a5c3a638b50cb50"
   },
   {
     "file": "static/js/calendar.js",
