@@ -19,6 +19,7 @@
     	<mt-cell title="新消息通知" is-link></mt-cell>
     	<mt-cell title="隐私" is-link></mt-cell>
     	<mt-cell title="通用" is-link></mt-cell>
+        <mt-cell title="调试" is-link @click.native="debug()"></mt-cell>
     </div>
     
     <div class="list-group">
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { MessageBox } from 'mint-ui'
 export default {
 	name: 'setting',
@@ -48,7 +50,17 @@ export default {
       },action => {
         console.log(action)
       })
-		}
+		},
+    debug(){
+      axios({
+        method:'get',
+        url:'http://cdn.jsdelivr.net/npm/eruda',
+        responseType:'application/script'
+      }).then(function(response) {
+        eval(response.data)
+        eruda.init()
+      });
+    }
 	},
 	mounted () {
 
