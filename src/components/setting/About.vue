@@ -48,10 +48,10 @@ export default {
     if(window.chcp){
       chcp.fetchUpdate((error, data) => {
         if(data){
-          alert(JSON.stringify(error))
-          alert(JSON.stringify(data))
+          console.log(error)
+          console.log(data)
           let config = JSON.parse(data.config)
-          alert(config.release +'   '+ store.state.common.app.version)
+          console.log(config.release +'   '+ store.state.common.app.version)
           if(config.release != store.state.common.app.version){
             this.latest = true
           }
