@@ -47,6 +47,8 @@ export default {
 	mounted () {
     if(window.chcp){
       chcp.fetchUpdate((error, data) => {
+        alert('in')
+        console.log(data)
         if(data){
           console.log(error)
           console.log(data)
