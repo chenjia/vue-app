@@ -20,6 +20,7 @@ export default [{
       require(['../components/lock/Lock.vue'])
       require(['../components/map/Map.vue'])
       require(['../components/tab/Tab.vue'])
+      require(['../components/setting/Setting.vue'])
     },500)
   }
 }]
