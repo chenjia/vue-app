@@ -45,20 +45,15 @@ export default {
     }
 	},
 	mounted () {
-    alert(1)
     if(window.chcp){
-      alert(2)
       chcp.fetchUpdate((error, data) => {
-        alert(3)
         console.log(data)
         if(data){
-          alert(4)
           console.log(error)
           console.log(data)
           let config = JSON.parse(data.config)
           console.log(config.release +'   '+ store.state.common.app.version)
           if(config.release != store.state.common.app.version){
-            alert(5)
             this.latest = true
           }
         }
