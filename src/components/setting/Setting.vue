@@ -52,14 +52,16 @@ export default {
       })
 		},
     debug(){
-      axios({
-        method:'get',
-        url:'http://cdn.jsdelivr.net/npm/eruda',
-        responseType:'application/script'
-      }).then(function(response) {
-        eval(response.data)
-        eruda.init()
-      });
+      if(!eruda){
+        axios({
+          method:'get',
+          url:'http://cdn.jsdelivr.net/npm/eruda',
+          responseType:'application/script'
+        }).then(function(response) {
+          eval(response.data)
+          eruda.init()
+        });
+      }
     }
 	},
 	mounted () {
