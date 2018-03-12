@@ -45,11 +45,14 @@ export default {
     }
 	},
 	mounted () {
-		utils.version.getVersionInfo((err, versionInfo) => {
-			if(versionInfo.currentWebVersion != store.state.common.app.version){
-				this.latest = true
-			}
-		})
+    if(window.chcp){
+      chcp.fetchUpdate((error, data) => {
+        let config = JSON.parse(data.config)
+        if(config.release != store.state.common.app.version){
+          this.latest = true
+        }
+      })
+    }
 	}
 }
 </script>

@@ -9,11 +9,6 @@ const version = {
 			callback(err, versionInfo)
 		})
 	},
-	updateVersionInfo(){
-		version.getVersionInfo((err, versionInfo) => {
-			store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
-		})
-	},
 	fetchUpdate(){
 		if(!window.chcp){return}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
@@ -63,7 +58,9 @@ const version = {
 }
 
 document.addEventListener("deviceready", () => {
-	version.updateVersionInfo()
+	version.getVersionInfo((err, versionInfo) => {
+		store.commit('UPDATE_VERSION', versionInfo.currentWebVersion)
+	})
 }, false)
 
 export default version
