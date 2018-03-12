@@ -39,10 +39,10 @@ export default {
         text:'联系人',
         url:'contact'
       },{
-        id:'message',
+        id:'list',
         icon:'fa-envelope-o',
         text:'消息',
-        url:'message'
+        url:'list'
       },{
         id:'setting',
         icon:'fa-cog',
