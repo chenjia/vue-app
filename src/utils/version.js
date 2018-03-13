@@ -10,7 +10,7 @@ const version = {
 	},
 	fetchUpdate(){
 		console.log('fetchUpdate')
-		if(!window.chcp){return}
+		if(!window.chcp){alert(window.chcp); return false}
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
 			chcp.fetchUpdate((error, data) => {
