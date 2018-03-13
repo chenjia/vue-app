@@ -4,10 +4,9 @@ import { MessageBox } from 'mint-ui'
 
 const version = {
 	getVersionInfo(callback){
-		if(!window.chcp){return}
-		chcp.getVersionInfo((err, versionInfo) => {
-			callback(err, versionInfo)
-		})
+		if(window.chcp){
+			chcp.getVersionInfo(callback)
+		}
 	},
 	fetchUpdate(){
 		if(!window.chcp){return}
