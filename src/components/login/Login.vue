@@ -12,7 +12,7 @@
         <img @click="getCaptcha" :src="captchaBase64" height="36px" width="100px">
       </mt-field>
       <div class="pd-md">
-        <mt-button @click="login" type="primary" size="large">登录</mt-button>
+        <mt-button @click="login" type="primary" size="large">登　录</mt-button>
       </div>
       <mt-field label="服务器地址" v-model="server"></mt-field>
       <mt-field label="热更新地址" v-model="chcpUrl"></mt-field>
