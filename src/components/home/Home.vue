@@ -75,7 +75,7 @@ export default {
       },{
         icon: 'fa fa-opera'
       },{
-        icon: 'fa fa-edge'
+        icon: 'fa fa-internet-explorer'
       }],
       menus: [{
         name: '列表',

@@ -70,7 +70,7 @@ export default {
   transition: all .2s ease-in;
 }
 .animate-in-enter-active,.animate-out-enter-active{
-  transition: all .2s ease-out;
+  transition: all .2s ease-out .1s;
 }
 .animate-in-enter, .animate-out-leave-to{
   transform: translateX(15%);
