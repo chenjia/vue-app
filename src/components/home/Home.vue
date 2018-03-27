@@ -27,7 +27,7 @@
       <i class="fa fa-calendar-o"></i> 待办事项
     </mt-button>
 
-    <timeline :items="timelines"></timeline>
+    <timeline v-if="ready" :items="timelines"></timeline>
 
     <mt-popup v-model="popupMenu" position="left" style="width:80%;">
       <mt-header title="菜单" fixed>
@@ -68,15 +68,7 @@ export default {
         { title: 'About', icon: 'question_answer' }
       ],
       banners: [{
-        icon: 'fa fa-list'
-      },{
-        icon: 'fa fa-bar-chart'
-      },{
-        icon: 'fa fa-address-book-o'
-      },{
-        icon: 'fa fa-list-alt'
-      },{
-        icon: 'fa fa-folder'
+        icon: 'fa fa-chrome'
       }],
       menus: [{
         name: '列表',
@@ -231,7 +223,21 @@ export default {
     }
   },
   mounted(){
-    
+    setTimeout(()=>{
+      this.banners.push({
+        icon: 'fa fa-firefox'
+      })
+      this.banners.push({
+        icon: 'fa fa-safari'
+      })
+      this.banners.push({
+        icon: 'fa fa-opera'
+      })
+      this.banners.push({
+        icon: 'fa fa-edge'
+      })
+      this.ready = true
+    },500)
   }
 }
 </script>
