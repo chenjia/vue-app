@@ -93,9 +93,6 @@ export default {
           fade:true
         }
         this.list.push(item)
-        setTimeout(()=>{
-          item.fade = false
-        },100)
       }
 
       this.length += count
@@ -104,7 +101,7 @@ export default {
       this.list.splice(index,1)
     }
   },
-  mounted(){
+  created(){
     this.add(5)
   }
 }

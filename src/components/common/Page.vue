@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition :name="transitionName">
+    <transition :name="transitionName" mode="out-in">
       <keep-alive include="home">
         <router-view></router-view>
       </keep-alive>
