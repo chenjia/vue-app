@@ -6,11 +6,11 @@
     </mt-header>
     
     <div>
-      <mt-swipe :auto="10000" :style="{height:screenWidth*0.6+'px'}">
+      <!-- <mt-swipe :auto="10000" :style="{height:screenWidth*0.6+'px'}">
         <mt-swipe-item v-for="(item,index) in banners" :key="index" :style="{textAlign:'center', height:screenWidth*0.6666+'px'}">
           <i :class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
         </mt-swipe-item>
-      </mt-swipe>
+      </mt-swipe> -->
       <table class="icon-table">
         <tr v-if="index%4 == 0" v-for="(menu, index) in menus" :key="index">
           <td v-if="i>=index && i<index+4" v-for="(menu, i) in menus" style="width:25%;">
@@ -27,7 +27,7 @@
       <i class="fa fa-calendar-o"></i> 待办事项
     </mt-button>
 
-    <timeline :items="timelines"></timeline>
+    <!-- <timeline :items="timelines"></timeline> -->
 
     <mt-popup v-model="popupMenu" position="left" style="width:80%;">
       <mt-header title="菜单" fixed>
