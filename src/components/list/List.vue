@@ -22,7 +22,7 @@
             <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
           </span>
         </div>
-        <mt-cell-swipe class="fade" :class="{'fade-out':item.fade}" v-for="(item,index) in list" :key="index" :title="item.name" value="带链接" :right="[{
+        <mt-cell-swipe class="fade" :class="{'fade-out':item.fade}" v-for="(item,index) in list" :key="index" :title="item.name" label="http://chenjia.github.io/vue-app" is-link value="带链接" :right="[{
           content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
           style: { background: '#ef4f4f', color: '#fff' },
           handler: () => swipeItem(index)
