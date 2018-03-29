@@ -36,12 +36,12 @@ export default {
       },{
         id:'contact',
         icon:'fa-address-book-o',
-        text:'联系人',
+        text:'通讯录',
         url:'contact'
       },{
-        id:'list',
-        icon:'fa-envelope-o',
-        text:'消息',
+        id:'calendar',
+        icon:'fa-calendar',
+        text:'日历',
         url:'list'
       },{
         id:'setting',

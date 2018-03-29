@@ -1,5 +1,5 @@
 <template>
-  <div style="position:absolute;background:#eee;width:100%;height:100%;">
+  <div style="position:absolute;overflow-y:auto;background:#eee;width:100%;height:100%;">
     <mt-header title="设置">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
@@ -29,7 +29,6 @@
     <div style="padding:20px">
     	<mt-button @click="logout()" type="danger" size="large">退出登录</mt-button>
     </div>
-    
   </div>
 </template>
 
