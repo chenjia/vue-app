@@ -66,7 +66,7 @@ export default {
 	height:6px;
 	border-radius:50%;
 	background:#fff;
-	border:3px solid #26a2ff;
+	border:3px solid #87cefa;
 }
 .line-icon{
 	position:relative;
