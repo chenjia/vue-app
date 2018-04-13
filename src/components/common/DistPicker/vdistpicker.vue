@@ -133,8 +133,8 @@ export default {
     }
   },
   watch: {
-    currentProvince(vaule) {
-      this.$emit('province', this.setData(vaule))
+    currentProvince(value) {
+      this.$emit('province', this.setData(value))
       if (this.onlyProvince) this.emit('selected')
     },
     currentCity(value) {

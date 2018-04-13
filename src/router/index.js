@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '../vuex/store'
+import Page from '../components/common/Page'
 
 import login from './login'
 import home from './home'
@@ -32,9 +33,7 @@ const router = new Router({
     redirect: '/page/login'
   },{
     path: '/page',
-    component: function(resolve) {
-      require.ensure([], () => resolve(require('../components/common/Page.vue')), 'page')
-    },
+    component: Page,
     children:[
     ...login,
     ...home,
