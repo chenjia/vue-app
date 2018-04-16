@@ -4,7 +4,8 @@ export default [{
   meta: {
     login: false,
     hasFooter: false,
-    hasTabs: true
+    hasTabs: true,
+    keepAlive:true
   },
   component(r) {
     require.ensure([], () => r(require('../components/home/Home.vue')), 'home')

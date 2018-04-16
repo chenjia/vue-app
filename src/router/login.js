@@ -1,14 +1,18 @@
+import Login from '../components/login/Login.vue'
+
 export default [{
   name: 'login',
   path: 'login',
   meta: {
     login: false,
-    hasFooter: true
+    hasFooter: true,
+    keepAlive:true
   },
-  component(r) {
+  component:Login,
+  beforeEnter(to, from, next){
     require.ensure([], () => {
-      r(require('../components/login/Login.vue'))
       require(['../components/home/Home.vue'])
     }, 'login')
+    next()
   }
 }]

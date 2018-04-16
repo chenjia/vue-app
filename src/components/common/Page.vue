@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition :name="transitionName" mode="out-in">
-      <keep-alive include="home">
+      <keep-alive :include="keepAlive">
         <router-view></router-view>
       </keep-alive>
     </transition>
@@ -26,6 +26,7 @@ export default {
       urlArray.push('/page/login', '/page/home', path)
     }
     return {
+      keepAlive:['login','home'],
       urlArray:urlArray,
       transitionName: 'animate-in'
     }
@@ -40,6 +41,7 @@ export default {
     ])
   },
   beforeRouteUpdate (to, from, next) {
+    console.log(123)
     if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
       this.$router.isBack = true
     }
@@ -50,6 +52,10 @@ export default {
       this.$router.isBack = false
     } else {
       this.transitionName = 'animate-in'
+    }
+
+    if(to.meta.keepAlive && this.keepAlive.indexOf(to.meta.name) == -1){
+      this.keepAlive.push(to.name)
     }
 
     next()
