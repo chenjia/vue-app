@@ -1,18 +1,20 @@
 <template>
-	<div style="position:absolute;width:100%;height:100%;text-align:center;background-size: 100% 100%;background-image:url(./static/img/lock-bg.jpg)">
-		<div class="mhn-lock-title">
-			<span :class="{'mhn-lock-stable':lock.state=='stable','mhn-lock-success':lock.state=='success','mhn-lock-failure':lock.state=='failure'}">{{lock.title}}</span>
-		</div>
-		<div class="mhn-lock-demo">
-			<table :class="{'shake':lock.state=='failure'}" cellspacing="6">
-				<tr v-for="i in 3">
-					<td :class="{'mhn-lock-selected':lock.prevPattern&&(lock.prevPattern.indexOf((i-1)*3+j) != -1)}" v-for="j in 3"></td>
-				</tr>
-			</table>
-		</div>
-		<div class="mhn-lock-wrap">
-			<div class="mhn-lock" :class="{'patt-success':lock.state=='success','patt-error':lock.state=='failure'}"></div>
-		</div>
+	<div style="position:absolute;width:100%;display:table;height:100%;text-align:center;background-size: 100% 100%;background-image:url(./static/img/lock-bg.jpg)">
+		<div style="display:table-cell;vertical-align:middle;">
+      <div class="mhn-lock-title">
+        <span :class="{'mhn-lock-stable':lock.state=='stable','mhn-lock-success':lock.state=='success','mhn-lock-failure':lock.state=='failure'}">{{lock.title}}</span>
+      </div>
+      <div class="mhn-lock-demo">
+        <table :class="{'shake':lock.state=='failure'}" cellspacing="6">
+          <tr v-for="i in 3">
+            <td :class="{'mhn-lock-selected':lock.prevPattern&&(lock.prevPattern.indexOf((i-1)*3+j) != -1)}" v-for="j in 3"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="mhn-lock-wrap">
+        <div class="mhn-lock" :class="{'patt-success':lock.state=='success','patt-error':lock.state=='failure'}"></div>
+      </div>
+    </div>
 	</div>
 </template>
 <script>

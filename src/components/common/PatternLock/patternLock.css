@@ -77,7 +77,6 @@
    z-index: 100;
  }
  .mhn-lock-title {
-  margin-top:30px;
   font-size:18px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .5)
@@ -94,7 +93,7 @@
   color: #f34235;
 }
 .mhn-lock-demo{
-  margin-top:30px;
+  margin-top:40px;
   text-align:center;
 }
 .mhn-lock-demo table{
@@ -110,7 +109,7 @@
   background:#26a2ff;
 }
 .shake td{
-  background:#f34235;
+  background:rgba(243,66,53,.8);
 }
 .mhn-lock {
   background: 0 0

@@ -5,7 +5,7 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "31c79a7b344d2734a8f53cbda5c8c42d"
+    "hash": "d146103f6174e76224e90b24ad07d3b9"
   },
   {
     "file": "static/css/main.css",
@@ -61,11 +61,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "c5143f70d5ad71e0d1829856f074ec22"
+    "hash": "674ea0b25c78415b9a1ade1231619978"
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "7e49f06b924dd1b9a11b14c1f38685e3"
+    "hash": "d9fb8b7c7778226fd4e8825701f3b3e4"
   },
   {
     "file": "static/js/chart.js",
@@ -73,23 +73,27 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "e53e6fe7e40e85967e95ad3927a6704b"
+    "hash": "6be3828e97890dc6542b12ffaeebce63"
   },
   {
     "file": "static/js/contact.js",
     "hash": "957e6ea740fc9ed925103ff069c65da2"
   },
   {
+    "file": "static/js/demo.js",
+    "hash": "ab3864046f90a25923f9309bb9a6dd97"
+  },
+  {
     "file": "static/js/dialog.js",
-    "hash": "9959645f90686a83ffd3069ac6ee7060"
+    "hash": "9df32afcfc2cf426ff662f8a441c044e"
   },
   {
     "file": "static/js/form.js",
-    "hash": "b98bd14f7e99b667293f628990d43e9e"
+    "hash": "ee2de547998deccccc5121cc56b7d111"
   },
   {
     "file": "static/js/home.js",
-    "hash": "2647bbc41978f577aaa2aaec2d45a760"
+    "hash": "510cba6bb648102e899b42384a89022b"
   },
   {
     "file": "static/js/list.js",
@@ -101,23 +105,15 @@
   },
   {
     "file": "static/js/lock.js",
-    "hash": "ea24d51e2060a7db620bb45f95b3d6d3"
-  },
-  {
-    "file": "static/js/login.js",
-    "hash": "6cbf64e2015ec40ae5cc38200576435e"
+    "hash": "a9551f772f79c5388ad59c14d84e74e5"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "54d8e506a4744ce92d0b650c9baac84a"
+    "hash": "135fa99ef7280616e711b72dc0740f28"
   },
   {
     "file": "static/js/map.js",
     "hash": "22d3eb8670ac962d13fec8628b25e265"
-  },
-  {
-    "file": "static/js/page.js",
-    "hash": "12636a0ea14149a0907b2ec9ad135f2c"
   },
   {
     "file": "static/js/setting.js",
@@ -129,7 +125,7 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "4c43fd5cb24d2df8b3a5fcc3fed0aff2"
+    "hash": "7e7f195e16aee3f94d89dd7295e88bee"
   },
   {
     "file": "static/js/video.js",
@@ -162,10 +158,6 @@
   {
     "file": "static/lib/font-awesome/fonts/FontAwesome.otf",
     "hash": "0d2717cd5d853e5c765ca032dfd41a4d"
-  },
-  {
-    "file": "static/lib/H5lock/src/H5lock.js",
-    "hash": "b703023b503801ef4692281157dd1321"
   },
   {
     "file": "static/lib/mobiscroll/css/icons_mobiscroll.eot",
