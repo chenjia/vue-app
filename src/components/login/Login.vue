@@ -13,6 +13,7 @@
       </mt-field>
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登　录</mt-button>
+        <br/><mt-button @click="test" type="primary" size="large">test</mt-button>
       </div>
       <mt-field label="服务器地址" v-model="server"></mt-field>
       <mt-field label="热更新地址" v-model="chcpUrl"></mt-field>
@@ -92,6 +93,14 @@ export default {
     },
     check(){
       utils.version.fetchUpdate()
+    },
+    test(){
+      console.log('getCurrentPosition')
+      navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position)
+      },function(err){
+        console.log(err)
+      },{ enableHighAccuracy: true })
     }
   },
   watch:{
