@@ -41,7 +41,6 @@ export default {
     ])
   },
   beforeRouteUpdate (to, from, next) {
-    console.log(123)
     if(this.urlArray.length>1 && this.urlArray[this.urlArray.length-2] == to.path){
       this.$router.isBack = true
     }

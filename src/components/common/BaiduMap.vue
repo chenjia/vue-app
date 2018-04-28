@@ -23,6 +23,7 @@
         const map = new BMap.Map("mapBox")
         map.centerAndZoom(new BMap.Point(121.506396,31.24495),15)
         navigator.geolocation.getCurrentPosition(function(position){
+          console.log(position)
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
           const gpsPoint = new BMap.Point(currentLon, currentLat)
