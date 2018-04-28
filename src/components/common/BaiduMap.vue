@@ -22,8 +22,10 @@
       window.mapCallback = BMap => {
         const map = new BMap.Map("mapBox")
         map.centerAndZoom(new BMap.Point(121.506396,31.24495),15)
+        alert('正则获取GPS坐标...')
         navigator.geolocation.getCurrentPosition(function(position){
           console.log(position)
+          alert('获取GPS坐标成功')
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
           const gpsPoint = new BMap.Point(currentLon, currentLat)
@@ -42,7 +44,7 @@
           })
         }, function(err){
           console.log(err)
-          alert(err.message)
+          alert(JSON.stringify(err))
         })
       }
     }
