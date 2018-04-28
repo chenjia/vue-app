@@ -105,7 +105,7 @@
   },
   {
     "file": "static/js/lock.js",
-    "hash": "a9551f772f79c5388ad59c14d84e74e5"
+    "hash": "4324db8fff2aa0dfb344585d3088415c"
   },
   {
     "file": "static/js/manifest.js",
@@ -186,5 +186,13 @@
   {
     "file": "static/media/movie.ogg",
     "hash": "62a4fde860f3d9aa9d3f05d0b14ef554"
+  },
+  {
+    "file": "static/pdf.html",
+    "hash": "7159d2a2bcf489e264eda774d6fefc15"
+  },
+  {
+    "file": "static/test.pdf",
+    "hash": "37739887f28aaeb59866b5627d43a8b4"
   }
 ]

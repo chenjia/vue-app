@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{height:screenHeight+'px'}">
     <mt-header title="手势解锁">
       <mt-button @click="toHome" slot="left" icon="back">返回</mt-button>
     </mt-header>
