@@ -14,7 +14,7 @@
 <script>
   import baiduMap from '../common/BaiduMap.vue'
   export default {
-    name: 'map',
+    name: 'Map',
     components:{
       baiduMap
     },
