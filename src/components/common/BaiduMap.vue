@@ -42,6 +42,7 @@
           })
         }, function(err){
           console.log(err)
+          alert('获取地理位置坐标失败！')
         })
       }
     }
