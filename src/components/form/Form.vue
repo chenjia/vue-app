@@ -9,6 +9,8 @@
       <MultiPicker label="编程语言" placeholder="请选择编程语言" v-model="language" :data="pickerItems" />
       <DatePicker label="开始日期" v-model="beginDate" :end="endDate"/>
       <DatePicker label="结束日期" v-model="endDate" :begin="beginDate"/>
+      <DatePicker label="日期时段" v-model="dateRange" :options="dateOptions"/>
+      <DatePicker label="选择月份" v-model="dateMonth" :options="{type:'month'}"/>
       <DatePicker label="开始时间" v-model="beginDatetime" type="datetime" :end="endDatetime"/>
       <DatePicker label="结束时间" v-model="endDatetime" type="datetime" :begin="beginDatetime"/>
       <DistPicker label="家庭住址" v-model="dist"/>
@@ -77,6 +79,21 @@ export default {
       endDate:'2018-02-18',
       beginDatetime:'2018-03-18 10:00',
       endDatetime:'2018-03-20 15:00',
+      dateRange:'2010-01-01 上午',
+      dateOptions:{
+        type:'hour',
+        labels:["年", "月", "日", "时段"],
+        customData:{
+          "h":[{
+            "text":"上午",
+            "value":"上午"
+          },{
+            "text":"下午",
+            "value":"下午"
+          }]
+        }
+      },
+      dateMonth:'2010-01',
       dist:'',
       job:'',
       gender: 'M',

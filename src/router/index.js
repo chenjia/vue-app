@@ -18,7 +18,6 @@ import dialog from './dialog'
 import chat from './chat'
 import video from './video'
 import setting from './setting'
-import demo from './demo'
 
 Vue.use(Router)
 
@@ -49,8 +48,7 @@ const router = new Router({
     ...dialog,
     ...chat,
     ...video,
-    ...setting,
-    ...demo
+    ...setting
     ]
   }]
 })

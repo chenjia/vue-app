@@ -5,11 +5,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "d146103f6174e76224e90b24ad07d3b9"
+    "hash": "840574ad101b0f784989b5ce3a8a8c8c"
   },
   {
     "file": "static/css/main.css",
-    "hash": "46f1856a3e55b496aeee54ea5f7698de"
+    "hash": "df529c1e562b8d8862015ed8a5591f54"
   },
   {
     "file": "static/html/baiduMap.html",
@@ -61,7 +61,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "4a57249453edfddbe2307325f7ac0a15"
+    "hash": "1c7119f4af5a5d5630df95876cc31c71"
   },
   {
     "file": "static/js/calendar.js",
@@ -80,16 +80,12 @@
     "hash": "957e6ea740fc9ed925103ff069c65da2"
   },
   {
-    "file": "static/js/demo.js",
-    "hash": "ab3864046f90a25923f9309bb9a6dd97"
-  },
-  {
     "file": "static/js/dialog.js",
     "hash": "9df32afcfc2cf426ff662f8a441c044e"
   },
   {
     "file": "static/js/form.js",
-    "hash": "5c63bf2c05397ab9977fc1fe09515713"
+    "hash": "00513cb80b262ebc23acc50e05060652"
   },
   {
     "file": "static/js/home.js",
@@ -109,7 +105,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "135fa99ef7280616e711b72dc0740f28"
+    "hash": "1d1288c28d4f00a7921d093c282703bb"
   },
   {
     "file": "static/js/map.js",
@@ -125,11 +121,11 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "7e7f195e16aee3f94d89dd7295e88bee"
+    "hash": "5fc78e318b77b6a430b8b788a31291c9"
   },
   {
     "file": "static/js/video.js",
-    "hash": "a82b0af23904072b66a45055e041d76f"
+    "hash": "efb8c23f980c3330ef2bcd48a8ebb520"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",

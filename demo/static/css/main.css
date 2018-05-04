@@ -159,6 +159,12 @@ form .mint-field-core{
   text-align: center;
   color: #fff;
 }
+.mt-range-runway{
+  border-top-width:2px!important;
+}
+.mt-range-progress{
+  height:2px!important;
+}
 .mint-actionsheet-listitem{
   color:#26a2ff;
   font-size:16px;

@@ -70,7 +70,7 @@ export default {
 </style>
 <style type="text/css">
 .distpicker-address-wrapper{
-	color:#666!important;
+	color:#888!important;
 }
 .distpicker-address-wrapper .address-header ul li.active{
 	color:#26a2ff!important;
