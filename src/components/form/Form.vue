@@ -6,8 +6,11 @@
     <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
-      <picker label="编程语言" v-model="language" :data="pickerItems" />
-      <datepicker label="出生日期" v-model="date"/>
+      <MultiPicker label="编程语言" placeholder="请选择编程语言" v-model="language" :data="pickerItems" />
+      <DatePicker label="开始日期" v-model="beginDate" :end="endDate"/>
+      <DatePicker label="结束日期" v-model="endDate" :begin="beginDate"/>
+      <DatePicker label="开始时间" v-model="beginDatetime" type="datetime" :end="endDatetime"/>
+      <DatePicker label="结束时间" v-model="endDatetime" type="datetime" :begin="beginDatetime"/>
       <distpicker label="家庭住址" v-model="dist"/>
       <jobpicker label="职业" v-model="job"/>
       <mt-cell class="mint-field">
@@ -43,34 +46,37 @@
 </template>
 
 <script>
-import picker from '../common/Picker'
-import datepicker from '../common/DatePicker'
+import MultiPicker from '../common/MultiPicker'
+import DatePicker from '../common/DatePicker'
 import distpicker from '../common/DistPicker'
 import jobpicker from '../common/JobPicker'
 export default {
-  name: 'form',
+  name: 'Form',
   components:{
-    picker,
-    datepicker,
+    DatePicker:DatePicker,
     distpicker,
-    jobpicker
+    jobpicker,
+    MultiPicker:MultiPicker
   },
   data () {
     return {
       username:'',
       password:'',
-      language:'',
+      language:'2',
       pickerItems:[{
-        value:'angular',
+        value:'1',
         text:'angular'
       },{
-        value:'vue',
+        value:'2',
         text:'vue'
       },{
-        value:'react',
+        value:'3',
         text:'react'
       }],
-      date:'2018-01-18',
+      beginDate:'2018-01-18',
+      endDate:'2018-02-18',
+      beginDatetime:'2018-03-18 10:00',
+      endDatetime:'2018-03-20 15:00',
       dist:'',
       job:'',
       gender: 'M',

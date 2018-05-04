@@ -61,7 +61,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "867a1783514c25dcad1324951af80484"
+    "hash": "4a57249453edfddbe2307325f7ac0a15"
   },
   {
     "file": "static/js/calendar.js",
@@ -89,7 +89,7 @@
   },
   {
     "file": "static/js/form.js",
-    "hash": "ee2de547998deccccc5121cc56b7d111"
+    "hash": "5c63bf2c05397ab9977fc1fe09515713"
   },
   {
     "file": "static/js/home.js",
@@ -182,6 +182,38 @@
   {
     "file": "static/lib/mobiscroll/js/mobiscroll.javascript.min.js",
     "hash": "b7cd2c4ba85534e2c4b5f8d33ec82631"
+  },
+  {
+    "file": "static/lib/mui/css/mui.min.css",
+    "hash": "0363a68c9461c903cd6758e5cbf6fe9c"
+  },
+  {
+    "file": "static/lib/mui/css/mui.picker.min.css",
+    "hash": "09afd8fdd4515c94aa693f6961da5640"
+  },
+  {
+    "file": "static/lib/mui/css/mui.poppicker.css",
+    "hash": "8986825478a283ede35ab1a3093ca1cf"
+  },
+  {
+    "file": "static/lib/mui/fonts/mui.ttf",
+    "hash": "8820b7f6582a3c45b7527ae6b183dd2f"
+  },
+  {
+    "file": "static/lib/mui/js/mui.min.js",
+    "hash": "373e35caa5d6d504d64857cd3f490472"
+  },
+  {
+    "file": "static/lib/mui/js/mui.picker.js",
+    "hash": "81933de9951cedc9c3f1b9bb292f9beb"
+  },
+  {
+    "file": "static/lib/mui/js/mui.picker.min.js",
+    "hash": "d84015fcb9bfd5b42a7316373950bfad"
+  },
+  {
+    "file": "static/lib/mui/js/mui.poppicker.js",
+    "hash": "bffdd65098158478eea76fbec10bf850"
   },
   {
     "file": "static/media/movie.ogg",

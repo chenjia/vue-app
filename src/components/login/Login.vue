@@ -60,8 +60,7 @@ export default {
     },
     login(){
       Indicator.open({
-        text: '登录中...',
-        spinnerType: 'fading-circle'
+        text: '登录中...'
       })
 
       setTimeout(()=>{
