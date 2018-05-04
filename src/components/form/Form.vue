@@ -11,8 +11,8 @@
       <DatePicker label="结束日期" v-model="endDate" :begin="beginDate"/>
       <DatePicker label="开始时间" v-model="beginDatetime" type="datetime" :end="endDatetime"/>
       <DatePicker label="结束时间" v-model="endDatetime" type="datetime" :begin="beginDatetime"/>
-      <distpicker label="家庭住址" v-model="dist"/>
-      <jobpicker label="职业" v-model="job"/>
+      <DistPicker label="家庭住址" v-model="dist"/>
+      <JobPicker label="职业" v-model="job"/>
       <mt-cell class="mint-field">
         <span slot="title">婚否 {{marriage}}</span>
         <mt-switch class="switch-normal" v-model="marriage">
@@ -48,14 +48,14 @@
 <script>
 import MultiPicker from '../common/MultiPicker'
 import DatePicker from '../common/DatePicker'
-import distpicker from '../common/DistPicker'
-import jobpicker from '../common/JobPicker'
+import DistPicker from '../common/DistPicker'
+import JobPicker from '../common/JobPicker'
 export default {
   name: 'Form',
   components:{
     DatePicker:DatePicker,
-    distpicker,
-    jobpicker,
+    DistPicker:DistPicker,
+    JobPicker:JobPicker,
     MultiPicker:MultiPicker
   },
   data () {
