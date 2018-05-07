@@ -35,6 +35,9 @@ export default {
       this.setText(data.province.value,data.city.value,data.area.value)
     	setTimeout(()=>{
         this.visible = false
+        const input = this.$el.querySelectorAll('input')[0]
+        input.focus()
+        input.setSelectionRange(input.value.length,input.value.length)
       })
     },
     setText(p,c,a){
