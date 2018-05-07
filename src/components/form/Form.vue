@@ -34,6 +34,15 @@
         </mt-switch>
       </mt-cell>
       <mt-cell class="mint-field">
+        <span slot="title">吸烟 {{smoking}}</span>
+        <mt-switch class="switch-normal switch-smoking" v-model="smoking">
+          <span class="normal-text">
+            <span>吸</span>
+            <span>禁</span>
+          </span>
+        </mt-switch>
+      </mt-cell>
+      <mt-cell class="mint-field">
         <span slot="title">电量 {{light}}%</span>
         <mt-range v-model="light" :min="0" :max="100" style="width:100%;">
           <div slot="start" style="align-items:center;"><i class="fa fa-battery-empty"></i>&nbsp;</div>
@@ -98,6 +107,7 @@ export default {
       job:'',
       gender: 'M',
       marriage: false,
+      smoking:true,
       light:50,
       checkValue:['选项A'],
       radioValue:''

@@ -139,6 +139,9 @@ form .mint-field-core{
 .switch-gender .mint-switch-input+.mint-switch-core:after {
   background-image:url(../img/female.png);
 }
+.switch-smoking .mint-switch-input+.mint-switch-core:after {
+  background-image:url(../img/no_smoking.png);
+}
 .switch-normal .mint-switch-input:checked+.mint-switch-core:after {
   transform: translateX(28px);
   background-image:url(../img/yes.png);
@@ -146,6 +149,9 @@ form .mint-field-core{
 }
 .switch-gender .mint-switch-input:checked+.mint-switch-core:after {
   background-image:url(../img/male.png);
+}
+.switch-smoking .mint-switch-input:checked+.mint-switch-core:after {
+  background-image:url(../img/smoking.png);
 }
 .mint-switch-label .normal-text :first-child {
   display: inline-block;

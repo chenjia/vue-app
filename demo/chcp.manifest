@@ -5,11 +5,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "840574ad101b0f784989b5ce3a8a8c8c"
+    "hash": "35583c9d1bafe984a6d68d31d7255d61"
   },
   {
     "file": "static/css/main.css",
-    "hash": "df529c1e562b8d8862015ed8a5591f54"
+    "hash": "d1a258728f95efc5dbdf4417bf964b39"
   },
   {
     "file": "static/html/baiduMap.html",
@@ -48,8 +48,16 @@
     "hash": "e87bc8352357bc263d34e56889cfcd0d"
   },
   {
+    "file": "static/img/no_smoking.png",
+    "hash": "7173275e8843958787efbff600d25122"
+  },
+  {
     "file": "static/img/no.png",
     "hash": "446112982e2784e1643b2e53ee841433"
+  },
+  {
+    "file": "static/img/smoking.png",
+    "hash": "b981780bae785019745cc6d849a73b76"
   },
   {
     "file": "static/img/yes.png",
@@ -85,7 +93,7 @@
   },
   {
     "file": "static/js/form.js",
-    "hash": "4463e22751efcf302543e63bce34812a"
+    "hash": "6a0688d70ed3d10a2a03c1c14fe10030"
   },
   {
     "file": "static/js/home.js",
