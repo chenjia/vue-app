@@ -6,7 +6,7 @@
     </mt-header>
     
     <div>
-      <mt-swipe :auto="10000" :style="{height:screenWidth*0.6+'px'}">
+      <mt-swipe v-if="showSwipe" :prevent="true" :auto="5000" :style="{height:screenWidth*0.6+'px'}">
         <mt-swipe-item v-for="(item,index) in banners" :key="index" :style="{textAlign:'center', height:screenWidth*0.6666+'px'}">
           <i :class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
         </mt-swipe-item>
@@ -57,6 +57,7 @@ export default {
   },
   data() {
     return {
+      showSwipe:true,
       drawer: false,
       mini: false,
       temporary: true,
@@ -218,7 +219,7 @@ export default {
     }
   },
   methods: {
-    
+
   },
   watch:{
     popupMenu(val){
@@ -231,6 +232,17 @@ export default {
   },
   mounted(){
 
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm=>{
+      vm.showSwipe = true
+    })
+  },
+  beforeRouteLeave(to, from, next){
+    setTimeout(()=>{
+      this.showSwipe = false
+    },300)
+    next()
   }
 }
 </script>
