@@ -1,6 +1,6 @@
 <template>
 	<mt-field class="job-picker" @click.native="toggleVisible(true, $event)" v-model="text" :label="label" :readonly="true" :disableClear="true">
-		<i @click="toggleVisible(true)" class="fa fa-briefcase icon-picker"></i>
+		<i @click="toggleVisible(true)" class="fa fa-wrench icon-picker"></i>
     <mt-popup v-model="visible" position="bottom" @close="toggleVisible(false)" :closeOnClickModal="true" class="popup-dist">
       <vdistpicker type="mobile" @selected="selected"/>
     </mt-popup>
