@@ -26,6 +26,7 @@ export default {
   },
   data() {
     return {
+      init: false,
       text: '请选择',
       visible: false,
       inputValue:null,
@@ -35,23 +36,28 @@ export default {
   },
   methods: {
     open() {
-      if(this.readonly)return;
       // $('.modal-open').css({pointerEvents:'auto'})
+      if(this.readonly)return;
+      
+      if(!this.init){
+        mui.init();
+        var options = {layer:1} || this.options
+        this.picker = new mui.PopPicker(options)
+        this.picker.setData(this.data)
+        this.init = true
+        this.setText(this.inputValue,this.data,0)
+      }
 			this.picker.show(items => {
 				for(var i=items.length-1;i>=0;i--){
 					if(items[i].value != null){
 						this.text = items[i].text;
 						this.inputValue = items[i].value;
+            this.picker.dispose()
+            this.init = false
 						break;
 					}
 				}
 			});
-    },
-    close() {
-      
-    },
-    confirm(value) {
-      
     },
     setText(value,data,level){
     	data = data || this.data;
@@ -59,12 +65,16 @@ export default {
     	if(value != null){
     		for(var i=0;i<data.length;i++){
     			if(data[i].children != null){
-    				this.picker.pickers[level].setSelectedIndex(i)
+            if(this.picker){
+              this.picker.pickers[level].setSelectedIndex(i)
+            }
     				var result = this.setText(value,data[i].children,level+1)
     				if(result) break;
     			}else if(data[i].value == this.inputValue){
     				this.text = data[i].text;
-    				this.picker.pickers[level].setSelectedIndex(i)
+            if(this.picker){
+              this.picker.pickers[level].setSelectedIndex(i)
+            }
     				return true;
     			}
     		}
@@ -83,12 +93,6 @@ export default {
   },
   mounted(){
   	this.inputValue = this.value
-    mui.init();
-		var options = {layer:1} || this.options
-		if(!this.picker){
-			this.picker = new mui.PopPicker(options);
-			this.picker.setData(this.data);
-		}
   }
 }
 </script>

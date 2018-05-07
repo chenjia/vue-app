@@ -5,7 +5,7 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "c6a2b97992f8b6b46e912cc995484be5"
+    "hash": "35583c9d1bafe984a6d68d31d7255d61"
   },
   {
     "file": "static/css/main.css",
@@ -69,7 +69,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "bd99ec406c097565d942b78d450f407b"
+    "hash": "1c7119f4af5a5d5630df95876cc31c71"
   },
   {
     "file": "static/js/calendar.js",
@@ -93,7 +93,7 @@
   },
   {
     "file": "static/js/form.js",
-    "hash": "12ad4a9c3685dc46beb4d2ea9a37e7e5"
+    "hash": "56cc31ae4766ae26e976a75ecfd67cd4"
   },
   {
     "file": "static/js/home.js",

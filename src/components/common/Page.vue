@@ -71,24 +71,20 @@ export default {
 }
 </script>
 <style>
-/*隐藏动画*/
 .animate-out-leave-active,.animate-in-leave-active{
-  transition: all .15s;
+  transition: all .15s ease-in;
 }
-.animate-out-enter, .animate-in-leave-to{
-  /*transform: translateX(-100%);*/
-  opacity: 0;
-}
-
-/*显示动画*/
 .animate-in-enter-active,.animate-out-enter-active{
-  transition: all .2s;
+  transition: all .15s ease-out;
 }
 .animate-in-enter, .animate-out-leave-to{
-  transform: translateX(100%);
+  transform: translateX(15%);
   opacity: 0;
 }
-
+.animate-out-enter, .animate-in-leave-to{
+  transform: translateX(-15%);
+  opacity: 0;
+}
 /*.animate-in-enter>div{
   transform: translateX(100%);
 }

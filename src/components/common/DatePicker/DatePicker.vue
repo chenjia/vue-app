@@ -35,6 +35,7 @@ export default {
   },
   data() {
     return {
+      init: false,
     	picker:null,
       inputValue:this.value,
       opts:{}
@@ -44,41 +45,47 @@ export default {
     open() {
     	// $('.modal-open').css({pointerEvents:'auto'});
   		if(this.readonly)return;
+
+      if(!this.init){
+        mui.init();
+        this.opts = this.options
+        this.opts.type = this.options.type || this.type || 'date'
+        this.opts.value = this.value || this.opts.value
+        this.opts.beginDate = utils.format.parseDate(this.begin || '1900-01-01', 'yyyy-MM-dd')
+        this.opts.endDate = utils.format.parseDate(this.end || '2100-01-01', 'yyyy-MM-dd')
+        this.picker = new mui.DtPicker(this.opts);
+        this.init = true
+      }
+
       this.picker.show(rs => {
 				this.inputValue = rs.value
-				this.$emit("input", rs.value);
+				this.$emit("input", rs.value)
+        this.picker.dispose()
+        this.init = false
   		});
-    },
-    close() {
-      
-    },
-    confirm(value) {
-      
     }
   },
   watch:{
   	begin(val){
-      this.picker.dispose()
+      if(this.picker){
+        this.picker.dispose()
+      }
+      
   		this.opts.beginDate = this.begin?utils.format.parseDate(this.begin, 'yyyy-MM-dd HH:mm:ss'):utils.format.parseDate('1900-01-01', 'yyyy-MM-dd');
       this.opts.value = this.inputValue
   		this.picker = new mui.DtPicker(this.opts)
   	},
   	end(val){
-      this.picker.dispose()
+      if(this.picker){
+        this.picker.dispose()
+      }
   		this.opts.endDate = this.end?utils.format.parseDate(this.end, 'yyyy-MM-dd HH:mm:ss'):new Date();
   		this.opts.value = this.inputValue
   		this.picker = new mui.DtPicker(this.opts)
   	}
   },
   mounted(){
-  	mui.init();
-  	this.opts = this.options
-  	this.opts.type = this.options.type || this.type || 'date'
-  	this.opts.value = this.opts.value || this.value
-  	this.opts.beginDate = utils.format.parseDate(this.begin || '1900-01-01', 'yyyy-MM-dd')
-  	this.opts.endDate = utils.format.parseDate(this.end || '2100-01-01', 'yyyy-MM-dd')
-  	console.log(this.opts)
-    this.picker = new mui.DtPicker(this.opts);
+  	
   }
 }
 </script>
