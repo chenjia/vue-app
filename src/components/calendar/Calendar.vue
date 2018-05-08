@@ -1,5 +1,5 @@
 <template>
-  <div class="lxt-page">
+  <div class="lxt-page" :style="{height:screenHeight+'px'}" style="background:#f7f7f7;">
     <mt-header title="日历">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>

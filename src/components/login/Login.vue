@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       model:{
+        userId: 'admin',
         username: 'admin',
         password: 'admin',
         captcha: ''
