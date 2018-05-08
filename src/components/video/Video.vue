@@ -4,13 +4,15 @@
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
 
-    <video autoplay controls loop src="../../../static/media/movie.ogg">您的浏览器不支持 video 标签。</video>
+    <video :style="{width:'100%'}" autoplay controls loop>
+      <source src="../../../static/media/7957a8f7246d2caf1e552e1a989f37f6.mp4" type="video/mp4" />
+    </video>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'video',
+  name: 'Video',
   data () {
     return {
       
