@@ -14,8 +14,8 @@ export default {
   },
   watch:{
     opts(val){
-      require.ensure([], r => {
-        var echarts = require('echarts/lib/echarts')
+      // require.ensure([], r => {
+        let echarts = require('echarts/lib/echarts')
         let chinaJson = require('./china')
         require('./macarons')
         require('echarts/lib/chart/bar')
@@ -37,7 +37,7 @@ export default {
         }
         echarts.registerMap('china', chinaJson)
         myChart.setOption(val, true)
-      }, 'echarts')
+      // }, 'echarts')
     },
     options(val){
       this.opts = val
