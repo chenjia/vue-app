@@ -69,19 +69,19 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "1c7119f4af5a5d5630df95876cc31c71"
+    "hash": "1c511fe1bf5f5cf0854f6e4b9e6f7073"
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "d9fb8b7c7778226fd4e8825701f3b3e4"
+    "hash": "7e49f06b924dd1b9a11b14c1f38685e3"
   },
   {
     "file": "static/js/chart.js",
-    "hash": "2df7ff3f7f608e1c3a9e63d9bb87000b"
+    "hash": "0853835df86ce961ecc68c1e6abfff5f"
   },
   {
     "file": "static/js/chat.js",
-    "hash": "6be3828e97890dc6542b12ffaeebce63"
+    "hash": "e53e6fe7e40e85967e95ad3927a6704b"
   },
   {
     "file": "static/js/contact.js",
@@ -89,15 +89,19 @@
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "9df32afcfc2cf426ff662f8a441c044e"
+    "hash": "9959645f90686a83ffd3069ac6ee7060"
+  },
+  {
+    "file": "static/js/echarts.js",
+    "hash": "1d9832b0cce886326d563b7bf8516bd3"
   },
   {
     "file": "static/js/form.js",
-    "hash": "56cc31ae4766ae26e976a75ecfd67cd4"
+    "hash": "22444b31c4ee35830856f47482c6b7e2"
   },
   {
     "file": "static/js/home.js",
-    "hash": "df8753d850d9228311e9718e70639906"
+    "hash": "fd703ecbd5a2e09ee7af2ba4e11f3458"
   },
   {
     "file": "static/js/list.js",
@@ -105,15 +109,15 @@
   },
   {
     "file": "static/js/loading.js",
-    "hash": "dca053acecff7d75e79a753c99d9eb88"
+    "hash": "92f2d632f7190ad95c1192c278bfcc20"
   },
   {
     "file": "static/js/lock.js",
-    "hash": "4324db8fff2aa0dfb344585d3088415c"
+    "hash": "06af2d922c762dd991c5b857a01139b6"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "1d1288c28d4f00a7921d093c282703bb"
+    "hash": "4e385cef96eb3054a60ac7686cff06d5"
   },
   {
     "file": "static/js/map.js",
@@ -125,7 +129,7 @@
   },
   {
     "file": "static/js/tab.js",
-    "hash": "8c608413560269b8679fd1a10ea9f848"
+    "hash": "c746e35e14405fc249f86fbe5af12262"
   },
   {
     "file": "static/js/vendor.js",

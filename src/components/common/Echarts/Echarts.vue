@@ -3,34 +3,41 @@
 </template>
 
 <script>
-import chinaJson from './china'
-import echarts from 'echarts/lib/echarts'
-import './macarons'
-import 'echarts/lib/chart/bar'
-import 'echarts/lib/chart/line'
-import 'echarts/lib/chart/pie'
-import 'echarts/lib/chart/radar'
-import 'echarts/lib/chart/funnel'
-import 'echarts/lib/chart/gauge'
-import 'echarts/lib/chart/map'
-import 'echarts/lib/component/tooltip'
-import 'echarts/lib/component/title'
-import 'echarts/lib/component/legend'
-
 export default {
   name: 'echarts',
-  props:['width', 'height','options'],
+  props:['type', 'width', 'height','options'],
   data () {
     return {
+      init: false,
       opts: null
     }
   },
   watch:{
     opts(val){
-      let myChart = echarts.getInstanceByDom(this.$refs.myChart)
-      if(myChart){
+      require.ensure([], r => {
+        var echarts = require('echarts/lib/echarts')
+        let chinaJson = require('./china')
+        require('./macarons')
+        require('echarts/lib/chart/bar')
+        require('echarts/lib/chart/line')
+        require('echarts/lib/chart/pie')
+        require('echarts/lib/chart/radar')
+        require('echarts/lib/chart/funnel')
+        require('echarts/lib/chart/gauge')
+        require('echarts/lib/chart/map')
+        require('echarts/lib/component/tooltip')
+        require('echarts/lib/component/title')
+        require('echarts/lib/component/legend')
+        let myChart;
+        if(this.init){
+          myChart = echarts.getInstanceByDom(this.$refs.myChart)
+        }else{
+          myChart = echarts.init(this.$refs.myChart, 'macarons')
+          this.init = true
+        }
+        echarts.registerMap('china', chinaJson)
         myChart.setOption(val, true)
-      }
+      }, 'echarts')
     },
     options(val){
       this.opts = val
@@ -40,9 +47,6 @@ export default {
     this.opts = this.options
     this.$refs.myChart.style.width = this.width+'px'
     this.$refs.myChart.style.height = this.height+'px'
-    echarts.registerMap('china', chinaJson)
-    let myChart = echarts.init(this.$refs.myChart, 'macarons')
-    myChart.setOption(this.options, true)
   }
 }
 </script>

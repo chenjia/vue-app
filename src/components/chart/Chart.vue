@@ -4,7 +4,7 @@
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
     
-    <echarts :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>
+    <echarts :type="active" :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>
 
     <mt-tabbar v-model="active">
       <mt-tab-item id="bar"><span slot="icon">柱</span></mt-tab-item>
@@ -382,7 +382,7 @@ export default {
     }
   },
   mounted(){
-    
+
   }
 }
 </script>
