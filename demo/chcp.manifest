@@ -69,7 +69,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "816a2d8b16a58793eff1a157b711779d"
+    "hash": "f07baa52c9f27d7abc32c87896d93ba4"
   },
   {
     "file": "static/js/calendar.js",
@@ -97,7 +97,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "df8753d850d9228311e9718e70639906"
+    "hash": "be48ea233d3fa476d729669ec6adb6bc"
   },
   {
     "file": "static/js/list.js",
@@ -133,7 +133,7 @@
   },
   {
     "file": "static/js/video.js",
-    "hash": "efb8c23f980c3330ef2bcd48a8ebb520"
+    "hash": "309af4d9f43a28f8172e2ce1bda14d66"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",

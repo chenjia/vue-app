@@ -84,6 +84,11 @@ export default {
         color: '#ff7f50',
         url: 'list'
       },{
+        name: '选项卡',
+        icon: 'folder',
+        color: '#ffa500',
+        url: 'tab'
+      },{
         name: '图表',
         icon: 'bar-chart',
         color: '#87cefa',
@@ -99,11 +104,6 @@ export default {
         color: '#32cd32',
         url: 'form'
       },{
-        name: '选项卡',
-        icon: 'folder',
-        color: '#6495ed',
-        url: 'tab'
-      },{
         name: '锁屏',
         icon: 'hand-o-up',
         color: '#ff69b4',
@@ -111,7 +111,7 @@ export default {
       },{
         name: '加载',
         icon: 'spinner',
-        color: '#ffa500',
+        color: '#6495ed',
         url: 'loading'
       },{
         name: '视频',

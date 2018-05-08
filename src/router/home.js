@@ -22,6 +22,6 @@ export default [{
       require(['../components/map/Map.vue'])
       require(['../components/tab/Tab.vue'])
       require(['../components/setting/Setting.vue'])
-    },1000)
+    },3000)
   }
 }]
