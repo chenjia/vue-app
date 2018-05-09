@@ -36,10 +36,10 @@
         </mt-switch>
       </mt-cell>
       <mt-cell class="mint-field">
-        <span slot="title">吸烟状况{{smoking}}</span>
+        <span slot="title">吸烟 {{smoking}}</span>
         <mt-switch class="switch-normal switch-smoking" v-model="smoking">
           <span class="normal-text">
-            <span>吸</span>
+            <span>允</span>
             <span>禁</span>
           </span>
         </mt-switch>
