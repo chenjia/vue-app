@@ -45,18 +45,18 @@ export default {
     }
 	},
 	mounted () {
-    if(window.chcp){
-      chcp.fetchUpdate((error, data) => {
-        if(data){
-          let config = JSON.parse(data.config)
-          if(config.release != store.state.common.app.version){
-            this.latest = true
-          }
-        }
-      }, {
-        'config-file': Config.chcpUrl
-      })
-    }
+    // if(window.chcp){
+    //   chcp.fetchUpdate((error, data) => {
+    //     if(data){
+    //       let config = JSON.parse(data.config)
+    //       if(config.release != store.state.common.app.version){
+    //         this.latest = true
+    //       }
+    //     }
+    //   }, {
+    //     'config-file': Config.chcpUrl
+    //   })
+    // }
 	}
 }
 </script>
