@@ -5,7 +5,33 @@ import { MessageBox } from 'mint-ui'
 const version = {
 	getVersionInfo(callback){
 		if(window.chcp){
-			chcp.getVersionInfo(callback)
+			// chcp.getVersionInfo(callback)
+
+			try {
+				chcp.fetchUpdate(function(error, data) {
+					console.log(data)
+					if (error) {
+						console.log(error);
+						return;
+					}
+					var progress = parseFloat(data.progress);
+					if (progress == 1.0) {
+						chcp.installUpdate();
+					}
+				})
+			} catch (err) {
+				console.log(err);
+			}
+		
+
+
+
+
+
+
+
+
+			
 		}
 	},
 	fetchUpdate(){
