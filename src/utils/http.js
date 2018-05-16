@@ -1,9 +1,11 @@
 import axios from 'axios'
 import cache from './cache'
+require('../../static/lib/security/tripledes')
+require('../../static/lib/security/mode-ecb-min')
 
 let instance = axios.create({
   method: 'post',
-  timeout: 60000,
+  timeout: 30000,
   withCredentials: true,
   headers: {
     post: {
@@ -34,7 +36,7 @@ instance.interceptors.request.use(function(config) {
   }
   config.url = window.Config.server + config.url
   config.data = {
-    request: JSON.stringify(data)
+    params: encryptByDES(JSON.stringify(data), Config.key)
   }
   return config
 }, function(error) {
@@ -43,6 +45,8 @@ instance.interceptors.request.use(function(config) {
 })
 
 instance.interceptors.response.use(function(response) {
+  let resp = decryptByDES(response.data.response, Config.key)
+  response.data = JSON.parse(resp)
   let token = response.data.head.token
   cache.set('token', token || cache.get('token'))
   return response
@@ -50,5 +54,25 @@ instance.interceptors.response.use(function(response) {
   console.log(error)
   return Promise.reject(error)
 })
+
+function encryptByDES(message, key) {
+    var keyHex = CryptoJS.enc.Utf8.parse(key);
+    var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return encrypted.ciphertext.toString(CryptoJS.enc.Base64);
+}
+
+function decryptByDES(ciphertext, key) {
+    var keyHex = CryptoJS.enc.Utf8.parse(key);
+    var decrypted = CryptoJS.DES.decrypt({
+        ciphertext: CryptoJS.enc.Base64.parse(ciphertext)
+    }, keyHex, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return decrypted.toString(CryptoJS.enc.Utf8);
+}
 
 export default instance

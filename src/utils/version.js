@@ -13,6 +13,7 @@ const version = {
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
 			chcp.fetchUpdate((error, data) => {
+				console.log(data)
 				store.commit('TOGGLE_POPUP', {visible: true, text: '正在下载新版本...'})
 				let config = JSON.parse(data.config)
 				if(config.native_version != window.Config.native_version){
