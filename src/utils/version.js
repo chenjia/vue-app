@@ -6,36 +6,28 @@ const version = {
 	getVersionInfo(callback){
 		if(window.chcp){
 			// chcp.getVersionInfo(callback)
-
-			try {
-				chcp.fetchUpdate(function(error, data) {
-					console.log(data)
-					if (error) {
-						console.log(error);
-						return;
-					}
-					var progress = parseFloat(data.progress);
-					if (progress == 1.0) {
-						chcp.installUpdate();
-					}
-				})
-			} catch (err) {
-				console.log(err);
-			}
-		
-
-
-
-
-
-
-
-
-			
 		}
 	},
 	fetchUpdate(){
 		if(!window.chcp){return}
+
+		try {
+			chcp.fetchUpdate(function(error, data) {
+				console.log(data)
+				if (error) {
+					console.log(error);
+					return;
+				}
+				var progress = parseFloat(data.progress);
+				if (progress == 1.0) {
+					chcp.installUpdate();
+				}
+			})
+		} catch (err) {
+			console.log(err);
+		}
+		return;
+
 		store.commit('TOGGLE_POPUP', {visible: true, text: '正在检测新版本'})
 		chcp.getVersionInfo((err, versionInfo) => {
 			console.log(versionInfo)
