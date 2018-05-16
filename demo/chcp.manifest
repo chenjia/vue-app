@@ -69,7 +69,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "d1f49e5e0c2e6b186d6821392981fd7f"
+    "hash": "62491d38bd806a520682802f2659261d"
   },
   {
     "file": "static/js/calendar.js",
@@ -236,7 +236,7 @@
     "hash": "9ee5c388f16ec684fa5860d31df6a097"
   },
   {
-    "file": "static/media/test.mp4",
+    "file": "static/media/test2.mp4",
     "hash": "9ee5c388f16ec684fa5860d31df6a097"
   }
 ]
