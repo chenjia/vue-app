@@ -17,7 +17,7 @@
       {{$store.state.common.ui.popupText}}
     </mt-popup>
 
-    <mt-popup v-model="popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
+    <mt-popup v-model="$store.state.common.version.popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
       <mt-header title="版本更新提示"></mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
         <span style='color:#4caf50'>本次更新内容：</span>
@@ -29,7 +29,7 @@
             <div v-if="!$store.state.common.version.updatingText" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.version.progress + '%'}}</span></div>
             <div v-else>{{$store.state.common.version.updatingText}}</div>
           </div>
-          <div v-show="!updating">
+          <div v-show="!$store.state.common.version.updating">
             <mt-button @click="toggleUpdating"  type="primary" size="large">立即更新</mt-button>
           </div>
         </div>
