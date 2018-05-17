@@ -26,7 +26,7 @@ const version = {
 			if (progress == 1.0) {
 				this.installUpdate();
 			}else{
-				store.commit('TOGGLE_PROGRESS', progress)
+				store.commit('TOGGLE_PROGRESS', progress * 100)
 			}
 		})
 	},
