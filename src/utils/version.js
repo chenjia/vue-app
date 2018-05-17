@@ -21,7 +21,9 @@ const version = {
 				let progress = parseInt(data.progress * 100);
 				store.commit('TOGGLE_PROGRESS', progress)
 				if (progress == 100) {
-					version.installUpdate()
+					setTimeout(()=>{
+						version.installUpdate()
+					},3000)
 				}
 			}
 		})
