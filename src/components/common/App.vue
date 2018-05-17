@@ -23,7 +23,7 @@
         <span style='color:#4caf50'>本次更新内容：</span>
         <div v-for="item in descriptions" style="font-size:14px;">{{item}}</div>
 
-        <div style="position:absolute;bottom:15px;" :style="{width:(screenWidth-30)+'px'}">
+        <div style="position:fixed;left:5%;padding:15px 0;bottom:0;width:90%;">
           <div v-show="$store.state.common.version.updating">
             <mt-progress :value="$store.state.common.version.progress" :bar-height="5"></mt-progress>
             <div v-if="!$store.state.common.version.updatingText" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.version.progress + '%'}}</span></div>
