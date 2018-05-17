@@ -1,9 +1,4 @@
 import store from '../vuex/store'
-import cache from './cache'
-import { MessageBox } from 'mint-ui'
-
-
-
 
 const version = {
 	getServerVersion(){
@@ -14,17 +9,17 @@ const version = {
 			return false
 		}
 
-		chcp.fetchUpdate(function(error, data) {
+		chcp.fetchUpdate((error, data) => {
 			console.log(data)
 			
 			if (error) {
-				console.log(error);
-				return;
+				console.log(error)
+				return
 			}
 
 			let progress = parseFloat(data.progress);
 			if (progress == 1.0) {
-				this.installUpdate();
+				this.installUpdate()
 			}else{
 				store.commit('TOGGLE_PROGRESS', progress * 100)
 			}
