@@ -1,5 +1,5 @@
 <template>
-  <div class="lxt-page">
+  <div>
     <mt-header title="聊天">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       <mt-button @click="popupMenu = true" slot="right">
