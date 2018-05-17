@@ -92,7 +92,7 @@ export default {
       // })
     },
     check(){
-      utils.version.fetchUpdate()
+      utils.version.checkForUpdate()
     }
   },
   watch:{
