@@ -18,10 +18,9 @@ const version = {
 			}
 
 			if(data.totalNum){
-				let progress = parseInt(data.progress);
-				store.commit('TOGGLE_PROGRESS', progress * 100)
-				if (progress == 1) {
-					console.log(data)
+				let progress = parseInt(data.progress * 100);
+				store.commit('TOGGLE_PROGRESS', progress)
+				if (progress == 100) {
 					version.installUpdate()
 				}
 			}
