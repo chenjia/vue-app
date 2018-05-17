@@ -20,6 +20,26 @@
     "hash": "abdd703a7991c2f94c350eadb54166ff"
   },
   {
+    "file": "static/img/1.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
+    "file": "static/img/2.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
+    "file": "static/img/3.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
+    "file": "static/img/4.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
+    "file": "static/img/5.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
     "file": "static/img/captcha.png",
     "hash": "49768f8e38e7c3bb9198faa25dc225f3"
   },
@@ -69,7 +89,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "c80afe2841d1e8fe73d2f0dd40a3b0bd"
+    "hash": "87453f2abea20fcc60ccc0e49d1397ab"
   },
   {
     "file": "static/js/calendar.js",

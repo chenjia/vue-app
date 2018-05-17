@@ -9,7 +9,9 @@ const typeArrays = [
   'TOGGLE_LOADING',
   'TOGGLE_POPUP',
   'TOGGLE_PROGRESS',
-  'TOGGLE_UPDATING'
+  'TOGGLE_UPDATING',
+  'TOGGLE_POPUP_VERSION',
+  'TOGGLE_UPDATING_TEXT'
 ]
 
 const types = {}
@@ -20,9 +22,7 @@ for (let type of typeArrays) {
 
 const state = {
   app: {
-    version: '',
-    progress: 0,
-    updatingText: ''
+    
   },
   ui: {
     hasHeader: false,
@@ -34,6 +34,12 @@ const state = {
     popupTop: false,
     popupText: '',
     popupDuration: null
+  },
+  version: {
+    popupVersion: false,
+    updating: false,
+    progress: 0,
+    updatingText: ''
   },
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
@@ -94,9 +100,6 @@ const mutations = {
   [types.TOGGLE_LOADING](state, flag) {
     state.ui.loading = flag
   },
-  [types.TOGGLE_PROGRESS](state, progress) {
-    state.app.progress = progress
-  },
   [types.TOGGLE_POPUP](state, params) {
     state.ui.popupTop = params.visible
     state.ui.popupText = params.text
@@ -108,10 +111,18 @@ const mutations = {
       }, params.duration)
     }
   },
-  [types.TOGGLE_UPDATING](state, text) {
-    state.app.updatingText = text
+  [types.TOGGLE_PROGRESS](state, progress) {
+    state.version.progress = progress
+  },
+  [types.TOGGLE_UPDATING](state, flag) {
+    state.version.updating = flag
+  },
+  [types.TOGGLE_POPUP_VERSION](state, flag) {
+    state.version.popupVersion = flag
+  },
+  [types.TOGGLE_UPDATING_TEXT](state, updatingText) {
+    state.version.updatingText = updatingText
   }
-
 }
 
 export default {

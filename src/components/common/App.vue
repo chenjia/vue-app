@@ -24,10 +24,10 @@
         <div v-for="item in descriptions" style="font-size:14px;">{{item}}</div>
 
         <div style="position:absolute;bottom:15px;" :style="{width:(screenWidth-30)+'px'}">
-          <div v-show="updating">
-            <mt-progress :value="$store.state.common.app.progress" :bar-height="5"></mt-progress>
-            <div v-if="!$store.state.common.appupdatingText" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.app.progress + '%'}}</span></div>
-            <div v-else>{{$store.state.common.appupdatingText}}</div>
+          <div v-show="$store.state.common.version.updating">
+            <mt-progress :value="$store.state.common.version.progress" :bar-height="5"></mt-progress>
+            <div v-if="!$store.state.common.version.updatingText" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.version.progress + '%'}}</span></div>
+            <div v-else>{{$store.state.common.version.updatingText}}</div>
           </div>
           <div v-show="!updating">
             <mt-button @click="toggleUpdating"  type="primary" size="large">立即更新</mt-button>
@@ -46,8 +46,6 @@ export default {
   name: 'app',
   data(){
     return {
-      updating: false,
-      popupVersion: false,
       descriptions: [],
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
@@ -85,7 +83,7 @@ export default {
   },
   methods:{
     toggleUpdating(){
-      this.updating = true
+      store.commit('TOGGLE_UPDATING', true)
       utils.version.fetchUpdate()
     }
   },
@@ -102,7 +100,7 @@ export default {
             window.open(Config.appDownloadUrl)
           })
         }else if(Config.appVersion != response.data.release){
-          this.popupVersion = true
+          store.commit('TOGGLE_POPUP_VERSION', true)
           this.descriptions = response.data.description.split('\n')
         }
       })
