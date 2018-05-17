@@ -15,7 +15,7 @@ const version = {
     })
 	},
 	getServerVersion(){
-		return axios.get(Config.chcpUrl+'?r='+Config.random)
+		return axios.get(Config.chcpUrl+'?r='+(''+Math.random()).substr(2))
 	},
 	fetchUpdate(){
 		if(!window.chcp){
@@ -37,7 +37,7 @@ const version = {
 					store.commit('TOGGLE_UPDATING', '正在安装新版本')
 					setTimeout(()=>{
 						version.installUpdate()
-					},1000)
+					},100)
 				}
 			}
 		})
