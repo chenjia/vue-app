@@ -17,7 +17,7 @@ const version = {
 				return
 			}
 
-			if(data.total){
+			if(data.totalNum){
 				let progress = parseFloat(data.progress);
 				if (progress == 1.0) {
 					console.log(data)
