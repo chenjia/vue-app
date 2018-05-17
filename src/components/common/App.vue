@@ -46,8 +46,8 @@ export default {
   name: 'app',
   data(){
     return {
-      updating: true,
-      popupVersion: true,
+      updating: false,
+      popupVersion: false,
       descriptions: [],
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
