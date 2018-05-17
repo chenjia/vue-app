@@ -19,13 +19,10 @@ const version = {
 
 			if(data.totalNum){
 				let progress = parseFloat(data.progress);
+				store.commit('TOGGLE_PROGRESS', progress * 100)
 				if (progress == 1.0) {
 					console.log(data)
-					alert(version+'installUpdate')
 					version.installUpdate()
-				}else{
-					store.commit('TOGGLE_PROGRESS', progress * 100)
-					alert(progress * 100)
 				}
 			}
 		})
