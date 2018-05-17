@@ -2,7 +2,7 @@ import store from '../vuex/store'
 
 const version = {
 	getServerVersion(){
-		return axios.get(Config.chcpUrl)
+		return axios.get(Config.chcpUrl+'?r='+Config.random)
 	},
 	fetchUpdate(){
 		if(!window.chcp){
