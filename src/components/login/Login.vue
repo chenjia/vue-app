@@ -16,7 +16,7 @@
       </div>
       <mt-field label="服务器地址" v-model="server"></mt-field>
       <mt-field label="热更新地址" v-model="chcpUrl"></mt-field>
-      <div style="position:absolute;width:100%;bottom:0;color:gray;font-size:12px;text-align:center">版本号：{{$store.state.common.app.version}}</div>
+      <div style="position:absolute;width:100%;bottom:0;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
     </div>
 
     <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
@@ -42,6 +42,7 @@ export default {
         password: 'admin',
         captcha: ''
       },
+      appVersion: Config.appVersion,
       server: Config.server,
       chcpUrl: Config.chcpUrl,
       popupTop:false,
