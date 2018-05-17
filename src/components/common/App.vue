@@ -46,8 +46,8 @@ export default {
   name: 'app',
   data(){
     return {
-      updating: false,
-      popupVersion: false,
+      updating: true,
+      popupVersion: true,
       descriptions: [],
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
@@ -128,7 +128,7 @@ export default {
   opacity: 0;
   transform: translate(0, 50px);
 }
-.mt-progress-runway{
+.mt-progress-runway, .mt-progress-progress{
   border-radius: 5px;
 }
 </style>
