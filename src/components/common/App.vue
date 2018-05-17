@@ -99,7 +99,7 @@ export default {
           MessageBox.alert('当前版本过低，请安装最新版本！', '版本更新').then(()=>{
             window.open(Config.appDownloadUrl)
           })
-        }else if(Config.appVersion != response.data.release){
+        }else if(Config.appVersion != response.data.appVersion){
           store.commit('TOGGLE_POPUP_VERSION', true)
           this.descriptions = response.data.description.split('\n')
         }
