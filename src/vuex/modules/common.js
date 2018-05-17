@@ -36,9 +36,9 @@ const state = {
     popupDuration: null
   },
   version: {
-    popupVersion: true,
-    updating: true,
-    progress: 100,
+    popupVersion: false,
+    updating: false,
+    progress: 0,
     updatingText: ''
   },
   user: utils.cache.get('user'),
