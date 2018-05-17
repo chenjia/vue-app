@@ -128,4 +128,7 @@ export default {
   opacity: 0;
   transform: translate(0, 50px);
 }
+.mt-progress-runway{
+  border-radius: 5px;
+}
 </style>

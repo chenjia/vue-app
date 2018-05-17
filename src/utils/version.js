@@ -24,8 +24,6 @@ const version = {
 				}else{
 					store.commit('TOGGLE_PROGRESS', progress * 100)
 				}
-			}else{
-				this.installUpdate()
 			}
 		})
 	},
