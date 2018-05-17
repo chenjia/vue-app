@@ -16,16 +16,39 @@
     <mt-popup v-model="$store.state.common.ui.popupTop" :closeOnClickModal="false" position="top" :modal="true" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
       {{$store.state.common.ui.popupText}}
     </mt-popup>
+
+    <mt-popup v-model="popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
+      <mt-header title="版本更新提示"></mt-header>
+      <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
+        <span style='color:#4caf50'>本次更新内容：</span>
+        <div v-for="item in descriptions" style="font-size:14px;">{{item}}</div>
+
+        <div style="position:absolute;bottom:15px;" :style="{width:(screenWidth-30)+'px'}">
+          <div v-show="updating">
+            <mt-progress :value="$store.state.common.app.progress" :bar-height="5"></mt-progress>
+            <div v-if="!$store.state.common.appupdatingText" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.app.progress + '%'}}</span></div>
+            <div v-else>{{$store.state.common.appupdatingText}}</div>
+          </div>
+          <div v-show="!updating">
+            <mt-button @click="toggleUpdating"  type="primary" size="large">立即更新</mt-button>
+          </div>
+        </div>
+      </div>
+    </mt-popup>
   </div>
 </template>
 
 <script>
+import { MessageBox } from 'mint-ui'
 import { mapGetters } from 'vuex'
 import store from '../../vuex/store'
 export default {
   name: 'app',
   data(){
     return {
+      updating: false,
+      popupVersion: false,
+      descriptions: [],
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
       tabs:[{
@@ -60,13 +83,30 @@ export default {
       'isLoading'
     ])
   },
+  methods:{
+    toggleUpdating(){
+      this.updating = true
+      utils.version.fetchUpdate()
+    }
+  },
   watch:{
     '$store.state.common.ui.tab'(val){
       this.go({name:val})
     }
   },
   mounted(){
-    
+    document.addEventListener("deviceready", () => {
+      utils.version.getServerVersion().then(response => {
+        if(Config.nativeVersion != response.data.nativeVersion){
+          MessageBox.alert('当前版本过低，请安装最新版本！', '版本更新').then(()=>{
+            window.open(Config.appDownloadUrl)
+          })
+        }else if(Config.appVersion != response.data.release){
+          this.popupVersion = true
+          this.descriptions = response.data.description.split('\n')
+        }
+      })
+    }, false)
   }
 }
 </script>

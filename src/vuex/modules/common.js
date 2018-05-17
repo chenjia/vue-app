@@ -8,7 +8,8 @@ const typeArrays = [
   'TOGGLE_TABS',
   'TOGGLE_LOADING',
   'TOGGLE_POPUP',
-  'UPDATE_VERSION'
+  'TOGGLE_PROGRESS',
+  'TOGGLE_UPDATING'
 ]
 
 const types = {}
@@ -19,7 +20,9 @@ for (let type of typeArrays) {
 
 const state = {
   app: {
-    version: ''
+    version: '',
+    progress: 0,
+    updatingText: ''
   },
   ui: {
     hasHeader: false,
@@ -67,10 +70,6 @@ const actions = {
 }
 
 const mutations = {
-  [types.UPDATE_VERSION](state, version) {
-    utils.cache.set('version', version)
-    state.app.version = version
-  },
   [types.LOGIN](state, data) {
     utils.cache.set('user', data.user)
     utils.cache.set('userSetting', data.userSetting)
@@ -95,6 +94,9 @@ const mutations = {
   [types.TOGGLE_LOADING](state, flag) {
     state.ui.loading = flag
   },
+  [types.TOGGLE_PROGRESS](state, progress) {
+    state.app.progress = progress
+  },
   [types.TOGGLE_POPUP](state, params) {
     state.ui.popupTop = params.visible
     state.ui.popupText = params.text
@@ -105,7 +107,11 @@ const mutations = {
         state.ui.popupDuration = null
       }, params.duration)
     }
+  },
+  [types.TOGGLE_UPDATING](state, text) {
+    state.app.updatingText = text
   }
+
 }
 
 export default {

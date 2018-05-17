@@ -2,6 +2,7 @@ import axios from 'axios'
 import cache from './cache'
 require('../../static/lib/security/tripledes')
 require('../../static/lib/security/mode-ecb-min')
+window.axios = axios
 
 let instance = axios.create({
   method: 'post',

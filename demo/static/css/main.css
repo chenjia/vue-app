@@ -10,7 +10,9 @@ body.modal-open {
   position: fixed;
   width: 100%;
 }
-
+.center{
+  text-align:center;
+}
 .lxt-content{
   padding:16px;
 }

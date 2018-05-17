@@ -1,7 +1,8 @@
 window.Config = {
-  native_version:'1.0',
+  appVersion:'1.0',
+  nativeVersion:'1.0',
   server: 'http://localhost:8080/lxt-server',
-  appUrl:'https://chenjia.github.io/vue-app/demo/index.html',
+  appDownloadUrl:'https://chenjia.github.io/vue-app/demo/index.html',
   chcpUrl:'https://chenjia.github.io/vue-app/demo/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
   random:(''+Math.random()).substr(2)
@@ -76,6 +77,7 @@ Vue.component(TabItem.name, TabItem)
 Vue.config.productionTip = false
 
 window.utils = utils
+window.Vue = Vue
 
 Vue.mixin({
   data() {
