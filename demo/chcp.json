@@ -1,8 +1,8 @@
 {
   "content_url": "https://chenjia.github.io/vue-app/demo",
   "update": "now",
-  "appVersion": "1.0.2",
+  "appVersion": "1.0.3",
   "nativeVersion": "1.0",
   "description": "1. 页面样式调整\n2. 增量更新功能优化\n3. 修复部分bug",
-  "release": "2018.05.17-17.14.24"
+  "release": "2018.05.17-17.45.51"
 }
