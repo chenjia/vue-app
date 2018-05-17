@@ -17,11 +17,15 @@ const version = {
 				return
 			}
 
-			let progress = parseFloat(data.progress);
-			if (progress == 1.0) {
-				this.installUpdate()
+			if(data.total){
+				let progress = parseFloat(data.progress);
+				if (progress == 1.0) {
+					this.installUpdate()
+				}else{
+					store.commit('TOGGLE_PROGRESS', progress * 100)
+				}
 			}else{
-				store.commit('TOGGLE_PROGRESS', progress * 100)
+				this.installUpdate()
 			}
 		})
 	},
