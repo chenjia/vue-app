@@ -1,5 +1,5 @@
 window.Config = {
-  appVersion:'1.0.5',
+  appVersion:'1.0.6',
   nativeVersion:'1.0',
   server: 'http://localhost:8080/lxt-server',
   appDownloadUrl:'https://chenjia.github.io/vue-app/demo/index.html',
