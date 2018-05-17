@@ -11,7 +11,8 @@ const typeArrays = [
   'TOGGLE_PROGRESS',
   'TOGGLE_UPDATING',
   'TOGGLE_POPUP_VERSION',
-  'TOGGLE_UPDATING_TEXT'
+  'TOGGLE_UPDATING_TEXT',
+  'TOGGLE_DESCRIPTION'
 ]
 
 const types = {}
@@ -39,7 +40,8 @@ const state = {
     popupVersion: false,
     updating: false,
     progress: 0,
-    updatingText: ''
+    updatingText: '',
+    description:[]
   },
   user: utils.cache.get('user'),
   userSetting: utils.cache.get('userSetting')
@@ -122,6 +124,9 @@ const mutations = {
   },
   [types.TOGGLE_UPDATING_TEXT](state, updatingText) {
     state.version.updatingText = updatingText
+  },
+  [types.TOGGLE_DESCRIPTION](state, description) {
+    state.version.description = description
   }
 }
 

@@ -21,7 +21,7 @@
       <mt-header title="版本更新提示"></mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
         <span style='color:#4caf50'>本次更新内容：</span>
-        <div v-for="item in descriptions" style="font-size:14px;">{{item}}</div>
+        <div v-for="item in $store.state.common.version.description" style="font-size:14px;">{{item}}</div>
 
         <div style="position:fixed;left:5%;padding:15px 0;bottom:0;width:90%;">
           <div v-show="$store.state.common.version.updating">
@@ -46,7 +46,6 @@ export default {
   name: 'app',
   data(){
     return {
-      descriptions: [],
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
       tabs:[{
@@ -94,16 +93,7 @@ export default {
   },
   mounted(){
     document.addEventListener("deviceready", () => {
-      utils.version.getServerVersion().then(response => {
-        if(Config.nativeVersion != response.data.nativeVersion){
-          MessageBox.alert('当前版本过低，请安装最新版本！', '版本更新').then(()=>{
-            window.open(Config.appDownloadUrl)
-          })
-        }else if(Config.appVersion != response.data.appVersion){
-          store.commit('TOGGLE_POPUP_VERSION', true)
-          this.descriptions = response.data.description.split('\n')
-        }
-      })
+      utils.version.checkForUpdate()
     }, false)
   }
 }

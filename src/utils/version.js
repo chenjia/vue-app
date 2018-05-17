@@ -1,6 +1,19 @@
 import store from '../vuex/store'
+import { MessageBox } from 'mint-ui'
 
 const version = {
+	checkForUpdate(){
+		version.getServerVersion().then(response => {
+      if(Config.nativeVersion != response.data.nativeVersion){
+        MessageBox.alert('当前版本过低，请安装最新版本！', '版本更新').then(()=>{
+          window.open(Config.appDownloadUrl)
+        })
+      }else if(Config.appVersion != response.data.appVersion){
+        store.commit('TOGGLE_POPUP_VERSION', true)
+        store.commit('TOGGLE_DESCRIPTION', response.data.description.split('\n'))
+      }
+    })
+	},
 	getServerVersion(){
 		return axios.get(Config.chcpUrl+'?r='+Config.random)
 	},
