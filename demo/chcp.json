@@ -1,10 +1,10 @@
 {
   "content_url": "https://chenjia.github.io/vue-app/demo",
   "update": "now",
-  "appVersion": "1.0.2",
+  "appVersion": "1.0.3",
   "nativeVersion": "1.0",
   "description": [
     "1. 优化增量升级功能"
   ],
-  "release": "2018.05.18-15.12.58"
+  "release": "2018.05.18-15.16.28"
 }
