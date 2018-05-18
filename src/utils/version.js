@@ -44,13 +44,12 @@ const version = {
 		})
 	},
 	installUpdate(){
-		utils.cache.set('prevVersion', Config.appVersion)
-		alert(utils.cache.get('prevVersion'))
 		chcp.installUpdate(error => {
 			if (error) {
-				utils.cache.removeItem('prevVersion')
 				store.commit('TOGGLE_UPDATING_TEXT', '更新包安装失败')
 				alert(JSON.stringify(error))
+	    }else{
+	    	store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 3000})
 	    }
 		})
 	}
