@@ -98,7 +98,7 @@ export default {
 
     console.log(utils.cache.get('prevVersion'), Config.appVersion)
 
-    if(utils.cache.get('prevVersion') && utils.cache.get('prevVersion') != Config.appVersion){
+    if(utils.cache.get('prevVersion') && (utils.cache.get('prevVersion') != Config.appVersion)){
       store.commit('TOGGLE_POPUP', {visible: true, text: '已经更新为最新版本', duration: 3000})
       utils.cache.removeItem('prevVersion')
     }
