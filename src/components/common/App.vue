@@ -27,7 +27,7 @@
           <div v-show="$store.state.common.version.updating">
             <mt-progress :value="$store.state.common.version.progress" :bar-height="5"></mt-progress>
             <div v-if="$store.state.common.version.updatingText == ''" class="center">下载进度：<span style="display:inline-block;width:46px;text-align:right;">{{$store.state.common.version.progress + '%'}}</span></div>
-            <div v-if="$store.state.common.version.updatingText!=''">{{$store.state.common.version.updatingText}}</div>
+            <div v-if="$store.state.common.version.updatingText!=''" class="center">{{$store.state.common.version.updatingText}}</div>
           </div>
           <div v-show="!$store.state.common.version.updating">
             <mt-button @click="toggleUpdating"  type="primary" size="large">立即更新</mt-button>
