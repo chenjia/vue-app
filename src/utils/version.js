@@ -1,5 +1,4 @@
 import store from '../vuex/store'
-import cache from './cache'
 import { MessageBox } from 'mint-ui'
 
 const version = {
@@ -52,7 +51,7 @@ const version = {
 				store.commit('TOGGLE_UPDATING_TEXT', '更新包安装失败')
 				alert(JSON.stringify(error))
 	    } else {
-	    	cache.set('prevVersion', Config.appVersion)
+	    	utils.cache.set('prevVersion', Config.appVersion)
 	    	alert(Config.appVersion)
 	    }
 		})
