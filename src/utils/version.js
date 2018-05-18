@@ -34,7 +34,7 @@ const version = {
 				let progress = parseInt(data.progress * 100);
 				store.commit('TOGGLE_PROGRESS', progress)
 				if (progress == 100) {
-					store.commit('TOGGLE_UPDATING', '正在安装新版本')
+					store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 					setTimeout(()=>{
 						version.installUpdate()
 					},100)
@@ -43,13 +43,13 @@ const version = {
 		})
 	},
 	installUpdate(){
-		store.commit('TOGGLE_UPDATING', '正在安装新版本')
+		store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 		chcp.installUpdate(error => {
 			if (error) {
-				store.commit('TOGGLE_UPDATING', '更新包安装失败')
+				store.commit('TOGGLE_UPDATING_TEXT', '更新包安装失败')
 				alert(JSON.stringify(error))
 	    } else {
-	      store.commit('TOGGLE_UPDATING', '已经更新为最新版本')
+	      store.commit('TOGGLE_UPDATING_TEXT', '已经更新为最新版本')
 	    }
 		})
 	}
