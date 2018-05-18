@@ -51,6 +51,7 @@ const version = {
 				alert(JSON.stringify(error))
 	    } else {
 	    	utils.cache.set('prevVersion', Config.appVersion)
+	    	alert(utils.cache.get('prevVersion'))
 	    }
 		})
 	}
