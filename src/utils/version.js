@@ -45,7 +45,7 @@ const version = {
 	},
 	installUpdate(){
 		utils.cache.set('prevVersion', Config.appVersion)
-		alert(utils.cache.set('prevVersion'))
+		alert(utils.cache.get('prevVersion'))
 		chcp.installUpdate(error => {
 			if (error) {
 				utils.cache.removeItem('prevVersion')
