@@ -51,6 +51,7 @@ const version = {
 				alert(JSON.stringify(error))
 	    } else {
 	    	cache.set('prevVersion', Config.appVersion)
+	    	console.log(Config.appVersion)
 	    }
 		})
 	}
