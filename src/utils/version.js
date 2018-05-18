@@ -38,20 +38,19 @@ const version = {
 					store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 					setTimeout(()=>{
 						version.installUpdate()
-					},100)
+					},200)
 				}
 			}
 		})
 	},
 	installUpdate(){
 		store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
+		utils.cache.set('prevVersion', Config.appVersion)
 		chcp.installUpdate(error => {
 			if (error) {
+				utils.cache.removeItem('prevVersion')
 				store.commit('TOGGLE_UPDATING_TEXT', '更新包安装失败')
 				alert(JSON.stringify(error))
-	    } else {
-	    	utils.cache.set('prevVersion', Config.appVersion)
-	    	alert(utils.cache.get('prevVersion'))
 	    }
 		})
 	}
