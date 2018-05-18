@@ -8,6 +8,7 @@ const typeArrays = [
   'TOGGLE_TABS',
   'TOGGLE_LOADING',
   'TOGGLE_POPUP',
+  'TOGGLE_NEXT_VERSION',
   'TOGGLE_PROGRESS',
   'TOGGLE_UPDATING',
   'TOGGLE_POPUP_VERSION',
@@ -37,6 +38,7 @@ const state = {
     popupDuration: null
   },
   version: {
+    nextVersion: '',
     popupVersion: false,
     updating: false,
     progress: 0,
@@ -112,6 +114,9 @@ const mutations = {
         state.ui.popupDuration = null
       }, params.duration)
     }
+  },
+  [types.TOGGLE_NEXT_VERSION](state, nextVersion) {
+    state.version.nextVersion = nextVersion
   },
   [types.TOGGLE_PROGRESS](state, progress) {
     state.version.progress = progress

@@ -11,6 +11,7 @@ const version = {
         })
       }else if(Config.appVersion != response.data.appVersion){
         store.commit('TOGGLE_POPUP_VERSION', true)
+        store.commit('TOGGLE_NEXT_VERSION', response.data.appVersion)
         store.commit('TOGGLE_DESCRIPTION', response.data.description)
       }
     })

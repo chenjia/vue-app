@@ -20,7 +20,7 @@
     <mt-popup v-model="$store.state.common.version.popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
       <mt-header title="版本更新提示"></mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
-        <span style='color:#4caf50'>本次更新内容：</span>
+        <span style='color:#4caf50'>本次更新内容（{{appVersion}} -> {{$store.state.common.version.nextVersion}}）：</span>
         <div v-for="item in $store.state.common.version.description" style="font-size:14px;">{{item}}</div>
 
         <div style="position:fixed;left:5%;padding:15px 0;bottom:0;width:90%;">
@@ -30,7 +30,7 @@
             <div v-if="$store.state.common.version.updatingText!=''" class="center">{{$store.state.common.version.updatingText}}</div>
           </div>
           <div v-show="!$store.state.common.version.updating">
-            <mt-button @click="toggleUpdating"  type="primary" size="large">立即更新</mt-button>
+            <mt-button @click="toggleUpdating" type="primary" size="large">立即更新</mt-button>
           </div>
         </div>
       </div>
@@ -46,6 +46,7 @@ export default {
   name: 'app',
   data(){
     return {
+      appVersion: Config.appVersion,
       transitionName: 'animate-in',
       tab:store.state.common.ui.tab || 'home',
       tabs:[{
