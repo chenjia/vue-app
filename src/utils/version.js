@@ -46,6 +46,7 @@ const version = {
 	installUpdate(){
 		store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 		chcp.installUpdate(error => {
+			alert('installUpdate')
 			if (error) {
 				store.commit('TOGGLE_UPDATING_TEXT', '更新包安装失败')
 				alert(JSON.stringify(error))
