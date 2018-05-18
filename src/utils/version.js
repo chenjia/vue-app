@@ -44,8 +44,8 @@ const version = {
 		})
 	},
 	installUpdate(){
-		store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 		utils.cache.set('prevVersion', Config.appVersion)
+		alert(utils.cache.set('prevVersion'))
 		chcp.installUpdate(error => {
 			if (error) {
 				utils.cache.removeItem('prevVersion')
