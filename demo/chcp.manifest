@@ -69,7 +69,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "6f1bb3bf2d0992692d8188afda7b6951"
+    "hash": "dc44fdb0f231172dba974de35a3e3cfc"
   },
   {
     "file": "static/js/calendar.js",
@@ -232,15 +232,259 @@
     "hash": "9eb3e46fa823b2a55f2dba0335a692d9"
   },
   {
-    "file": "static/media/1.mp4",
-    "hash": "9ee5c388f16ec684fa5860d31df6a097"
-  },
-  {
-    "file": "static/media/2.mp4",
-    "hash": "9ee5c388f16ec684fa5860d31df6a097"
-  },
-  {
     "file": "static/media/7957a8f7246d2caf1e552e1a989f37f6.mp4",
     "hash": "9ee5c388f16ec684fa5860d31df6a097"
+  },
+  {
+    "file": "static/modules/base/app.js",
+    "hash": "79169a981142b8178b579a4041d1f6eb"
+  },
+  {
+    "file": "static/modules/base/directives/echarts.js",
+    "hash": "bca0ecd60540bd9dd8cdc82e58fece75"
+  },
+  {
+    "file": "static/modules/base/directives/input-color.js",
+    "hash": "331cd7c99151b7d09d1986c05bb2f67a"
+  },
+  {
+    "file": "static/modules/base/directives/input-datetime.js",
+    "hash": "5b0601a50c55ed09b6f4e9f7b8491733"
+  },
+  {
+    "file": "static/modules/base/directives/input-select.js",
+    "hash": "eb467de4e75d91c476fd2637ad8b929a"
+  },
+  {
+    "file": "static/modules/base/directives/input-sfz.js",
+    "hash": "8443e5f224c003a951cc996a194e26c9"
+  },
+  {
+    "file": "static/modules/base/directives/input-treelist.js",
+    "hash": "3c5fbe738e9f61d6e9a762a9cd9b983f"
+  },
+  {
+    "file": "static/modules/base/directives/patternLock.js",
+    "hash": "92b4e8f83ea27b572365ea081eef4443"
+  },
+  {
+    "file": "static/modules/base/directives/tabs.js",
+    "hash": "70f60ed56714e024c7c74e015c5b2242"
+  },
+  {
+    "file": "static/modules/base/directives/timeline.js",
+    "hash": "3442ed310ee8f55e92ee4d50afa23d43"
+  },
+  {
+    "file": "static/modules/base/directives/toast.js",
+    "hash": "bdb24ca23371d5e0e118d8207b79002a"
+  },
+  {
+    "file": "static/modules/base/filters/filter.js",
+    "hash": "69d54d4479ebbe40ee53b7c1f19fbad8"
+  },
+  {
+    "file": "static/modules/base/utils/cache.js",
+    "hash": "9b43b847aa799acacd80cb2f79190500"
+  },
+  {
+    "file": "static/modules/base/utils/format.js",
+    "hash": "1d6e4f885e5f6c191d5b3b2c8a420bab"
+  },
+  {
+    "file": "static/modules/base/utils/http.js",
+    "hash": "2d3d20d35ac3629d95ae47f35afaf368"
+  },
+  {
+    "file": "static/modules/base/utils/interceptor.js",
+    "hash": "0ca003208f5d203706c14a43fdc0cc6f"
+  },
+  {
+    "file": "static/modules/base/utils/security.js",
+    "hash": "c880694f07cd41776ee6b28bc292554d"
+  },
+  {
+    "file": "static/modules/base/utils/service.js",
+    "hash": "0374622da1204dbbe692b9f255195dcb"
+  },
+  {
+    "file": "static/modules/base/utils/utils.js",
+    "hash": "3a7c378d23f0e8e7f5ee6a5763b92a4b"
+  },
+  {
+    "file": "static/modules/sample/controllers/calendarController.js",
+    "hash": "eb7f9413a34566fea15d00f6f2d1ff36"
+  },
+  {
+    "file": "static/modules/sample/controllers/chartController.js",
+    "hash": "c21494a9c8879b57a291cde503d236b3"
+  },
+  {
+    "file": "static/modules/sample/controllers/contactsController.js",
+    "hash": "546d5bdad30d0ad5fd687690b7d91b83"
+  },
+  {
+    "file": "static/modules/sample/controllers/customerController.js",
+    "hash": "78a04e290ea7fc4d5f003bb3ea74a31f"
+  },
+  {
+    "file": "static/modules/sample/controllers/demoController.js",
+    "hash": "bb887923ae3d21e68c304b75b37c77c8"
+  },
+  {
+    "file": "static/modules/sample/controllers/formController.js",
+    "hash": "1aaac30c94b490109825ba4b543237d5"
+  },
+  {
+    "file": "static/modules/sample/controllers/homeController.js",
+    "hash": "ab4777392351be25cc55f6400af326b6"
+  },
+  {
+    "file": "static/modules/sample/controllers/listController.js",
+    "hash": "1f6addde8a9625046758c332146169c6"
+  },
+  {
+    "file": "static/modules/sample/controllers/liveController.js",
+    "hash": "90c036b86df9b8eb84ea79ddb3ecabc5"
+  },
+  {
+    "file": "static/modules/sample/controllers/loadingController.js",
+    "hash": "d3f8accf007909b6d435de4ec146f6d7"
+  },
+  {
+    "file": "static/modules/sample/controllers/loginController.js",
+    "hash": "5dee042661dfb375fc4c0d8149265b36"
+  },
+  {
+    "file": "static/modules/sample/controllers/mapController.js",
+    "hash": "42cec5d4213e66d09bfe3e2c12a045cf"
+  },
+  {
+    "file": "static/modules/sample/controllers/netCustomerController.js",
+    "hash": "30344c19d6bfb6c2807abc8f54047e4a"
+  },
+  {
+    "file": "static/modules/sample/controllers/oldCustomerController.js",
+    "hash": "e3d3f9db33086bd666f74008b5d1f7fc"
+  },
+  {
+    "file": "static/modules/sample/controllers/preCustomerController.js",
+    "hash": "7f5d2649dce6dc30cc74a49cebd98916"
+  },
+  {
+    "file": "static/modules/sample/controllers/tabController.js",
+    "hash": "38aa4eb2ad60ffd4691db273e079f9ad"
+  },
+  {
+    "file": "static/modules/sample/data/address.json",
+    "hash": "af2f8804df880e11c2cd9920e27624ec"
+  },
+  {
+    "file": "static/modules/sample/data/city.json",
+    "hash": "a8d6c5fac6b0e70dd65b757eb3d3a3d3"
+  },
+  {
+    "file": "static/modules/sample/data/contacts.json",
+    "hash": "ac898b572f7ab8557cfaee6cf2ceee98"
+  },
+  {
+    "file": "static/modules/sample/data/lbpicture.json",
+    "hash": "4d48f8a6c6e6909ac9d90c86b7e3e2b0"
+  },
+  {
+    "file": "static/modules/sample/sampleModule.js",
+    "hash": "dc3f5c7075268848bcc7633aac28549c"
+  },
+  {
+    "file": "static/modules/sample/service/sampleService.js",
+    "hash": "7a032afc601244dc3ccfcff8c7aebbe0"
+  },
+  {
+    "file": "static/modules/sample/views/calendar.html",
+    "hash": "4006423e683f5bd9f7cca1901631e69e"
+  },
+  {
+    "file": "static/modules/sample/views/chart.html",
+    "hash": "786491c15774d533fee0aa43c662da74"
+  },
+  {
+    "file": "static/modules/sample/views/common/baiduMap.html",
+    "hash": "cc7c9fe21238c9325902401c4c3cc0fd"
+  },
+  {
+    "file": "static/modules/sample/views/contacts.html",
+    "hash": "2a0d60453cffef472de13a3b0a8edebc"
+  },
+  {
+    "file": "static/modules/sample/views/customerList.html",
+    "hash": "05bb7face5117a52f92334d592bbd4c2"
+  },
+  {
+    "file": "static/modules/sample/views/form.html",
+    "hash": "0bc455611b9393bb906a189bb12af47c"
+  },
+  {
+    "file": "static/modules/sample/views/header.html",
+    "hash": "35efa51e1dd2d020705e55457ad3fe18"
+  },
+  {
+    "file": "static/modules/sample/views/home.html",
+    "hash": "820112a29b8b17554f8eda284aec9310"
+  },
+  {
+    "file": "static/modules/sample/views/list.html",
+    "hash": "9bf7583c8fe24b6649a72288dd75d913"
+  },
+  {
+    "file": "static/modules/sample/views/live.html",
+    "hash": "3062cc2e0c14eeb0e8824613b364a70f"
+  },
+  {
+    "file": "static/modules/sample/views/loading.html",
+    "hash": "7b2066e72357434875fc3b25f195a090"
+  },
+  {
+    "file": "static/modules/sample/views/login.html",
+    "hash": "df05e0f880f436138c33040eada7ac63"
+  },
+  {
+    "file": "static/modules/sample/views/map.html",
+    "hash": "8903975c557a4053a5a84a92316c388b"
+  },
+  {
+    "file": "static/modules/sample/views/netCustomerList.html",
+    "hash": "a19b0fc5747f35c36bf37c0316a7b08a"
+  },
+  {
+    "file": "static/modules/sample/views/oldCustomerList.html",
+    "hash": "9cb1de176b39d01153c16eaf62b446b0"
+  },
+  {
+    "file": "static/modules/sample/views/patternLock.html",
+    "hash": "fb766c06bf4fcbff7f4caf975d6316ea"
+  },
+  {
+    "file": "static/modules/sample/views/player.html",
+    "hash": "bd3f57486aac7a30455c3d10f7248628"
+  },
+  {
+    "file": "static/modules/sample/views/preCustomerList.html",
+    "hash": "a19b0fc5747f35c36bf37c0316a7b08a"
+  },
+  {
+    "file": "static/modules/sample/views/tab.html",
+    "hash": "063e3418e8131c02f8207475479d6cb5"
+  },
+  {
+    "file": "static/modules/sample/views/tabsCustomerList.html",
+    "hash": "37afbdf1bbe4bfa77e9e394dddc9ee57"
+  },
+  {
+    "file": "static/modules/sample/views/testTab.html",
+    "hash": "4d454642d4ea5436357ec7c71ae9e3d2"
+  },
+  {
+    "file": "static/modules/sample/views/testTabs.html",
+    "hash": "fb5275fa517b8d5333987823e1301b94"
   }
 ]
