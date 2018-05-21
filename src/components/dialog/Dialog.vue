@@ -14,8 +14,6 @@
       <mt-button @click="showPopup('Center')" type="primary" size="large">中部弹窗</mt-button><br/>
       <mt-button @click="showPopup('Bottom')" type="primary" size="large">底部弹窗</mt-button><br/>
       <mt-button @click="sheetVisible = true" type="primary" size="large">actionSheet</mt-button><br/>
-      
-
     </div>
 
     <mt-popup v-model="popupAccordion" position="right" style="width:100%;border-radius:4px;">
