@@ -30,6 +30,13 @@ export default {
     active(val){
       if(val == 'gauge'){
         setInterval(() => {
+          this.gaugeValue = this.gaugeValue + (parseInt(Math.random() * 5) * (Math.random()>0.5?1:-1));
+          if(this.gaugeValue>100) {
+            this.gaugeValue = 100
+          }
+          if(this.gaugeValue<0) {
+            this.gaugeValue = 0
+          }
           this.options.gauge = {
             tooltip: {
               formatter: '{a} <br/>{b} : {c}%'
@@ -47,17 +54,18 @@ export default {
                 formatter: '{value}%'
               },
               data: [{
-                value: parseInt(Math.random() * 100),
+                value: this.gaugeValue,
                 name: '完成率'
               }]
             }]
           }
-        }, 3000)
+        }, 500)
       }
     }
   },
   data () {
     return {
+      gaugeValue:50,
       active: 'bar',
       options: {
         bar: {
