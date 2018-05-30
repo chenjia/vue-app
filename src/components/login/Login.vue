@@ -9,7 +9,7 @@
       <mt-field label="账　号" placeholder="请输入用户名" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
       <mt-field label="验证码" v-model="model.captcha" placeholder="请输入验证码">
-        <img @click="getCaptcha" :src="captchaBase64" height="36px" width="100px">
+        <img @click="getCaptcha" :src="base64Img" height="36px" width="100px">
       </mt-field>
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登　录</mt-button>
@@ -18,10 +18,6 @@
       <mt-field label="热更新地址" v-model="chcpUrl"></mt-field>
       <div style="position:absolute;width:100%;bottom:0;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
     </div>
-
-    <mt-popup v-model="popupTop" position="top" :modal="false" style="width:100%;height:50px;line-height:50px;color:#fff;text-align:center;background:rgba(0,0,0,0.5)">
-      {{msg}}
-    </mt-popup>
   </div>
 </template>
 
@@ -40,14 +36,13 @@ export default {
         userId: 'admin',
         username: 'admin',
         password: 'admin',
-        captcha: ''
+        captcha: '',
+        captchaToken: ''
       },
       appVersion: Config.appVersion,
       server: Config.server,
       chcpUrl: Config.chcpUrl,
-      popupTop:false,
-      msg: '',
-      captchaBase64:''
+      base64Img:''
     }
   },
   methods: {
@@ -57,7 +52,8 @@ export default {
     }),
     getCaptcha(){
       utils.http.post('/captcha').then(response => {
-        this.captchaBase64 = 'data:image/png;base64, '+response.data.body.data
+        this.model.captchaToken = response.data.body.data.captchaToken
+        this.base64Img = 'data:image/png;base64, '+response.data.body.data.base64Img
       })
     },
     login(){
@@ -65,31 +61,26 @@ export default {
         text: '登录中'
       })
 
-      setTimeout(()=>{
-        store.commit('LOGIN', {user:this.model})
-        Indicator.close()
-        this.go('/page/home')
-      },Math.random()*3000)
+      // setTimeout(()=>{
+      //   store.commit('LOGIN', {user:this.model})
+      //   Indicator.close()
+      //   this.go('/page/home')
+      // },Math.random()*3000)
       
 
-      // utils.http.post('/system/login', this.model).then(response => {
-      //   console.log(response)
-      //   if(response.data.head.status == 200){
-      //     this.doLogin({
-      //       user:response.data.body.data.user,
-      //       userSetting:response.data.body.data.userSetting
-      //     })
-      //     this.go('/page/home')
-      //   }else {
-      //     this.msg = response.data.body.data
-      //     this.popupTop = true
-      //     setTimeout(()=>{
-      //       this.popupTop = false
-      //     }, 3000)
-      //     this.getCaptcha()
-      //   }
-      //   
-      // })
+      utils.http.post('/login', this.model).then(response => {
+        if(response.data.body.data) {
+          this.doLogin({
+            user:response.data.body.data.user,
+            userSetting:response.data.body.data.userSetting
+          })
+          this.go('/page/home')
+        }else{
+          store.commit('TOGGLE_POPUP', {visible: true, text: response.data.head.msg, duration: 3000})
+          this.getCaptcha()
+        }
+        Indicator.close()
+      })
     },
     check(){
       utils.version.checkForUpdate()
@@ -105,7 +96,7 @@ export default {
   },
   mounted(){
     this.doLogout()
-    // this.getCaptcha()
+    this.getCaptcha()
   }
 }
 </script>

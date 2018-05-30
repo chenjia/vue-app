@@ -1,5 +1,6 @@
 import axios from 'axios'
 import cache from './cache'
+import store from '../vuex/store'
 require('../../static/lib/security/tripledes')
 require('../../static/lib/security/mode-ecb-min')
 window.axios = axios
@@ -35,9 +36,10 @@ instance.interceptors.request.use(function(config) {
       data: config.data
     }
   }
+  console.log('【request:'+config.url+'】',config.data)
   config.url = window.Config.server + config.url
   config.data = {
-    params: encryptByDES(JSON.stringify(data), Config.key)
+    request: encryptByDES(JSON.stringify(data), Config.key)
   }
   return config
 }, function(error) {
@@ -48,6 +50,10 @@ instance.interceptors.request.use(function(config) {
 instance.interceptors.response.use(function(response) {
   let resp = decryptByDES(response.data.response, Config.key)
   response.data = JSON.parse(resp)
+  console.log('【response:'+response.config.url+'】',response)
+  if(response.data.head.status != 200){
+    store.commit('TOGGLE_POPUP', {visible: true, text: response.data.head.msg, duration: 3000})
+  }
   let token = response.data.head.token
   cache.set('token', token || cache.get('token'))
   return response
