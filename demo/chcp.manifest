@@ -93,71 +93,75 @@
   },
   {
     "file": "static/js/about.js",
-    "hash": "48ba0ae9026dd2f7b134b48244266a2c"
+    "hash": "3869731605d912b674a5d38fdfcc54f0"
   },
   {
     "file": "static/js/app.js",
-    "hash": "ffac2ccb8019eae7ae718a2f4a775bfe"
+    "hash": "1827ce631bee037e1bf769b7188876df"
   },
   {
     "file": "static/js/calendar.js",
-    "hash": "50187ce8c6f1cbf720dac80d307ad4bd"
+    "hash": "3175195bb9a26144ff5ca10058e36ed7"
   },
   {
     "file": "static/js/chart.js",
-    "hash": "4d0b56285dbc051a94c0b433e535666c"
+    "hash": "7f1690b6c03ede57245d705093f6f751"
   },
   {
     "file": "static/js/chat.js",
-    "hash": "2e2a3265970f69fb97c73e3994170613"
+    "hash": "eee80a05dc94d1e21ca6649bc616c739"
   },
   {
     "file": "static/js/contact.js",
-    "hash": "957e6ea740fc9ed925103ff069c65da2"
+    "hash": "d927e35894ad54bb64a3dd27372cfb24"
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "ab0fa5b39ca9ba775f19bb174a77d371"
+    "hash": "39ca9389632b7e53dcb94fabacc390ec"
   },
   {
     "file": "static/js/form.js",
-    "hash": "1572c3214ce1fb7e50557120aeca3b67"
+    "hash": "35e09145045e49e5e44a8b9287db0585"
   },
   {
     "file": "static/js/home.js",
-    "hash": "be48ea233d3fa476d729669ec6adb6bc"
+    "hash": "887eadcb565da8bcfb6f6d1340cf428a"
   },
   {
     "file": "static/js/list.js",
-    "hash": "f29cdfb3ac41b30238753056245ef75d"
+    "hash": "d038af0abefd3549943189a45e6eca94"
   },
   {
     "file": "static/js/loading.js",
-    "hash": "dca053acecff7d75e79a753c99d9eb88"
+    "hash": "a29557a1f741edd4deeb3b021126d557"
   },
   {
     "file": "static/js/lock.js",
-    "hash": "4324db8fff2aa0dfb344585d3088415c"
+    "hash": "0812ac9c68d7067e2cdaf17146503e22"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "d28ba2b750ddee0b88b5c3807dc5a1a6"
+    "hash": "ff724612ecf5691ff85ab51b8f13412d"
   },
   {
     "file": "static/js/map.js",
-    "hash": "f05291767aeed7a4fd03c0321cf3e542"
+    "hash": "8d93307f0e635d54ed142fc9b60adb93"
   },
   {
     "file": "static/js/setting.js",
-    "hash": "a6d5ef577001cc0b8408f61e54a2d2f2"
+    "hash": "c130d87b72dd9f63afd912ade2dedde5"
   },
   {
     "file": "static/js/tab.js",
-    "hash": "8c608413560269b8679fd1a10ea9f848"
+    "hash": "34e57ca63d031ba45a7f41f50b18fc14"
+  },
+  {
+    "file": "static/js/upload.js",
+    "hash": "d4415d2e247bacd788a9c48f0c5763ce"
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "5fc78e318b77b6a430b8b788a31291c9"
+    "hash": "7e7f195e16aee3f94d89dd7295e88bee"
   },
   {
     "file": "static/js/video.js",

@@ -15,6 +15,19 @@
             <mt-button type="primary" size="large" @click="showIndicator('double-bounce')">double-bounce</mt-button><br/>
             <mt-button type="primary" size="large" @click="showIndicator('triple-bounce')">triple-bounce</mt-button><br/>
           </div>
+
+          <div style="border:1px solid red;">
+              <uploader :options="options" class="uploader-example">
+                <uploader-unsupport></uploader-unsupport>
+                <uploader-drop>
+                 <p>Drop files here to upload or</p>
+                 <uploader-btn>select files</uploader-btn>
+                 <uploader-btn :attrs="attrs">select images</uploader-btn>
+                 <uploader-btn :directory="true">select folder</uploader-btn>
+               </uploader-drop>
+               <uploader-list></uploader-list>
+             </uploader>
+            </div>
         </mt-tab-container-item>
         <mt-tab-container-item :id="1">
           <div class="pd-md">
@@ -28,6 +41,8 @@
               <div slot="start">上传文件　</div>
               <div slot="end"><span style="display:inline-block;width:60px;">　{{percent}}%</span></div>
             </mt-progress>
+
+            
           </div>
         </mt-tab-container-item>
         <mt-tab-container-item :id="2">
@@ -46,18 +61,28 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import { Indicator } from 'mint-ui'
 import tab from '@/components/common/Tab'
+import uploader from 'vue-simple-uploader'
+Vue.use(uploader)
 export default {
   name: 'loading',
   components:{
-    tab:tab
+    tab
   },
   data() {
     return {
       percent:0,
       tabs:['加载','上传'],
-      tabIndex:0
+      tabIndex:0,
+      options: {
+        target: '//localhost:8001/api/upload',
+        testChunks: false
+      },
+      attrs: {
+        accept: 'image/*'
+      }
     }
   },
   methods: {
@@ -133,5 +158,18 @@ export default {
   font-size: 16px;
   background-size:94px 94px;
   transition: all 1s;
+}
+.uploader-example {
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+}
+.uploader-example .uploader-btn {
+  margin-right: 4px;
+}
+.uploader-example .uploader-list {
+  max-height: 440px;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>

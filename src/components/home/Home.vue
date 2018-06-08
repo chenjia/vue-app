@@ -37,7 +37,7 @@
       <div class="has-header" style="overflow-y:auto;" :style="{height:screenHeight-40+'px'}">
         <mt-cell @click.native="popupMenu = false;go(menu.url)" v-for="(menu, index) in menus" :key="index" :title="menu.name">
           <i slot="icon" class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{verticalAlign:'middle', color:menu.color}"></i>
-        </mt-cell>                                                                                                                                          
+        </mt-cell>
       </div>
     </mt-popup>
   </div>
@@ -138,6 +138,11 @@ export default {
         icon: 'qq',
         color: '#ff6347',
         url: 'chat'
+      },{
+        name: '上传',
+        icon: 'upload',
+        color: '#7b68ee',
+        url: 'upload'
       }],
       timelines:[{
         time:(()=>{
