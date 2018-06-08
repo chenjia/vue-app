@@ -55,9 +55,6 @@ const router = new Router({
   }]
 })
 router.beforeEach((to, from, next) => {
-  store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)
-  store.commit('TOGGLE_FOOTER', to.meta.hasFooter != false)
-  store.commit('TOGGLE_TABS', {flag:to.meta.hasTabs == true, tab:to.name})
   if (to.meta.login != false && !store.state.common.user) {
     store.commit('TOGGLE_POPUP', {
       visible: true,
@@ -71,6 +68,9 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
+  store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)
+  store.commit('TOGGLE_FOOTER', to.meta.hasFooter != false)
+  store.commit('TOGGLE_TABS', {flag:to.meta.hasTabs == true, tab:to.name})
   let loader = document.querySelector('.loader-box')
   if(loader.className.indexOf('fadeOut') === -1){
     loader.className += ' fadeOut'

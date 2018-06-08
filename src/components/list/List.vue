@@ -22,11 +22,17 @@
             <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
           </span>
         </div>
-        <mt-cell-swipe class="fade" :class="{'fade-out':item.fade}" v-for="(item,index) in list" :key="index" :title="item.name" label="http://chenjia.github.io/vue-app" is-link value="带链接" :right="[{
-          content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
-          style: { background: '#ef4f4f', color: '#fff' },
-          handler: () => swipeItem(index)
-        }]"></mt-cell-swipe>
+        <mt-cell-swipe class="list" v-for="(item,index) in list" :key="index" :right="swipeRight(index)">
+          <div slot="title" style="padding:10px 0;">
+            <img class="img-head" src="../../../static/img/head_bg.jpg">
+            <div style="padding-left:10px;display:inline-block;height:48px;line-height:24px;vertical-align: middle;">
+              <span>张三</span><br/>
+              <span style="color:#999;font-size:14px;">男</span>
+              <span style="margin:0 10px;color:#999;font-size:14px;">25岁</span>
+              <span style="color:#999;font-size:14px;">{{Math.random()}}</span>
+            </div>
+          </div>
+        </mt-cell-swipe>
         <div slot="bottom" class="mint-loadmore-bottom">
           <span v-show="bottomStatus !== 'loading'" class="loadmore-arrow" :class="{ 'rotate': bottomStatus === 'drop' }">↑</span>
           <span v-show="bottomStatus === 'loading'">
@@ -58,11 +64,18 @@ export default {
     }
   },
   methods: {
+    swipeRight(index){
+      return [{
+        content: '<i class=\'fa fa-fw fa-remove\'></i> 删除',
+        style: { background: '#ef4f4f', color: '#fff' },
+        handler: () => this.swipeItem(index)
+      }]
+    },
     loadTop(){
       setTimeout(()=>{
         this.length = 0
         this.list = []
-        this.add(5)
+        this.add(10)
         this.$refs.loadmore.onTopLoaded()
       }, Math.random()*2000+1000)
     },
@@ -71,7 +84,7 @@ export default {
     },
     loadBottom(){
       setTimeout(()=>{
-        this.add(5)
+        this.add(10)
         this.$refs.loadmore.onBottomLoaded()
       }, Math.random()*2000+1000)
     },
@@ -81,7 +94,7 @@ export default {
     loadMore() {
       this.loading = true
       setTimeout(() => {
-        this.add(5)
+        this.add(10)
         this.loading = false
         this.bottomStatus = 'loading'
       }, Math.random()*2000+1000)
@@ -102,7 +115,7 @@ export default {
     }
   },
   created(){
-    this.add(5)
+    this.add(10)
   }
 }
 </script>
@@ -129,11 +142,12 @@ export default {
 div[class^="mint-spinner-"]{
   display:inline-block;
 }
-/*.fade{
-  opacity:1;
-  transition:all .2s ease-in .1s;
+.img-head{
+  width:48px;
+  height:48px;
+  border-radius: 50%;
 }
-.fade.fade-out{
-  opacity:0;
-}*/
+.list .mint-cell-swipe-button{
+  line-height:68px;
+}
 </style>
