@@ -143,6 +143,11 @@ export default {
         icon: 'upload',
         color: '#7b68ee',
         url: 'upload'
+      },{
+        name: '浏览器',
+        icon: 'chrome',
+        color: '#00fa9a',
+        url: 'browser'
       }],
       timelines:[{
         time:(()=>{
