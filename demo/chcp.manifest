@@ -97,7 +97,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "603386a048a792f7786b38760d4ff867"
+    "hash": "b1c307be88f37bc7895bc13dbeff3130"
+  },
+  {
+    "file": "static/js/browser.js",
+    "hash": "8b8e3e59c375edf031dc86e9c3674a12"
   },
   {
     "file": "static/js/calendar.js",
@@ -141,7 +145,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "a2ddb78845c5539619b8fe0d65711255"
+    "hash": "9d057e41336afaae2440dac2718609cf"
   },
   {
     "file": "static/js/map.js",
@@ -161,7 +165,7 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "7e7f195e16aee3f94d89dd7295e88bee"
+    "hash": "4c43fd5cb24d2df8b3a5fcc3fed0aff2"
   },
   {
     "file": "static/js/video.js",

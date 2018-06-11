@@ -19,6 +19,7 @@ import chat from './chat'
 import video from './video'
 import setting from './setting'
 import upload from './upload'
+import browser from './browser'
 
 Vue.use(Router)
 
@@ -50,7 +51,8 @@ const router = new Router({
     ...chat,
     ...video,
     ...setting,
-    ...upload
+    ...upload,
+    ...browser
     ]
   }]
 })
