@@ -9,7 +9,6 @@
       <mt-button @click="popupAccordion = !popupAccordion" type="primary" size="large">手风琴</mt-button><br/>
       <mt-button @click="showAlert" type="primary" size="large">提示</mt-button><br/>
       <mt-button @click="showConfirm" type="primary" size="large">确认</mt-button><br/>
-      <mt-button @click="popupZoom = !popupZoom" type="primary" size="large">缩放</mt-button><br/>
       <mt-button @click="showPopup('Top', true)" type="primary" size="large">顶部提示</mt-button><br/>
       <mt-button @click="showPopup('Center')" type="primary" size="large">中部弹窗</mt-button><br/>
       <mt-button @click="showPopup('Bottom')" type="primary" size="large">底部弹窗</mt-button><br/>
@@ -78,35 +77,21 @@
     </mt-popup>
 
     <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
-
-    <zoom title="放大缩小" :dialog="true" :show.sync="popupZoom">
-      <mt-button @click="popupZoom = !popupZoom" type="primary" size="large">关闭</mt-button>
-      <div style="overflow-y:auto;" :style="{height:screenHeight+'px'}">
-        <img style="width:100%;" src="../../../static/img/pdf/1.png">
-        <img style="width:100%;" src="../../../static/img/pdf/2.png">
-        <img style="width:100%;" src="../../../static/img/pdf/3.png">
-        <img style="width:100%;" src="../../../static/img/pdf/4.png">
-        <img style="width:100%;" src="../../../static/img/pdf/5.png">
-      </div>
-    </zoom>
   </div>
 </template>
 
 <script>
-import zoom from '../common/Zoom.vue'
 import accordion from '../common/Accordion.vue'
 import { MessageBox } from 'mint-ui'
 export default {
   name: 'Dialog',
   components:{
-    accordion,
-    zoom
+    accordion
   },
   data () {
     return {
       popupAccordion: false,
       popupAlert: false,
-      popupZoom: false,
       popupTop: false,
       popupCenter: false,
       popupBottom: false,

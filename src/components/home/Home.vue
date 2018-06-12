@@ -148,6 +148,11 @@ export default {
         icon: 'chrome',
         color: '#00fa9a',
         url: 'browser'
+      },{
+        name: '缩放',
+        icon: 'arrows-alt',
+        color: '#ffd700',
+        url: 'zoom'
       }],
       timelines:[{
         time:(()=>{

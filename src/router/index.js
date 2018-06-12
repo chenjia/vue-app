@@ -20,6 +20,7 @@ import video from './video'
 import setting from './setting'
 import upload from './upload'
 import browser from './browser'
+import zoom from './zoom'
 
 Vue.use(Router)
 
@@ -52,7 +53,8 @@ const router = new Router({
     ...video,
     ...setting,
     ...upload,
-    ...browser
+    ...browser,
+    ...zoom
     ]
   }]
 })
