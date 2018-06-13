@@ -229,11 +229,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "f4006cc2df409912df5cf02a33f28673"
+    "hash": "e2b22aea84568a070b38a8fe4ea38070"
   },
   {
     "file": "static/js/browser.js",
-    "hash": "db1c9d39b3190b6a8f753e1dc7e9591c"
+    "hash": "8df20ed11082a27504a4065aaeee1f0f"
   },
   {
     "file": "static/js/calendar.js",
@@ -293,7 +293,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "a533b0aab50ed16f76905a0e6618b319"
+    "hash": "2b98d5071d44de4b7a904199c40b263b"
   },
   {
     "file": "static/js/vendor.js",

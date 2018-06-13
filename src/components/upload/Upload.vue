@@ -5,18 +5,17 @@
     </mt-header>
 
     <div class="pd-md">
-      <mt-button type="primary" size="large" @click="showUpload('cropVisible')">文件上传</mt-button><br/>
+      <mt-button type="primary" size="large" @click="showUpload('uploadVisible')">文件上传</mt-button><br/>
       <mt-button type="primary" size="large" @click="showUpload('cropVisible')">图片上传</mt-button><br/>
     </div>
 
     <mt-popup v-model="uploadVisible" position="right" popup-transition="popup-fade">
-      <mt-header title="菜单" fixed>
-        
-      	
+      <mt-header title="文件上传">
+        <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       </mt-header>
-      <div style="position:absolute;width:100%;height:100%;">
-	    	
-	    </div>
+      <div class="pd-md">
+        
+      </div>
 	  </mt-popup>
 
     <mt-popup v-model="cropVisible" position="right" popup-transition="popup-fade" style="width:100%;" :style="{height:screenHeight+'px'}">
@@ -29,8 +28,6 @@
 	    </div>
 	    <div class="pd-md">
 	    	<mt-button class="btn-progress" size="large" @click="uploadImg">开始上传</mt-button>
-	    	<div></div>
-	    	<div></div>
 	    </div>
 	  </mt-popup>
 
