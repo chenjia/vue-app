@@ -111,7 +111,7 @@ export default {
       this.popupPDF = !this.popupPDF
       if(this.items.length == 0){
         let array = []
-        for(let i=1;i<=20;i++){
+        for(let i=1;i<=10;i++){
           array.push(i+'.png')
         }
         this.items = array
