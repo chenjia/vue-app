@@ -20,7 +20,7 @@
     <mt-popup v-model="$store.state.common.version.popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
       <mt-header title="版本更新提示"></mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
-        <span style='color:#4caf50'>本次更新内容（{{appVersion}} <i class="fa fa-angle-double-right"></i> {{$store.state.common.version.nextVersion}}）：</span>
+        <span style='color:#4caf50'>本次更新内容（{{appVersion}} -&gt; {{$store.state.common.version.nextVersion}}）：</span>
         <div v-for="item in $store.state.common.version.description" style="font-size:14px;">{{item}}</div>
 
         <div style="position:fixed;left:5%;padding:15px 0;bottom:0;width:90%;">
