@@ -20,6 +20,10 @@
     "hash": "abdd703a7991c2f94c350eadb54166ff"
   },
   {
+    "file": "static/img/1.png",
+    "hash": "eca8109a70c989a9dbe598398c494c63"
+  },
+  {
     "file": "static/img/captcha.png",
     "hash": "49768f8e38e7c3bb9198faa25dc225f3"
   },
@@ -229,7 +233,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "6e34d0208bdc81cf12063ebc7275ee69"
+    "hash": "a737647bc71c113df934deb0f5d2c14d"
   },
   {
     "file": "static/js/browser.js",
@@ -245,7 +249,7 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "2e2a3265970f69fb97c73e3994170613"
+    "hash": "f05ae5d253755591dca347bec7c8ea6b"
   },
   {
     "file": "static/js/contact.js",
@@ -265,7 +269,7 @@
   },
   {
     "file": "static/js/list.js",
-    "hash": "5359656a6dbe878df40fbb66120245f3"
+    "hash": "490b3d065fbcb236d055c2deda857835"
   },
   {
     "file": "static/js/loading.js",
@@ -285,7 +289,7 @@
   },
   {
     "file": "static/js/setting.js",
-    "hash": "6fa441f3d10afbbc79179e9d8688197d"
+    "hash": "9298a5458ab6672c4313f2946f295a09"
   },
   {
     "file": "static/js/tab.js",
@@ -293,7 +297,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "1421ab577a0b474717abee2712325e9e"
+    "hash": "133b5df2cb2e439bcabbc4df64d5f9d7"
   },
   {
     "file": "static/js/vendor.js",
@@ -305,7 +309,7 @@
   },
   {
     "file": "static/js/zoom.js",
-    "hash": "f195c8bc07f4594d8f3e9e8f752b3677"
+    "hash": "87a0db977f8c7ef35bd1cc6373f74517"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",

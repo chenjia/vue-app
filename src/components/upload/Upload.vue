@@ -33,7 +33,7 @@
       	<mt-button @click="sheetVisible = true" slot="right" icon="camera">选择图片</mt-button>
     	</mt-header>
       <div :style="{height:(screenHeight-100)+'px'}">
-	    	<img id="image" style="opacity:0;" :src="img">
+	    	<img id="image" style="opacity:0;" src="../../../static/img/pdf/1.png">
 	    </div>
 	    <div class="pd-md">
 	    	<mt-button class="btn-progress" size="large" @click="uploadImg">开始上传</mt-button>
@@ -69,8 +69,7 @@ export default {
       },
       attrs: {
         accept: 'image/*'
-      },
-      img: require('../../../static/img/pdf/1.png')
+      }
     }
   },
   methods:{
