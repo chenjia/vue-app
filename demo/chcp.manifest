@@ -229,7 +229,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "29a2024979a34451a80a07b1341e9f60"
+    "hash": "8fb0666a321742c30a25d54ca6c73d46"
   },
   {
     "file": "static/js/browser.js",
@@ -253,7 +253,7 @@
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "745cbf33b73e52cc2f1f606408e2bac5"
+    "hash": "52ea2328416b44f9087d67a93e9a154c"
   },
   {
     "file": "static/js/form.js",
@@ -269,7 +269,7 @@
   },
   {
     "file": "static/js/loading.js",
-    "hash": "a29557a1f741edd4deeb3b021126d557"
+    "hash": "20d5fffbdbec6641130184affa341c5d"
   },
   {
     "file": "static/js/lock.js",
@@ -277,7 +277,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "01d47da092581456f7d9c8b4c06bd839"
+    "hash": "589e89a363fa5a7845554b9778934d71"
   },
   {
     "file": "static/js/map.js",
@@ -293,7 +293,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "2b98d5071d44de4b7a904199c40b263b"
+    "hash": "95058e08a85e1e8acb2f5577b1eca075"
   },
   {
     "file": "static/js/vendor.js",

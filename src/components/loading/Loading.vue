@@ -15,19 +15,6 @@
             <mt-button type="primary" size="large" @click="showIndicator('double-bounce')">double-bounce</mt-button><br/>
             <mt-button type="primary" size="large" @click="showIndicator('triple-bounce')">triple-bounce</mt-button><br/>
           </div>
-
-          <div style="border:1px solid red;">
-              <uploader :options="options" class="uploader-example">
-                <uploader-unsupport></uploader-unsupport>
-                <uploader-drop>
-                 <p>Drop files here to upload or</p>
-                 <uploader-btn>select files</uploader-btn>
-                 <uploader-btn :attrs="attrs">select images</uploader-btn>
-                 <uploader-btn :directory="true">select folder</uploader-btn>
-               </uploader-drop>
-               <uploader-list></uploader-list>
-             </uploader>
-            </div>
         </mt-tab-container-item>
         <mt-tab-container-item :id="1">
           <div class="pd-md">
@@ -64,8 +51,6 @@
 import Vue from 'vue'
 import { Indicator } from 'mint-ui'
 import tab from '@/components/common/Tab'
-import uploader from 'vue-simple-uploader'
-Vue.use(uploader)
 export default {
   name: 'loading',
   components:{
@@ -75,14 +60,7 @@ export default {
     return {
       percent:0,
       tabs:['加载','上传'],
-      tabIndex:0,
-      options: {
-        target: '//localhost:8001/api/upload',
-        testChunks: false
-      },
-      attrs: {
-        accept: 'image/*'
-      }
+      tabIndex:0
     }
   },
   methods: {
