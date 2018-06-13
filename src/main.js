@@ -1,5 +1,5 @@
 window.Config = {
-  appVersion:'1.0.13',
+  appVersion:'1.0.14',
   nativeVersion:'1.0',
   server: 'http://localhost:8001/api',
   appDownloadUrl:'https://chenjia.github.io/vue-app/demo/index.html',
@@ -33,6 +33,7 @@ import {
   Header,
   IndexList,
   IndexSection,
+  Lazyload,
   Loadmore,
   Popup,
   Progress,
@@ -48,6 +49,7 @@ import {
   TabContainerItem,
   TabItem
 } from 'mint-ui'
+Vue.use(Lazyload)
 Vue.component(Actionsheet.name, Actionsheet)
 Vue.component(Badge.name, Badge)
 Vue.component(Button.name, Button)
