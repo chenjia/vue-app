@@ -12,7 +12,7 @@
     <zoom title="放大缩小" :dialog="true" :show.sync="popupPDF">
       <mt-button @click="popupPDF = !popupPDF" type="primary" size="large">关闭</mt-button>
       <div style="overflow-y:auto;" :style="{height:screenHeight+'px'}">
-        <img class="image" v-for="item in items" style="width:100%;border-bottom:1px solid #ccc;" v-lazy="'../static/img/pdf/'+item">
+        <img class="image" v-for="item in items" style="width:100%;border-bottom:1px solid #ccc;" v-lazy="'./static/img/pdf/'+item">
       </div>
     </zoom>
 
