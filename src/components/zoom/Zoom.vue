@@ -111,7 +111,7 @@ export default {
       this.popupPDF = !this.popupPDF
       if(this.items.length == 0){
         let array = []
-        for(let i=1;i<=39;i++){
+        for(let i=1;i<=20;i++){
           array.push(i+'.png')
         }
         this.items = array
@@ -140,14 +140,15 @@ export default {
 .table th {
     background: #24a9ee;
     border-bottom: none;
-    padding: 12px 8px;
+    padding:6px;
     color:white;
+    font-size:9px;
     border-right: 1px solid #a8c0de;
-    padding: 12px 8px;
 }
 .table td {
     border-right: 1px solid #a8c0de;
-    padding: 12px 8px;
+    padding:6px;
+    font-size:9px;
 }
 .table tbody tr:nth-child(odd) {
     background: #ddf1fd;

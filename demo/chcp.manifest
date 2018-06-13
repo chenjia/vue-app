@@ -20,10 +20,6 @@
     "hash": "abdd703a7991c2f94c350eadb54166ff"
   },
   {
-    "file": "static/img/1.png",
-    "hash": "eca8109a70c989a9dbe598398c494c63"
-  },
-  {
     "file": "static/img/captcha.png",
     "hash": "49768f8e38e7c3bb9198faa25dc225f3"
   },
@@ -65,159 +61,83 @@
   },
   {
     "file": "static/img/pdf/1.png",
-    "hash": "eca8109a70c989a9dbe598398c494c63"
+    "hash": "a68a1852b581e2ce33fac0c9e2c74ad0"
   },
   {
     "file": "static/img/pdf/10.png",
-    "hash": "4e4f705f45568a6c70a69c8c6870cfb1"
+    "hash": "d27ed9eb3cb96bbc7112e293575006fa"
   },
   {
     "file": "static/img/pdf/11.png",
-    "hash": "5cef4b69b85a0c786a180c56524450ea"
+    "hash": "1d1efe8a1cd9cce1bc695b9bd6d89790"
   },
   {
     "file": "static/img/pdf/12.png",
-    "hash": "7c134140ed95bfe4d2cb1d3ee07c0a3d"
+    "hash": "3773fde30b69c279816ebe4da10b34b4"
   },
   {
     "file": "static/img/pdf/13.png",
-    "hash": "6404f803a54284ede73b087387bd5bca"
+    "hash": "3086d28f70ab9de3c7c3570f15d857bd"
   },
   {
     "file": "static/img/pdf/14.png",
-    "hash": "bccad611787af33aff8d759682b30b94"
+    "hash": "d73bb0c3792b2f69a17bb5aa0b153bb9"
   },
   {
     "file": "static/img/pdf/15.png",
-    "hash": "9ff5645cfb595260158a3bc7ce9378b1"
+    "hash": "359f85d7dc0793e44f6aef1c275a5fb1"
   },
   {
     "file": "static/img/pdf/16.png",
-    "hash": "d2e8b43b44108367db7847b504e884a3"
+    "hash": "27eb579b44a080c17b2a0ebb78faf397"
   },
   {
     "file": "static/img/pdf/17.png",
-    "hash": "cee89fb7a9bd58ed7c3598c5946afe1c"
+    "hash": "0c9cb4a0c246624c7c70caf28f97f4e0"
   },
   {
     "file": "static/img/pdf/18.png",
-    "hash": "a36ee1edf4db74b326fd56b43ce9c225"
+    "hash": "b39970f31bb35dc24a4db7bef9f7f1c8"
   },
   {
     "file": "static/img/pdf/19.png",
-    "hash": "a9f9fc68c9c90d3f48cd3043a22de71d"
+    "hash": "930ea26db9fff2627500dc847099714d"
   },
   {
     "file": "static/img/pdf/2.png",
-    "hash": "395354f3bd665886b45b2548573aace5"
+    "hash": "1ff0a4c90b87e9bb9f7d34e6b14203ca"
   },
   {
     "file": "static/img/pdf/20.png",
-    "hash": "2397ffd288e71908c4d44adf1f86dc4c"
-  },
-  {
-    "file": "static/img/pdf/21.png",
-    "hash": "9ae89a7c1cfcc432f0ec8c4ffaef627d"
-  },
-  {
-    "file": "static/img/pdf/22.png",
-    "hash": "b5aecb3ce7689f58c7b1b971ab3f5f9a"
-  },
-  {
-    "file": "static/img/pdf/23.png",
-    "hash": "29d1cab414e781725432440b172c7383"
-  },
-  {
-    "file": "static/img/pdf/24.png",
-    "hash": "7cab39e6b5c8485725a76123ca2ef509"
-  },
-  {
-    "file": "static/img/pdf/25.png",
-    "hash": "1a2f92a58c64cde1af43bfb67e521579"
-  },
-  {
-    "file": "static/img/pdf/26.png",
-    "hash": "bc9215f11a7db763dc198336a38779f3"
-  },
-  {
-    "file": "static/img/pdf/27.png",
-    "hash": "a6638c2196ffa9231c413abb771a4059"
-  },
-  {
-    "file": "static/img/pdf/28.png",
-    "hash": "350df72832873db12cec49e40af319ea"
-  },
-  {
-    "file": "static/img/pdf/29.png",
-    "hash": "4c847a41e4a28ebae382d97e98d06358"
+    "hash": "4eeea5fedc836557cb908688aeee12d9"
   },
   {
     "file": "static/img/pdf/3.png",
-    "hash": "776c9d23f78efef16454d01a9e3fac1b"
-  },
-  {
-    "file": "static/img/pdf/30.png",
-    "hash": "77f0cb81798c7a05e9e47808263fad30"
-  },
-  {
-    "file": "static/img/pdf/31.png",
-    "hash": "25180e6430d04aa74c4f83730f0b0f18"
-  },
-  {
-    "file": "static/img/pdf/32.png",
-    "hash": "4d032d4ab67f46bbd68264a63bd12840"
-  },
-  {
-    "file": "static/img/pdf/33.png",
-    "hash": "8704db4b72969628b6230b2bc2a5caef"
-  },
-  {
-    "file": "static/img/pdf/34.png",
-    "hash": "5df1431d02163fd00135e36d3cfaced3"
-  },
-  {
-    "file": "static/img/pdf/35.png",
-    "hash": "408c4ce6fa45666c55cd6e2bc35e158d"
-  },
-  {
-    "file": "static/img/pdf/36.png",
-    "hash": "5ace6883219065f5eeeebb1eb309f75e"
-  },
-  {
-    "file": "static/img/pdf/37.png",
-    "hash": "55220e114f19e952abfbd6a1758e8781"
-  },
-  {
-    "file": "static/img/pdf/38.png",
-    "hash": "58213ca0efffc2b91951001349bf5b1a"
-  },
-  {
-    "file": "static/img/pdf/39.png",
-    "hash": "c17c69c962cb5e020ee82b59e427851e"
+    "hash": "ef4a4c0a3f7d7da43dda4ca1dd94bfb5"
   },
   {
     "file": "static/img/pdf/4.png",
-    "hash": "e3eda69060c7ff5bae81114527061038"
+    "hash": "a8f4885c420da9742d2826d3242998d8"
   },
   {
     "file": "static/img/pdf/5.png",
-    "hash": "c2716bd7bb0187a91635b286e56dc27b"
+    "hash": "a65415a29cc37d8853d688046ec94411"
   },
   {
     "file": "static/img/pdf/6.png",
-    "hash": "1b1bcc59efe10748f1a1ed351a25dd8e"
+    "hash": "19bea09d72fe5b26dc84ad04b493d881"
   },
   {
     "file": "static/img/pdf/7.png",
-    "hash": "c2e4c40ec33bcd4ef8d7012856d86583"
+    "hash": "7695feb2cd476880eca17c9fb471a19c"
   },
   {
     "file": "static/img/pdf/8.png",
-    "hash": "245867a3f8c8c5e61c1310bf6cd96cde"
+    "hash": "ef58ef07a26462c07c8c1b743eb31be1"
   },
   {
     "file": "static/img/pdf/9.png",
-    "hash": "84ea0f6f2027dccf73c7b0a18d8e4467"
+    "hash": "6c28ba15d19351e82516d3990685f862"
   },
   {
     "file": "static/img/smoking.png",
@@ -233,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "df66162f8bcabf05c5bd9c7282a87f8e"
+    "hash": "bde05472f7707e82be182478310bf4dd"
   },
   {
     "file": "static/js/browser.js",
@@ -297,7 +217,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "133b5df2cb2e439bcabbc4df64d5f9d7"
+    "hash": "f7e621f27eb87cc03816a96d604a91c1"
   },
   {
     "file": "static/js/vendor.js",
@@ -309,7 +229,7 @@
   },
   {
     "file": "static/js/zoom.js",
-    "hash": "87a0db977f8c7ef35bd1cc6373f74517"
+    "hash": "e930852fb37f722629478c58c3b09344"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",
