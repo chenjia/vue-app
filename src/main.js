@@ -1,9 +1,9 @@
 window.Config = {
-  appVersion:'1.0.23',
+  appVersion:'1.0.24',
   nativeVersion:'1.0',
   server: 'http://localhost:8001/api',
-  appDownloadUrl:'https://chenjia.github.io/vue-app/demo/index.html',
-  chcpUrl:'https://chenjia.github.io/vue-app/demo/chcp.json',
+  appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app',
+  chcpUrl:'https://chenjia1989.gitlab.io/vue-app/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
   random:(''+Math.random()).substr(2)
 }
