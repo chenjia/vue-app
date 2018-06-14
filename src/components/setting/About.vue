@@ -41,23 +41,20 @@ export default {
       })
 		},
 		check(){
-      utils.version.fetchUpdate()
+      utils.version.checkForUpdate()
     }
-	},
-	mounted () {
-    // if(window.chcp){
-    //   chcp.fetchUpdate((error, data) => {
-    //     if(data){
-    //       let config = JSON.parse(data.config)
-    //       if(config.release != store.state.common.app.version){
-    //         this.latest = true
-    //       }
-    //     }
-    //   }, {
-    //     'config-file': Config.chcpUrl
-    //   })
-    // }
-	}
+  },
+  mounted () {
+    utils.version.getServerVersion().then(response => {
+      if(Config.nativeVersion != response.data.nativeVersion){
+        MessageBox.alert('当前版本过低，请安装最新版本！', '版本更新').then(()=>{
+          window.open(Config.appDownloadUrl)
+        })
+      }else if(Config.appVersion != response.data.appVersion){
+        this.latest = true
+      }
+    })
+  }
 }
 </script>
 <style type="text/css" scoped>

@@ -1,8 +1,8 @@
 window.Config = {
-  appVersion:'1.0.24',
+  appVersion:'1.0.25',
   nativeVersion:'1.0',
   server: 'http://localhost:8001/api',
-  appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app',
+  appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app/index.html',
   chcpUrl:'https://chenjia1989.gitlab.io/vue-app/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
   random:(''+Math.random()).substr(2)

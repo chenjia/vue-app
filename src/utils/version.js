@@ -41,6 +41,8 @@ const version = {
 					},200)
 				}
 			}
+		},{
+			'config-file': Config.chcpUrl
 		})
 	},
 	installUpdate(){
