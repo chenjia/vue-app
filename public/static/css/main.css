@@ -1,0 +1,222 @@
+*{
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color:transparent;
+  font-family: 'PingFangSC-Regular';
+}
+input,textarea,select{
+  -webkit-user-select: text;
+  outline-style: none;
+}
+body.modal-open {
+  position: fixed;
+  width: 100%;
+}
+.center{
+  text-align:center;
+}
+.primary{
+  color:#26a2ff;
+}
+.flexable{
+  display: flex;
+  display: -webkit-flex;
+}
+.flex-item{
+  margin-bottom: 10px;
+  width:50%;
+  box-sizing:border-box;
+  padding: 0 5px;
+}
+.lxt-content{
+  padding:16px;
+}
+.page{
+  padding-bottom:55px;
+  color:#333;
+}
+.has-header{
+  padding-top:40px;
+}
+.mbsc-cal-day-i .mbsc-ic:before{
+  font-family:'FontAwesome'!important;
+}
+.pd-sm{
+  padding:5px;
+}
+.pd-md{
+  padding:10px;
+}
+
+.tabs {
+  position: relative;
+}
+
+.tabs .tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background: #FFF;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs .tab-bar .tab-item {
+  text-align: center;
+  padding: 0 10px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  transition: all .3s;
+}
+
+.tabs .tab-item.active {
+  font-size: 14px;
+  color: #26a2ff;
+}
+
+.tabs .tab-line {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid #26a2ff;
+}
+.mint-button{
+  font-size:14px;
+}
+.mint-field .mint-cell-title{
+  width:100px;
+  font-size:16px;
+}
+.mint-field .mint-cell-value{
+  justify-content: flex-end;
+}
+form .mint-field-core{
+  text-align:right;
+  padding-right:30px;
+}
+.mint-field-core,.mint-checklist-title,.mint-radiolist-title,.mint-radio-label,.mint-checkbox-label{
+  font-size:16px;
+}
+.mint-header-title{
+  font-size:16px;
+}
+.mint-header .mint-button{
+  min-width:24px;
+}
+.mint-header .mint-button.fa{
+  font-size:18px;
+}
+.mint-popup{
+  transition: all .3s ease-out;
+}
+.mint-swipe-indicator{
+  opacity: 1;
+  background:rgba(0,0,0,0.4);
+}
+.mint-swipe-indicator.is-active{
+  background:rgba(255,255,255,0.8);
+}
+.mt-progress-progress{
+  transition:width .3s linear;
+}
+.mint-switch-label .normal-text {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  height: 32px;
+  line-height: 32px;
+  z-index: 1;
+  font-size:14px;
+}
+.switch-normal{
+  margin-right: -10px;
+}
+.switch-normal .mint-switch-core{
+  width: 60px;
+  border:1px solid #ef4f4f;
+  background:#ef4f4f;
+}
+.switch-normal .mint-switch-input:checked + .mint-switch-core{
+  border-color: #4caf50;
+  background-color: #4caf50;
+}
+.switch-normal .mint-switch-core:before {
+  width: 58px;
+  background-color: #ef4f4f;
+}
+.switch-normal .mint-switch-core:after {
+  z-index: 2;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: 7px;
+}
+.switch-normal .mint-switch-input+.mint-switch-core:after {
+  line-height:30px;
+  text-align:center;
+  background-image:url(../img/no.png);
+}
+.switch-gender .mint-switch-input+.mint-switch-core:after {
+  background-image:url(../img/female.png);
+}
+.switch-smoking .mint-switch-input+.mint-switch-core:after {
+  background-image:url(../img/no_smoking.png);
+}
+.switch-normal .mint-switch-input:checked+.mint-switch-core:after {
+  transform: translateX(28px);
+  background-image:url(../img/yes.png);
+  color:#4caf50;
+}
+.switch-gender .mint-switch-input:checked+.mint-switch-core:after {
+  background-image:url(../img/male.png);
+}
+.switch-smoking .mint-switch-input:checked+.mint-switch-core:after {
+  background-image:url(../img/smoking.png);
+}
+.mint-switch-label .normal-text :first-child {
+  display: inline-block;
+  width: 27px;
+  text-align: center;
+  color: #fff;
+}
+.mint-switch-label .normal-text :last-child {
+  display: inline-block;
+  width: 23px;
+  text-align: center;
+  color: #fff;
+}
+.mt-range-runway{
+  border-top-width:2px!important;
+}
+.mt-range-progress{
+  height:2px!important;
+}
+.mint-actionsheet-listitem{
+  color:#26a2ff;
+  font-size:16px;
+}
+.mint-actionsheet-button{
+  color:#ef4f4f;
+  font-size:14px;
+}
+.mint-indexlist-content{
+  -webkit-overflow-scrolling: touch;
+}
+.mint-tab-item{
+  color:#888;
+}
+.mt-progress-progress{
+  background-size: 10px 10px;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  animation: progress-bar-stripes .5s linear infinite;
+}
+.mt-progress-runway, .mt-progress-progress{
+  border-radius: 5px;
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 10px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

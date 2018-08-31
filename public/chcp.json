@@ -1,0 +1,12 @@
+{
+  "content_url": "http://chenjia.github.io/vue-app/public",
+  "update": "now",
+  "appVersion": "1.0.21",
+  "nativeVersion": "1.0",
+  "description": [
+    "1. 优化首屏加载速度",
+    "2. 部分bug修复",
+    "3. 新增即时聊天功能"
+  ],
+  "release": "2018.08.31-14.00.31"
+}
