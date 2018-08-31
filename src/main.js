@@ -3,8 +3,8 @@ window.Config = {
   nativeVersion:'1.0',
   // server: 'http://localhost:8700/lxt-gateway/lxt-manage',
   server: 'http://47.100.119.102/lxt-gateway/lxt-manage',
-  appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app/index.html',
-  chcpUrl:'https://chenjia1989.gitlab.io/vue-app/chcp.json',
+  appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app/public/index.html',
+  chcpUrl:'https://chenjia1989.gitlab.io/vue-app/public/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
   random:(''+Math.random()).substr(2),
   preload: 3000
