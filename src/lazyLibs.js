@@ -58,12 +58,4 @@ require.ensure([], () => {
 	Vue.component(TabItem.name, TabItem)
 
   window.lazyLibsLoaded = true
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  console.log('lazyLibsLoaded')
->>>>>>> 83706bced850ac0db85bd46a31e1fae2d40174e5
-=======
-  console.log('lazyLibsLoaded')
->>>>>>> 83706bced850ac0db85bd46a31e1fae2d40174e5
 }, 'lazyLibs')
