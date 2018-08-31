@@ -23,9 +23,7 @@ export default {
     }
   },
   methods: {
-    onDayClick2(){
-      
-    }
+    
   },
   mounted(){
     setTimeout(()=>{

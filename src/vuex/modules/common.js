@@ -1,4 +1,4 @@
-import utils from '../../utils'
+import cache from '../../utils/cache'
 
 const typeArrays = [
   'LOGIN',
@@ -45,8 +45,8 @@ const state = {
     updatingText: '',
     description:[]
   },
-  user: utils.cache.get('user'),
-  userSetting: utils.cache.get('userSetting')
+  user: cache.get('user'),
+  userSetting: cache.get('userSetting')
 }
 
 const getters = {
@@ -81,13 +81,13 @@ const actions = {
 
 const mutations = {
   [types.LOGIN](state, data) {
-    utils.cache.set('user', data.user)
-    utils.cache.set('userSetting', data.userSetting)
+    cache.set('user', data.user)
+    cache.set('userSetting', data.userSetting)
     state.user = data.user
     state.userSetting = data.userSetting
   },
   [types.LOGOUT](state) {
-    utils.cache.clear()
+    cache.clear()
     state.user = null
     state.userSetting = null
   },

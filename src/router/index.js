@@ -21,6 +21,7 @@ import setting from './setting'
 import upload from './upload'
 import browser from './browser'
 import zoom from './zoom'
+import workflow from './workflow'
 
 Vue.use(Router)
 
@@ -54,12 +55,30 @@ const router = new Router({
     ...setting,
     ...upload,
     ...browser,
-    ...zoom
+    ...zoom,
+    ...workflow
     ]
   }]
 })
+
+let routerMap = {}
+let ready = false
+let loader = document.querySelector('.loader-box')
+let timer1,timer2;
+
 router.beforeEach((to, from, next) => {
-  if (to.meta.login != false && !store.state.common.user) {
+  if(!routerMap[to.name]){
+    if(loader.className.indexOf('fadeOut') !== -1){
+      timer1 = setTimeout(()=>{
+        loader.style.display = 'block'
+        timer2 = setTimeout(()=>{
+          loader.className = loader.className.replace(' fadeOut', '')
+        })
+      },100)
+    }
+  }
+  
+  if(to.meta.login != false && !store.state.common.user) {
     store.commit('TOGGLE_POPUP', {
       visible: true,
       text: '请先登录！',
@@ -72,15 +91,30 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
+  clearTimeout(timer2)
+  clearTimeout(timer1)
+  routerMap[to.name] = true
   store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)
   store.commit('TOGGLE_FOOTER', to.meta.hasFooter != false)
   store.commit('TOGGLE_TABS', {flag:to.meta.hasTabs == true, tab:to.name})
-  let loader = document.querySelector('.loader-box')
-  if(loader.className.indexOf('fadeOut') === -1){
-    loader.className += ' fadeOut'
-    setTimeout(()=>{
-      loader.style.display = 'none'
-    },500)
+
+  if(ready){
+    if(loader.className.indexOf('fadeOut') === -1){
+      setTimeout(()=>{
+        loader.className += ' fadeOut'
+      },500)
+      setTimeout(()=>{
+        loader.style.display = 'none'
+      },1000)
+    }
+  }else{
+    ready = true
+    if(loader.className.indexOf('fadeOut') === -1){
+      loader.className += ' fadeOut'
+      setTimeout(()=>{
+        loader.style.display = 'none'
+      },500)
+    }
   }
 })
 export default router

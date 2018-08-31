@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header title="地图">
+    <mt-header title="百度地图">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
     </mt-header>
 

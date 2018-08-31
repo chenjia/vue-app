@@ -7,6 +7,7 @@
     <div class="pd-md">
       <mt-button type="primary" size="large" @click="showUpload('uploadVisible')">文件上传</mt-button><br/>
       <mt-button type="primary" size="large" @click="showUpload('cropVisible')">图片上传</mt-button><br/>
+      <mt-button type="primary" size="large" @click="showUpload('galleryVisible')">相册管理</mt-button><br/>
     </div>
 
     <mt-popup v-model="uploadVisible" position="right" style="width:100%;height:100%;">
@@ -15,12 +16,12 @@
       </mt-header>
       <div class="pd-md">
         <uploader :options="options" class="uploader-example">
-          <uploader-unsupport></uploader-unsupport>
+          <uploader-unsupport>对不起，您的浏览器不支持此上传控件</uploader-unsupport>
           <uploader-drop>
-           <p>Drop files here to upload or</p>
-           <uploader-btn>select files</uploader-btn>
-           <uploader-btn :attrs="attrs">select images</uploader-btn>
-           <uploader-btn :directory="true">select folder</uploader-btn>
+           <p>拖动文件到此处上传</p>
+           <uploader-btn>选择文件</uploader-btn>
+           <uploader-btn :attrs="attrs">选择图片</uploader-btn>
+           <uploader-btn :directory="true">选择文件夹</uploader-btn>
          </uploader-drop>
          <uploader-list></uploader-list>
        </uploader>
@@ -28,106 +29,189 @@
 	  </mt-popup>
 
     <mt-popup v-model="cropVisible" position="right" style="width:100%;height:100%;">
-	    <mt-header title="图片上传">
-      	<mt-button @click="cropVisible = !cropVisible" slot="left" icon="back">返回</mt-button>
-      	<mt-button @click="sheetVisible = true" slot="right" icon="camera">选择图片</mt-button>
-    	</mt-header>
-      <div :style="{height:(screenHeight-100)+'px'}">
-	    	<img id="image" style="opacity:0;" src="../../../static/img/lock-bg.jpg">
-	    </div>
-	    <div class="pd-md">
-	    	<mt-button class="btn-progress" size="large" @click="uploadImg">开始上传</mt-button>
-	    </div>
-	  </mt-popup>
+      <mt-header title="图片上传">
+        <mt-button @click="cropVisible = !cropVisible" slot="left" icon="back">返回</mt-button>
+        <mt-button @click="" slot="right">
+          选择图片
+          <input ref="imgFile" @change="selectImg" accept="image/*" style="position:absolute;top:0;right:0;opacity:0;width:58px;height:40px;" type="file" name="" value="">
+        </mt-button>
+      </mt-header>
+      <div class="uploadBox" style="width:100%;">
+        <img id="image">
+      </div>
+      <div class="pd-md center">
+        <div style="display:inline-block;width:100px;">
+          <div class="preview"></div>
+        </div>
+      </div>
 
-	  <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
+      <div class="pd-md" style="position:absolute;bottom:0;width:100%;height:61px;box-sizing: border-box;">
+        <mt-button class="btn-upload" v-show="imgReady" type="primary" size="large" @click="uploadImg">开始上传</mt-button>  
+      
+        <mt-progress v-show="uploading || percent==100" :value="percent" :bar-height="5" style="margin-top:10px;">
+          <div slot="start">上传文件　</div>
+          <div slot="end"><span style="display:inline-block;width:60px;">　{{percent}}%</span></div>
+        </mt-progress>
+      </div>
+    </mt-popup>
+
+    <mt-popup v-model="galleryVisible" position="right" style="overflow-y:auto;background:#eee;width:100%;height:100%;">
+      <mt-header title="相册管理">
+        <mt-button @click="galleryVisible = !galleryVisible" slot="left" icon="back">返回</mt-button>
+        <mt-button @click="createGallery" slot="right">创建相册</mt-button>
+      </mt-header>
+
+      <div class="flexable" style="padding:10px 5px;flex-wrap: wrap;justify-content: space-between;">
+        <div v-for="i in 2" class="flex-item">
+          <div v-if="(index+i-1)%2==0" v-for="index in 5" style="margin-bottom:10px;background:#fff;border:1px solid #ccc;border-radius: 5px;">
+            <div class="pd-sm" style="border-radius: 5px 5px 0 0;">
+              <img style="width:100%;" :src="'./static/img/gallery/'+(index-1)+'.jpg'">
+              <div style="padding:0 5px;color:#999;font-size:14px;">
+                <i class="fa fa-map-marker"></i>
+                <span>上海市浦东新区xxx路xxx号</span>
+              </div>
+            </div>
+            <div class="flexable primary" style="padding:10px 0;font-size:14px;justify-content:space-around;border-top:1px solid #ccc;border-radius: 0 0 5px 5px;">
+              <i class="fa fa-thumbs-up"></i>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mt-popup>
   </div>
 </template>
 
 <script>
-import jquery from 'jquery'
-window.jQuery = window.$ = jquery
 import uploader from 'vue-simple-uploader'
 Vue.use(uploader)
-import 'cropper/dist/cropper.min.css'
-import cropper from 'cropper'
+import 'cropperjs/dist/cropper.min.css'
+import Cropper from 'cropperjs'
+import { MessageBox } from 'mint-ui'
+
+let cropper
+function each(arr, callback) {
+  let length = arr.length
+  let i
+
+  for (i = 0; i < length; i++) {
+    callback.call(arr, arr[i], i, arr)
+  }
+
+  return arr
+}
+
 export default {
   name: 'Upload',
   data () {
     return {
+      cropper:null,
       cropVisible:false,
       uploadVisible:false,
-      sheetVisible: false,
-      actions:[{
-        name:'从文件导入'
-      },{
-        name:'打开照相机'
-      }],
+      galleryVisible:false,
       options: {
-        target: '//localhost:8001/api/upload',
+        target: window.Config.server + '/upload',
         testChunks: false
       },
       attrs: {
         accept: 'image/*'
-      }
+      },
+      imgReady:false,
+      uploading:false,
+      percent: 0,
+      galleryList:[]
     }
   },
   methods:{
   	showUpload(type){
-  		if(type == 'uploadVisible'){
-        this.uploadVisible = true
-  		}else if(type == 'cropVisible'){
-  			this.cropVisible = true
-  			$('#image').cropper({
-  				aspectRatio: 1,
-  				crop: function(event) {
-  					console.log(event.detail.x);
-  					console.log(event.detail.y);
-  					console.log(event.detail.width);
-  					console.log(event.detail.height);
-  					console.log(event.detail.rotate);
-  					console.log(event.detail.scaleX);
-  					console.log(event.detail.scaleY);
-  				}
-  			});
-  		}
+      this[type] = true
   	},
+    selectImg(){
+      let _this = this
+      let image = document.querySelector('#image')
+      let previews = document.querySelectorAll('.preview')
+
+      let reader = new FileReader()
+      reader.readAsDataURL(this.$refs.imgFile.files[0])
+
+      reader.onload = function(e) {
+        _this.imgReady = true
+        _this.percent = 0
+        image.onload = function(){
+          let ratio = image.width/image.height
+          document.querySelector('.uploadBox').style.height = _this.screenWidth/ratio+'px'
+        }
+        if(cropper){
+          cropper.replace(this.result)
+          previews[0].innerHTML = ''
+        }else{
+          image.src = this.result
+
+          cropper = new Cropper(image, {
+            aspectRatio:1,
+            crop: function(e) {
+              let data = e.detail
+              let cropper = this.cropper
+              let imageData = cropper.getImageData()
+              let previewAspectRatio = data.width / data.height
+
+              each(previews, function (elem) {
+                let previewImage = elem.getElementsByTagName('img').item(0)
+                let previewWidth = elem.offsetWidth
+                let previewHeight = previewWidth / previewAspectRatio
+                let imageScaledRatio = data.width / previewWidth
+
+                elem.style.height = previewHeight + 'px'
+                previewImage.style.width = imageData.naturalWidth / imageScaledRatio + 'px'
+                previewImage.style.height = imageData.naturalHeight / imageScaledRatio + 'px'
+                previewImage.style.marginLeft = -data.x / imageScaledRatio + 'px'
+                previewImage.style.marginTop = -data.y / imageScaledRatio + 'px'
+              })
+            }
+          })
+        }
+
+        let clone = image.cloneNode()
+        clone.className = ''
+        clone.style.cssText = 
+        'display: block;' +
+        'width: 100%;' +
+        'min-width: 0;' +
+        'min-height: 0;' +
+        'max-width: none;' +
+        'max-height: none;'
+
+        each(previews, function (elem) {
+          elem.appendChild(clone.cloneNode())
+        })
+      }
+    },
   	uploadImg(){
-  		let progress = 0
+      this.imgReady = false
+      this.uploading = true
   		let timer = setInterval(()=>{
-  			progress += parseInt(Math.random()*5, 10)
-  			if(progress>100){
-  				progress = 100;
+  			this.percent += parseInt(Math.random()*5, 10)
+  			if(this.percent>100){
+  				this.percent = 100
+          this.uploading = false
   				clearInterval(timer)
   			}
-  			let style = '<style>.btn-progress:before{width:'+progress+'%;background:#26a2ff;content: " ";position:absolute;top:0;bottom:0;left:0;z-index:0;}</style>'
-  			let div = $('<div></div>')
-  			div.html(style)
-  			$('.btn-progress').before(div)
   		},100)
-  		
-  	}
+  	},
+    createGallery(){
+      MessageBox.prompt("请输入相册名称").then(({ value, action }) => {
+        
+      })
+    }
   },
   mounted(){
 		
   }
 }
 </script>
-<style type="text/css">
-.btn-progress label{
-	z-index: 999;
-	color: green;
-	position: relative;
-}
-.btn-progress:before{
-	transition:all .5s;
-	width:0%;
-	background:#26a2ff;
-	content: " ";
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	z-index:0;
+<style type="text/css" scoped>
+.preview {
+  overflow: hidden;
 }
 </style>

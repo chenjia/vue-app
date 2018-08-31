@@ -4,63 +4,36 @@
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
-    
-    <div>
-      <tab :tabs="tabs" :tabIndex.sync="tabIndex" style="position:relative;top:1px;z-index:999;"></tab>
-      <mt-tab-container v-model="tabIndex" :swipeable="true">
-        <mt-tab-container-item :id="0">
-          <div class="pd-md">
-            <mt-button type="primary" size="large" @click="showIndicator('snake')">snake</mt-button><br/>
-            <mt-button type="primary" size="large" @click="showIndicator('fading-circle')">fading-circle</mt-button><br/>
-            <mt-button type="primary" size="large" @click="showIndicator('double-bounce')">double-bounce</mt-button><br/>
-            <mt-button type="primary" size="large" @click="showIndicator('triple-bounce')">triple-bounce</mt-button><br/>
-          </div>
-        </mt-tab-container-item>
-        <mt-tab-container-item :id="1">
-          <div class="pd-md">
-            <div @click="percentTimer" class="circle" :style="{left:(screenWidth-100)*0.5+'px',background:percent==100?'#eee':'#26a2ff'}">
-              <div class="pie_left" :style="{transform:percent>50?'rotate('+(percent-50)*3.6+'deg)':'rotate(0deg)'}"></div>
-              <div class="pie_right" :style="{background:percent>50&&percent!=100?'#26a2ff':'#eee',transform:percent<=50?'rotate('+percent*3.6+'deg)':'rotate(0deg)'}"></div>
-              <div :style="{'background-image':percent==100?'url(static/img/head.jpg)':'url(static/img/head_bg.jpg)'}" class="mask"><span v-show="percent!=100&&percent!=0">{{percent}}%</span></div>
-            </div>
 
-            <mt-progress :value="percent" style="margin-top:120px;">
-              <div slot="start">上传文件　</div>
-              <div slot="end"><span style="display:inline-block;width:60px;">　{{percent}}%</span></div>
-            </mt-progress>
+    <div class="pd-md" style="position: relative;">
+      <div @click="percentTimer" class="circle" :style="{left:(screenWidth-100)*0.5+'px',background:percent==100?'#eee':'#26a2ff'}">
+        <div class="pie_left" :style="{transform:percent>50?'rotate('+(percent-50)*3.6+'deg)':'rotate(0deg)'}"></div>
+        <div class="pie_right" :style="{background:percent>50&&percent!=100?'#26a2ff':'#eee',transform:percent<=50?'rotate('+percent*3.6+'deg)':'rotate(0deg)'}"></div>
+        <div :style="{'background-image':percent==100?'url(static/img/head.jpg)':'url(static/img/head_bg.jpg)'}" class="mask"><span v-show="percent!=100&&percent!=0">{{percent}}%</span></div>
+      </div>
 
-            
-          </div>
-        </mt-tab-container-item>
-        <mt-tab-container-item :id="2">
-          <div style="text-align:center;color:green;" :style="{'line-height':screenHeight-50+'px'}">
-            <i class="fa fa-edge" style="font-size:100px;"></i>
-          </div>
-        </mt-tab-container-item>
-        <mt-tab-container-item :id="3">
-          <div style="text-align:center;color:green;" :style="{'line-height':screenHeight-50+'px'}">
-            <i class="fa fa-safari" style="font-size:100px;"></i>
-          </div>
-        </mt-tab-container-item>
-      </mt-tab-container>
+      <mt-progress :value="percent" :bar-height="5" style="margin-top:120px;">
+        <div slot="start">上传文件　</div>
+        <div slot="end"><span style="display:inline-block;width:60px;">　{{percent}}%</span></div>
+      </mt-progress>
+    </div>
+
+    <div class="pd-md">
+      <mt-button type="primary" size="large" @click="showIndicator('snake')">snake</mt-button><br/>
+      <mt-button type="primary" size="large" @click="showIndicator('fading-circle')">fading-circle</mt-button><br/>
+      <mt-button type="primary" size="large" @click="showIndicator('double-bounce')">double-bounce</mt-button><br/>
+      <mt-button type="primary" size="large" @click="showIndicator('triple-bounce')">triple-bounce</mt-button><br/>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
 import { Indicator } from 'mint-ui'
-import tab from '@/components/common/Tab'
 export default {
   name: 'loading',
-  components:{
-    tab
-  },
   data() {
     return {
-      percent:0,
-      tabs:['加载','上传'],
-      tabIndex:0
+      percent:0
     }
   },
   methods: {

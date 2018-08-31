@@ -6,15 +6,15 @@
     </mt-header>
     
     <div>
-      <mt-swipe v-if="showSwipe" :prevent="true" :auto="5000" :style="{height:screenWidth*0.6+'px'}">
-        <mt-swipe-item v-for="(item,index) in banners" :key="index" :style="{textAlign:'center', height:screenWidth*0.6666+'px'}">
-          <i :class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
+      <mt-swipe v-if="showSwipe" @change="handleChange" :prevent="true" :auto="auto" :style="{height:screenWidth*0.6+'px'}">
+        <mt-swipe-item v-for="i in 5" :key="i">
+          <img width="100%" :src="'./static/img/banner/'+(i-1)+'.jpg'">
         </mt-swipe-item>
       </mt-swipe>
       <table class="icon-table">
         <tr v-if="index%4 == 0" v-for="(menu, index) in menus" :key="index">
-          <td v-if="i>=index && i<index+4" v-for="(menu, i) in menus" style="width:25%;">
-            <div @click="go(menu.url)">
+          <td @click="go(menu.url)" v-if="i>=index && i<index+4" v-for="(menu, i) in menus" style="width:25%;padding-top:5px;">
+            <div>
               <i class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{color:menu.color}"></i><br/>
               <span>{{menu.name}}</span>
             </div>
@@ -24,7 +24,7 @@
     </div>
 
     <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
-      <i class="fa fa-calendar-o"></i> 待办事项
+      <i class="fa fa-calendar-o"></i> 日程安排
     </mt-button>
 
     <timeline :items="timelines"></timeline>
@@ -44,6 +44,15 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import {
+  Cell,
+  Swipe,
+  SwipeItem
+} from 'mint-ui'
+Vue.component(Cell.name, Cell)
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
 import timeline from '../common/Timeline.vue'
 import {
   mapGetters,
@@ -57,6 +66,7 @@ export default {
   },
   data() {
     return {
+      auto: 5000,
       showSwipe:true,
       drawer: false,
       mini: false,
@@ -67,17 +77,6 @@ export default {
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' }
       ],
-      banners: [{
-        icon: 'fa fa-chrome'
-      },{
-        icon: 'fa fa-firefox'
-      },{
-        icon: 'fa fa-safari'
-      },{
-        icon: 'fa fa-opera'
-      },{
-        icon: 'fa fa-internet-explorer'
-      }],
       menus: [{
         name: '列表',
         icon: 'list',
@@ -153,6 +152,11 @@ export default {
         icon: 'arrows-alt',
         color: '#ffd700',
         url: 'zoom'
+      },{
+        name: '流程图',
+        icon: 'sitemap',
+        color: '#6b8e23',
+        url: 'workflow'
       }],
       timelines:[{
         time:(()=>{
@@ -234,7 +238,11 @@ export default {
     }
   },
   methods: {
-
+    handleChange(index){
+      if(this.$route.name != 'home'){
+        this.showSwipe = false
+      }
+    }
   },
   watch:{
     popupMenu(val){
@@ -252,12 +260,6 @@ export default {
     next(vm=>{
       vm.showSwipe = true
     })
-  },
-  beforeRouteLeave(to, from, next){
-    setTimeout(()=>{
-      this.showSwipe = false
-    },300)
-    next()
   }
 }
 </script>

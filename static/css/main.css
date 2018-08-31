@@ -1,6 +1,7 @@
 *{
   -webkit-user-select: none;
   -webkit-tap-highlight-color:transparent;
+  font-family: 'PingFangSC-Regular';
 }
 input,textarea,select{
   -webkit-user-select: text;
@@ -12,6 +13,19 @@ body.modal-open {
 }
 .center{
   text-align:center;
+}
+.primary{
+  color:#26a2ff;
+}
+.flexable{
+  display: flex;
+  display: -webkit-flex;
+}
+.flex-item{
+  margin-bottom: 10px;
+  width:50%;
+  box-sizing:border-box;
+  padding: 0 5px;
 }
 .lxt-content{
   padding:16px;
@@ -25,6 +39,9 @@ body.modal-open {
 }
 .mbsc-cal-day-i .mbsc-ic:before{
   font-family:'FontAwesome'!important;
+}
+.pd-sm{
+  padding:5px;
 }
 .pd-md{
   padding:10px;
@@ -91,12 +108,12 @@ form .mint-field-core{
 .mint-popup{
   transition: all .3s ease-out;
 }
-.mint-swipe-indicator.is-active{
-  background:#26a2ff;
-}
 .mint-swipe-indicator{
   opacity: 1;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.4);
+}
+.mint-swipe-indicator.is-active{
+  background:rgba(255,255,255,0.8);
 }
 .mt-progress-progress{
   transition:width .3s linear;
@@ -186,4 +203,20 @@ form .mint-field-core{
 }
 .mint-tab-item{
   color:#888;
+}
+.mt-progress-progress{
+  background-size: 10px 10px;
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  animation: progress-bar-stripes .5s linear infinite;
+}
+.mt-progress-runway, .mt-progress-progress{
+  border-radius: 5px;
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 10px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }

@@ -7,7 +7,7 @@ window.axios = axios
 
 let instance = axios.create({
   method: 'post',
-  timeout: 30000,
+  timeout: 60000,
   withCredentials: true,
   headers: {
     post: {
@@ -68,13 +68,13 @@ function encryptByDES(message, key) {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7
     });
-    return encrypted.ciphertext.toString(CryptoJS.enc.Base64);
+    return encrypted.ciphertext.toString(CryptoJS.enc.Base64).replace(/[\r\n]/g, '').replace(/[\n]/g, '');
 }
 
 function decryptByDES(ciphertext, key) {
     var keyHex = CryptoJS.enc.Utf8.parse(key);
     var decrypted = CryptoJS.DES.decrypt({
-        ciphertext: CryptoJS.enc.Base64.parse(ciphertext)
+        ciphertext: CryptoJS.enc.Base64.parse(ciphertext.replace(/[\r\n]/g, '').replace(/[\n]/g, ''))
     }, keyHex, {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7
