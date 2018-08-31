@@ -1,11 +1,20 @@
 window.Config = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   appVersion:'1.0.20',
   nativeVersion:'1.0',
   // server: 'http://localhost:8700/lxt-gateway/lxt-manage',
   server: 'http://47.100.119.102/lxt-gateway/lxt-manage',
   appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app/index.html',
   chcpUrl:'https://chenjia1989.gitlab.io/vue-app/chcp.json',
+=======
+  appVersion:'1.0.21',
+  nativeVersion:'1.0',
+  // server: 'http://localhost:8700/lxt-gateway/lxt-manage',
+  server: 'http://47.100.119.102/lxt-gateway/lxt-manage',
+  appDownloadUrl:'https://chenjia.github.io/vue-app/public/index.html',
+  chcpUrl:'https://chenjia.github.io/vue-app/public/chcp.json',
+>>>>>>> 83706bced850ac0db85bd46a31e1fae2d40174e5
 =======
   appVersion:'1.0.21',
   nativeVersion:'1.0',
