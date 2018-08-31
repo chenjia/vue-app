@@ -83,7 +83,7 @@ export default {
       this.ready = true
     },100)
     setTimeout(()=>{
-      this.items.C.push('Chenjia')
+      this.items.C.push('chenjia')
     },200)
     
   }

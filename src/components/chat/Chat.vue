@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header title="聊天">
+    <mt-header title="即时聊天">
       <mt-button @click="back" slot="left" icon="back">返回</mt-button>
       <mt-button @click="popupMenu = true" slot="right">
         <i class="fa fa-fw fa-plus"></i>
@@ -18,6 +18,8 @@
             </mt-cell>
           </div>
         </accordion>
+
+        <p class="pd-md" style="color:gray;">PS：可用admin/admin，chenjia/chenjia 两个用户模拟聊天场景，后台采用dwr的http长连接实现</p>
     </div>
 
     <mt-popup v-model="popupConfig" position="left" class="popup-config">
@@ -49,7 +51,7 @@
 
     <chatDetails :open.sync="popupDetails" :target="target"></chatDetails>
 
-    <iframe style="display:none;" id="chatFrame" :src="server+'/chatFrame.html?userId='+user.userId"></iframe>
+    <iframe style="display:none;" id="chatFrame" :src="server + '/chatFrame.html?userId='+user.userId"></iframe>
   </div>
 </template>
 
@@ -82,9 +84,17 @@ export default {
       this.contacts = [{
         name:'最近联系人',
         friends:[{
-          name:'佳哥哥',
-          memo:'佳哥哥',
+          name:'admin',
+          memo:'admin',
+          friendId:'admin'
+        },{
+          name:'chenjia',
+          memo:'chenjia',
           friendId:'chenjia'
+        },{
+          name:'xiaoting',
+          memo:'xiaoting',
+          friendId:'xiaoting'
         }]
       }]
       return;

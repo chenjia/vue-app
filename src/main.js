@@ -1,80 +1,26 @@
 window.Config = {
-  appVersion:'1.0.25',
+  appVersion:'1.0.20',
   nativeVersion:'1.0',
-  server: 'http://localhost:8001/api',
+  // server: 'http://localhost:8700/lxt-gateway/lxt-manage',
+  server: 'http://47.100.119.102/lxt-gateway/lxt-manage',
   appDownloadUrl:'https://chenjia1989.gitlab.io/vue-app/index.html',
   chcpUrl:'https://chenjia1989.gitlab.io/vue-app/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
-  random:(''+Math.random()).substr(2)
+  random:(''+Math.random()).substr(2),
+  preload: 3000
 }
 
-import FastClick from 'fastclick'
 import Vue from 'vue'
+import utils from './utils'
 import App from './components/common/App'
 import router from './router'
 import store from './vuex/store'
 import 'mint-ui/lib/style.css'
 import '../static/css/main.css'
-import utils from './utils'
-import {
-  mapGetters,
-  mapMutations
-} from 'vuex'
 
 import {
-  Actionsheet,
-  Badge,
-  Button,
-  Cell,
-  CellSwipe,
-  Checklist,
-  DatetimePicker,
-  Field,
-  Header,
-  IndexList,
-  IndexSection,
-  Lazyload,
-  Loadmore,
-  Popup,
-  Progress,
-  Radio,
-  Range,
-  Search,
-  Spinner,
-  Swipe,
-  SwipeItem,
-  Switch,
-  Tabbar,
-  TabContainer,
-  TabContainerItem,
-  TabItem
-} from 'mint-ui'
-Vue.use(Lazyload)
-Vue.component(Actionsheet.name, Actionsheet)
-Vue.component(Badge.name, Badge)
-Vue.component(Button.name, Button)
-Vue.component(Cell.name, Cell)
-Vue.component(CellSwipe.name, CellSwipe)
-Vue.component(Checklist.name, Checklist)
-Vue.component(DatetimePicker.name, DatetimePicker)
-Vue.component(Field.name, Field)
-Vue.component(Header.name, Header)
-Vue.component(IndexList.name, IndexList)
-Vue.component(IndexSection.name, IndexSection)
-Vue.component(Loadmore.name, Loadmore)
-Vue.component(Popup.name, Popup)
-Vue.component(Progress.name, Progress)
-Vue.component(Radio.name, Radio)
-Vue.component(Range.name, Range)
-Vue.component(Search.name, Search)
-Vue.component(Spinner.name, Spinner)
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.component(Switch.name, Switch)
-Vue.component(Tabbar.name, Tabbar)
-Vue.component(TabContainer.name, TabContainer)
-Vue.component(TabContainerItem.name, TabContainerItem)
-Vue.component(TabItem.name, TabItem)
+  mapMutations
+} from 'vuex' 
 
 Vue.config.productionTip = false
 
@@ -112,5 +58,3 @@ new Vue({
     App
   }
 })
-
-FastClick.attach(document.body)

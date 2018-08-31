@@ -18,7 +18,9 @@
     </mt-popup>
 
     <mt-popup v-model="$store.state.common.version.popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
-      <mt-header title="版本更新提示"></mt-header>
+      <mt-header title="版本更新提示">
+        <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      </mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
         <span style='color:#4caf50'>本次更新内容（{{appVersion}} -&gt; {{$store.state.common.version.nextVersion}}）：</span>
         <div v-for="item in $store.state.common.version.description" style="font-size:14px;">{{item}}</div>
@@ -39,9 +41,27 @@
 </template>
 
 <script>
-import { MessageBox } from 'mint-ui'
+import Vue from 'vue'
+import {
+  Button,
+  Field,
+  Header,
+  Popup,
+  Progress,
+  Tabbar,
+  TabItem
+} from 'mint-ui'
+Vue.component(Button.name, Button)
+Vue.component(Field.name, Field)
+Vue.component(Header.name, Header)
+Vue.component(Progress.name, Progress)
+Vue.component(Popup.name, Popup)
+Vue.component(Tabbar.name, Tabbar)
+Vue.component(TabItem.name, TabItem)
+
 import { mapGetters } from 'vuex'
 import store from '../../vuex/store'
+
 export default {
   name: 'app',
   data(){
@@ -85,6 +105,9 @@ export default {
     toggleUpdating(){
       store.commit('TOGGLE_UPDATING', true)
       utils.version.fetchUpdate()
+    },
+    back(){
+      store.commit('TOGGLE_POPUP_VERSION', false)
     }
   },
   watch:{
@@ -96,6 +119,10 @@ export default {
     document.addEventListener("deviceready", () => {
       utils.version.checkForUpdate()
     }, false)
+
+    setTimeout(()=>{
+      require('../../lazyLibs')
+    }, Config.preload)
   }
 }
 </script>
@@ -116,8 +143,5 @@ export default {
   transition:all .4s ease-out;
   opacity: 0;
   transform: translate(0, 50px);
-}
-.mt-progress-runway, .mt-progress-progress{
-  border-radius: 5px;
 }
 </style>

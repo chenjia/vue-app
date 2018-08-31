@@ -97,12 +97,14 @@ export default {
         }, 500)
       }).catch(()=>{
         this.records = {
-          chenjia:[{
+          admin:[{
             recordId:'xxxxx',
             receiveId:'admin',
             sendId:'chenjia',
             content:'Hello World'
-          }]
+          }],
+          chenjia:[],
+          xiaoting:[]
         }
 
       })

@@ -57,7 +57,21 @@ export default {
       this.keepAlive.push(to.name)
     }
 
-    next()
+    if(window.lazyLibsLoaded || ['login'].indexOf(to.name) != -1){
+      next()
+    }else{
+      let timer = () => {
+        setTimeout(() => {
+          if(window.lazyLibsLoaded){
+            next()
+          }else{
+            timer()
+          }
+        }, 200)
+      }
+
+      timer()
+    }
   },
   created(){
     router.afterEach((to, from) => {
@@ -73,16 +87,20 @@ export default {
 <style>
 .animate-out-leave-active,.animate-in-leave-active{
   transition: all .15s ease-in;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .animate-in-enter-active,.animate-out-enter-active{
   transition: all .15s ease-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .animate-in-enter, .animate-out-leave-to{
-  transform: translateX(15%);
+  transform: translateX(50px) translateZ(0);
   opacity: 0;
 }
 .animate-out-enter, .animate-in-leave-to{
-  transform: translateX(-15%);
+  transform: translateX(-50px) translateZ(0);
   opacity: 0;
 }
 /*.animate-in-enter>div{

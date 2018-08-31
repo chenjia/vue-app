@@ -114,7 +114,7 @@ export default {
       gender: 'M',
       marriage: false,
       smoking:true,
-      volume:50,
+      volume:60,
       checkValue:['选项A'],
       radioValue:''
     }

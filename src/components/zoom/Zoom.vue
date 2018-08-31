@@ -37,14 +37,14 @@
             <th>星期日</th>
           </tr>
           <tr>
-            <td rowspan="4">上午</td>
+            <td rowspan="4" class="center">上午</td>
             <td>语文</td>
             <td>数学</td>
             <td>英语</td>
             <td>英语</td>
             <td>物理</td>
             <td>计算机</td>
-            <td rowspan="4">休息</td>
+            <td rowspan="4" class="center">休息</td>
           </tr>
           <tr>
             <td>数学</td>
@@ -69,14 +69,14 @@
           <td>地理</td>
           <td>计算机</td>
           <tr>
-            <td rowspan="2">下午</td>
+            <td rowspan="2" class="center">下午</td>
             <td>语文</td>
             <td>数学</td>
             <td>英语</td>
             <td>英语</td>
             <td>物理</td>
             <td>计算机</td>
-            <td rowspan="2">休息</td>
+            <td rowspan="2" class="center">休息</td>
           </tr>
           <tr>
             <td>数学</td>
@@ -84,7 +84,7 @@
             <td>地理</td>
             <td>历史</td>
             <td>化学</td>
-            <td>计算</td>
+            <td>计算机</td>
           </tr>
         </table>
       </div>
@@ -133,7 +133,7 @@ export default {
 .table {
   margin-top:10px;
   font-size: 16px;
-  width: 800px;
+  width: 500px;
   border: 1px solid #a8c0de;
   border-collapse: collapse;
 }

@@ -70,7 +70,7 @@
       </mt-header>
 
       <div>
-        <mt-cell title="明炉烧鸭饭" value="x1"></mt-cell>
+        <mt-cell title="满汉全席套餐" value="x1"></mt-cell>
         <mt-cell title="米饭" value="x1"></mt-cell>
         <mt-cell title="打包盒" value="x2"></mt-cell>
       </div>
