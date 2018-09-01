@@ -17,9 +17,9 @@
 
     <div class="list-group">
     	<mt-cell title="新消息通知" is-link></mt-cell>
-    	<mt-cell title="隐私" is-link></mt-cell>
+    	<mt-cell title="隐私" is-link @click.native="showUserAgent()"></mt-cell>
     	<mt-cell title="通用" is-link></mt-cell>
-        <mt-cell title="调试" is-link @click.native="debug()"></mt-cell>
+      <mt-cell title="调试" is-link @click.native="debug()"></mt-cell>
     </div>
     
     <div class="list-group">
@@ -28,6 +28,10 @@
 
     <div style="padding:20px">
     	<mt-button @click="logout()" type="danger" size="large">退出登录</mt-button>
+    </div>
+
+    <div class="pd-md">
+      {{userAgent}}
     </div>
   </div>
 </template>
@@ -39,7 +43,7 @@ export default {
 	name: 'setting',
 	data () {
 		return {
-
+      userAgent: null
 		}
 	},
 	methods: {
@@ -61,6 +65,9 @@ export default {
           eruda.init()
         });
       }
+    },
+    showUserAgent(){
+      this.userAgent = navigator.userAgent
     }
 	},
 	mounted () {
