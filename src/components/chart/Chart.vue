@@ -1,7 +1,7 @@
 <template>
   <div :style="{height:screenHeight+'px'}">
     <mt-header title="图表">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
     
     <echarts :type="active" :width="screenWidth" :height="screenHeight-60" :options="options[active]"></echarts>

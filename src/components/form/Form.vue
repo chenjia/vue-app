@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="表单">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
     <div>
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>

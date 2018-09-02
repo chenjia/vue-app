@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="列表" fixed>
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
 

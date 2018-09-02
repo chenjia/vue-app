@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="视频">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
     <video :style="{width:'100%'}" autoplay controls loop>

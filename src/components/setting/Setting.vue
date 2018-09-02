@@ -1,7 +1,7 @@
 <template>
   <div style="position:absolute;overflow-y:auto;background:#eee;width:100%;height:100%;">
     <mt-header title="设置">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
     <div class="list-group">

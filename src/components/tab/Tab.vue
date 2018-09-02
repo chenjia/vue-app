@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="选项卡">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
     <tab :tabs="tabs" :tabIndex.sync="tabIndex" style="position:relative;top:1px;z-index:999;"></tab>

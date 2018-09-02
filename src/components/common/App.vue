@@ -19,7 +19,7 @@
 
     <mt-popup v-model="$store.state.common.version.popupVersion" popup-transition="popup-fade" style="width:100%;height:100%;">
       <mt-header title="版本更新提示">
-        <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+        <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
       </mt-header>
       <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
         <span style='color:#4caf50'>本次更新内容（{{appVersion}} -&gt; {{$store.state.common.version.nextVersion}}）：</span>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="联系人">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
     
     <div class="mint-searchbar">

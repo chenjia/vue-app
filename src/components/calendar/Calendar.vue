@@ -1,7 +1,7 @@
 <template>
   <div :style="{height:screenHeight+'px'}" style="background:#f7f7f7;">
     <mt-header title="日历">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
     <div id="calendar" class="fade" :class="{'active':init}"></div>

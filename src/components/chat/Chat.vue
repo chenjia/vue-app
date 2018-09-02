@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="即时聊天">
-      <mt-button @click="back" slot="left" icon="back">返回</mt-button>
+      <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
       <mt-button @click="popupMenu = true" slot="right">
         <i class="fa fa-fw fa-plus"></i>
       </mt-button>
