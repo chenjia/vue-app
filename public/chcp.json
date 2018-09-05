@@ -1,5 +1,5 @@
 {
-  "content_url": "http://chenjia.github.io/vue-app/public",
+  "content_url": "https://chenjia.github.io/vue-app/public",
   "update": "now",
   "appVersion": "1.0.27",
   "nativeVersion": "1.0",
@@ -8,5 +8,5 @@
     "2. 部分bug修复",
     "3. 测试ios app"
   ],
-  "release": "2018.09.05-21.19.16"
+  "release": "2018.09.05-21.30.13"
 }
