@@ -44,7 +44,7 @@ const version = {
 				}
 			}
 		},{
-			'config-file': Config.chcpUrl
+			'config-file': window.Config.chcpUrl
 		})
 	},
 	installUpdate(){
