@@ -8,7 +8,7 @@
     <div>
       <mt-field label="账　号" placeholder="请输入账号" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
-      <mt-field label="验证码" v-model="model.captcha" placeholder="请输入验证码">
+      <mt-field label="验证码" type="tel" v-model="model.captcha" placeholder="请输入验证码">
         <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;border:1px solid #eee;">
       </mt-field>
       <div class="pd-md">
@@ -68,24 +68,24 @@ export default {
         text: '登录中'
       })
 
-      utils.http.post('/api/user/login', this.model).then(response => {
-        Indicator.close()
-        if(response.data.body.data) {
-          this.doLogin({
-            user:response.data.body.data.user,
-            userSetting:response.data.body.data.userSetting
-          })
-          this.go('/page/home')
-        }else{
-          store.commit('TOGGLE_POPUP', {visible: true, text: response.data.head.msg, duration: 3000})
-          this.getCaptcha()
-        }
-      }, error => {
-        setTimeout(()=>{
+      setTimeout(()=>{
+        utils.http.post('/api/user/login', this.model).then(response => {
+          Indicator.close()
+          if(response.data.body.data) {
+            this.doLogin({
+              user:response.data.body.data.user,
+              userSetting:response.data.body.data.userSetting
+            })
+            this.go('/page/home')
+          }else{
+            store.commit('TOGGLE_POPUP', {visible: true, text: response.data.head.msg, duration: 3000})
+            this.getCaptcha()
+          }
+        }, error => {
           Indicator.close()
           this.go('/page/home')
-        },100)
-      })
+        })
+      },10)
     },
     check(){
       utils.version.checkForUpdate()

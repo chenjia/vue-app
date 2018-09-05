@@ -1,12 +1,12 @@
 {
   "content_url": "http://chenjia.github.io/vue-app/public",
   "update": "now",
-  "appVersion": "1.0.24",
+  "appVersion": "1.0.25",
   "nativeVersion": "1.0",
   "description": [
     "1. 优化首屏加载速度",
     "2. 部分bug修复",
     "3. 测试ios app"
   ],
-  "release": "2018.09.02-16.12.32"
+  "release": "2018.09.05-20.44.21"
 }
