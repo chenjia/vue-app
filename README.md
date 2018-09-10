@@ -2,7 +2,7 @@ vue-app 是采用vue+mint-UI开发的Hybird app，里面集成了很多demo可�
 
 在线访问地址为 https://chenjia.github.io/vue-app/public/index.html 开发人员联系方式：251746034@qq.com
 
-如果觉得对您有帮助请别忘记加星，望更多人能加入到Hybird开发的行列中。
+如果觉得对您有帮助请别忘记加星，望更多人能加入到Hybrid开发的行列中。
 
 # vue-app
 
