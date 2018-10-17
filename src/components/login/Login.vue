@@ -14,8 +14,8 @@
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登　录</mt-button>
       </div>
-      <mt-field label="服务器地址" v-model="server"></mt-field>
-      <mt-field label="热更新地址" v-model="chcpUrl"></mt-field>
+      <mt-field label="服务器url" v-model="server"></mt-field>
+      <mt-field label="热更新url" v-model="chcpUrl"></mt-field>
       <div style="position:absolute;width:100%;bottom:5px;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
     </div>
   </div>

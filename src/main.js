@@ -1,5 +1,5 @@
 window.Config = {
-  appVersion:'1.0.29',
+  appVersion:'1.0.30',
   nativeVersion:'1.0',
   // server: 'http://localhost:8700/lxt-gateway',
   server: 'http://47.100.119.102/lxt-gateway',
