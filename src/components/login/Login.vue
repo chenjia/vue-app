@@ -53,7 +53,7 @@ export default {
       doLogout:'LOGOUT'
     }),
     getCaptcha(){
-      utils.http.post('/api/user/captcha').then(response => {
+      utils.http.post('/lxt-manage/api/user/captcha').then(response => {
         this.model.captchaToken = response.data.body.data.captchaToken
         this.base64Img = 'data:image/png;base64, '+response.data.body.data.base64Img
       })
@@ -69,7 +69,7 @@ export default {
       })
 
       setTimeout(()=>{
-        utils.http.post('/api/user/login', this.model).then(response => {
+        utils.http.post('/lxt-manage/api/user/login', this.model).then(response => {
           Indicator.close()
           if(response.data.body.data) {
             this.doLogin({

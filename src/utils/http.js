@@ -36,7 +36,7 @@ instance.interceptors.request.use(function(config) {
       data: config.data
     }
   }
-  console.log('【request:'+config.url+'】',config.data)
+  console.log('【request:'+config.url+'】', data)
   config.url = window.Config.server + config.url
   config.data = {
     request: encryptByDES(JSON.stringify(data), Config.key)

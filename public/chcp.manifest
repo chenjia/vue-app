@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "46dcf873af628db0f6f8707d8a05844a"
+    "hash": "cec528254849e4b56b842179c9755da7"
   },
   {
     "file": "static/css/app.css",
@@ -153,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "3aa5ed3ad694e5cde5f0c86e128d0b4a"
+    "hash": "4c698c7c5a9112cb9f9f7a88e42e64af"
   },
   {
     "file": "static/js/browser.js",
@@ -169,7 +169,7 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "f4c7ac181ddeedc8832e73cb9c75971c"
+    "hash": "baf8f1c13b2a84cb6ad1a92baae99918"
   },
   {
     "file": "static/js/contact.js",
@@ -205,7 +205,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "1d12a5507f17d5769038f1ed22e52b1d"
+    "hash": "e6cf2d786f90239d6ca7e4a35467b917"
   },
   {
     "file": "static/js/manifest.js",
@@ -225,7 +225,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "35d0e593087e606b1724ce4adc868b71"
+    "hash": "52f63bd85a8802fa2711ec5cc806808e"
   },
   {
     "file": "static/js/vendor.js",
