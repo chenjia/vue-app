@@ -14,9 +14,9 @@
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登　录</mt-button>
       </div>
-      <mt-field label="服务器url" v-model="server"></mt-field>
-      <mt-field label="热更新url" v-model="chcpUrl"></mt-field>
-      <div style="position:absolute;width:100%;bottom:5px;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
+      <mt-field v-if="showVersion" label="服务器url" v-model="server"></mt-field>
+      <mt-field v-if="showVersion" label="热更新url" v-model="chcpUrl"></mt-field>
+      <div @click="showVersion = !showVersion" style="position:absolute;width:100%;bottom:5px;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
     </div>
   </div>
 </template>
@@ -41,6 +41,7 @@ export default {
         captcha: '',
         captchaToken: ''
       },
+      showVersion: false,
       appVersion: Config.appVersion,
       server: Config.server,
       chcpUrl: Config.chcpUrl,

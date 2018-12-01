@@ -1,7 +1,7 @@
 window.Config = {
-  appVersion:'1.0.30',
+  appVersion:'1.0.31',
   nativeVersion:'1.0',
-  // server: 'http://localhost:8700/lxt-gateway',
+  // server: 'http://localhost:8201/lxt-gateway',
   server: 'http://47.100.119.102/lxt-gateway',
   appDownloadUrl:'https://chenjia.github.io/vue-app/public/index.html',
   chcpUrl:'https://chenjia.github.io/vue-app/public/chcp.json',
