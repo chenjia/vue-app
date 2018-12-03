@@ -20,6 +20,7 @@ require.ensure([], () => {
   let Popup = require('mint-ui/lib/popup').default
   let Progress = require('mint-ui/lib/progress').default
   let Radio = require('mint-ui/lib/radio').default
+  let Range = require('mint-ui/lib/range').default
   let Search = require('mint-ui/lib/search').default
   let Spinner = require('mint-ui/lib/spinner').default
   let Swipe = require('mint-ui/lib/swipe').default
