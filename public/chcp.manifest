@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "cec528254849e4b56b842179c9755da7"
+    "hash": "bbbc96d3ffde6d2e72f455450f8dd4fd"
   },
   {
     "file": "static/css/app.css",
@@ -153,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "4456e691f192d8d0317574165980aa31"
+    "hash": "d0924df35608cb7141dd2d465bf3b4bc"
   },
   {
     "file": "static/js/browser.js",
@@ -205,7 +205,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "76fdf122abace0240ea1c714cfb2480e"
+    "hash": "8af5e5982490d8cac513b95ba3db8ef1"
   },
   {
     "file": "static/js/manifest.js",

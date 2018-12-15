@@ -1,6 +1,6 @@
 <template>
   <div :style="{height: screenHeight+'px'}">
-    <mt-header title="vue应用">
+    <mt-header title="vue-app">
       <mt-button slot="left" @click="go('home')" class="fa fa-fw fa-home"></mt-button>
       <mt-button slot="right" @click="check()" class="fa fa-fw fa-refresh"></mt-button>
     </mt-header>
