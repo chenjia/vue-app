@@ -10,17 +10,21 @@
     </div>
     
     <zoom title="放大缩小" :dialog="true" :show.sync="popupPDF">
-      <mt-button @click="popupPDF = !popupPDF" type="primary" size="large">关闭</mt-button>
+      <mt-button style="position:absolute;top:10px;right:10px;" @click="popupPDF = !popupPDF" type="primary" size="small" plain>
+        <i class="fa fa-close"></i>
+      </mt-button>
       <div style="overflow-y:auto;" :style="{height:screenHeight+'px'}">
         <img class="image" v-for="item in items" style="width:100%;border-bottom:1px solid #ccc;" v-lazy="'./static/img/pdf/'+item">
       </div>
     </zoom>
 
     <zoom title="放大缩小" :dialog="true" :show.sync="popupTable">
-      <mt-button @click="popupTable = !popupTable" type="primary" size="large">关闭</mt-button>
+      <mt-button style="position:absolute;top:10px;right:10px;" @click="popupTable = !popupTable" type="primary" size="small" plain>
+        <i class="fa fa-close"></i>
+      </mt-button>
       <div style="overflow:auto;" :style="{height:screenHeight+'px'}">
         <table class="table" border="1" bordercolor="blue">
-          <caption align="center"> 课程表</caption>
+          <caption align="center" style="margin:20px 0 10px 0;"> 课程表</caption>
           <tr>
             <th>项目</th>
             <th colspan="5">上课</th>
