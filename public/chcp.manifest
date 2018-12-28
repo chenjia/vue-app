@@ -1,7 +1,7 @@
 [
   {
     "file": "index.html",
-    "hash": "bbbc96d3ffde6d2e72f455450f8dd4fd"
+    "hash": "01e94a29ba528e322d8ac1b259d97dbb"
   },
   {
     "file": "static/css/app.css",
@@ -153,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "d0924df35608cb7141dd2d465bf3b4bc"
+    "hash": "651bdaed4a127fe8f138a82ebf7abb5b"
   },
   {
     "file": "static/js/browser.js",
@@ -205,7 +205,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "8af5e5982490d8cac513b95ba3db8ef1"
+    "hash": "ecc970642d65b949eb363f723f3bfc4e"
   },
   {
     "file": "static/js/manifest.js",
@@ -241,7 +241,7 @@
   },
   {
     "file": "static/js/zoom.js",
-    "hash": "d246e7117901d270fb15b65572a9b93e"
+    "hash": "363f62973febf1f32a503ef0e406400d"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",
