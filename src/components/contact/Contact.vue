@@ -86,10 +86,28 @@ export default {
       this.items.C.push('chenjia')
     },200)
 
-    alert(navigator.contacts)
-    
     document.addEventListener("deviceready", ()=>{
-      console.log(navigator.contacts);
+      function onSuccess(contacts) {
+        alert('Found ' + contacts.length + ' contacts.');
+        console.log(JSON.stringify(contacts))
+      };
+
+      function onError(contactError) {
+        alert('onError!');
+      };
+
+      var options      = new ContactFindOptions();
+      // options.filter   = "Bob";
+      options.multiple = true;
+      options.desiredFields = [navigator.contacts.fieldType.id];
+      options.hasPhoneNumber = true;
+      var fields = [
+        navigator.contacts.fieldType.displayName, 
+        navigator.contacts.fieldType.name, 
+        navigator.contacts.fieldType.phoneNumbers, 
+        navigator.contacts.fieldType.nickname
+      ]
+      navigator.contacts.find(fields, onSuccess, onError, options);
     }, false);
   }
 }
