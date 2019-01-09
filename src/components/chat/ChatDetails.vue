@@ -29,8 +29,8 @@
       <div class="chat-editor-btn">
         <i class="fa fa-fw fa-smile-o"></i>
       </div>
-      <mt-button @click="send" v-show="msg != null && msg != ''" type="primary" size="small">发送</mt-button>
-      <div v-show="msg == null || msg == ''" class="chat-editor-btn">
+      <mt-button @click="send" v-show="msg != null && msg != ''" type="primary" size="small" style="margin:0 10px;">发送</mt-button>
+      <div v-show="msg == null || msg == ''" class="chat-editor-btn" style="margin-right:10px;">
         <i class="fa fa-fw fa-plus"></i>
       </div>
     </div>
@@ -236,6 +236,7 @@ export default {
 }
 .chat-editor-btn{
   display:inline-block;
+  margin-left:10px;
   width:30px;
   height:30px;
   line-height:30px;
@@ -252,7 +253,7 @@ export default {
   line-height:30px;
   border-bottom:1px solid #ccc;
   border-radius: 0;
-  flex:0 1 150px;
+  flex:1 1 100px;
 }
 .rotate{
   transform:rotate(-180deg);
