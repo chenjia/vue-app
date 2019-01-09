@@ -85,7 +85,12 @@ export default {
     setTimeout(()=>{
       this.items.C.push('chenjia')
     },200)
+
+    alert(navigator.contacts)
     
+    document.addEventListener("deviceready", ()=>{
+      console.log(navigator.contacts);
+    }, false);
   }
 }
 </script>
