@@ -88,25 +88,19 @@ export default {
 
     document.addEventListener("deviceready", ()=>{
       function onSuccess(contacts) {
-        alert('Found ' + contacts.length + ' contacts.');
-        console.log(JSON.stringify(contacts))
+        console.log('Found ' + contacts.length + ' contacts.')
+        for (var i = 0; i < contacts.length; i++) {
+          console.log("Contact[" + i + "]: " + JSON.stringify(contacts[i]))
+        }
       };
 
       function onError(contactError) {
         alert('onError!');
       };
 
-      var options      = new ContactFindOptions();
-      // options.filter   = "Bob";
-      options.multiple = true;
-      options.desiredFields = [navigator.contacts.fieldType.id];
-      options.hasPhoneNumber = true;
-      var fields = [
-        navigator.contacts.fieldType.displayName, 
-        navigator.contacts.fieldType.name, 
-        navigator.contacts.fieldType.phoneNumbers, 
-        navigator.contacts.fieldType.nickname
-      ]
+      var fields = ["displayName", "name", "phoneNumbers", "emails", "address"]
+      console.log(navigator.contacts.fieldType)
+      var options = { filter: "", multiple: true }
       navigator.contacts.find(fields, onSuccess, onError, options);
     }, false);
   }
