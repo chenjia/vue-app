@@ -25,7 +25,7 @@
       <div class="chat-editor-btn" style="transform:rotate(90deg);">
         <i class="fa fa-fw fa-wifi"></i>
       </div>
-      <input @keyup.enter="send" v-model="msg" type="text" class="chat-editor-input" :style="{width:screenWidth-130+'px'}">
+      <input @keyup.enter="send" v-model="msg" type="text" class="chat-editor-input" :style="{width:screenWidth-100+'px'}">
       <div class="chat-editor-btn">
         <i class="fa fa-fw fa-smile-o"></i>
       </div>
@@ -251,7 +251,8 @@ export default {
   height:30px;
   line-height:30px;
   border-bottom:1px solid #ccc;
-  flex:0 1 100px;
+  border-radius: 0;
+  flex:0 1 150px;
 }
 .rotate{
   transform:rotate(-180deg);

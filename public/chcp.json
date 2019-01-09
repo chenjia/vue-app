@@ -1,7 +1,7 @@
 {
   "content_url": "https://chenjia.github.io/vue-app/public",
   "update": "now",
-  "appVersion": "1.0.37",
+  "appVersion": "1.0.38",
   "nativeVersion": "1.0",
   "description": [
     "1. 优化首屏加载速度",
@@ -9,5 +9,5 @@
     "3. 测试增量更新功能",
     "4. 测试通讯录"
   ],
-  "release": "2019.01.09-16.54.57"
+  "release": "2019.01.09-17.55.27"
 }
