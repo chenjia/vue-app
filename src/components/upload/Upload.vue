@@ -112,7 +112,7 @@ export default {
       uploadVisible:false,
       galleryVisible:false,
       options: {
-        target: window.Config.server + '/lxt-upload/api/upload',
+        target: window.Config.server + '/upload/uploadFile',
         testChunks: false
       },
       attrs: {
@@ -206,7 +206,7 @@ export default {
         }
       },100)
 
-      utils.http.post('/lxt-upload/api/uploadImg', {type:file.type.substr(6),base64url:base64url}).then(response => {
+      utils.http.post('/upload/uploadImg', {type:file.type.substr(6),base64url:base64url}).then(response => {
         clearInterval(timer)
         this.percent = 100
         setTimeout(()=>{

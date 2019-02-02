@@ -153,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "0066a3e81a5744fcf6ac9eb6791b7157"
+    "hash": "50677b413609ec3fbe04e963f8aec9d2"
   },
   {
     "file": "static/js/browser.js",
@@ -169,7 +169,7 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "a20f62dc70f68033a6150742fe4e9004"
+    "hash": "9961837df88d1a0b3131daa2ac1b10e4"
   },
   {
     "file": "static/js/contact.js",
@@ -205,7 +205,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "ecc970642d65b949eb363f723f3bfc4e"
+    "hash": "309b29271a3608072cadfe094e06eb9a"
   },
   {
     "file": "static/js/manifest.js",
@@ -225,7 +225,7 @@
   },
   {
     "file": "static/js/upload.js",
-    "hash": "52f63bd85a8802fa2711ec5cc806808e"
+    "hash": "76fe1e5cd5381421a095444841b39619"
   },
   {
     "file": "static/js/vendor.js",
