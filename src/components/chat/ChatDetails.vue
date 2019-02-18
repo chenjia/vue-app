@@ -187,6 +187,9 @@ export default {
   max-width: 60%;
   word-wrap:break-word;
 }
+.chat-msg p{
+  margin:0;
+}
 .chat-send .chat-msg{
   border:1px solid #26a2ff;
   background:#e3f2fd;
