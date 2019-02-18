@@ -15,9 +15,7 @@
         </div>
         <div :id="item.recordId" v-for="(item,index) in records[target.friendId]" class="chat-box" :class="{'chat-receive':user.userId==item.receiveId,'chat-send':user.userId==item.sendId}">
           <img class="chat-head" :src="heads[item.sendId]">
-          <div class="chat-msg">
-            {{item.content}}
-          </div>
+          <div class="chat-msg" v-html="item.content"></div>
         </div>
       </mt-loadmore>
     </div>
