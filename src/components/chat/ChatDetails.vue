@@ -231,7 +231,7 @@ export default {
   bottom:0;
   background:#eee;
   width:100%;
-  height:75px;
+  height:40px;
 }
 .chat-editor .edui-default .edui-editor{
   border-radius: 0;
@@ -259,6 +259,30 @@ export default {
   border-bottom:1px solid #ccc;
   border-radius: 0;
   flex:1 1 100px;
+}
+#edui4_content{
+  width:93vw!important;
+  overflow-x:auto;
+}
+.edui-editor-toolbarbox{
+    position: absolute!important;
+    width: 30px!important;
+    height: 30px!important;
+    line-height: 30px;
+    box-shadow: none!important;
+    left: 6px;
+    bottom: 6px;
+    z-index: 99999;
+}
+.edui-editor-toolbarboxouter{
+  box-shadow: none!important;
+}
+.edui-editor-toolbarboxinner,.edui-splitbutton-body,.edui-menubutton-body,.edui-bordereraser{
+  background:#f0f0f0!important;
+  border:none!important;
+}
+.edui-editor-iframeholder{
+  padding-left:30px;
 }
 .rotate{
   transform:rotate(-180deg);

@@ -153,7 +153,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "a6ff3a0d85e45c9c3d687fb3f6966c9d"
+    "hash": "687c41e14f1040ee4cf1f7e75f27ecfe"
   },
   {
     "file": "static/js/browser.js",
@@ -169,7 +169,7 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "32bab3a1b01fca64336bf5b2d02785fe"
+    "hash": "8d3cdfd9723322cd1c740d7968f213f4"
   },
   {
     "file": "static/js/contact.js",
@@ -2937,7 +2937,7 @@
   },
   {
     "file": "static/lib/ueditor/dialogs/emotion/emotion.css",
-    "hash": "c509b2a9eb6a8de979dc6b4535ba3831"
+    "hash": "f0baa889cc00c8dd756dbf5fa70097ed"
   },
   {
     "file": "static/lib/ueditor/dialogs/emotion/emotion.html",

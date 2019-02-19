@@ -4,7 +4,7 @@
     <RemoteScript src="static/lib/ueditor/ueditor.config.js" @callback="callbackIndex=callbackIndex+1"></RemoteScript>
     <RemoteScript v-if="callbackIndex>0" src="static/lib/ueditor/ueditor.all.min.js" @callback="callbackIndex=callbackIndex+1"></RemoteScript>
     <RemoteScript v-if="callbackIndex>1" src="static/lib/ueditor/lang/zh-cn/zh-cn.js" @callback="initEditor()"></RemoteScript>
-    <mt-button @click="send" size="small" style="position:absolute;z-index:99999;right:4px;bottom:4px;width:50px;padding:0">发送</mt-button>
+    <mt-button @click="send" size="small" style="position:absolute;z-index:99999;right:3px;bottom:3px;width:50px;padding:0">发送</mt-button>
   </div>
 </template>
 
@@ -40,16 +40,20 @@ export default {
     },
     send(){
       var content = this.editor.getContent();
-      var message = {
-        msgType:0,
-        sendId:this.user.userId,
-        sendUser:this.user.realname,
-        receiveId:this.target.userId,
-        receiveUser:this.target.realname,
-        content:content
+      if(content){
+        var message = {
+          msgType:0,
+          sendId:this.user.userId,
+          sendUser:this.user.realname,
+          receiveId:this.target.userId,
+          receiveUser:this.target.realname,
+          content:content
+        }
+        this.sendMessage(message)
+        this.editor.setContent('');
+      }else{
+        alert('发送内容不能为空！')
       }
-      this.sendMessage(message)
-      this.editor.setContent('');
     }
   },
   watch:{
