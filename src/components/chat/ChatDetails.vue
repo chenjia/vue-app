@@ -13,14 +13,16 @@
             <span style="position:relative;top:-4px;left:4px;color:#26a2ff;">加载中...</span>
           </span>
         </div>
-        <div :id="item.recordId" v-for="(item,index) in records[target.friendId]" class="chat-box" :class="{'chat-receive':user.userId==item.receiveId,'chat-send':user.userId==item.sendId}">
+        <div :id="item.recordId" v-for="(item,index) in records[target.userId]" class="chat-box" :class="{'chat-receive':user.userId==item.receiveId,'chat-send':user.userId==item.sendId}">
           <img class="chat-head" :src="heads[item.sendId]">
           <div class="chat-msg" v-html="item.content"></div>
         </div>
       </mt-loadmore>
     </div>
     <div class="chat-editor">
-      <div class="chat-editor-btn" style="transform:rotate(90deg);">
+      <UEditor :target="target" :sendMessage="sendMessage"></UEditor>
+      
+      <!-- <div class="chat-editor-btn" style="transform:rotate(90deg);">
         <i class="fa fa-fw fa-wifi"></i>
       </div>
       <input @keyup.enter="send" v-model="msg" type="text" class="chat-editor-input" :style="{width:screenWidth-100+'px'}">
@@ -30,14 +32,18 @@
       <mt-button @click="send" v-show="msg != null && msg != ''" type="primary" size="small" style="margin:0 10px;">发送</mt-button>
       <div v-show="msg == null || msg == ''" class="chat-editor-btn" style="margin-right:10px;">
         <i class="fa fa-fw fa-plus"></i>
-      </div>
+      </div> -->
     </div>
   </mt-popup>
 </template>
 
 <script>
+import UEditor from '../common/UEditor'
 export default {
   name: 'chatDetails',
+  components:{
+    UEditor
+  },
   props:{
     open:{
       type: Boolean,
@@ -72,21 +78,21 @@ export default {
     queryRecords(callback){
       utils.http.post('/chat/record', {
         sendId:this.user.userId,
-        receiveId:this.target.friendId,
+        receiveId:this.target.userID,
         beforeDate: this.now,
         currentPage: this.currentPage,
         count:10
       }).then(response => {
         setTimeout(() => {
           this.currentPage++
-          if(!this.records[this.target.friendId]){
-            this.$set(this.records, this.target.friendId, response.data.body.data.reverse())
+          if(!this.records[this.target.userId]){
+            this.$set(this.records, this.target.userId, response.data.body.data.reverse())
             setTimeout(function(){
               document.querySelector('.chat-container').scrollTop = 99999
             })
           }else{
-            let recordId = this.records[this.target.friendId][0].recordId
-            this.$set(this.records, this.target.friendId, response.data.body.data.reverse().concat(this.records[this.target.friendId]))
+            let recordId = this.records[this.target.userId][0].recordId
+            this.$set(this.records, this.target.userId, response.data.body.data.reverse().concat(this.records[this.target.userId]))
             setTimeout(function(){
               document.querySelector('.chat-container').scrollTop = document.getElementById(recordId).offsetTop - 50
               callback()
@@ -115,18 +121,12 @@ export default {
     handleTopChange(status) {
       this.topStatus = status;
     },
-    send(){
-      let message = {
-        msgType:0,
-        sendId:this.user.userId,
-        sendUser:this.user.realname,
-        receiveId:this.target.friendId,
-        receiveUser:this.target.memo,
-        content:this.msg
-      };
+    sendMessage(message){
       let frame = document.getElementById('chatFrame')
       frame.contentWindow.postMessage(message, '*')
-      this.records[this.target.friendId].push(message)
+      console.log(this.target)
+      this.records[this.target.userId].push(message)
+      this.records  = Object.assign({}, this.records)
       this.msg = ''
       setTimeout(function(){
         document.querySelector('.chat-container').scrollTop = 99999
@@ -135,6 +135,7 @@ export default {
     receiveMessage(message){
       if(this.records[message.sendId]){
         this.records[message.sendId].push(message)
+        this.records  = Object.assign({}, this.records)
         setTimeout(function(){
           document.querySelector('.chat-container').scrollTop = 99999
         })
@@ -150,6 +151,7 @@ export default {
     }
   },
   mounted(){
+    this.records[this.target.userId] = []
     window.addEventListener('message', event => {
       this.receiveMessage(event.data)
     })
@@ -226,14 +228,16 @@ export default {
 .chat-editor{
   position:fixed;
   z-index:9;
-  align-items:center;
   bottom:0;
   background:#eee;
-  display:flex;
-  justify-content: space-around;
   width:100%;
-  height:50px;
-  line-height:50px;
+  height:75px;
+}
+.chat-editor .edui-default .edui-editor{
+  border-radius: 0;
+}
+.chat-editor .edui-default .edui-editor-iframeholder{
+   background: #f0f0f0;
 }
 .chat-editor-btn{
   display:inline-block;

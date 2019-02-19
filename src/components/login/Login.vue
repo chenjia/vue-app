@@ -8,7 +8,7 @@
     <div>
       <mt-field label="账　号" placeholder="请输入账号" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
-      <mt-field label="验证码" type="tel" v-model="model.captcha" placeholder="请输入验证码">
+      <mt-field label="验证码" type="tel" v-model="model.captcha" @keyup.enter.native="login()" placeholder="请输入验证码">
         <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;border:1px solid #eee;">
       </mt-field>
       <div class="pd-md">

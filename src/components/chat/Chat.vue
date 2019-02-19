@@ -9,17 +9,19 @@
 
     <div class="chat-cell">
       <accordion :open="false" v-for="(group,index) in contacts" :key="index">
-          <div slot="title">
-            <div><i class="fa fa-fw fa-user"></i> {{group.name}}</div>
-          </div>
-          <div slot="content">
-            <mt-cell @click.native="toDetails(item)" v-for="(item,index) in group.friends" :key="index" :title="item.memo" :label="'暂无最新消息'">
-              <img class="chat-head" src="../../../static/img/head.jpg">
-            </mt-cell>
-          </div>
-        </accordion>
+        <div slot="title">
+          <div><i class="fa fa-fw fa-user"></i> {{group.name}}</div>
+        </div>
+        <div slot="content">
+          <mt-cell @click.native="toDetails(item)" v-for="(item,index) in group.friends" :key="index" :title="item.realname" :label="'暂无最新消息'">
+            <img class="chat-head" src="../../../static/img/head.jpg">
+          </mt-cell>
+        </div>
+      </accordion>
 
-        <p class="pd-md" style="color:gray;">PS：可用admin/admin，chenjia/chenjia 两个用户模拟聊天场景，后台采用dwr的http长连接实现</p>
+      <p class="pd-md" style="color:gray;">当前用户：{{$store.state.common.user.username}}<br/>
+      PS：可用admin/admin，chenjia/chenjia 两个用户模拟聊天场景，后台采用dwr的http长连接实现
+      </p>
     </div>
 
     <mt-popup v-model="popupConfig" position="left" class="popup-config">
@@ -84,17 +86,14 @@ export default {
       this.contacts = [{
         name:'最近联系人',
         friends:[{
-          name:'admin',
-          memo:'admin',
-          friendId:'admin'
+          realname:'admin',
+          userId:'admin'
         },{
-          name:'chenjia',
-          memo:'chenjia',
-          friendId:'chenjia'
+          realname:'chenjia',
+          userId:'chenjia'
         },{
-          name:'xiaoting',
-          memo:'xiaoting',
-          friendId:'xiaoting'
+          realname:'xiaoting',
+          userId:'xiaoting'
         }]
       }]
       return;
