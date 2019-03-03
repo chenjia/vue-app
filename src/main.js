@@ -7,7 +7,7 @@ window.Config = {
   chcpUrl:'https://chenjia.github.io/vue-app/public/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
   random:(''+Math.random()).substr(2),
-  preload: 3000
+  preload: 1
 }
 
 import Vue from 'vue'
@@ -49,7 +49,7 @@ Vue.mixin({
   }
 })
 
-new Vue({
+window.vm = new Vue({
   el: '#app',
   router,
   store,

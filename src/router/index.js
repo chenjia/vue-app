@@ -116,5 +116,6 @@ router.afterEach((to, from) => {
       },500)
     }
   }
+
 })
 export default router

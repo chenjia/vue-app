@@ -59,5 +59,7 @@ require.ensure([], () => {
 	Vue.component(TabItem.name, TabItem)
 
   window.lazyLibsLoaded = true
-  console.log(window.lazyLibsLoaded)
+  const length = window.vm.$root.$children[0].$children.length
+  window.vm.$root.$children[0].$children[length-1].$children[0].$forceUpdate()
+
 }, 'lazyLibs')

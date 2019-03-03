@@ -115,14 +115,15 @@ export default {
       this.go({name:val})
     }
   },
+  created(){
+    setTimeout(()=>{
+      require('../../lazyLibs')
+    }, Config.preload)
+  },
   mounted(){
     document.addEventListener("deviceready", () => {
       utils.version.checkForUpdate()
     }, false)
-
-    setTimeout(()=>{
-      require('../../lazyLibs')
-    }, Config.preload)
   }
 }
 </script>
