@@ -116,9 +116,7 @@ export default {
     }
   },
   created(){
-    setTimeout(()=>{
-      require('../../lazyLibs')
-    }, Config.preload)
+    require('../../lazyLibs')
   },
   mounted(){
     document.addEventListener("deviceready", () => {

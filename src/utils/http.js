@@ -30,7 +30,8 @@ instance.interceptors.request.use(function(config) {
       url: config.url,
       debug: true,
       userId: user ? user.userId : null,
-      token: cache.get('token')
+      token: cache.get('token'),
+      timestamp:new Date().getTime()
     },
     body: {
       data: config.data

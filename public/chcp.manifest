@@ -1,5 +1,9 @@
 [
   {
+    "file": "dump.rdb",
+    "hash": "269bf81ed0de9459291a32ba58e5e35d"
+  },
+  {
     "file": "index.html",
     "hash": "01e94a29ba528e322d8ac1b259d97dbb"
   },
@@ -153,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "687c41e14f1040ee4cf1f7e75f27ecfe"
+    "hash": "71541a2765e76f396eb5923b4ada1503"
   },
   {
     "file": "static/js/browser.js",
@@ -5134,10 +5138,6 @@
   {
     "file": "static/lib/ueditor/third-party/jquery-1.10.2.min.map",
     "hash": "6c3ccfc221d36777d383b6e04d0b8af9"
-  },
-  {
-    "file": "static/lib/ueditor/third-party/snapscreen/UEditorSnapscreen.exe",
-    "hash": "e4d2dd20f706c7cbde2184f38b1de09f"
   },
   {
     "file": "static/lib/ueditor/third-party/SyntaxHighlighter/shCore.js",
