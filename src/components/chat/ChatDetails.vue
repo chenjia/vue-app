@@ -57,7 +57,7 @@ export default {
     return {
       now: new Date().getTime(),
       show: this.open,
-      currentPage:1,
+      pageNumber:1,
       topStatus: '',
       msg: '',
       user:utils.cache.get('user')||{userId:'admin'},
@@ -76,41 +76,40 @@ export default {
       this.$emit('update:open', value)
     },
     queryRecords(callback){
-      utils.http.post('/chat/record', {
-        sendId:this.user.userId,
-        receiveId:this.target.userID,
-        beforeDate: this.now,
-        currentPage: this.currentPage,
-        count:10
+      utils.http.post('/chat/record/list', {
+        example: {
+          sendId:this.user.userId,
+          receiveId:this.target.userId,
+          beforeDate: this.now
+        },
+        pageData: {
+          pageNumber:this.pageNumber,
+          pageSize: 10
+        }
       }).then(response => {
+        const data = response.data.body.data.data
         setTimeout(() => {
-          this.currentPage++
-          if(!this.records[this.target.userId]){
-            this.$set(this.records, this.target.userId, response.data.body.data.reverse())
-            setTimeout(function(){
-              document.querySelector('.chat-container').scrollTop = 99999
-            })
-          }else{
+          this.pageNumber++
+          console.log(this.records)
+          let target = this.records[this.target.userId]
+          if(target && target.length > 0){
             let recordId = this.records[this.target.userId][0].recordId
-            this.$set(this.records, this.target.userId, response.data.body.data.reverse().concat(this.records[this.target.userId]))
+            this.records[this.target.userId] = data.reverse().concat(this.records[this.target.userId])
+            this.records  = Object.assign({}, this.records)
             setTimeout(function(){
               document.querySelector('.chat-container').scrollTop = document.getElementById(recordId).offsetTop - 50
               callback()
             })
+          }else{
+            this.records[this.target.userId] = data.reverse()
+            this.records  = Object.assign({}, this.records)
+            setTimeout(function(){
+              document.querySelector('.chat-container').scrollTop = 99999
+            })
           }
         }, 500)
       }).catch(()=>{
-        this.records = {
-          admin:[{
-            recordId:'xxxxx',
-            receiveId:'admin',
-            sendId:'chenjia',
-            content:'Hello World'
-          }],
-          chenjia:[],
-          xiaoting:[]
-        }
-
+        this.records = {}
       })
     },
     loadTop(){

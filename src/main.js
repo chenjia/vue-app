@@ -1,8 +1,8 @@
 window.Config = {
   appVersion:'1.0.43',
   nativeVersion:'1.0',
-  // server: 'http://localhost:8201/api',
-  server: 'http://47.100.119.102/api',
+  server: 'http://localhost:8201/api',
+  // server: 'http://47.100.119.102/api',
   appDownloadUrl:'https://chenjia.github.io/vue-app/public/index.html',
   chcpUrl:'https://chenjia.github.io/vue-app/public/chcp.json',
   key:'ed26d4cd99aa11e5b8a4c89cdc776729',
