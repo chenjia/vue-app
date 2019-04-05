@@ -2,7 +2,7 @@
   <div class="page has-footer">
     <mt-header title="首页">
       <mt-button slot="left" @click="popupMenu = true" class="fa fa-fw fa-bars"></mt-button>
-      <mt-button slot="right" @click="go('/page/login')" class="fa fa-fw fa-lock"></mt-button>
+      <mt-button slot="right" @click="scan()" class="fa fa-fw fa-qrcode"></mt-button>
     </mt-header>
     
     <div>
@@ -22,6 +22,9 @@
         </tr>
       </table>
     </div>
+
+    <!-- <input type="text" v-model="qrcode">
+    <button @click="scan()">scan</button> -->
 
     <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
       <i class="fa fa-calendar-o"></i> 日程安排
@@ -45,6 +48,7 @@
 
 <script>
 import Vue from 'vue'
+import store from '../../vuex/store'
 import {
   Cell,
   Swipe,
@@ -66,6 +70,7 @@ export default {
   },
   data() {
     return {
+      qrcode:'',
       auto: 5000,
       showSwipe:true,
       drawer: false,
@@ -238,6 +243,43 @@ export default {
     }
   },
   methods: {
+    scan(){
+      // utils.http.post('/manage/user/scan', {qrcode:this.qrcode}).then(response => {
+      //   console.log(response)
+      // }, error => {
+      //   console.log(error)
+      // })
+
+      if(window.cordova && cordova.plugins.barcodeScanner){
+        cordova.plugins.barcodeScanner.scan(result => {
+          utils.http.post('/manage/user/scan', {qrcode:result.text}).then(response => {
+            console.log(response)
+          }, error => {
+            console.log(error)
+          })
+          console.log("We got a barcode\n" +
+            "Result: " + result.text + "\n" +
+            "Format: " + result.format + "\n" +
+            "Cancelled: " + result.cancelled);
+        }, error => {
+          alert("Scanning failed: " + error);
+        }, {
+          preferFrontCamera : false, // iOS and Android
+          showFlipCameraButton : true, // iOS and Android
+          showTorchButton : true, // iOS and Android
+          torchOn: false, // Android, launch with the torch switched on (if available)
+          saveHistory: false, // Android, save scan history (default false)
+          prompt : "请将二维码对准扫描区域", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations : false, // iOS
+          disableSuccessBeep: true // iOS and Android
+        })
+      }else{
+        store.commit('TOGGLE_POPUP', {visible: true, text: '请在app中使用二维码扫描', duration: 3000})
+      }
+    },
     handleChange(index){
       if(this.$route.name != 'home'){
         this.showSwipe = false

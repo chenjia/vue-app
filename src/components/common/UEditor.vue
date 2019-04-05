@@ -42,6 +42,7 @@ export default {
       var content = this.editor.getContent();
       if(content){
         var message = {
+          type:'chat',
           msgType:0,
           sendId:this.user.userId,
           sendUser:this.user.realname,

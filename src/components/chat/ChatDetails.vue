@@ -76,7 +76,7 @@ export default {
       this.$emit('update:open', value)
     },
     queryRecords(callback){
-      utils.http.post('/chat/record/list', {
+      utils.http.post('/push/record/list', {
         example: {
           sendId:this.user.userId,
           receiveId:this.target.userId,

@@ -53,7 +53,7 @@
 
     <chatDetails :open.sync="popupDetails" :target="target"></chatDetails>
 
-    <iframe style="display:none;" id="chatFrame" :src="server + '/chat/chatFrame.html?userId='+user.userId"></iframe>
+    <iframe style="display:none;" id="chatFrame" :src="server + '/push/pushFrame.html?userId='+user.userId"></iframe>
   </div>
 </template>
 
