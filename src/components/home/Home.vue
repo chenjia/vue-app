@@ -24,7 +24,8 @@
     </div>
 
     <!-- <input type="text" v-model="qrcode">
-    <button @click="scan()">scan</button> -->
+    <button @click="scan()">scan</button>
+    <p><button @click="qrcodeLogin()">qrcodelogin</button></p> -->
 
     <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
       <i class="fa fa-calendar-o"></i> 日程安排
@@ -41,6 +42,21 @@
         <mt-cell @click.native="popupMenu = false;go(menu.url)" v-for="(menu, index) in menus" :key="index" :title="menu.name">
           <i slot="icon" class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{verticalAlign:'middle', color:menu.color}"></i>
         </mt-cell>
+      </div>
+    </mt-popup>
+
+    <mt-popup v-model="scanned" popup-transition="popup-fade" style="width:100%;height:100%;">
+      <mt-header title="二维码登录">
+        <mt-button @click="scanned=false" slot="left" icon="back"><span>返回</span></mt-button>
+      </mt-header>
+      <div style="padding:15px;line-height: 30px;overflow-y:auto;" :style="{height:(screenHeight-140)+'px'}">
+        <span style='color:#4caf50'>二维码已扫描成功，请确认登录</span>
+
+        <div style="position:fixed;left:5%;padding:15px 0;bottom:0;width:90%;">
+          <div>
+            <mt-button @click="qrcodeLogin()" type="primary" size="large">确认登录</mt-button>
+          </div>
+        </div>
       </div>
     </mt-popup>
   </div>
@@ -71,6 +87,7 @@ export default {
   data() {
     return {
       qrcode:'',
+      scanned:false,
       auto: 5000,
       showSwipe:true,
       drawer: false,
@@ -244,16 +261,20 @@ export default {
   },
   methods: {
     scan(){
-      // utils.http.post('/manage/user/scan', {qrcode:this.qrcode}).then(response => {
+      // utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeScan', msg:'登录二维码已扫描'}).then(response => {
       //   console.log(response)
+      //   this.scanned = true
       // }, error => {
       //   console.log(error)
       // })
 
+      
       if(window.cordova && cordova.plugins.barcodeScanner){
         cordova.plugins.barcodeScanner.scan(result => {
-          utils.http.post('/manage/user/scan', {qrcode:result.text}).then(response => {
+          this.qrcode = result.text
+          utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeScan', msg:'登录二维码已扫描'}).then(response => {
             console.log(response)
+            this.scanned = true
           }, error => {
             console.log(error)
           })
@@ -279,6 +300,16 @@ export default {
       }else{
         store.commit('TOGGLE_POPUP', {visible: true, text: '请在app中使用二维码扫描', duration: 3000})
       }
+      
+    },
+    qrcodeLogin(){
+      utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeLogin', msg:'二维码登录'}).then(response => {
+        console.log(response)
+        this.scanned = false
+        this.qrcode = ''
+      }, error => {
+        console.log(error)
+      })
     },
     handleChange(index){
       if(this.$route.name != 'home'){
@@ -296,7 +327,7 @@ export default {
     }
   },
   mounted(){
-
+    this.scanned = false
   },
   beforeRouteEnter(to, from, next) {
     next(vm=>{
