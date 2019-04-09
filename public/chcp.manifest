@@ -157,11 +157,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "20e84713bc139a91061d8c36f606ff45"
+    "hash": "21bf5ed6b7b5e73d23a77e2266a589ea"
   },
   {
     "file": "static/js/browser.js",
-    "hash": "beb2b1f69c86ee05cd89c338d9f9639a"
+    "hash": "e2f1186f0d0892f4c80ea3e80a279bc0"
   },
   {
     "file": "static/js/calendar.js",
@@ -177,11 +177,11 @@
   },
   {
     "file": "static/js/contact.js",
-    "hash": "c335fbe03fc028019a4908fb5430fdff"
+    "hash": "bd92cb8012e55ea6fadb5e4737700c53"
   },
   {
     "file": "static/js/dialog.js",
-    "hash": "1162df37c454d8b3c1c7f156f262692f"
+    "hash": "4fd68b34f65ee0deef36d3e158b95127"
   },
   {
     "file": "static/js/form.js",
@@ -189,7 +189,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "283de08dff2158fe993b3b6699bb627d"
+    "hash": "864206803c4ce7472e41e36b281887b4"
   },
   {
     "file": "static/js/lazyLibs.js",
@@ -197,11 +197,11 @@
   },
   {
     "file": "static/js/list.js",
-    "hash": "8ce6605dc29842bc3b06698a5f209448"
+    "hash": "0938d01feee03f8a1985ec5656b3c5a5"
   },
   {
     "file": "static/js/loading.js",
-    "hash": "769f2e8f264751600db0040499a7a7fb"
+    "hash": "6cd2e81cb0cb56ac5e59ce49eb94df98"
   },
   {
     "file": "static/js/lock.js",
@@ -209,43 +209,47 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "dc4075b981a483a328c5f92b53668bc4"
+    "hash": "7a5c7bd71580d19b12218fd2a5cd1469"
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "01dc7ad46a9712fbda6a82df8d9e3e59"
+    "hash": "ab139820f6fa121efcb2e26ed566f73e"
   },
   {
     "file": "static/js/map.js",
-    "hash": "5726ea476d889d8a12f5f236a885f33f"
+    "hash": "4443fb78b09f301b880be7f730c116bd"
   },
   {
     "file": "static/js/setting.js",
-    "hash": "014fbab2429c430bcbe4cc0197169076"
+    "hash": "cd2ce13f01b3169e603b06fba53e39e4"
+  },
+  {
+    "file": "static/js/signature.js",
+    "hash": "e9b1bde22e628810a84784156b92023c"
   },
   {
     "file": "static/js/tab.js",
-    "hash": "d6435599c75c03f4b0a8b5adb12d8ae0"
+    "hash": "5fb652ab49ce06e3f5d928631e33f9be"
   },
   {
     "file": "static/js/upload.js",
-    "hash": "76fe1e5cd5381421a095444841b39619"
+    "hash": "5620f79c463c7478774c1edf85386558"
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "7d786dcddf38106365c1b08cbc80cb76"
+    "hash": "6225d742ff8788a509b59e4a628cacdb"
   },
   {
     "file": "static/js/video.js",
-    "hash": "bc1649110bec38a1236d80a11be6f028"
+    "hash": "810f3773ac33f4e2c444d4e63c0c219f"
   },
   {
     "file": "static/js/workflow.js",
-    "hash": "f0809172978dcac19835e3eca3808e8a"
+    "hash": "4b55d82a7450985b80fb342324762355"
   },
   {
     "file": "static/js/zoom.js",
-    "hash": "363f62973febf1f32a503ef0e406400d"
+    "hash": "3927a10d9ec1d6c7c047ab981352cffd"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",

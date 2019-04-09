@@ -22,6 +22,7 @@ import upload from './upload'
 import browser from './browser'
 import zoom from './zoom'
 import workflow from './workflow'
+import signature from './signature'
 
 Vue.use(Router)
 
@@ -56,7 +57,8 @@ const router = new Router({
     ...upload,
     ...browser,
     ...zoom,
-    ...workflow
+    ...workflow,
+    ...signature
     ]
   }]
 })

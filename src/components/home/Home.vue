@@ -23,10 +23,6 @@
       </table>
     </div>
 
-    <!-- <input type="text" v-model="qrcode">
-    <button @click="scan()">scan</button>
-    <p><button @click="qrcodeLogin()">qrcodelogin</button></p> -->
-
     <mt-button size="large" style="border-radius:0;text-align:left;color:#26a2ff;">
       <i class="fa fa-calendar-o"></i> 日程安排
     </mt-button>
@@ -179,6 +175,11 @@ export default {
         icon: 'sitemap',
         color: '#6b8e23',
         url: 'workflow'
+      },{
+        name: '电子签名',
+        icon: 'pencil-square-o',
+        color: '#ff00ff',
+        url: 'signature'
       }],
       timelines:[{
         time:(()=>{
@@ -261,14 +262,6 @@ export default {
   },
   methods: {
     scan(){
-      // utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeScan', msg:'登录二维码已扫描'}).then(response => {
-      //   console.log(response)
-      //   this.scanned = true
-      // }, error => {
-      //   console.log(error)
-      // })
-
-      
       if(window.cordova && cordova.plugins.barcodeScanner){
         cordova.plugins.barcodeScanner.scan(result => {
           this.qrcode = result.text
