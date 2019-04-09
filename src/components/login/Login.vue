@@ -5,14 +5,21 @@
       <mt-button slot="right" @click="check()" class="fa fa-fw fa-refresh"></mt-button>
     </mt-header>
 
+    <div class="pd-md center">
+      <img src="static/img/logo.png" style="width:50%;">
+    </div>
+    
     <div>
       <mt-field label="账　号" placeholder="请输入账号" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
       <mt-field label="验证码" type="tel" v-model="model.captcha" @keyup.enter.native="login()" placeholder="请输入验证码">
         <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;border:1px solid #eee;">
       </mt-field>
-      <div class="pd-md">
-        <mt-button @click="login" type="primary" size="large">登　录</mt-button>
+      <div style="position:absolute;width:100%;bottom:20px;">
+        <div class="pd-md">
+          <mt-button @click="login" type="primary" size="large">登　录</mt-button>
+        </div>
+        
       </div>
       <mt-field v-if="showVersion" label="服务器url" v-model="server"></mt-field>
       <mt-field v-if="showVersion" label="热更新url" v-model="chcpUrl"></mt-field>
@@ -101,7 +108,7 @@ export default {
     }
   },
   mounted(){
-    
+
   },
   beforeRouteEnter(to, from, next){
     next(vm=>{
