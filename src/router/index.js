@@ -99,16 +99,15 @@ router.afterEach((to, from) => {
   store.commit('TOGGLE_HEADER', to.meta.hasHeader != false)
   store.commit('TOGGLE_FOOTER', to.meta.hasFooter != false)
   store.commit('TOGGLE_TABS', {flag:to.meta.hasTabs == true, tab:to.name})
-
   if(ready){
     if(loader.className.indexOf('fadeOut') === -1){
       setTimeout(()=>{
         loader.className += ' fadeOut'
       },500)
-      setTimeout(()=>{
-        loader.style.display = 'none'
-      },1000)
     }
+    setTimeout(()=>{
+      loader.style.display = 'none'
+    },1000)
   }else{
     ready = true
     if(loader.className.indexOf('fadeOut') === -1){
