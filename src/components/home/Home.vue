@@ -264,17 +264,21 @@ export default {
     scan(){
       if(window.cordova && cordova.plugins.barcodeScanner){
         cordova.plugins.barcodeScanner.scan(result => {
-          this.qrcode = result.text
-          utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeScan', msg:'登录二维码已扫描'}).then(response => {
-            console.log(response)
-            this.scanned = true
-          }, error => {
-            console.log(error)
-          })
+          if(!result.cancelled){
+            this.qrcode = result.text
+            utils.http.post('/manage/user/scan', {qrcode:this.qrcode, type:'qrcodeScan', msg:'登录二维码已扫描'}).then(response => {
+              console.log(response)
+              this.scanned = true
+            }, error => {
+              console.log(error)
+            })
+          }
+          
           console.log("We got a barcode\n" +
             "Result: " + result.text + "\n" +
             "Format: " + result.format + "\n" +
             "Cancelled: " + result.cancelled);
+
         }, error => {
           alert("Scanning failed: " + error);
         }, {
