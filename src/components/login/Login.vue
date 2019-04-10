@@ -15,12 +15,10 @@
       <mt-field label="验证码" type="tel" v-model="model.captcha" @keyup.enter.native="login()" placeholder="请输入验证码">
         <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;border:1px solid #eee;">
       </mt-field>
-      <div style="position:absolute;width:100%;bottom:20px;">
-        <div class="pd-md">
-          <mt-button @click="login" type="primary" size="large">登　录</mt-button>
-        </div>
-        
+      <div class="pd-md">
+        <mt-button @click="login" type="primary" size="large">登　录</mt-button>
       </div>
+        
       <mt-field v-if="showVersion" label="服务器url" v-model="server"></mt-field>
       <mt-field v-if="showVersion" label="热更新url" v-model="chcpUrl"></mt-field>
       <div @click="showVersion = !showVersion" style="position:absolute;width:100%;bottom:5px;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
