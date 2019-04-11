@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       server: Config.server,
-      user:utils.cache.get('user') || {userId:'admin'},
+      user:utils.cache.get('user') || {userId:''},
       popupMenu: false,
       popupConfig: false,
       popupDetails: false,

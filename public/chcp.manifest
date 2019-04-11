@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "bbe58b279fcb762136da48fbb16cd05d"
+    "hash": "1a1ba5ca0ce6cefa1329b4413eebf9f6"
   },
   {
     "file": "static/js/browser.js",
@@ -173,7 +173,7 @@
   },
   {
     "file": "static/js/chat.js",
-    "hash": "9e88a424e9586fb8371b15e098af56d5"
+    "hash": "111bbe9954080bbadbcb16aebca22f9f"
   },
   {
     "file": "static/js/contact.js",
@@ -221,7 +221,7 @@
   },
   {
     "file": "static/js/setting.js",
-    "hash": "cd2ce13f01b3169e603b06fba53e39e4"
+    "hash": "68a0921b2d16fb5b55c965ed4fc8ef7a"
   },
   {
     "file": "static/js/signature.js",

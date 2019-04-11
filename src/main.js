@@ -1,5 +1,5 @@
 window.Config = {
-  appVersion:'1.0.51',
+  appVersion:'1.0.52',
   nativeVersion:'1.0',
   // server: 'http://localhost:8201/api',
   server: 'http://47.100.119.102/api',

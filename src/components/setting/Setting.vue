@@ -6,7 +6,7 @@
 
     <div class="list-group">
     	<mt-cell is-link>
-    		<span slot="title">账号：admin</span>
+    		<span slot="title">账号：{{$store.state.common.user.username}}</span>
     		<img slot="icon" src="../../../static/img/logo.png" width="24" height="24">
     	</mt-cell>
     </div>
@@ -43,6 +43,7 @@ export default {
 	name: 'setting',
 	data () {
 		return {
+      user:utils.cache.get('user') || {userId:''},
       userAgent: null
 		}
 	},
