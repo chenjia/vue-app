@@ -14,9 +14,7 @@
 
     <mt-index-list v-if="ready" ref="indexList">
       <mt-index-section v-for="(group, index) in contacts" :key="index" :index="group.group">
-        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in group.items" :key="index" :title="getName(item)">
-          {{item.phoneNumbers[0].value}}
-        </mt-cell>
+        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in group.items" :key="group.group+index" :title="getName(item)" :value="item.phoneNumbers[0].value"></mt-cell>
       </mt-index-section>
     </mt-index-list>
   </div>
