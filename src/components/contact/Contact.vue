@@ -14,8 +14,8 @@
 
     <mt-index-list v-if="ready" ref="indexList">
       <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
-        <mt-cell :href="'tel:'+item.phoneNumbers[0]" v-for="(item, index) in contact" :key="index" :title="item.displayName">
-          {{item.phoneNumbers[0]}}
+        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in contact" :key="index" :title="item.displayName">
+          {{item.phoneNumbers[0].value}}
         </mt-cell>
       </mt-index-section>
     </mt-index-list>
@@ -31,25 +31,25 @@ export default {
       searchKey:'',
       items:[{
         displayName:'张三',
-        phoneNumbers:['13333333331']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'张三2',
-        phoneNumbers:['13333333332']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'张三3',
-        phoneNumbers:['13333333333']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'阿毛',
-        phoneNumbers:['13333333333']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'adai',
-        phoneNumbers:['13333333333']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'aa',
-        phoneNumbers:['13333333333']
+        phoneNumbers:[{value:'13333333331'}]
       },{
         displayName:'查',
-        phoneNumbers:['13333333333']
+        phoneNumbers:[{value:'13333333331'}]
       }]
       // items:{
       //   A:['Aaron','Alden','Austin'],
