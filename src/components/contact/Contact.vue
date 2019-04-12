@@ -82,6 +82,7 @@ export default {
   computed:{
     contacts(){
       let result = []
+      console.log(this.items)
       let items = this.pySegSort(this.items)
       if(this.searchKey){
         for(let i=0;i<items.length;i++){
