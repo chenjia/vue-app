@@ -84,22 +84,27 @@ export default {
   computed:{
     contacts:function(){
       let result = {}
+      console.log(this.items)
       let items = this.pySegSort(this.items)
+      console.log(items)
       if(this.searchKey){
-        for(let contact in items){
-          for(let item of items[contact]){
+        for(let group in items){
+          console.log(group)
+          for(let item of items[group]){
             let name = this.getName(item)
+            console.log(name)
             if(name.toLowerCase().indexOf(this.searchKey.toLowerCase())!=-1){
-              if(!result[contact]){
-                result[contact] = []
+              if(!result[group]){
+                result[group] = []
               }
-              result[contact].push(item)
+              result[group].push(item)
             }
           }
         }
       }else{
         result = items
       }
+      console.log(result)
       return result
     }
   },
@@ -107,10 +112,11 @@ export default {
     getName(contact){
       return contact.displayName || contact.name.formatted
     },
-    pySegSort(arr) {
+    pySegSort(contacts) {
+      let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
 
-      let letters = "*ABCDEFGHJKLMNOPQRSTWXYZ".split('');
+      let letters = "_ABCDEFGHJKLMNOPQRSTWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
       let group = {};
       letters.forEach((item,i)=>{
