@@ -111,7 +111,7 @@ export default {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
 
-      let letters = "_ABCDEFGHJKLMNOPQRSTWXYZ".split('');
+      let letters = "ABCDEFGHJKLMNOPQRSTWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
       let group = [];
       letters.forEach((item,i)=>{
@@ -124,7 +124,7 @@ export default {
             current.push(contact);
             arr.splice(j, 1);
             continue;
-          }else if((!zh[i-1] || zh[i-1].localeCompare(name) <= 0) && name.localeCompare(zh[i]) == -1) {
+          }else if((!zh[i] || zh[i].localeCompare(name) <= 0) && name.localeCompare(zh[i+1]) == -1) {
             current.push(contact);
             arr.splice(j, 1);
           }
@@ -150,9 +150,7 @@ export default {
       this.ready = true
     },100)
     setTimeout(()=>{
-      if(this.items.C){
-        this.items.C.push({name:'chenjia', phoneNumbers:[{value:'18702189255'}]})
-      }
+      this.items.push({displayName:'陈佳', phoneNumbers:[{value:'18702189255'}]})
     },200)
 
     let _this = this
