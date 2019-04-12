@@ -13,8 +13,8 @@
     </div>
 
     <mt-index-list v-if="ready" ref="indexList">
-      <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
-        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in contact" :key="index" :title="getName(item)">
+      <mt-index-section v-for="(group, index) in contacts" :key="index" :index="group.group">
+        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in group.items" :key="index" :title="getName(item)">
           {{item.phoneNumbers[0].value}}
         </mt-cell>
       </mt-index-section>
@@ -82,27 +82,26 @@ export default {
     }
   },
   computed:{
-    contacts:function(){
-      let result = {}
-      console.log(this.items)
+    contacts(){
+      let result = []
       let items = this.pySegSort(this.items)
-      console.log(items)
       if(this.searchKey){
-        for(let group in items){
-          for(let item of items[group]){
+        for(let i=0;i<items.length;i++){
+          let group = items[i]
+          let groupItems = []
+          for(let item of group.items){
             let name = this.getName(item)
             if(name.toLowerCase().indexOf(this.searchKey.toLowerCase())!=-1){
-              if(!result[group]){
-                result[group] = []
-              }
-              result[group].push(item)
+              groupItems.push(item)
             }
+          }
+          if(groupItems.length){
+            result.push({group:group.group, items:groupItems})  
           }
         }
       }else{
         result = items
       }
-      console.log(result)
       return result
     }
   },
@@ -116,7 +115,7 @@ export default {
 
       let letters = "_ABCDEFGHJKLMNOPQRSTWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
-      let group = {};
+      let group = [];
       letters.forEach((item,i)=>{
         let current = []
 
@@ -134,7 +133,6 @@ export default {
         }
 
         if(current.length) {
-
           current.sort((a,b)=>{
             let displayNameA = this.getName(a)
             let displayNameB = this.getName(b)
@@ -143,7 +141,7 @@ export default {
             }
             return displayNameA.localeCompare(displayNameB);
           });
-          group[item] = current
+          group.push({group: item, items:current})
         }
       });
       return group;
