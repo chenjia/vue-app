@@ -14,7 +14,7 @@
 
     <mt-index-list v-if="ready" ref="indexList">
       <mt-index-section v-for="(contact, key) in contacts" :key="key" :index="key">
-        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in contact" :key="index" :title="item.displayName">
+        <mt-cell :href="'tel:'+item.phoneNumbers[0].value" v-for="(item, index) in contact" :key="index" :title="getName(item)">
           {{item.phoneNumbers[0].value}}
         </mt-cell>
       </mt-index-section>
@@ -88,7 +88,7 @@ export default {
       if(this.searchKey){
         for(let contact in items){
           for(let item of items[contact]){
-            let name = item.displayName || item.name.formatted
+            let name = this.getName(item)
             if(name.toLowerCase().indexOf(this.searchKey.toLowerCase())!=-1){
               if(!result[contact]){
                 result[contact] = []
@@ -104,18 +104,21 @@ export default {
     }
   },
   methods:{
+    getName(contact){
+      return contact.displayName || contact.name.formatted
+    },
     pySegSort(arr) {
       if(!String.prototype.localeCompare) return null;
 
       let letters = "*ABCDEFGHJKLMNOPQRSTWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
       let group = {};
-      letters.forEach(function(item,i){
+      letters.forEach((item,i)=>{
         let current = []
 
         for(let j=arr.length-1;j>=0;j--){
           let contact = arr[j]
-          let name = contact.displayName || contact.name.formatted
+          let name = this.getName(contact)
           if(name.substr(0,1).toUpperCase() === item){
             current.push(contact);
             arr.splice(j, 1);
@@ -128,9 +131,9 @@ export default {
 
         if(current.length) {
 
-          current.sort(function(a,b){
-            let displayNameA = a.displayName || a.name.formatted
-            let displayNameB = b.displayName || b.name.formatted
+          current.sort((a,b)=>{
+            let displayNameA = this.getName(a)
+            let displayNameB = this.getName(b)
             if(displayNameA.substr(0,1).charCodeAt()<150 || displayNameB.substr(0,1).charCodeAt()<150){
               return displayNameA.substr(0,1).charCodeAt() > displayNameB.substr(0,1).charCodeAt()
             }
