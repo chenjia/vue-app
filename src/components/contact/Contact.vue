@@ -27,28 +27,7 @@ export default {
     return {
       ready:false,
       searchKey:'',
-      items:[{
-        displayName:'张三',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'张三2',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'张三3',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'阿毛',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'adai',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'aa',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'查',
-        phoneNumbers:[{value:'13333333331'}]
-      }]
+      items:[]
       // items:{
       //   A:['Aaron','Alden','Austin'],
       //   B:['Baldwin','Braden'],
@@ -156,6 +135,30 @@ export default {
     },200)
 
     let _this = this
+    if(!cordova){
+      this.items = [{
+        displayName:'张三',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'张三2',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'张三3',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'阿毛',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'adai',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'aa',
+        phoneNumbers:[{value:'13333333331'}]
+      },{
+        displayName:'查',
+        phoneNumbers:[{value:'13333333331'}]
+      }]
+    }
     document.addEventListener("deviceready", ()=>{
       function onSuccess(contacts) {
         _this.items = contacts
