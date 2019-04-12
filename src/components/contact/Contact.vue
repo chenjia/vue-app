@@ -100,6 +100,7 @@ export default {
       }else{
         result = items
       }
+      console.log(result)
       return result
     }
   },
