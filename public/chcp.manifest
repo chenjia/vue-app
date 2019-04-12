@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "1a1ba5ca0ce6cefa1329b4413eebf9f6"
+    "hash": "9776a4950013cf136da3f953d628b20e"
   },
   {
     "file": "static/js/browser.js",
@@ -177,7 +177,7 @@
   },
   {
     "file": "static/js/contact.js",
-    "hash": "bd92cb8012e55ea6fadb5e4737700c53"
+    "hash": "438ae8d7619d71b013bfb4608dcb8f5b"
   },
   {
     "file": "static/js/dialog.js",
@@ -209,7 +209,7 @@
   },
   {
     "file": "static/js/login.js",
-    "hash": "8c1ff8f39b65c7703ac4db91213f92f5"
+    "hash": "a5afa4478ac6501c3d7bf3a25b67c38f"
   },
   {
     "file": "static/js/manifest.js",
