@@ -89,10 +89,8 @@ export default {
       console.log(items)
       if(this.searchKey){
         for(let group in items){
-          console.log(group)
           for(let item of items[group]){
             let name = this.getName(item)
-            console.log(name)
             if(name.toLowerCase().indexOf(this.searchKey.toLowerCase())!=-1){
               if(!result[group]){
                 result[group] = []
@@ -157,7 +155,7 @@ export default {
     },100)
     setTimeout(()=>{
       if(this.items.C){
-        this.items.C.push({name:'chenjia', phoneNumbers:['18702189255']})
+        this.items.C.push({name:'chenjia', phoneNumbers:[{value:'18702189255'}]})
       }
     },200)
 
@@ -166,9 +164,6 @@ export default {
       function onSuccess(contacts) {
         _this.items = contacts
         console.log('Found ' + contacts.length + ' contacts.')
-        for (var i = 0; i < contacts.length; i++) {
-          console.log("Contact[" + i + "]: " + JSON.stringify(contacts[i]))
-        }
       };
 
       function onError(contactError) {
@@ -176,7 +171,6 @@ export default {
       };
 
       var fields = ["displayName", "name", "phoneNumbers", "emails", "address"]
-      console.log(navigator.contacts.fieldType)
       var options = { filter: "", multiple: true }
       navigator.contacts.find(fields, onSuccess, onError, options);
     }, false);
