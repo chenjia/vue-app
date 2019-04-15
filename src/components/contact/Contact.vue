@@ -63,7 +63,7 @@ export default {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
       let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-      let zh = "阿八嚓哒妸发旮哈I讥咔垃痳拏噢妑七呥扨它UV穵夕丫帀".split('');
+      let zh = "阿八嚓哒妸发旮哈讥讥咔垃痳拏噢妑七呥扨它穵穵穵夕丫帀".split('');
       let group = [];
       letters.forEach((item,i)=>{
         let current = []
@@ -74,8 +74,6 @@ export default {
           if(name.substr(0,1).toUpperCase() === item){
             current.push(contact);
             arr.splice(j, 1);
-            continue;
-          } else if(['I','U','V',indexOf(item) != -1]){
             continue;
           } else if((!zh[i] || zh[i].localeCompare(name,'zh-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-CN', { sensitivity: 'base'}) == -1) {
             current.push(contact);
@@ -95,7 +93,6 @@ export default {
           group.push({group: item, items:current})
         }
       });
-
       return group;
     }
   },
@@ -110,6 +107,163 @@ export default {
       }
       this.items = array
     }
+    // this.items = [{
+    //   displayName: 'Aaron',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '阿毛',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Braden',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '宝宝',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Chapman',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '场地',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Dunn',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '到达',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Elliott',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '饿了么',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Found',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '非常',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Grant',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '搞饭',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Hall',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '哈哈',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Irish',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'items',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Johnson',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '就是',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'key',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '开始',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'left',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '勒夫',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Martin',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '蚂蜂',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Nelson',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '呢方式',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Osborne',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '哦哦',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Pierce',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '浦东',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Quinta',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '区分',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Rose',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '人格',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'String',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '顺风耳',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Turner',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '听歌',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Urian',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Uwe',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Vega',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Vance',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'White',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '网格',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Xena',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '幸福氛围',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'York',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '有氛围',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: 'Zenon',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // },{
+    //   displayName: '在发疯',
+    //   phoneNumbers:[{value:'13333333333'}]
+    // }]
   },
   mounted(){
     setTimeout(()=>{
