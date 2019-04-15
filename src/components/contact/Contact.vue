@@ -91,7 +91,6 @@ export default {
     pySegSort(contacts) {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
-
       let letters = "ABCDEFGHJKLMNOPQRSTWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
       let group = [];
@@ -102,11 +101,13 @@ export default {
           let contact = arr[j]
           let name = this.getName(contact)
           if(name.substr(0,1).toUpperCase() === item){
+            console.log(contact)
             current.push(contact);
             arr.splice(j, 1);
             continue;
-          }else if((!zh[i] || zh[i].localeCompare(name) <= 0) && name.localeCompare(zh[i+1]) == -1) {
+          }else if((!zh[i] || zh[i].localeCompare(name,'zh-Hans-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-Hans-CN', { sensitivity: 'base'}) == -1) {
             current.push(contact);
+            console.log(contact)
             arr.splice(j, 1);
           }
         }
@@ -118,7 +119,7 @@ export default {
             if(displayNameA.substr(0,1).charCodeAt()<150 || displayNameB.substr(0,1).charCodeAt()<150){
               return displayNameA.substr(0,1).charCodeAt() > displayNameB.substr(0,1).charCodeAt()
             }
-            return displayNameA.localeCompare(displayNameB);
+            return displayNameA.localeCompare(displayNameB,'zh-Hans-CN', { sensitivity: 'base'});
           });
           group.push({group: item, items:current})
         }
@@ -131,11 +132,10 @@ export default {
       this.ready = true
     },100)
     setTimeout(()=>{
-      this.items.push({displayName:'陈佳', phoneNumbers:[{value:'18702189255'}]})
+      // this.items.push({displayName:'陈佳', phoneNumbers:[{value:'18702189255'}]})
     },200)
 
-    let _this = this
-    if(!cordova){
+    if(!window.cordova){
       this.items = [{
         displayName:'张三',
         phoneNumbers:[{value:'13333333331'}]
@@ -159,6 +159,8 @@ export default {
         phoneNumbers:[{value:'13333333331'}]
       }]
     }
+
+    let _this = this
     document.addEventListener("deviceready", ()=>{
       function onSuccess(contacts) {
         _this.items = contacts
