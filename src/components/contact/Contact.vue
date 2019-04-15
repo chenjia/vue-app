@@ -34,7 +34,6 @@ export default {
   computed:{
     contacts(){
       let result = []
-      console.log(this.items)
       let items = this.pySegSort(this.items)
       if(this.searchKey){
         for(let i=0;i<items.length;i++){
@@ -53,7 +52,6 @@ export default {
       }else{
         result = items
       }
-      console.log(result)
       return result
     }
   },
@@ -65,7 +63,7 @@ export default {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
       let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-      let zh = "阿八嚓哒妸发旮哈i讥咔垃痳拏噢妑七呥扨它uv穵夕丫帀".split('');
+      let zh = "阿八嚓哒妸发旮哈I讥咔垃痳拏噢妑七呥扨它UV穵夕丫帀".split('');
       let group = [];
       letters.forEach((item,i)=>{
         let current = []
@@ -74,13 +72,13 @@ export default {
           let contact = arr[j]
           let name = this.getName(contact)
           if(name.substr(0,1).toUpperCase() === item){
-            console.log(contact)
             current.push(contact);
             arr.splice(j, 1);
             continue;
-          }else if((!zh[i] || zh[i].localeCompare(name,'zh-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-CN', { sensitivity: 'base'}) == -1) {
+          } else if(['I','U','V',indexOf(item) != -1]){
+            continue;
+          } else if((!zh[i] || zh[i].localeCompare(name,'zh-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-CN', { sensitivity: 'base'}) == -1) {
             current.push(contact);
-            console.log(contact)
             arr.splice(j, 1);
           }
         }
@@ -96,10 +94,8 @@ export default {
           });
           group.push({group: item, items:current})
         }
-        // else{
-        //   group.push({group: item, items:[]})
-        // }
       });
+
       return group;
     }
   },
