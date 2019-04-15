@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "3270902cc8f4671e4d9d5a05b54b4606"
+    "hash": "9b272811f34421e9a2c83024eeb1e846"
   },
   {
     "file": "static/js/browser.js",
@@ -177,7 +177,7 @@
   },
   {
     "file": "static/js/contact.js",
-    "hash": "8cb9d587d2ddf3fec7e6514a85098bdb"
+    "hash": "9635e57a9f998f91ccd57238ec017c0b"
   },
   {
     "file": "static/js/dialog.js",
@@ -213,15 +213,15 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "ab139820f6fa121efcb2e26ed566f73e"
+    "hash": "93e178e3dc9e4e5dcaa6f1c9c8f931de"
   },
   {
     "file": "static/js/map.js",
-    "hash": "4443fb78b09f301b880be7f730c116bd"
+    "hash": "66368ce3f94677bd0eb2e9bac1cf7cfe"
   },
   {
     "file": "static/js/setting.js",
-    "hash": "68a0921b2d16fb5b55c965ed4fc8ef7a"
+    "hash": "ea9f1aeb1a308dc277be2aa6cab5e338"
   },
   {
     "file": "static/js/signature.js",
@@ -241,11 +241,11 @@
   },
   {
     "file": "static/js/video.js",
-    "hash": "810f3773ac33f4e2c444d4e63c0c219f"
+    "hash": "87f11ba6987711077239f2ec7d37dd6c"
   },
   {
     "file": "static/js/workflow.js",
-    "hash": "4b55d82a7450985b80fb342324762355"
+    "hash": "fc89e1f8e31ec880e57a080523504aa1"
   },
   {
     "file": "static/js/zoom.js",
