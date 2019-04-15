@@ -96,6 +96,9 @@ export default {
           });
           group.push({group: item, items:current})
         }
+        // else{
+        //   group.push({group: item, items:[]})
+        // }
       });
       return group;
     }
