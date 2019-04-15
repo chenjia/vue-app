@@ -27,35 +27,8 @@ export default {
     return {
       ready:false,
       searchKey:'',
-      items:[]
-      // items:{
-      //   A:['Aaron','Alden','Austin'],
-      //   B:['Baldwin','Braden'],
-      //   C:['Cox','Chapman'],
-      //   D:['Davis','Dunn'],
-      //   E:['Ellis','Elliott'],
-      //   F:['Freeman','Franklin'],
-      //   G:['Greene','Grant'],
-      //   H:['Harris','Hall'],
-      //   I:['Irvin','Irish'],
-      //   J:['Jones','Johnson'],
-      //   K:['King','Knight'],
-      //   L:['Lewis','Lee'],
-      //   M:['Martinez','Martin'],
-      //   N:['Nichols','Nelson'],
-      //   O:['Oliver','Osborne'],
-      //   P:['Porter','Pierce'],
-      //   Q:['Quick','Quinta'],
-      //   R:['Robinson','Rose'],
-      //   S:['Stone','Stevens'],
-      //   T:['Thomas','Turner'],
-      //   U:['Uwe','Urian'],
-      //   V:['Vance','Vega'],
-      //   W:['Wilson','White'],
-      //   X:['Xavier','Xena'],
-      //   Y:['Young','York'],
-      //   Z:['Zack','Zenon']
-      // }
+      items:[],
+      names:['Aaron','Alden','Austin','Baldwin','Braden','Cox','Chapman','Davis','Dunn','Ellis','Elliott','Freeman','Franklin','Greene','Grant','Harris','Hall','Irvin','Irish','Jones','Johnson','King','Knight','Lewis','Lee','Martinez','Martin','Nichols','Nelson','Oliver','Osborne','Porter','Pierce','Quick','Quinta','Robinson','Rose','Stone','Stevens','Thomas','Turner','Uwe','Urian','Vance','Vega','Wilson','White','Xavier','Xena','Young','York','Zack','Zenon']
     }
   },
   computed:{
@@ -91,7 +64,7 @@ export default {
     pySegSort(contacts) {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
-      let letters = "ABCDEFGHJKLMNOPQRSTWXYZ".split('');
+      let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
       let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
       let group = [];
       letters.forEach((item,i)=>{
@@ -105,7 +78,7 @@ export default {
             current.push(contact);
             arr.splice(j, 1);
             continue;
-          }else if((!zh[i] || zh[i].localeCompare(name,'zh-Hans-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-Hans-CN', { sensitivity: 'base'}) == -1) {
+          }else if((!zh[i] || zh[i].localeCompare(name,'zh-CN', { sensitivity: 'base'}) <= 0) && name.localeCompare(zh[i+1],'zh-CN', { sensitivity: 'base'}) == -1) {
             current.push(contact);
             console.log(contact)
             arr.splice(j, 1);
@@ -119,12 +92,24 @@ export default {
             if(displayNameA.substr(0,1).charCodeAt()<150 || displayNameB.substr(0,1).charCodeAt()<150){
               return displayNameA.substr(0,1).charCodeAt() > displayNameB.substr(0,1).charCodeAt()
             }
-            return displayNameA.localeCompare(displayNameB,'zh-Hans-CN', { sensitivity: 'base'});
+            return displayNameA.localeCompare(displayNameB,'zh-CN', { sensitivity: 'base'});
           });
           group.push({group: item, items:current})
         }
       });
       return group;
+    }
+  },
+  beforeMount(){
+    if(!window.cordova){
+      const array = []
+      for(let item of this.names){
+        array.push({
+          displayName: item,
+          phoneNumbers:[{value:'13333333333'}]
+        })
+      }
+      this.items = array
     }
   },
   mounted(){
@@ -134,31 +119,6 @@ export default {
     setTimeout(()=>{
       // this.items.push({displayName:'陈佳', phoneNumbers:[{value:'18702189255'}]})
     },200)
-
-    if(!window.cordova){
-      this.items = [{
-        displayName:'张三',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'张三2',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'张三3',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'阿毛',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'adai',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'aa',
-        phoneNumbers:[{value:'13333333331'}]
-      },{
-        displayName:'查',
-        phoneNumbers:[{value:'13333333331'}]
-      }]
-    }
 
     let _this = this
     document.addEventListener("deviceready", ()=>{
