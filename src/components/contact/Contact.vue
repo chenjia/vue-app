@@ -65,7 +65,7 @@ export default {
       let arr = [].concat(contacts)
       if(!String.prototype.localeCompare) return null;
       let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-      let zh = "阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀".split('');
+      let zh = "阿八嚓哒妸发旮哈i讥咔垃痳拏噢妑七呥扨它uv穵夕丫帀".split('');
       let group = [];
       letters.forEach((item,i)=>{
         let current = []
