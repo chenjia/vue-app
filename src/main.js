@@ -5,7 +5,7 @@ window.Config = {
   server: 'http://47.100.119.102/api',
   appDownloadUrl:'https://chenjia.github.io/vue-app/public/index.html',
   chcpUrl:'https://chenjia.github.io/vue-app/public/chcp.json',
-  key:'ed26d4cd99aa11e5b8a4c89cdc776729',
+  key:'dzg5czJyejd5NjFkN3g3MjNjc2QwamN3OXUxODFjb280YWE4djhvYmV1NW9lemUxMzFjdGFiYTZ0OXo5dXhkMWNrYzRvZHZ3NjcyMzZkdWU=',
   random:new Date().getTime(),
   preload: 1
 }
@@ -18,10 +18,7 @@ import store from './vuex/store'
 import 'mint-ui/lib/style.css'
 import '../static/css/main.css'
 
-import {
-  mapMutations
-} from 'vuex' 
-
+import { mapMutations } from 'vuex' 
 Vue.config.productionTip = false
 
 window.utils = utils

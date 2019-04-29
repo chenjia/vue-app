@@ -17,6 +17,7 @@ require.ensure([], () => {
   let IndexSection = require('mint-ui/lib/index-section').default
   let Lazyload = require('mint-ui/lib/lazyload').default
   let Loadmore = require('mint-ui/lib/loadmore').default
+  let NavBar = require('mint-ui/lib/navbar').default
   let Popup = require('mint-ui/lib/popup').default
   let Progress = require('mint-ui/lib/progress').default
   let Radio = require('mint-ui/lib/radio').default
@@ -44,6 +45,7 @@ require.ensure([], () => {
 	Vue.component(IndexList.name, IndexList)
 	Vue.component(IndexSection.name, IndexSection)
 	Vue.component(Loadmore.name, Loadmore)
+  Vue.component(NavBar.name, NavBar)
 	Vue.component(Popup.name, Popup)
 	Vue.component(Progress.name, Progress)
 	Vue.component(Radio.name, Radio)
