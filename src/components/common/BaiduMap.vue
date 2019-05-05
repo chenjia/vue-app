@@ -46,7 +46,7 @@
         }, function(err){
           console.log(JSON.stringify(err.code))
           alert('获取地理位置坐标失败！')
-        }, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true })
+        }, { maximumAge: 3000, timeout: 60000, enableHighAccuracy: true })
       }
     }
   }
