@@ -20,10 +20,12 @@
     },
     mounted () {
       window.mapCallback = BMap => {
+        console.log('in callback',utils.cache.get('position'))
         const map = new BMap.Map("mapBox")
         const p = utils.cache.get('position') || {lng:104,lat:35}
         map.centerAndZoom(new BMap.Point(p.lng,p.lat),4)
         navigator.geolocation.getCurrentPosition(function(position){
+          console.log(position)
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
           const gpsPoint = new BMap.Point(currentLon, currentLat)
@@ -34,7 +36,8 @@
           convertor.translate(pointArr, 1, 5, function(data){
             utils.cache.set('position',data.points[0])
             if(data.status === 0) {
-              let  marker = new BMap.Marker(data.points[0]);
+              let marker = new BMap.Marker(data.points[0]);
+              console.log(data.points[0])
               map.addOverlay(marker);
               map.centerAndZoom(data.points[0],15)
               map.addControl(new BMap.NavigationControl())
