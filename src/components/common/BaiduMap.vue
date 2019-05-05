@@ -24,7 +24,7 @@
         const map = new BMap.Map("mapBox")
         const p = utils.cache.get('position') || {lng:104,lat:35}
         map.centerAndZoom(new BMap.Point(p.lng,p.lat),4)
-        navigator.geolocation.getCurrentPosition(function(position){
+        navigator.geolocation.watchPosition(function(position){
           console.log(position)
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
