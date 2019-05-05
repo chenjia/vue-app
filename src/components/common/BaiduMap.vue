@@ -24,26 +24,27 @@
         const map = new BMap.Map("mapBox")
         const p = utils.cache.get('position') || {lng:104,lat:35}
         map.centerAndZoom(new BMap.Point(p.lng,p.lat),4)
-        navigator.geolocation.watchPosition(function(position){
+        navigator.geolocation.watchPosition(position => {
           console.log(position)
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
           const gpsPoint = new BMap.Point(currentLon, currentLat)
 
-          let  convertor = new BMap.Convertor();
-          let  pointArr = [];
-          pointArr.push(gpsPoint);
-          convertor.translate(pointArr, 1, 5, function(data){
+          let  convertor = new BMap.Convertor()
+          let  pointArr = []
+          pointArr.push(gpsPoint)
+          convertor.translate(pointArr, 1, 5, data => {
             utils.cache.set('position',data.points[0])
             if(data.status === 0) {
-              let marker = new BMap.Marker(data.points[0]);
+              let marker = new BMap.Marker(data.points[0])
               console.log(data.points[0])
-              map.addOverlay(marker);
+              map.clearOverlays()
+              map.addOverlay(marker)
               map.centerAndZoom(data.points[0],15)
               map.addControl(new BMap.NavigationControl())
             }
           })
-        }, function(err){
+        }, err => {
           console.log(JSON.stringify(err.code))
           alert('获取地理位置坐标失败！')
         }, { maximumAge: 3000, timeout: 60000, enableHighAccuracy: true })
