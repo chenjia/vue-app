@@ -19,6 +19,7 @@
       
     },
     mounted () {
+      let maximumAge = 0
       window.mapCallback = BMap => {
         console.log('in callback',utils.cache.get('position'))
         const map = new BMap.Map("mapBox")
@@ -26,6 +27,7 @@
         map.centerAndZoom(new BMap.Point(p.lng,p.lat),4)
         navigator.geolocation.watchPosition(position => {
           console.log(position)
+          maximumAge = 15000
           const currentLat = position.coords.latitude
           const currentLon = position.coords.longitude
           const gpsPoint = new BMap.Point(currentLon, currentLat)
@@ -47,7 +49,7 @@
         }, err => {
           console.log(JSON.stringify(err.code))
           alert('获取地理位置坐标失败！')
-        }, { maximumAge: 3000, timeout: 60000, enableHighAccuracy: true })
+        }, { maximumAge: maximumAge, timeout: 60000, enableHighAccuracy: true })
       }
     }
   }
