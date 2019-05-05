@@ -44,9 +44,9 @@
             }
           })
         }, function(err){
-          console.log(err)
+          console.log(JSON.stringify(err))
           alert('获取地理位置坐标失败！')
-        })
+        }, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true })
       }
     }
   }
