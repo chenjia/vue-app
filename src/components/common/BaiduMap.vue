@@ -42,7 +42,7 @@
               console.log(data.points[0])
               map.clearOverlays()
               map.addOverlay(marker)
-              map.centerAndZoom(data.points[0],15)
+              map.panTo(data.points[0])
               map.addControl(new BMap.NavigationControl())
             }
           })
