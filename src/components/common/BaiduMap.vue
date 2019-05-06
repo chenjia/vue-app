@@ -25,7 +25,10 @@ export default {
       console.log('in callback',utils.cache.get('position'))
       const map = new BMap.Map("mapBox")
       const p = utils.cache.get('position') || {lng:104,lat:35}
-      map.centerAndZoom(new BMap.Point(p.lng,p.lat),4)
+      const point = new BMap.Point(p.lng,p.lat)
+      map.centerAndZoom(point, 4)
+      map.addOverlay(new BMap.Marker(point))
+
       navigator.geolocation.watchPosition(position => {
         console.log(position)
         const currentLat = position.coords.latitude
@@ -38,14 +41,13 @@ export default {
         convertor.translate(pointArr, 1, 5, data => {
           utils.cache.set('position',data.points[0])
           if(data.status === 0) {
-            let marker = new BMap.Marker(data.points[0])
             console.log(data.points[0])
-            map.clearOverlays()
-            map.addOverlay(marker)
-            if(maximumAge == 0){
-              map.centerAndZoom(data.points[0],18)
-            }else {
+            let marker = new BMap.Marker(data.points[0])
+            map.getOverlays()[0].setPosition(data.points[0])
+            if(maximumAge){
               map.panTo(data.points[0])
+            }else {
+              map.centerAndZoom(data.points[0],18)
             }
             map.addControl(new BMap.NavigationControl())
             maximumAge = 15000

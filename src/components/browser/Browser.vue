@@ -6,11 +6,11 @@
     </mt-header>
 
     <mt-navbar v-model="selected">
-      <mt-tab-item v-for="(tab, index) in tabs" :id="index+1">{{tab.title}}</mt-tab-item>
+      <mt-tab-item v-for="(tab, index) in tabs" :id="index+1" :key="index">{{tab.title}}</mt-tab-item>
     </mt-navbar>
 
     <mt-tab-container v-model="selected" style="padding-top:2px;">
-      <mt-tab-container-item v-for="(tab, index) in tabs" :id="index+1">
+      <mt-tab-container-item v-for="(tab, index) in tabs" :id="index+1" :key="index">
         <iframe :src="tab.src" :style="{border:'none',width:'100%',height:screenHeight+'px'}"></iframe>
       </mt-tab-container-item>
     </mt-tab-container>

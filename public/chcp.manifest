@@ -157,11 +157,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "d657907dad29e0c29a295d5d3a38311a"
+    "hash": "49a9c54221ff766993b8873d7476b4a2"
   },
   {
     "file": "static/js/browser.js",
-    "hash": "cf031a1f100c55b7895404e6b18a5f68"
+    "hash": "75c7047eb876a18bcd7be28c5e9787e4"
   },
   {
     "file": "static/js/calendar.js",
@@ -217,7 +217,7 @@
   },
   {
     "file": "static/js/map.js",
-    "hash": "bbd9e183e83d1f8d1083a485441a2020"
+    "hash": "1ef38ee6b3f7212d0f79e2582c1252cb"
   },
   {
     "file": "static/js/setting.js",
