@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "49a9c54221ff766993b8873d7476b4a2"
+    "hash": "5b4996d16d5e5176a81c222ef4bf53e6"
   },
   {
     "file": "static/js/browser.js",
@@ -189,7 +189,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "c5790a1f9ccd50adf8902ff30e3c5310"
+    "hash": "f3b6bbf5de5d2d65c2bd79848c8c58cd"
   },
   {
     "file": "static/js/lazyLibs.js",
