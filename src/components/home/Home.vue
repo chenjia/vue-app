@@ -263,7 +263,7 @@ export default {
   methods: {
     scan(){
       if(window.cordova && cordova.plugins.barcodeScanner){
-        store.commit('TOGGLE_POPUP', {visible: true, text: '正在启动摄像头', duration: 3000})
+        store.commit('TOGGLE_POPUP', {visible: true, text: '正在启用摄像头', duration: 3000})
 
         cordova.plugins.barcodeScanner.scan(result => {
           if(!result.cancelled){
