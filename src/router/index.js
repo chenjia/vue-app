@@ -87,6 +87,10 @@ router.beforeEach((to, from, next) => {
       duration: 3000
     })
     next('/page/login')
+    loader.className += ' fadeOut'
+    setTimeout(()=>{
+      loader.style.display = 'none'
+    },500)
   } else {
     next()
   }

@@ -13,7 +13,9 @@
       <mt-field label="账　号" placeholder="请输入账号" v-model="model.username"></mt-field>
       <mt-field label="密　码" placeholder="请输入密码" type="password" v-model="model.password"></mt-field>
       <mt-field label="验证码" type="tel" v-model="model.captcha" @keyup.enter.native="login()" placeholder="请输入验证码">
-        <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;border:1px solid #eee;">
+        <div class="border-animation">
+          <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;">
+        </div>
       </mt-field>
       <div class="pd-md">
         <mt-button @click="login" type="primary" size="large">登　录</mt-button>
@@ -117,3 +119,18 @@ export default {
   }
 }
 </script>
+<style type="text/css" scoped>
+.border-animation{
+  padding:1px;
+  background: linear-gradient(0deg, transparent 6px, #ccc 6px) repeat-y, linear-gradient(0deg, transparent 50%, #ccc 0) repeat-y, linear-gradient(90deg, transparent 50%, #ccc 0) repeat-x, linear-gradient(90deg, transparent 50%, #ccc 0) repeat-x;
+  background-size: 1px 12px, 1px 12px, 12px 1px, 12px 1px;
+  background-position: 0 0, 100% 0, 0 0, 0 100%;
+  animation: border-move 1s infinite linear;
+}
+@keyframes border-move {
+  from {}
+  to {
+    background-position: 0 -12px, 100% 12px, 12px 0, -12px 100%;
+  }
+}
+</style>

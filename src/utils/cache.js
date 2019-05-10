@@ -23,6 +23,7 @@ const cache = {
 					}
 				}
 			}else{
+				localStorage.removeItem(key)
 				value = null
 			}
 		}
