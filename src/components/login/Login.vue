@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import store from '../../vuex/store'
 import {
   Indicator
@@ -108,7 +109,20 @@ export default {
     }
   },
   mounted(){
-    
+    // axios.post('http://localhost:8080/api/', {
+    //   request: '{"head":{"chor_service_code":"shoppingCarQuery"},"body":{"order_user":"YYA1581"}}'
+    // }, {
+    //   headers: {
+    //     'Content-Type': 'application/x-www-form-urlencoded'
+    //   },
+    //   transformRequest: [function(data) {
+    //     let ret = ''
+    //     for (let it in data) {
+    //       ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+    //     }
+    //     return ret
+    //   }]
+    // })
   },
   beforeRouteEnter(to, from, next){
     next(vm=>{

@@ -3,6 +3,7 @@ import format from './format'
 import http from './http'
 import ui from './ui'
 import version from './version'
+import './error'
 
 const utils = {
   cache,
