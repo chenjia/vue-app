@@ -19,5 +19,7 @@ window.addEventListener('error', event => {
 })
 
 setInterval(()=>{
-  console.log(errors)
+  if(errors.length > 0){
+    console.log(errors)
+  }
 },3000)
