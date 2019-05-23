@@ -13,6 +13,7 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "cropper": "^4.0.0",
+    "crypto-js": "^3.1.9-1",
     "echarts": "^3.7.1",
     "fastclick": "^1.0.6",
     "jquery": "^2.1.4",
