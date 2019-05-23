@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "b5b1a35caf40a7a508720058699d3cb9"
+    "hash": "ddc856004bebb96329a853a228cf345f"
   },
   {
     "file": "static/js/browser.js",
@@ -177,7 +177,7 @@
   },
   {
     "file": "static/js/contact.js",
-    "hash": "8fb1b21119566948b2196a8793b725ea"
+    "hash": "3dc9625479d4e6d39a9cab881753c70c"
   },
   {
     "file": "static/js/dialog.js",
@@ -213,7 +213,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "b482a9c51268187d1c1aedde7f072116"
+    "hash": "129edd719dde0d8084159f18564ce7db"
   },
   {
     "file": "static/js/map.js",
@@ -225,7 +225,7 @@
   },
   {
     "file": "static/js/signature.js",
-    "hash": "7d5f26ced73107f1b9c83ea377365f10"
+    "hash": "883acd693af273ea2a92c25dd2240fbc"
   },
   {
     "file": "static/js/tab.js",
@@ -237,7 +237,7 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "a4e544d1c298eacece58de41d95a28bd"
+    "hash": "c4c24821d9fde55480a1c15fd8a76c37"
   },
   {
     "file": "static/js/video.js",
@@ -2758,18 +2758,6 @@
   {
     "file": "static/lib/mxgraph/src/resources/graph.txt",
     "hash": "a538458f4aa77a6c94debb803cc20b7d"
-  },
-  {
-    "file": "static/lib/security/mode-ecb-min.js",
-    "hash": "e68433d8b4e304cb5be10e721011b08c"
-  },
-  {
-    "file": "static/lib/security/mode-ecb.js",
-    "hash": "851d991ec9be858820c7e23c40d9c552"
-  },
-  {
-    "file": "static/lib/security/tripledes.js",
-    "hash": "9eb3e46fa823b2a55f2dba0335a692d9"
   },
   {
     "file": "static/lib/ueditor/dialogs/anchor/anchor.html",
