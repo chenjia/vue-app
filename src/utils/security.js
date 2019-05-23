@@ -1,18 +1,17 @@
-require('../../static/lib/security/tripledes')
-require('../../static/lib/security/mode-ecb-min')
+var CryptoJS = require("crypto-js");
 
-const encryptByDES = (message, key) => {
+const encryptByAES = (message, key) => {
     var keyHex = CryptoJS.enc.Utf8.parse(key);
-    var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+    var encrypted = CryptoJS.AES.encrypt(message, keyHex, {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7
     });
     return encrypted.ciphertext.toString(CryptoJS.enc.Base64).replace(/[\r\n]/g, '');
 }
 
-const decryptByDES = (ciphertext, key) => {
+const decryptByAES = (ciphertext, key) => {
     var keyHex = CryptoJS.enc.Utf8.parse(key);
-    var decrypted = CryptoJS.DES.decrypt({
+    var decrypted = CryptoJS.AES.decrypt({
         ciphertext: CryptoJS.enc.Base64.parse(ciphertext.replace(/[\r\n]/g, ''))
     }, keyHex, {
         mode: CryptoJS.mode.ECB,
@@ -44,4 +43,4 @@ const decryptKey = encryptedKey => {
   return str
 }
 
-export {encryptByDES,decryptByDES,encryptKey,decryptKey}
+export {encryptByAES,decryptByAES,encryptKey,decryptKey}
