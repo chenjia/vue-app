@@ -7,7 +7,7 @@
 
     <div class="has-header">
       <mt-loadmore 
-      :maxDistance="100"
+        :maxDistance="100"
         :top-method="loadTop"
         @top-status-change="handleTopChange"
         :bottom-method="loadBottom"

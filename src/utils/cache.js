@@ -12,7 +12,8 @@ const cache = {
 		let value = localStorage.getItem(key)
 
 		if(value){
-			value = eval('(' + decryptByAES(value, decryptKey(window.Config.key)) + ')')
+			value = JSON.parse(decryptByAES(value, decryptKey(window.Config.key)))
+
 			if(value.expired > new Date().getTime()){
 				value = value.value
 				if (value.substr(0, 1) == '{' || value.substr(0, 1) == '[') {
