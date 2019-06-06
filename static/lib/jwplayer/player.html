@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<title>Red5 - OFLADemo</title>
+<script type='text/javascript' src='jwplayer.js'></script>
+</head>
+<body>
+<div id="player">
+
+</div>
+<script type='text/javascript'>
+  var url = location.href.substr(location.href.indexOf('file=')+5);
+  console.log(url);
+  jwplayer('player').setup({
+    'flashplayer': 'player.swf',
+    'file': url,
+    'streamer': 'rtmp://localhost/oflaDemo',
+    'controlbar': 'bottom',
+    'width': '720',
+    'height': '480'
+  });
+</script>
+</body>
+</html>

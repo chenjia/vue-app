@@ -326,7 +326,7 @@ export default {
     }
   },
   mounted(){
-    this.scanned = false
+    
   },
   beforeRouteEnter(to, from, next) {
     next(vm=>{

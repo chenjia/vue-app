@@ -19,13 +19,12 @@ window.addEventListener('error', event => {
 })
 
 setInterval(()=>{
-  console.log(errors)
   if(errors.length > 0){
     const length = errors.length
-    utils.http.post('/manage/log/save', {logs:errors}).then(response => {
-      errors.splice(0,length)
-    }, error => {
-      console.log('保存日志报错了')
-    })
+    // utils.http.post('/manage/log/save', {logs:errors}).then(response => {
+    //   errors.splice(0,length)
+    // }, error => {
+    //   console.log('保存日志报错了')
+    // })
   }
 },3000)

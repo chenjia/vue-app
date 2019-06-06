@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "ddc856004bebb96329a853a228cf345f"
+    "hash": "af0d4ccb4417a2a2ae250f79910f3496"
   },
   {
     "file": "static/js/browser.js",
@@ -189,7 +189,7 @@
   },
   {
     "file": "static/js/home.js",
-    "hash": "e7eef21c02da8a8ab918d44bcf0358db"
+    "hash": "715cc73642fd5e6467c61ba4dfe1e9d1"
   },
   {
     "file": "static/js/lazyLibs.js",
@@ -197,7 +197,7 @@
   },
   {
     "file": "static/js/list.js",
-    "hash": "1c15ca6b93148f1b0675343eaf32964c"
+    "hash": "e98eafe47e8f9ea740551063fe789f33"
   },
   {
     "file": "static/js/loading.js",
@@ -213,7 +213,7 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "129edd719dde0d8084159f18564ce7db"
+    "hash": "7fa4cd8102985baa345d47ece2c0da54"
   },
   {
     "file": "static/js/map.js",
@@ -241,11 +241,11 @@
   },
   {
     "file": "static/js/video.js",
-    "hash": "590db35f699773f98c85cf55ca0e411d"
+    "hash": "7113eeee914982983830b22280a657ac"
   },
   {
     "file": "static/js/workflow.js",
-    "hash": "566c06dd86d5fb1acb3fece522e997e0"
+    "hash": "81e7b0ae4c72b18f40fcf8c02a907ba2"
   },
   {
     "file": "static/js/zoom.js",
@@ -278,6 +278,18 @@
   {
     "file": "static/lib/font-awesome/fonts/FontAwesome.otf",
     "hash": "0d2717cd5d853e5c765ca032dfd41a4d"
+  },
+  {
+    "file": "static/lib/jwplayer/jwplayer.js",
+    "hash": "f2e4bc8b769ed24786dcff21882a12ff"
+  },
+  {
+    "file": "static/lib/jwplayer/player.html",
+    "hash": "893f2b53734bfa84572a02dda71ba70d"
+  },
+  {
+    "file": "static/lib/jwplayer/player.swf",
+    "hash": "9b2e0b38edb2b6ad5befa2e50395fb52"
   },
   {
     "file": "static/lib/mobiscroll/css/icons_mobiscroll.eot",
