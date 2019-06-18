@@ -46,7 +46,9 @@ body.modal-open {
 .pd-md{
   padding:10px;
 }
-
+.pd-lg{
+  padding:20px;
+}
 .tabs {
   position: relative;
 }
