@@ -24,7 +24,7 @@
       </mt-header>
 
       <div class="has-header" style="overflow-y:auto;" :style="{height:screenHeight-40+'px'}">
-        <video :style="{width:'100%'}" autoplay controls loop>
+        <video :style="{width:'100%'}" controls loop>
           <source src="static/media/7957a8f7246d2caf1e552e1a989f37f6.mp4" type="video/mp4" />
         </video>
       </div>

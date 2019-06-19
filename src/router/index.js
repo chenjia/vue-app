@@ -81,6 +81,7 @@ router.beforeEach((to, from, next) => {
   }
   
   if(to.meta.login != false && !store.state.common.user) {
+    console.log('to login')
     store.commit('TOGGLE_POPUP', {
       visible: true,
       text: '请先登录！',
@@ -92,6 +93,7 @@ router.beforeEach((to, from, next) => {
       loader.style.display = 'none'
     },500)
   } else {
+    console.log('next')
     next()
   }
 })
