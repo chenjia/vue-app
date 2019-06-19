@@ -5,15 +5,15 @@
   },
   {
     "file": "index.html",
-    "hash": "01e94a29ba528e322d8ac1b259d97dbb"
+    "hash": "63b14955b18159d85d190878106846be"
   },
   {
     "file": "static/css/app.css",
-    "hash": "f03d7548f3200f79a663b810596074e0"
+    "hash": "2d0e44b088d7e58e14dd8d32f35d89c4"
   },
   {
     "file": "static/css/main.css",
-    "hash": "9253d883afdd7bd57804e38e5ffe44a9"
+    "hash": "98b8fedb317c45f6e9d85e2681c20362"
   },
   {
     "file": "static/html/baiduMap.html",
@@ -157,11 +157,11 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "af0d4ccb4417a2a2ae250f79910f3496"
+    "hash": "e303046c360675cebd698adc40d87947"
   },
   {
     "file": "static/js/browser.js",
-    "hash": "75c7047eb876a18bcd7be28c5e9787e4"
+    "hash": "9ebcbacc8179deede3b1755689735c54"
   },
   {
     "file": "static/js/calendar.js",
@@ -213,11 +213,19 @@
   },
   {
     "file": "static/js/manifest.js",
-    "hash": "7fa4cd8102985baa345d47ece2c0da54"
+    "hash": "b88819ca2acff01bf35da208b3c6d16b"
   },
   {
     "file": "static/js/map.js",
-    "hash": "1ef38ee6b3f7212d0f79e2582c1252cb"
+    "hash": "7797a8cbc11cfaafd1c30b1f359eb709"
+  },
+  {
+    "file": "static/js/observer.js",
+    "hash": "a3cc933c1f70d14e77341632a0dd2146"
+  },
+  {
+    "file": "static/js/publisher.js",
+    "hash": "4b1219bc16da2eff3ee9a27ad6223601"
   },
   {
     "file": "static/js/setting.js",
@@ -237,15 +245,15 @@
   },
   {
     "file": "static/js/vendor.js",
-    "hash": "c4c24821d9fde55480a1c15fd8a76c37"
+    "hash": "9ad56574cc5656fe88fc77fbf0a0378d"
   },
   {
     "file": "static/js/video.js",
-    "hash": "7113eeee914982983830b22280a657ac"
+    "hash": "82217991cca9c45f0cc7d6caf704af72"
   },
   {
     "file": "static/js/workflow.js",
-    "hash": "81e7b0ae4c72b18f40fcf8c02a907ba2"
+    "hash": "566c06dd86d5fb1acb3fece522e997e0"
   },
   {
     "file": "static/js/zoom.js",
@@ -5266,6 +5274,14 @@
   {
     "file": "static/lib/ueditor/ueditor.parse.min.js",
     "hash": "b58abee074812a05133b8cecdc06b49c"
+  },
+  {
+    "file": "static/lib/videojs/video-js.css",
+    "hash": "29daa9b197765c0111b16939ce1264a9"
+  },
+  {
+    "file": "static/lib/videojs/video.js",
+    "hash": "c384aa1c23e3fb1b490db180214c80fd"
   },
   {
     "file": "static/media/7957a8f7246d2caf1e552e1a989f37f6.mp4",
