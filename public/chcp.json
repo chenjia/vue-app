@@ -1,5 +1,5 @@
 {
-  "content_url": "https://47.100.119.102/vue-app",
+  "content_url": "http://47.100.119.102/vue-app",
   "update": "now",
   "appVersion": "1.0.4",
   "nativeVersion": "1.0",
@@ -8,5 +8,5 @@
     "2. 修复少量的bug",
     "3. 测试增量更新功能"
   ],
-  "release": "2019.06.19-14.37.43"
+  "release": "2019.06.19-16.09.36"
 }
