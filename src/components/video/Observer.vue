@@ -99,9 +99,6 @@ export default {
       console.log(data.eventID)
       if(data.eventID == '2001'){
         document.body.className = 'video-play'
-        document.body.innerHTML = ''
-      }else if(data.eventID == '2006'){
-        document.body.className = ''
       }
     })
     // var params = {
