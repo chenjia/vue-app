@@ -17,13 +17,12 @@
     <mt-field label="videoMaxKeyframeInterval" placeholder="videoMaxKeyframeInterval" v-model="options.videoMaxKeyframeInterval"></mt-field>
     <mt-field label="videoOrientation" placeholder="videoOrientation" v-model="options.videoOrientation"></mt-field>
     
-
-
     <div class="pd-md">
-      <mt-button @click="play" type="primary" size="large">开　播</mt-button>
+      <mt-button @click="start" type="primary" size="large">开　播</mt-button>
+      <mt-button v-show="streamer != null" @click="stop" type="primary" size="large">停　播</mt-button>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
@@ -32,6 +31,7 @@ export default {
     return {
       url: 'rtmp://47.100.119.102:1935/hls',
       stream: 'chenjia',
+      streamer: null,
       options: {
         videoWidth: '',
         videoHeight: '',
@@ -58,36 +58,60 @@ export default {
     }
   },
   methods: {
-    play(){
+    start(){
       if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-        this.iosPlay()
+        this.iosStart()
       } else if (/(Android)/i.test(navigator.userAgent)) {
-        this.androidPlay()
+        this.androidStart()
       } else {
         alert('未能识别设备类型，默认用安卓！')
         this.androidPlay()
       }
     },
-    androidPlay(){
+    stop(){
+      if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+        this.iosStop()
+      } else if (/(Android)/i.test(navigator.userAgent)) {
+        this.androidStop()
+      } else {
+        alert('未能识别设备类型！')
+      }
+    },
+    androidStart(){
       window.videoStreamer.streamRTMP(this.url + '/' + this.stream, ()=>{
-        console.log('success callback')
+        console.log('success streamRTMP')
       }, ()=>{
-        console.log('failure callback')
+        console.log('failure streamRTMP')
       });
     },
-    iosPlay(){
+    androidStop(){
+      window.videoStreamer.streamStop(()=>{
+        console.log('success streamStop')
+      }, ()=>{
+        console.log('failure streamStop')
+      })
+    },
+    iosStart(){
       let options = Object.assign({}, this.options)
       options.videoWidth = options.videoWidth || this.screenWidth
       options.videoHeight = options.videoHeight || this.screenHeight
       options.rtmpServerURL = this.url + '/' + this.stream
       console.log(options)
-      var streamer = window.rtmpLiveStreamer;
+      this.streamer = window.rtmpLiveStreamer;
 
-      streamer.start(results => {
+      this.streamer.start(results => {
         console.log('Results: ' + results);
       }, error => {
         console.log('Error: ' + error);
       }, options );
+    },
+    iosStop(){
+      this.streamer.stop(results => {
+          console.log('Results: ' + results);
+        }, error => {
+          console.log('Error: ' + error);
+        }, null
+      )
     }
   },
   watch: {
