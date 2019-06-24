@@ -262,7 +262,7 @@ export default {
   },
   methods: {
     scan(){
-      if(window.cordova && cordova.plugins.barcodeScanner){
+      if(this.env == 'app'){
         store.commit('TOGGLE_POPUP', {visible: true, text: '正在启用摄像头', duration: 3000})
 
         cordova.plugins.barcodeScanner.scan(result => {

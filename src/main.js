@@ -15,6 +15,7 @@ window.Vue = Vue
 Vue.mixin({
   data() {
     return {
+      env: window.cordova?'app':'web',
       screenWidth: document.documentElement.clientWidth,
       screenHeight: document.documentElement.clientHeight
     }

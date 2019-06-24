@@ -6,6 +6,18 @@
 
     <mt-field label="推流地址" placeholder="请输入拉流地址" v-model="url"></mt-field>
     <mt-field label="stream" placeholder="请输入stream" v-model="stream"></mt-field>
+    
+
+    <mt-field label="videoWidth" placeholder="videoWidth" v-model="options.videoWidth"></mt-field>
+    <mt-field label="videoHeight" placeholder="videoHeight" v-model="options.videoHeight"></mt-field>
+    <mt-field label="videoBitRate" placeholder="videoBitRate" v-model="options.videoBitRate"></mt-field>
+    <mt-field label="videoMaxBitRate" placeholder="videoMaxBitRate" v-model="options.videoMaxBitRate"></mt-field>
+    <mt-field label="videoMinBitRate" placeholder="videoMinBitRate" v-model="options.videoMinBitRate"></mt-field>
+    <mt-field label="videoFrameRate" placeholder="videoFrameRate" v-model="options.videoFrameRate"></mt-field>
+    <mt-field label="videoMaxKeyframeInterval" placeholder="videoMaxKeyframeInterval" v-model="options.videoMaxKeyframeInterval"></mt-field>
+    <mt-field label="videoOrientation" placeholder="videoOrientation" v-model="options.videoOrientation"></mt-field>
+    
+
 
     <div class="pd-md">
       <mt-button @click="play" type="primary" size="large">开　播</mt-button>
@@ -19,7 +31,30 @@ export default {
   data () {
     return {
       url: 'rtmp://47.100.119.102:1935/hls',
-      stream: 'chenjia'
+      stream: 'chenjia',
+      options: {
+        videoWidth: '',
+        videoHeight: '',
+        videoBitRate: "819200", //(800 * 1024)
+        videoMaxBitRate: "1024000", //(1000 * 1024)
+        videoMinBitRate: "512000", //(500 * 1024)
+        videoFrameRate: "24",
+        videoMaxKeyframeInterval: "48",
+        videoOrientation: "2", //1 = portrait, 2 = landscape
+        labelLive: "Live",
+        labelViewers: "Viewers",
+        labelNoQuestions: "No Questions",
+        alertStopSessionTitle: "结束提醒",
+        alertStopSessionYes: "确定",
+        alertStopSessionNo: "取消",
+        alertStopSessionMessage: "要关闭直播间吗?",
+        alertStartSessionTitle: "开播提醒",
+        alertStartSessionOK: "确定",
+        alertStartSessionMessage: "要开启直播间吗?",
+        videoTitleStart: "开始",
+        videoTitlePaused: "暂停",
+        videoTitleEnd: "结束"
+      }
     }
   },
   methods: {
@@ -41,31 +76,11 @@ export default {
       });
     },
     iosPlay(){
-      var options = {
-        videoWidth: this.screenWidth,
-        videoHeight: this.screenHeight,
-        videoBitRate: "819200", //(800 * 1024)
-        videoMaxBitRate: "1024000", //(1000 * 1024)
-        videoMinBitRate: "512000", //(500 * 1024)
-        videoFrameRate: "24",
-        videoMaxKeyframeInterval: "48",
-        videoOrientation: "1", //1 = portrait, 2 = landscape
-        rtmpServerURL: this.url + '/' + this.stream,
-        labelLive: "Live",
-        labelViewers: "Viewers",
-        labelNoQuestions: "No Questions",
-        alertStopSessionTitle: "Alert",
-        alertStopSessionYes: "Yes",
-        alertStopSessionNo: "No",
-        alertStopSessionMessage: "Are you sure you want to stop the session?",
-        alertStartSessionTitle: "Alert",
-        alertStartSessionOK: "OK",
-        alertStartSessionMessage: "Are you sure you want to start the session?",
-        videoTitleStart: "Start",
-        videoTitlePaused: "Paused",
-        videoTitleEnd: "End"
-      };
-
+      let options = Object.assign({}, this.options)
+      options.videoWidth = options.videoWidth || this.screenWidth
+      options.videoHeight = options.videoHeight || this.screenHeight
+      options.rtmpServerURL = this.url + '/' + this.stream
+      console.log(options)
       var streamer = window.rtmpLiveStreamer;
 
       streamer.start(results => {

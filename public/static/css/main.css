@@ -222,3 +222,10 @@ form .mint-field-core{
     background-position: 0 0;
   }
 }
+body.video-play {
+  background-color: transparent !important;
+}
+body.video-play > div {
+  background-color: transparent !important;
+  opacity: 0;
+}
