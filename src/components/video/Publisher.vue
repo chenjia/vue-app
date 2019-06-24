@@ -53,7 +53,7 @@ export default {
         alertStopSessionMessage: "要关闭直播间吗?",
         alertStartSessionTitle: "开播提醒",
         alertStartSessionOK: "确定",
-        alertStartSessionMessage: "要开启直播间吗?",
+        alertStartSessionMessage: "请点击下方红色按钮开启直播！",
         videoTitleStart: "开始",
         videoTitlePaused: "暂停",
         videoTitleEnd: "结束"
@@ -99,7 +99,7 @@ export default {
       options.videoWidth = options.videoWidth || this.screenWidth
       options.videoHeight = options.videoHeight || this.screenHeight
       options.rtmpServerURL = this.url + '/' + this.stream
-      console.log(options)
+      console.log(options, rtmpLiveStreamer)
       this.streamer = window.rtmpLiveStreamer;
 
       this.streamer.start(results => {
@@ -110,11 +110,10 @@ export default {
     },
     iosStop(){
       this.streamer.stop(results => {
-          console.log('Results: ' + results);
-        }, error => {
-          console.log('Error: ' + error);
-        }, null
-      )
+        console.log('Results: ' + results);
+      }, error => {
+        console.log('Error: ' + error);
+      }, null)
     }
   },
   watch: {
