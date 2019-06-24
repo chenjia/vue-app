@@ -99,7 +99,7 @@ export default {
       options.videoWidth = options.videoWidth || this.screenWidth
       options.videoHeight = options.videoHeight || this.screenHeight
       options.rtmpServerURL = this.url + '/' + this.stream
-      console.log(options, rtmpLiveStreamer)
+      console.log(options, window.rtmpLiveStreamer)
       this.streamer = window.rtmpLiveStreamer;
 
       this.streamer.start(results => {
