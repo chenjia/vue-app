@@ -56,7 +56,6 @@ export default {
           playType: window.CLiteAV.PLAY_TYPE.LIVE_RTMP,
           playMode: 1
         }, ()=>{
-          
           console.log('suc')
         }, ()=>{
           console.log('fail')
@@ -96,7 +95,6 @@ export default {
     }, false);
 
     document.addEventListener('CLiteAV.onPlayEvent', data => {
-      console.log(data.eventID)
       if(data.eventID == '2001'){
         document.body.className = 'video-play'
       }
