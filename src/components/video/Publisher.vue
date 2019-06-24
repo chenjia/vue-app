@@ -40,7 +40,7 @@ export default {
         videoMinBitRate: "512000", //(500 * 1024)
         videoFrameRate: "24",
         videoMaxKeyframeInterval: "48",
-        videoOrientation: "2", //1 = portrait, 2 = landscape
+        videoOrientation: "1", //1 = portrait, 2 = landscape
         labelLive: "Live",
         labelViewers: "Viewers",
         labelNoQuestions: "No Questions",

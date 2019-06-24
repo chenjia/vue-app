@@ -22,7 +22,7 @@
       <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import RemoteScript from '../../components/common/RemoteScript'
@@ -90,6 +90,12 @@ export default {
     
   },
   mounted(){
+    document.addEventListener("backbutton", event => {
+      alert('back')
+      console.log(event)
+      this.stopPlay()
+    }, false);
+
     document.addEventListener('CLiteAV.onPlayEvent', data => {
       if(data.eventID == '2001'){
         document.body.className = 'video-play'
