@@ -97,6 +97,7 @@ export default {
     }, false);
 
     document.addEventListener('CLiteAV.onPlayEvent', data => {
+      console.log(data.eventID)
       if(data.eventID == '2001'){
         document.body.className = 'video-play'
         document.body.innerHTML = ''
