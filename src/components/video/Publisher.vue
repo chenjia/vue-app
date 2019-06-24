@@ -19,6 +19,9 @@
     
     <div class="pd-md">
       <mt-button @click="start" type="primary" size="large">开　播</mt-button>
+    </div>
+
+    <div class="pd-md">
       <mt-button v-show="streamer != null" @click="stop" type="primary" size="large">停　播</mt-button>
     </div>
   </div>

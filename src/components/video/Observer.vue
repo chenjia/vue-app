@@ -81,6 +81,7 @@ export default {
     stopPlay(){
       window.CLiteAV.stopPlay(()=>{
         console.log('stop suc')
+        document.body.className = ''
       }, ()=>{
         console.log('stop fail')
       })
@@ -91,8 +92,6 @@ export default {
   },
   mounted(){
     document.addEventListener("backbutton", event => {
-      alert('back')
-      console.log(event)
       this.stopPlay()
     }, false);
 
