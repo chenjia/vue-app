@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "77fc777e562f41e87180802f8e09a021"
+    "hash": "948cea1a043c96355fd5009b27303daa"
   },
   {
     "file": "static/js/browser.js",
@@ -221,7 +221,7 @@
   },
   {
     "file": "static/js/observer.js",
-    "hash": "257d8711e0902ab7c1749543c7578178"
+    "hash": "2703b8dbae3b456015db0ef1a670381f"
   },
   {
     "file": "static/js/publisher.js",

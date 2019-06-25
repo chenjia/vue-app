@@ -1,7 +1,7 @@
 {
   "content_url": "http://47.100.119.102/vue-app",
   "update": "now",
-  "appVersion": "1.0.17",
+  "appVersion": "1.0.18",
   "nativeVersion": "1.0",
   "description": [
     "1. 优化首屏加载速度",
@@ -9,5 +9,5 @@
     "3. 测试增量更新功能",
     "4. 调试在线直播功能"
   ],
-  "release": "2019.06.25-14.05.57"
+  "release": "2019.06.25-14.46.34"
 }

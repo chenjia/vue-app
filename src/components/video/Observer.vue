@@ -59,7 +59,7 @@ export default {
 
         window.CLiteAV.startPlay({
           url: this.url,
-          playType: this.playType,
+          playType: parseInt(this.playType),
           playMode: parseInt(this.playMode)
         }, ()=>{
           console.log('suc')
