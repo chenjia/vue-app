@@ -36,8 +36,8 @@ export default {
       stream: 'chenjia',
       streamer: null,
       options: {
-        videoWidth: '',
-        videoHeight: '',
+        videoWidth: '375',
+        videoHeight: '667',
         videoBitRate: "819200", //(800 * 1024)
         videoMaxBitRate: "1024000", //(1000 * 1024)
         videoMinBitRate: "512000", //(500 * 1024)

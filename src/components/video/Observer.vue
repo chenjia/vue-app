@@ -18,24 +18,10 @@
     </div> -->
 
     <mt-field label="拉流地址" placeholder="请输入拉流地址" v-model="url"></mt-field>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
-    <div class="pd-md">
-      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
-    </div>
+    <mt-field label="url" placeholder="url" v-model="url"></mt-field>
+    <mt-field label="playType" placeholder="playType" v-model="playType"></mt-field>
+    <mt-field label="playMode" placeholder="playMode" v-model="playMode"></mt-field>
+
     <div class="pd-md">
       <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
     </div>
@@ -52,7 +38,9 @@ export default {
   data () {
     return {
       player: null,
-      url: 'rtmp://47.100.119.102/hls/chenjia'
+      url: 'rtmp://47.100.119.102/hls/chenjia',
+      playType: window.CLiteAV.PLAY_TYPE.LIVE_RTMP,
+      playMode: 1
     }
   },
   methods: {
@@ -71,8 +59,8 @@ export default {
 
         window.CLiteAV.startPlay({
           url: this.url,
-          playType: window.CLiteAV.PLAY_TYPE.LIVE_RTMP,
-          playMode: 1
+          playType: this.playType,
+          playMode: parseInt(this.playMode)
         }, ()=>{
           console.log('suc')
         }, ()=>{
