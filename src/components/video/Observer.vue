@@ -21,6 +21,24 @@
     <div class="pd-md">
       <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
     </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
+    <div class="pd-md">
+      <mt-button @click="startPlay" type="primary" size="large">播　放</mt-button>
+    </div>
   </div>
 </template>
 
