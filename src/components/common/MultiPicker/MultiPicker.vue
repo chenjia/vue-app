@@ -86,8 +86,9 @@ export default {
   		this.inputValue = val
   	},
   	inputValue(val){
-  		if(val){
+  		if(val || val === 0 || val ==='0'){
   			this.setText(val, this.data, 0)
+        this.$emit('input', val)
   		}
   	}
   },
