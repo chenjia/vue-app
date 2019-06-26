@@ -59,7 +59,7 @@ export default {
       if(!window.eruda){
         axios({
           method:'get',
-          url:'http://cdn.jsdelivr.net/npm/eruda',
+          url:'static/lib/eruda/eruda.min.js',
           responseType:'application/script'
         }).then(function(response) {
           eval(response.data)

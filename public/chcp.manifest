@@ -157,7 +157,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "df462e1371df9367f5c4be4142fc8d49"
+    "hash": "6fc693bf4f9e771e56baee7bf240c3eb"
   },
   {
     "file": "static/js/browser.js",
@@ -221,7 +221,7 @@
   },
   {
     "file": "static/js/observer.js",
-    "hash": "45bc36f188c5794c4118829a15e3f5e3"
+    "hash": "ffaa1e6ea90362a9b81a52b4716c7de6"
   },
   {
     "file": "static/js/publisher.js",
@@ -229,7 +229,7 @@
   },
   {
     "file": "static/js/setting.js",
-    "hash": "b7e60ff13deb68bbf5cb4b16fe2516ea"
+    "hash": "0493591e3d5ad984507676b168b625c5"
   },
   {
     "file": "static/js/signature.js",
@@ -258,6 +258,10 @@
   {
     "file": "static/js/zoom.js",
     "hash": "a6107fd1a85b1e10b56005f9eac81f3d"
+  },
+  {
+    "file": "static/lib/eruda/eruda.min.js",
+    "hash": "a539d292e32ac197e7aeb36d3fb1fc7b"
   },
   {
     "file": "static/lib/font-awesome/css/font-awesome.min.css",
