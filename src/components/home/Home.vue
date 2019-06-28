@@ -15,7 +15,7 @@
         <tr v-if="index%4 == 0" v-for="(menu, index) in menus" :key="index">
           <td @click="go(menu.url)" v-if="i>=index && i<index+4" v-for="(menu, i) in menus" style="width:25%;padding-top:5px;">
             <div>
-              <i class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{color:menu.color}"></i><br/>
+              <i class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{color:colors[i]}"></i><br/>
               <span>{{menu.name}}</span>
             </div>
           </td>
@@ -36,7 +36,7 @@
 
       <div class="has-header" style="overflow-y:auto;" :style="{height:screenHeight-40+'px'}">
         <mt-cell @click.native="popupMenu = false;go(menu.url)" v-for="(menu, index) in menus" :key="index" :title="menu.name">
-          <i slot="icon" class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{verticalAlign:'middle', color:menu.color}"></i>
+          <i slot="icon" class="fa fa-fw" :class="'fa fa-'+menu.icon" :style="{verticalAlign:'middle', color:colors[index]}"></i>
         </mt-cell>
       </div>
     </mt-popup>
@@ -95,91 +95,79 @@ export default {
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' }
       ],
+      colors:['#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0', '#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700', '#6b8e23', '#ff00ff', '#3cb371', '#b8860b', '#30e0e0'],
       menus: [{
         name: '列表',
         icon: 'list',
-        color: '#ff7f50',
         url: 'list'
       },{
         name: '选项卡',
         icon: 'folder',
-        color: '#ffa500',
         url: 'tab'
       },{
         name: '图表',
         icon: 'bar-chart',
-        color: '#87cefa',
         url: 'chart'
       },{
         name: '通讯录',
         icon: 'address-book-o',
-        color: '#da70d6',
         url: 'contact'
       },{
         name: '表单',
         icon: 'list-alt',
-        color: '#32cd32',
         url: 'form'
       },{
         name: '锁屏',
         icon: 'hand-o-up',
-        color: '#ff69b4',
         url: 'lock'
       },{
         name: '加载',
         icon: 'spinner',
-        color: '#6495ed',
         url: 'loading'
       },{
         name: '视频',
         icon: 'video-camera',
-        color: '#cd5c5c',
         url: 'video'
       },{
         name: '日历',
         icon: 'calendar',
-        color: '#ba55d3',
         url: 'calendar'
       },{
         name: '地图',
         icon: 'map',
-        color: '#40e0d0',
         url: 'map'
       },{
         name: '弹窗',
         icon: 'window-restore',
-        color: '#1e90ff',
         url: 'dialog'
       },{
         name: '聊天',
         icon: 'qq',
-        color: '#ff6347',
         url: 'chat'
       },{
         name: '上传',
         icon: 'upload',
-        color: '#7b68ee',
         url: 'upload'
       },{
         name: '浏览器',
         icon: 'chrome',
-        color: '#00fa9a',
         url: 'browser'
       },{
         name: '缩放',
         icon: 'arrows-alt',
-        color: '#ffd700',
         url: 'zoom'
       },{
         name: '流程图',
         icon: 'sitemap',
-        color: '#6b8e23',
         url: 'workflow'
       },{
         name: '电子签名',
         icon: 'pencil-square-o',
-        color: '#ff00ff',
         url: 'signature'
+      },{
+        name: '启动页',
+        icon: 'ellipsis-h',
+        url: 'splash'
       }],
       timelines:[{
         time:(()=>{
@@ -252,12 +240,6 @@ export default {
         content:'亲爱滴，晚安么么哒~',
         icon:'fa fa-moon-o'
       }]
-      /*
-        '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed', 
-        '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0', 
-        '#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700', 
-        '#6b8e23', '#ff00ff', '#3cb371', '#b8860b', '#30e0e0' 
-      */
     }
   },
   methods: {

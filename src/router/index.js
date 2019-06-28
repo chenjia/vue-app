@@ -23,6 +23,7 @@ import browser from './browser'
 import zoom from './zoom'
 import workflow from './workflow'
 import signature from './signature'
+import splash from './splash'
 
 Vue.use(Router)
 
@@ -58,7 +59,8 @@ const router = new Router({
     ...browser,
     ...zoom,
     ...workflow,
-    ...signature
+    ...signature,
+    ...splash
     ]
   }]
 })
