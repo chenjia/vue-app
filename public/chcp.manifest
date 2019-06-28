@@ -160,32 +160,32 @@
     "hash": "c61c51c12a3501dcd68085c9ccfe1872"
   },
   {
-    "file": "static/img/splash/ADMIABAEGAAgjKLz4wUoy6LHOjCKAjjOAQ!160x160.png.webp",
-    "hash": "e34413d906f94db066aa7d545289b1c0"
-  },
-  {
-    "file": "static/img/splash/ADMIABAEGAAgr9qc5AUo1cXihgYw6wY4ngM!800x800.png.webp",
-    "hash": "fb7b90839b5202e6a370d9a87b47680c"
-  },
-  {
-    "file": "static/img/splash/ADMIABAEGAAgsNqc5AUosKnR-wQwtwE41AI!300x300.png.webp",
-    "hash": "a7f52f435af99c5aca7d95537ce6b651"
-  },
-  {
-    "file": "static/img/splash/ADMIABAEGAAgtJGC5AUo19nb4QYwKDg1.png.webp",
-    "hash": "2253f309c1e7bf669b0767e71db2e20c"
-  },
-  {
-    "file": "static/img/splash/ADMIABAEGAAgv7D34wUouMyx6AQwoAE4nQE.png.webp",
-    "hash": "38e7382f7e83e674645a1cb1c2ede92d"
-  },
-  {
-    "file": "static/img/splash/ADMIABAEGAAgv7D34wUovsXanQIwjAE4eA.png.webp",
-    "hash": "a831b20f347fd5b5062bc60377090c55"
-  },
-  {
     "file": "static/img/splash/bg.jpeg",
     "hash": "dea8a1cbee0d7b359716db77f705ad76"
+  },
+  {
+    "file": "static/img/splash/bird.png",
+    "hash": "9b475dfa72520ea4c2fc85abb580060f"
+  },
+  {
+    "file": "static/img/splash/butterfly0.png",
+    "hash": "4205b7528c542ba027ce27a2b0f3ee52"
+  },
+  {
+    "file": "static/img/splash/butterfly1.png",
+    "hash": "1c8897c63a291c9c4943eaddcea38058"
+  },
+  {
+    "file": "static/img/splash/cloud.png",
+    "hash": "df09908b3e1885ff0d3cae89527868ca"
+  },
+  {
+    "file": "static/img/splash/dragonfly.png",
+    "hash": "f17ddb67d7f6c787488c4d4b3af7718d"
+  },
+  {
+    "file": "static/img/splash/flower.png",
+    "hash": "68d347f9d110431ad28e75b654127455"
   },
   {
     "file": "static/img/yes.png",
@@ -197,7 +197,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "75a76f64b89b8ee7ed0baf299b1e8e43"
+    "hash": "7abfee9af862a6d85af6c073cd6415e2"
   },
   {
     "file": "static/js/browser.js",
@@ -277,7 +277,7 @@
   },
   {
     "file": "static/js/splash.js",
-    "hash": "67dd857707c97de4a9c7933b4c6595da"
+    "hash": "6c9888eebf2cdea7c9d03af70b6fd5e0"
   },
   {
     "file": "static/js/tab.js",

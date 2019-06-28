@@ -2,22 +2,22 @@
   <div style="position:absolute;width:100%;height:100%;overflow-y:auto;">
     <mt-swipe :auto="0" :continuous="false">
       <mt-swipe-item class="splash-bg" :style="{backgroundPosition: '0 100%', backgroundSize:screenWidth*3+'px 100%'}">
-        <img class="splash-cloud" src="static/img/splash/ADMIABAEGAAgr9qc5AUo1cXihgYw6wY4ngM!800x800.png.webp" alt="">
-        <img class="splash-dragonfly splash-dragonfly0" src="static/img/splash/ADMIABAEGAAgtJGC5AUo19nb4QYwKDg1.png.webp">
-        <img class="splash-dragonfly splash-dragonfly1"src="static/img/splash/ADMIABAEGAAgtJGC5AUo19nb4QYwKDg1.png.webp">
+        <img class="splash-cloud" src="static/img/splash/cloud.png">
+        <img class="splash-dragonfly splash-dragonfly0" src="static/img/splash/dragonfly.png">
+        <img class="splash-dragonfly splash-dragonfly1"src="static/img/splash/dragonfly.png">
       </mt-swipe-item>
       <mt-swipe-item class="splash-bg" :style="{backgroundPosition: (screenWidth*-1)+'px 100%', backgroundSize:screenWidth*3+'px 100%'}">
-        <img class="splash-cloud" src="static/img/splash/ADMIABAEGAAgr9qc5AUo1cXihgYw6wY4ngM!800x800.png.webp" alt="">
-        <img class="splash-flower" style="left:-2%;" src="static/img/splash/ADMIABAEGAAgsNqc5AUosKnR-wQwtwE41AI!300x300.png.webp" alt="">
-        <img class="splash-flower splash-flower1" style="left:45%;bottom:5%;" src="static/img/splash/ADMIABAEGAAgsNqc5AUosKnR-wQwtwE41AI!300x300.png.webp" alt="">
-        <img class="splash-flower splash-flower2" style="right:-2%;bottom:2%;" src="static/img/splash/ADMIABAEGAAgsNqc5AUosKnR-wQwtwE41AI!300x300.png.webp" alt="">
-        <img class="splash-butterfly splash-butterfly0" src="static/img/splash/ADMIABAEGAAgv7D34wUovsXanQIwjAE4eA.png.webp" alt="">
-        <img class="splash-butterfly splash-butterfly1" src="static/img/splash/ADMIABAEGAAgv7D34wUouMyx6AQwoAE4nQE.png.webp" alt="">
-        <img class="splash-kite" src="static/img/splash/ADMIABADGAAgoOin5AUoyom7oQMw6wM4lwY.gif" alt="">
+        <img class="splash-cloud" src="static/img/splash/cloud.png">
+        <img class="splash-flower" style="left:-2%;" src="static/img/splash/flower.png">
+        <img class="splash-flower splash-flower1" style="left:45%;bottom:5%;" src="static/img/splash/flower.png">
+        <img class="splash-flower splash-flower2" style="right:-2%;bottom:2%;" src="static/img/splash/flower.png">
+        <img class="splash-butterfly splash-butterfly0" src="static/img/splash/butterfly0.png">
+        <img class="splash-butterfly splash-butterfly1" src="static/img/splash/butterfly1.png">
+        <img class="splash-kite" src="static/img/splash/ADMIABADGAAgoOin5AUoyom7oQMw6wM4lwY.gif">
       </mt-swipe-item>
       <mt-swipe-item class="splash-bg" :style="{backgroundPosition: (screenWidth*-2)+'px 100%', backgroundSize:screenWidth*3+'px 100%'}">
-        <img class="splash-cloud" src="static/img/splash/ADMIABAEGAAgr9qc5AUo1cXihgYw6wY4ngM!800x800.png.webp" alt="">
-        <img class="splash-bird" style="left:80%;top:10%;width:30px;" src="static/img/splash/ADMIABAEGAAgjKLz4wUoy6LHOjCKAjjOAQ!160x160.png.webp" alt="">
+        <img class="splash-cloud" src="static/img/splash/cloud.png">
+        <img class="splash-bird" style="left:80%;top:10%;width:30px;" src="static/img/splash/bird.png">
         <div class="center" style="position:fixed;width:100%;bottom:40px;">
           <mt-button @click="go('/page/home')" type="primary">立即体验</mt-button>
         </div>
