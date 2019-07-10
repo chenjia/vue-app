@@ -3,6 +3,9 @@
   -webkit-tap-highlight-color:transparent;
   font-family: 'PingFangSC-Regular';
 }
+body{
+  background-color: #f5f5f9;
+}
 input,textarea,select{
   -webkit-user-select: text;
   outline-style: none;

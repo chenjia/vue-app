@@ -308,7 +308,7 @@ export default {
     }
   },
   mounted(){
-    
+    console.log('home')
   },
   beforeRouteEnter(to, from, next) {
     next(vm=>{
@@ -330,7 +330,7 @@ export default {
   height:64px;
   line-height: 20px;
   vertical-align:middle;
-  border:1px dashed #dfdfdf;
+  border:1px solid #dfdfdf;
 }
 .icon-table td i{
   font-size:24px;

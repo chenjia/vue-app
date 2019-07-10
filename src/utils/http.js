@@ -41,7 +41,7 @@ instance.interceptors.request.use(function(config) {
   config.url = window.Config.server + config.url
 
   config.data = {
-    request: encryptByAES(JSON.stringify(data), decryptKey(Config.key))
+    request: encryptByAES(JSON.stringify(data), decryptKey(window.Config.key))
   }
   return config
 }, function(error) {
@@ -50,7 +50,7 @@ instance.interceptors.request.use(function(config) {
 })
 
 instance.interceptors.response.use(function(response) {
-  let resp = decryptByAES(response.data.response, decryptKey(Config.key))
+  let resp = decryptByAES(response.data.response, decryptKey(window.Config.key))
   response.data = JSON.parse(resp)
   console.log('\n【response:'+response.config.url+'】',response, '\n\n')
   if(response.data.head.status != 200){

@@ -5,7 +5,7 @@
       <mt-button slot="right" @click="check()" class="fa fa-fw fa-refresh"></mt-button>
     </mt-header>
 
-    <div class="pd-md center">
+    <div class="pd-md center" style="background-color: white;">
       <img src="static/img/logo.png" style="width:50%;">
     </div>
     
@@ -17,10 +17,11 @@
           <img @click="getCaptcha" :src="base64Img" style="width:100px;height:36px;">
         </div>
       </mt-field>
-      <div class="pd-md">
-        <mt-button @click="login" type="primary" size="large">登　录</mt-button>
-      </div>
-        
+    </div>
+    <div class="pd-md">
+      <mt-button @click="login" type="primary" size="large">登　录</mt-button>
+    </div>
+    <div>
       <mt-field v-if="showVersion" label="服务器url" v-model="server"></mt-field>
       <mt-field v-if="showVersion" label="热更新url" v-model="chcpUrl"></mt-field>
       <div @click="showVersion = !showVersion" style="position:absolute;width:100%;bottom:5px;color:gray;font-size:12px;text-align:center">版本号：{{appVersion}}</div>
@@ -108,7 +109,7 @@ export default {
     }
   },
   mounted(){
-    
+    console.log('login')
   },
   beforeRouteEnter(to, from, next){
     next(vm=>{
