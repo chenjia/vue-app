@@ -114,11 +114,11 @@ form .mint-field-core{
   transition: all .3s ease-out;
 }
 .mint-swipe-indicator{
-  opacity: 1;
-  background:rgba(0,0,0,0.4);
+  opacity: 1!important;
+  background-color:rgba(0,0,0,0.5)!important;
 }
 .mint-swipe-indicator.is-active{
-  background:rgba(255,255,255,0.8);
+  background-color:rgba(255,255,255,0.8)!important;
 }
 .mt-progress-progress{
   transition:width .3s linear;
@@ -216,9 +216,6 @@ form .mint-field-core{
 }
 .mt-progress-runway, .mt-progress-progress{
   border-radius: 5px;
-}
-.mint-swipe-indicator.is-active{
-  opacity: .8;
 }
 @keyframes progress-bar-stripes {
   from {
