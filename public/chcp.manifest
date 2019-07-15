@@ -13,11 +13,11 @@
   },
   {
     "file": "static/css/app.css",
-    "hash": "fa776b9b2e2c1512d927afca9c47767e"
+    "hash": "54e347ce5ea1e0bb8d1f0271e977e175"
   },
   {
     "file": "static/css/main.css",
-    "hash": "defba8a8ca0a279ec6e7ddfed89b9e5c"
+    "hash": "39ab134daaafd51371f3df2823964fdb"
   },
   {
     "file": "static/html/baiduMap.html",
@@ -197,7 +197,7 @@
   },
   {
     "file": "static/js/app.js",
-    "hash": "e55e4bdd41c8170168d5a6e1f832634b"
+    "hash": "a12c5277d13262510cfaedfbaf5039af"
   },
   {
     "file": "static/js/browser.js",
@@ -261,7 +261,7 @@
   },
   {
     "file": "static/js/observer.js",
-    "hash": "ffaa1e6ea90362a9b81a52b4716c7de6"
+    "hash": "bfd963dad469379c6ff2a04aac0a189a"
   },
   {
     "file": "static/js/publisher.js",

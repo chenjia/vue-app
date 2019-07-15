@@ -137,8 +137,8 @@ export default {
     changeMode(mode){
       this.playMode = mode
       console.log('changeMode timeout:'+mode)
-      window.CLiteAV.setPlayMode(mode)
       setTimeout(()=>{
+        window.CLiteAV.setPlayMode(mode)
         window.screen.orientation.unlock()
       },1111)
     }
