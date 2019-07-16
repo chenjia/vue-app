@@ -16,7 +16,7 @@ const version = {
 		})
 	},
 	getServerVersion(){
-		return axios.get(Config.chcpUrl+'?r='+Config.random)
+		return axios.get(Config.chcpUrl+'?r='+new Date().getTime())
 	},
 	fetchUpdate(){
 		if(!window.chcp){
