@@ -2,7 +2,7 @@ vue-app 是采用vue+mint-UI开发的Hybird app，里面集成了很多demo可�
 
 在线访问地址为 http://47.100.119.102/vue-app 开发人员联系方式：251746034@qq.com
 
-安卓下载地址：https://www.pgyer.com/CPz5
+安卓下载地址：https://www.pgyer.com/CPz5 安装密码：123456
 ios由于没有相应证书，暂时没有下载链接。
 
 如果觉得对您有帮助请别忘记加星，望更多人能加入到Hybrid开发的行列中。
