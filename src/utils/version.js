@@ -39,9 +39,9 @@ const version = {
 				if (progress == 100) {
 					store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
 					setTimeout(() => {
-						alert('ready to install')
+						console.log('ready to install')
 						version.installUpdate()
-					}, 200)
+					}, 500)
 				}
 			}
 		}, {
