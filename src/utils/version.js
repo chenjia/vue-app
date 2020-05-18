@@ -25,25 +25,26 @@ const version = {
 		}
 
 		chcp.fetchUpdate((error, data) => {
-			console.log(data, data.config)
+			console.log('in fetchUpdate', data, data.config)
 			
 			if (error) {
 				console.log(error)
 				return
 			}
 
-			if(data.totalNum){
+			if (data.totalNum) {
 				let progress = parseInt(data.progress * 100);
-				console.log(progress)
+				console.log('progress', progress)
 				store.commit('TOGGLE_PROGRESS', progress)
 				if (progress == 100) {
 					store.commit('TOGGLE_UPDATING_TEXT', '正在安装新版本')
-					setTimeout(()=>{
+					setTimeout(() => {
+						alert('ready to install')
 						version.installUpdate()
-					},200)
+					}, 200)
 				}
 			}
-		},{
+		}, {
 			'config-file': Config.chcpUrl
 		})
 	},
