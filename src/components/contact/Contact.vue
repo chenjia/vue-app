@@ -104,11 +104,12 @@ export default {
         contacts.map(item => {
           items.push({
             displayName: item.displayName || item.name.formatted,
-            phoneNumbers: item.phoneNumbers
+            phoneNumbers: [{value:'13333333333'}]
           })
         })
 
         _this.items = items
+        console.log(items)
       }
 
       const onError = contactError => {
