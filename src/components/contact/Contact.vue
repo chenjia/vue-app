@@ -4,8 +4,6 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
-    <div>{{ready}}</div>
-
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -14,7 +12,7 @@
       <a class="mint-searchbar-cancel" style="display: none;">取消</a>
     </div>
 
-    <mt-index-list v-if="ready">
+    <mt-index-list>
       <mt-index-section v-for="(group, index) in contacts" :key="index" :index="group.group">
         <mt-cell v-for="(item, index) in group.items" :key="group.group+index" :title="getName(item)">
           <a style="color:#888;text-decoration: none;" :href="'tel:'+item.phoneNumbers[0].value">{{item.phoneNumbers[0].value}}</a>
@@ -102,17 +100,176 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.items = contacts.map(item => {
-          return {
-            displayName: item.displayName || item.name.formatted,
-            phoneNumbers: item.phoneNumbers
-          }
-        })
-        
-        _this.$nextTick(() => {
-          _this.ready = true
-        })
-        _this.$forceUpdate()
+        // _this.items = contacts.map(item => {
+        //   return {
+        //     displayName: item.displayName || item.name.formatted,
+        //     phoneNumbers: item.phoneNumbers
+        //   }
+        // })
+
+        _this.items = [{
+          displayName: 'Aaron',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '阿毛',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Braden',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '宝宝',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Chapman',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '场地',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Dunn',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '到达',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Elliott',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '饿了么',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Found',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '非常',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Grant',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '搞饭',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Hall',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '哈哈',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Irish',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'items',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Johnson',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '就是',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'key',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '开始',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'left',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '勒夫',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '刘双龙',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '卢金龙',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Martin',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '蚂蜂',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Nelson',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '呢方式',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Osborne',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '哦哦',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Pierce',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '浦东',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Quinta',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '区分',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Rose',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '人格',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'String',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '顺风耳',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Turner',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '听歌',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Urian',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Uwe',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Vega',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Vance',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'White',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '网格',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Xena',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '幸福氛围',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'York',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '雨神',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: 'Zenon',
+          phoneNumbers:[{value:'13333333333'}]
+        },{
+          displayName: '在发疯',
+          phoneNumbers:[{value:'13333333333'}]
+        }]
       }
 
       const onError = contactError => {
