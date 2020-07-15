@@ -102,13 +102,16 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.items = contacts.map(item => {
-          return {
-            displayName: item.displayName || item.name.formatted,
-            phoneNumbers: item.phoneNumbers
-          }
-        })
         _this.ready = true
+        _this.$forceUpdate()
+        _this.$nextTick(() => {
+          _this.items = contacts.map(item => {
+            return {
+              displayName: item.displayName || item.name.formatted,
+              phoneNumbers: item.phoneNumbers
+            }
+          })
+        })
       }
 
       const onError = contactError => {
