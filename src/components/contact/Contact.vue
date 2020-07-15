@@ -60,6 +60,9 @@ export default {
       }
       console.log(this.items.length)
       console.log(result)
+      setTimeout(() => {
+        this.$forceUpdate()
+      },111)
       return result
     }
   },
