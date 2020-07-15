@@ -40,22 +40,21 @@ export default {
     contacts(){
       let result = []
       let items = this.pinyinSort(this.items)
-      console.log(items)
-      if(this.searchKey){
-        for(let i=0;i<items.length;i++){
+      if (this.searchKey) {
+        for (let i = 0; i < items.length; i++) {
           let group = items[i]
           let groupItems = []
-          for(let item of group.items){
+          for (let item of group.items) {
             let name = this.getName(item)
-            if(name.toLowerCase().indexOf(this.searchKey.toLowerCase())!=-1){
+            if (name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1) {
               groupItems.push(item)
             }
           }
-          if(groupItems.length){
+          if (groupItems.length) {
             result.push({group:group.group, items:groupItems})  
           }
         }
-      }else{
+      } else {
         result = items
       }
       return result
@@ -275,7 +274,7 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.items = contacts
+        _this.$set('items', contacts)
         console.log('Found ' + contacts.length + ' contacts.')
       }
 
