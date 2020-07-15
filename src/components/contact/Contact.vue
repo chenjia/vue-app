@@ -110,7 +110,7 @@ export default {
           }
         })
         _this.ready = true
-        console.log(items)
+        console.log(_this.items)
       }
 
       const onError = contactError => {
