@@ -56,6 +56,7 @@ export default {
       } else {
         result = items
       }
+      console.log(this.items.length)
       console.log(result)
       return result
     }
@@ -106,6 +107,7 @@ export default {
             phoneNumbers: item.phoneNumbers
           }
         })
+        console.log(_this.items)
       }
 
       const onError = contactError => {
