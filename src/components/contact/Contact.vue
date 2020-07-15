@@ -37,9 +37,7 @@ export default {
   computed:{
     contacts(){
       let result = []
-      console.log(this.items.length + ':' + this.searchKey)
       let items = this.pinyinSort(this.items)
-      console.log(JSON.stringify(items))
       if (this.searchKey) {
         for (let i = 0; i < items.length; i++) {
           let group = items[i]
@@ -104,12 +102,11 @@ export default {
         contacts.map(item => {
           items.push({
             displayName: item.displayName || item.name.formatted,
-            phoneNumbers: [{value:'13333333333'}]
+            phoneNumbers: [{value: (item.phoneNumbers && item.phoneNumbers.length > 0) ? item.phoneNumbers[0].value : ''}]
           })
         })
 
         _this.items = items
-        console.log(items)
       }
 
       const onError = contactError => {
