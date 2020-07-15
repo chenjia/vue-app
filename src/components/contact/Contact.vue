@@ -4,8 +4,6 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
-    <div>{{items.length}}</div>
-    
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -275,8 +273,7 @@ export default {
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
         _this.items = contacts
-        _this.$forceUpdate()
-        console.log('Found ' + contacts.length + ' contacts.')
+        console.log(contacts)
       }
 
       const onError = contactError => {
