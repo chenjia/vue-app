@@ -278,6 +278,8 @@ export default {
             phoneNumbers: item.phoneNumbers
           }
         })
+
+        console.log(_this.items)
       }
 
       const onError = contactError => {
