@@ -38,6 +38,7 @@ export default {
     contacts(){
       let result = []
       let items = this.pinyinSort(this.items)
+      console.log(items)
       if(this.searchKey){
         for(let i=0;i<items.length;i++){
           let group = items[i]
