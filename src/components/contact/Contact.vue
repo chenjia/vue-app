@@ -4,8 +4,6 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
-    <div>{{contacts}}</div>
-
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -14,7 +12,7 @@
       <a class="mint-searchbar-cancel" style="display: none;">取消</a>
     </div>
 
-    <mt-index-list>
+    <mt-index-list v-if="ready">
       <mt-index-section v-for="(group, index) in contacts" :key="index" :index="group.group">
         <mt-cell v-for="(item, index) in group.items" :key="group.group+index" :title="getName(item)">
           <a style="color:#888;text-decoration: none;" :href="'tel:'+item.phoneNumbers[0].value">{{item.phoneNumbers[0].value}}</a>
@@ -31,6 +29,7 @@ export default {
   name: 'contact',
   data () {
     return {
+      ready: false,
       searchKey:'',
       items:[]
     }
@@ -107,7 +106,7 @@ export default {
             phoneNumbers: item.phoneNumbers
           }
         })
-        console.log(_this.items)
+        _this.ready = true
       }
 
       const onError = contactError => {
@@ -285,6 +284,8 @@ export default {
           displayName: '在发疯',
           phoneNumbers:[{value:'13333333333'}]
         }]
+
+        this.ready = true
       }, 111)
     }
   }
