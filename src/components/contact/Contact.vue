@@ -274,7 +274,8 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.$set('items', contacts)
+        _this.items = contacts
+        _this.$forceUpdate()
         console.log('Found ' + contacts.length + ' contacts.')
       }
 

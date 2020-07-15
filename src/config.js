@@ -1,5 +1,5 @@
 window.Config = {
-  appVersion: '1.0.37',
+  appVersion: '1.0.38',
   nativeVersion: '1.0',
   // server: 'http://localhost:8201/api',
   server: 'http'+(location.href.indexOf('https')==0?'s':'')+'://47.100.119.102/api',
