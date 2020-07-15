@@ -39,7 +39,9 @@ export default {
   computed:{
     contacts(){
       let result = []
+      console.log(this.items.length + ':' + this.searchKey)
       let items = this.pinyinSort(this.items)
+      console.log(JSON.stringify(items))
       if (this.searchKey) {
         for (let i = 0; i < items.length; i++) {
           let group = items[i]
@@ -92,7 +94,6 @@ export default {
           group.push({group: item, items:current})
         }
       })
-      console.log(group)
       return group
     }
   },
