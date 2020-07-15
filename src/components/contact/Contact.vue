@@ -4,6 +4,9 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
+    <div>{{items}}</div>
+    <div>{{ready}}</div>
+
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -102,11 +105,12 @@ export default {
       const onSuccess = contacts => {
         _this.items = contacts.map(item => {
           return {
-            displayName: item.displayName,
+            displayName: item.displayName || item.name.formatted,
             phoneNumbers: item.phoneNumbers
           }
         })
         _this.ready = true
+        console.log(items)
       }
 
       const onError = contactError => {
