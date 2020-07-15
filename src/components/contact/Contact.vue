@@ -4,7 +4,6 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
-    <div>{{items}}</div>
     <div>{{ready}}</div>
 
     <div class="mint-searchbar">
@@ -58,11 +57,6 @@ export default {
       } else {
         result = items
       }
-      console.log(this.items.length)
-      console.log(result)
-      setTimeout(() => {
-        this.$forceUpdate()
-      },111)
       return result
     }
   },
@@ -98,6 +92,7 @@ export default {
           group.push({group: item, items:current})
         }
       })
+      console.log(group)
       return group
     }
   },
@@ -113,7 +108,6 @@ export default {
           }
         })
         _this.ready = true
-        console.log(_this.items)
       }
 
       const onError = contactError => {
