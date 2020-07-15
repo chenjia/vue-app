@@ -272,12 +272,9 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.items = contacts.map(item => {
-          return {
-            displayName: item.displayName,
-            phoneNumbers: item.phoneNumbers
-          }
-        })
+        _this.items = contacts
+        console.log(JSON.stringify(contacts))
+        _this.items = JSON.parse(JSON.stringify(contacts))
       }
 
       const onError = contactError => {
