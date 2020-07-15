@@ -279,8 +279,8 @@ export default {
           }
         })
 
-        console.log(_this.items[0])
-        console.log(contacts[0])
+        console.log(JSON.stringify(_this.items[0]))
+        console.log(JSON.stringify(contacts[0]))
       }
 
       const onError = contactError => {
