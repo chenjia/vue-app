@@ -4,6 +4,8 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
+    <div>{{contacts}}</div>
+
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -54,7 +56,6 @@ export default {
       } else {
         result = items
       }
-      console.log(result)
       return result
     }
   },
@@ -98,7 +99,12 @@ export default {
     let _this = this
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
-        _this.items = contacts
+        _this.items = contacts.map(item => {
+          return {
+            displayName: item.displayName,
+            phoneNumbers: item.phoneNumbers
+          }
+        })
       }
 
       const onError = contactError => {
