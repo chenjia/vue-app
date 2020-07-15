@@ -3,6 +3,8 @@
     <mt-header title="联系人">
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
+
+    <div>{{items.length}}</div>
     
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
