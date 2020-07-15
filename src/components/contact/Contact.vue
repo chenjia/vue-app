@@ -273,7 +273,9 @@ export default {
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
         _this.items = contacts
-        console.log(contacts)
+        for (let i = 0; i < 10; i++) {
+          console.log(contacts[i])
+        }
       }
 
       const onError = contactError => {
