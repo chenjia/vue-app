@@ -279,7 +279,8 @@ export default {
           }
         })
 
-        console.log(JSON.stringify(_this.items))
+        _this.items = JSON.parse(JSON.stringify(_this.items))
+
       }
 
       const onError = contactError => {
