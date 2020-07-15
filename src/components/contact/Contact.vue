@@ -4,8 +4,6 @@
       <mt-button @click="back" slot="left" icon="back"><span>返回</span></mt-button>
     </mt-header>
 
-    <div>{{items}}</div>
-
     <div class="mint-searchbar">
       <div class="mint-searchbar-inner">
         <i class="mintui mintui-search"></i>
@@ -33,32 +31,8 @@ export default {
     return {
       ready:false,
       searchKey:'',
+      contacts: {},
       items:[]
-    }
-  },
-  computed:{
-    contacts(){
-      let result = []
-      let items = this.pinyinSort(this.items)
-      if (this.searchKey) {
-        for (let i = 0; i < items.length; i++) {
-          let group = items[i]
-          let groupItems = []
-          for (let item of group.items) {
-            let name = this.getName(item)
-            if (name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1) {
-              groupItems.push(item)
-            }
-          }
-          if (groupItems.length) {
-            result.push({group:group.group, items:groupItems})  
-          }
-        }
-      } else {
-        result = items
-      }
-      console.log(result[0])
-      return result
     }
   },
   methods:{
@@ -94,6 +68,28 @@ export default {
         }
       })
       return group
+    },
+    groupContacts() {
+      let result = []
+      let items = this.pinyinSort(this.items)
+      if (this.searchKey) {
+        for (let i = 0; i < items.length; i++) {
+          let group = items[i]
+          let groupItems = []
+          for (let item of group.items) {
+            let name = this.getName(item)
+            if (name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1) {
+              groupItems.push(item)
+            }
+          }
+          if (groupItems.length) {
+            result.push({group:group.group, items:groupItems})  
+          }
+        }
+      } else {
+        result = items
+      }
+      this.contacts = result
     }
   },
   beforeMount(){
@@ -264,7 +260,13 @@ export default {
 
       setTimeout(()=>{
         this.items.push({displayName:'陈佳', phoneNumbers:[{value:'18702189255'}]})
+        this.groupContacts()
       },200)
+    }
+  },
+  watch: {
+    searchKey() {
+      this.groupContacts()
     }
   },
   mounted(){
@@ -276,6 +278,7 @@ export default {
     document.addEventListener("deviceready", ()=>{
       const onSuccess = contacts => {
         _this.items = contacts
+        _this.groupContacts()
       }
 
       const onError = contactError => {
