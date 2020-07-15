@@ -57,6 +57,7 @@ export default {
       } else {
         result = items
       }
+      console.log(result[0])
       return result
     }
   },
