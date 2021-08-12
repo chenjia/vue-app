@@ -90,7 +90,6 @@ export default {
         const data = response.data.body.data.data
         setTimeout(() => {
           this.pageNumber++
-          console.log(this.records)
           let target = this.records[this.target.userId]
           if(target && target.length > 0){
             let recordId = this.records[this.target.userId][0].recordId
@@ -123,7 +122,6 @@ export default {
     sendMessage(message){
       let frame = document.getElementById('chatFrame')
       frame.contentWindow.postMessage(message, '*')
-      console.log(this.target)
       this.records[this.target.userId].push(message)
       this.records  = Object.assign({}, this.records)
       this.msg = ''
