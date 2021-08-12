@@ -35,9 +35,9 @@ module.exports = {
         resolve('src'),
         resolve('test'),
         resolve('/node_modules/pinyin'),
-        resolve('/node_modules/_pinyin@2.8.3@pinyin'),
+        resolve('/node_modules/_pinyin@2.10.2@pinyin'),
         resolve('/node_modules/signature_pad'),
-        resolve('/node_modules/_signature_pad@3.0.0-beta.3@signature_pad')
+        resolve('/node_modules/_signature_pad@3.0.0-beta.4@signature_pad')
       ]
     }, {
       test: /\.(png|jpe?g|gif)(\?.*)?$/,
