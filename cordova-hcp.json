@@ -1,7 +1,7 @@
 {
   "content_url": "http://47.100.119.102/vue-app",
   "update": "now",
-  "appVersion":"1.0.9",
+  "appVersion":"1.1.1",
   "nativeVersion": "1.0",
   "description":[
   	"1. 优化首屏加载速度",
