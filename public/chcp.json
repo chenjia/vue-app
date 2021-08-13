@@ -1,12 +1,12 @@
 {
   "content_url": "http://47.100.119.102/vue-app",
   "update": "now",
-  "appVersion": "1.1.1",
+  "appVersion": "1.1.2",
   "nativeVersion": "1.0",
   "description": [
     "1. 优化首屏加载速度",
     "2. 部分bug修复",
     "3. 新增聊天功能"
   ],
-  "release": "2021.08.13-17.35.18"
+  "release": "2021.08.13-18.06.05"
 }
